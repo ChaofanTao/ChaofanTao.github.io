@@ -81,7 +81,7 @@ analytics:
 # Site Author
 author:
   name             : "Chaofan Tao(陶超凡)"
-  avatar           : "images/ChaofanTao.jpg"
+  avatar           : "ChaofanTao.jpg"
   bio              : "I am passionate about research. If you’re seeking self-motivated PhD student, I won't let you down!"
   location         : "Chengdu, China"
   employer         :
@@ -122,6 +122,7 @@ include:
   - .htaccess
   - _pages
   - files
+  - images
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -254,7 +255,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Shanghai # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
