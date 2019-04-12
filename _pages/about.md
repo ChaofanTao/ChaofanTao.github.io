@@ -16,6 +16,7 @@ I am an undergraduate student currently in the [School of Mathematical Science](
 
 # Transcript
 * Transcript of University of Electronic Science and Technology of China
+
  GPA: 3.98/4.0 -- 90.31/100.00
 * Language: IELTS 7.5 (R:8.5 L:8.5 W:6.5 S:6.0)
 
