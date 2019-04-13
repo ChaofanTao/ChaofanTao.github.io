@@ -25,6 +25,10 @@ Hi, my name is Chaofan Tao. I am an undergraduate student in the [School of Math
 
 I am focusing myself on the research of __transfer learning__ currently, under the supervision of [Prof. Lixin Duan](http://lxduan.info/)  at the [Data Intelligence group](https://dig.uestc.cn/). I spent one year working with [Prof. Yang Yang](http://cfm.uestc.edu.cn/~yangyang/) as my instructor  at [Center for Future Media](http://cfm.uestc.edu.cn/index). My research interests include __computer vision__ and __transfer learning__, __deep learning__, espeically for unsupervised transfer learning and their applications.
 
+# News
+* [Apr. 2019] I was selected into the study-abroad elite camp jointly organized by [UESTC](https://www.uestc.edu.cn/) and [New Oriental](http://www.neworiental.org/english/) (20 people in 5000)
+
+
 # Selected Articles
 * __Chaofan Tao__, Fengmao Lv, Lixin Duan and Min Wu. "Minimax Entropy Network: Learning Categorical-Invariant Features for Domain Adaptation" (under review)
 * Yi Bin, __Chaofan Tao__, Yang Yang, Zi Huang, Jingjing Li and Heng Tao Shen. "MR-NET: Exploiting Mutual Relation for Visual  Relationship Detection" , AAAI-19 (CCF A tier).
@@ -53,7 +57,7 @@ I am focusing myself on the research of __transfer learning__ currently, under t
   + Proposed a method to mitigate the problem of data sparsity for doctors clustering by utilizing various types of clue (e.g. rating number and comment text).
   + Crawled various types of data and built an auto-encoder for discriminative representation learning.
 
-* July 2017 - Sept 2017 Intern at Center for Future Media, UESTC
+* July. 2017 - Sept. 2017 Intern at Center for Future Media, UESTC
   + Under the instruction of Prof. Yang Yang.
   + Finished Stanford Unsupervised Feature Learning and Deep Learning (Stanford-UFLDL) tutorial. [Code](https://github.com/ChaofanTao/MachineLearning-UFLDL)
   
@@ -82,4 +86,4 @@ Player of Basketball Team, Yingcai Honors College
 
 
 ===================  
-Last Updated: April 13 2019.
+Last Updated: April 13, 2019.
