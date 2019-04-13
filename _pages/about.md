@@ -45,10 +45,10 @@ I am focusing myself on the research of ``transfer learning`` currently, under t
 	+ Formulated training methods and conducted part of experiments.
 	+ Visualized our comparable results and writed part of the paper.
  
-* Mar. 2018 - Sempt. 2018: Team member of a 3-people team in Undergraduates Innovation and Entrepreneurship Competition
+* Mar. 2018 - Sept. 2018: Team member of a 3-people team in Undergraduates Innovation and Entrepreneurship Competition
   + Made contributions to design an anti-lost tracker with wireless communication chips for tracking monitored items.
   + Won a prize of 1500 RMB (top %15).
-
+  
 * Sept. 2017 - Jan. 2018: Multi-Clue based Representation Learning for Doctors Clustering
   + Proposed a method to mitigate the problem of data sparsity for doctors clustering by utilizing various types of clue (e.g. rating number and comment text).
   + Crawled various types of data and built an auto-encoder for discriminative representation learning.
@@ -56,15 +56,18 @@ I am focusing myself on the research of ``transfer learning`` currently, under t
 * July 2017 - Sept 2017 Intern at Center for Future Media, UESTC
   + Under the instruction of Prof. Yang Yang.
   + Finished Stanford Unsupervised Feature Learning and Deep Learning (Stanford-UFLDL) tutorial. [Code](https://github.com/ChaofanTao/MachineLearning-UFLDL)
+  
+* Some Curriculum Designs
+  + Course Algorithm Desgin and Analysis and ACM-ICPC contests holden by UESTC. [Code](https://github.com/ChaofanTao/AlgorithmDesign)
  
 
 # Awards and Honors
-Outstanding Student Scholarship, Year 2018  
-2nd Prize in Mathematical Contest and Interdisciplinary Contest in Modeling, Year 2018  
-Recommendation Letter of  Management Programme, National University of Singapore, Year 2018 %Innovation  
-Outstanding Student Scholarship, Year 2017  
-Prize for finishing National University Student Marathon League, Year 2017  
-2nd Prize in the Undergraduate Physics Knowledge Competition in Sichuan Province, Year 2017  
+* Outstanding Student Scholarship, Year 2018  
+* 2nd Prize in Mathematical Contest and Interdisciplinary Contest in Modeling, Year 2018  
+* Recommendation Letter of  Management Programme, National University of Singapore, Year 2018 %Innovation  
+* Outstanding Student Scholarship, Year 2017  
+* Prize for finishing National University Student Marathon League, Year 2017  
+* 2nd Prize in the Undergraduate Physics Knowledge Competition in Sichuan Province, Year 2017  
 
 # Skills
 Programming: C, C++, Python, Matlab, SQL, Shell  
