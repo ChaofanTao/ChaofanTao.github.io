@@ -15,7 +15,7 @@ No.2006, Xiyuan Ave, West Hi-Tech Zone
 Chengdu, Sichuan, China  
 
 Email: tcftrees@gmail.com  
-<b>Here is my [[CV]]</b>(https://github.com/ChaofanTao/ChaofanTao.github.io/blob/master/files/CV_cftao.pdf) <br>
+<b>Here is my </b> [CV](https://github.com/ChaofanTao/ChaofanTao.github.io/blob/master/files/CV_cftao.pdf). <br>
 
 __I am looking for my PhD position. If you’re interested at self-motivated students, I am always an option!__
 
