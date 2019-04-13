@@ -8,6 +8,15 @@ redirect_from:
   - /about.html
 ---
 
+School of Mathematical Sciences  
+Yingcai Honors College  
+University of Electronic Science and Technology of China  
+No.2006, Xiyuan Ave, West Hi-Tech Zone  
+Chengdu, Sichuan, China  
+
+Email: tcftrees@gmail.com  
+Here is my [CV].
+
 I am looking for my ``PhD position``. If you’re interested at self-motivated students focused on ``computer vision`` and ``transfer learning``, I am always an option!
 
 # News
@@ -24,7 +33,7 @@ I am an undergraduate student currently in the [School of Mathematical Science](
 * Language: IELTS 7.5 (R:8.5 L:8.5 W:6.5 S:6.0)
 
 # Research
-I am doing research under the supervision of Prof. [Lixin Duan](http://lxduan.info/). My research interests include ``computer vision`` and ``transfer learning``, espeically for ``unsupervised transfer learning``.
+I am doing research under the supervision of Prof. [Lixin Duan](http://lxduan.info/). My research interests include computer vision and transfer learning, deep learning, espeically for unsupervised transfer learning and their applications.
 
 
 
