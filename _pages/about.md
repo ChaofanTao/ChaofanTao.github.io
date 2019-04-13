@@ -8,6 +8,8 @@ redirect_from:
   - /about.html
 ---
 
+I am looking for my ``PhD position``. If you’re interested at self-motivated students focused on ``computer vision`` and ``transfer learning``, I am always an option!
+
 # News
 -----
 
@@ -18,10 +20,11 @@ I am an undergraduate student currently in the [School of Mathematical Science](
 * Transcript of University of Electronic Science and Technology of China
 
    GPA: 3.98/4.0 -- 90.31/100.00
+   
 * Language: IELTS 7.5 (R:8.5 L:8.5 W:6.5 S:6.0)
 
 # Research
-I am doing research under the supervision of Prof. [Lixin Duan](http://lxduan.info/). My research interests include deep learning and transfer learning, espeically for unsupervised domain adaptation.
+I am doing research under the supervision of Prof. [Lixin Duan](http://lxduan.info/). My research interests include ``computer vision`` and ``transfer learning``, espeically for ``unsupervised transfer learning``.
 
 
 
