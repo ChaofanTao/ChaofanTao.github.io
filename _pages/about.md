@@ -15,7 +15,7 @@ No.2006, Xiyuan Ave, West Hi-Tech Zone
 Chengdu, Sichuan, China  
 
 Email: tcftrees@gmail.com  
-Here is my [CV].
+Here is my [CV](https://github.com/ChaofanTao/ChaofanTao.github.io/blob/master/files/CV_cftao.pdf).
 
 I am looking for my ``PhD position``. If you’re interested at self-motivated students focused on ``computer vision`` and ``deep learning``, I am always an option!
 
