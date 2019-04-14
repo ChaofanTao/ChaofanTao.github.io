@@ -21,7 +21,7 @@ __I am looking for my PhD position. If you’re interested at self-motivated stu
 
 
 # Biography
-Hi, my name is Chaofan Tao. I am an undergraduate student in the [School of Mathematical Science](http://www.math.uestc.edu.cn/) and [Yingcai Honors College](http://www.yingcai.uestc.edu.cn/) (elite school of top %2 students), [University of Electronic Science and Technology of China (UESTC)](https://www.uestc.edu.cn/). UESTC is one of the top universities in China admitted into the nation's ["Project 211" and "Project 985"](https://en.uestc.edu.cn/index.php?m=content&c=index&a=lists&catid=72). 
+Hi, my name is Chaofan Tao. I am an undergraduate student in the [School of Mathematical Science](http://www.math.uestc.edu.cn/) and [Yingcai Honors College](http://www.yingcai.uestc.edu.cn/) (elite school of top 2% students), [University of Electronic Science and Technology of China (UESTC)](https://www.uestc.edu.cn/). UESTC is one of the top universities in China admitted into the nation's ["Project 211" and "Project 985"](https://en.uestc.edu.cn/index.php?m=content&c=index&a=lists&catid=72). 
 
 I am focusing myself on the research of __transfer learning__ currently, under the supervision of [Prof. Lixin Duan](http://lxduan.info/)  at the [Data Intelligence group](https://dig.uestc.cn/). I spent one year working with [Prof. Yang Yang](http://cfm.uestc.edu.cn/~yangyang/) as my instructor  at [Center for Future Media](http://cfm.uestc.edu.cn/index). My research interests include __computer vision__ and __transfer learning__, __deep learning__, espeically for unsupervised transfer learning and their applications.
 
@@ -51,7 +51,7 @@ I am focusing myself on the research of __transfer learning__ currently, under t
  
 * Mar. 2018 - Sept. 2018: Team member of a 3-people team in Undergraduates Innovation and Entrepreneurship Competition
   + Made contributions to design an anti-lost tracker with wireless communication chips for tracking monitored items.
-  + Won a prize of 1500 RMB (top %15).
+  + Won a prize of 1500 RMB (top 15%).
   
 * Sept. 2017 - Jan. 2018: Multi-Clue based Representation Learning for Doctors Clustering
   + Proposed a method to mitigate the problem of data sparsity for doctors clustering by utilizing various types of clue (e.g. rating number and comment text).
@@ -67,8 +67,8 @@ I am focusing myself on the research of __transfer learning__ currently, under t
 
 # Awards and Honors
 * Outstanding Student Scholarship, Year 2018  
-* 2nd Prize in Mathematical Contest and Interdisciplinary Contest in Modeling, Year 2018 [PDF](https://github.com/ChaofanTao/MCM/blob/master/2018-COMAP/Evaluation%20on%20Climate-based%20Fragile%20State%20Index.pdf), [Code](https://github.com/ChaofanTao/MCM/tree/master/2018-COMAP)  
-* Recommendation Letter of  Management Programme, National University of Singapore, Year 2018 %Innovation  
+* Honorable Prize in Mathematical Contest and Interdisciplinary Contest in Modeling, Year 2018 [PDF](https://github.com/ChaofanTao/MCM/blob/master/2018-COMAP/Evaluation%20on%20Climate-based%20Fragile%20State%20Index.pdf), [Code](https://github.com/ChaofanTao/MCM/tree/master/2018-COMAP)  
+* Recommendation Letter of Management Innovation Programme, National University of Singapore, Year 2018   
 * Outstanding Student Scholarship, Year 2017  
 * Prize for finishing National University Student Marathon League, Year 2017  
 * 2nd Prize in the Undergraduate Physics Knowledge Competition in Sichuan Province, Year 2017  
@@ -86,4 +86,4 @@ Player of Basketball Team, Yingcai Honors College
 
 
 ===================  
-Last Updated: April 13, 2019.
+Last Updated: April 14, 2019.
