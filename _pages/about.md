@@ -67,7 +67,7 @@ I am focusing myself on the research of __transfer learning__ currently, under t
 
 # Awards and Honors
 * Outstanding Student Scholarship, Year 2018  
-* 2nd Prize in Mathematical Contest and Interdisciplinary Contest in Modeling, Year 2018  
+* 2nd Prize in Mathematical Contest and Interdisciplinary Contest in Modeling, Year 2018 [PDF](https://github.com/ChaofanTao/MCM/blob/master/2018-COMAP/Evaluation%20on%20Climate-based%20Fragile%20State%20Index.pdf), [Code](https://github.com/ChaofanTao/MCM/tree/master/2018-COMAP)  
 * Recommendation Letter of  Management Programme, National University of Singapore, Year 2018 %Innovation  
 * Outstanding Student Scholarship, Year 2017  
 * Prize for finishing National University Student Marathon League, Year 2017  
