@@ -1,1 +1,1 @@
-Welcome to my personal website~: <www.chaofantao.top>
+Welcome to my personal website~: <http://chaofantao.top/>
