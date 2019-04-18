@@ -24,7 +24,10 @@ __I am looking for my PhD position. If you’re interested at self-motivated stu
 Hi, my name is Chaofan Tao. I am an undergraduate student in the [School of Mathematical Science](http://www.math.uestc.edu.cn/) and [Yingcai Honors College](http://www.yingcai.uestc.edu.cn/) (elite school of top 2% students), [University of Electronic Science and Technology of China (UESTC)](https://www.uestc.edu.cn/). UESTC is one of the top universities in China admitted into the nation's ["Project 211" and "Project 985"](https://en.uestc.edu.cn/index.php?m=content&c=index&a=lists&catid=72). 
 
 I am focusing myself on the research of __transfer learning__ currently, under the supervision of [Prof. Lixin Duan](http://lxduan.info/) at the [Data Intelligence group](https://dig.uestc.cn/). My research interests include __computer vision__ and __transfer learning__, __deep learning__, espeically for unsupervised transfer learning and their applications.
-;  I spent one year working with [Prof. Yang Yang](http://cfm.uestc.edu.cn/~yangyang/) as my instructor  at [Center for Future Media](http://cfm.uestc.edu.cn/index). 
+
+[//]: # (I spent one year working with [Prof. Yang Yang](http://cfm.uestc.edu.cn/~yangyang/) as my instructor  at [Center for Future Media](http://cfm.uestc.edu.cn/index).)
+
+ 
 
 # News
 * [Apr. 2019] I was selected into the study-abroad elite camp jointly organized by [UESTC](https://www.uestc.edu.cn/) and [New Oriental](http://www.neworiental.org/english/) (20 people in 5000)
