@@ -47,9 +47,9 @@ I am doing research in the field of __transfer learning__ currently, under the s
   + Implemented all the experiments in the proposed method and obtained improved performance against state-of-the-art transfer learning methods.
 
 * Feb. 2018 - Oct. 2018: Student researcher for exploiting mutual relation for visual relationship detection
-	+ Co-proposed an intuitive algorithm for visual relationship detection by exploiting mutual relation in a siamese network  and incorporating semantic information in the model .
-	+ Formulated training methods and conducted part of experiments.
-	+ Visualized our comparable results and writed part of the paper.
+	+ Intern at [Center for Future Media](http://cfm.uestc.edu.cn/index), under the instruction of [Prof. Yang Yang](http://cfm.uestc.edu.cn/~yangyang/).
+	+ Co-proposed an effective algorithm for visual relationship detection by exploiting mutual relation in a siamese network and incorporating semantic information in the model.
+
  
 * Mar. 2018 - Sept. 2018: Team member of a 3-people team in Undergraduates Innovation and Entrepreneurship Competition
   + Made contributions to design an anti-lost tracker with wireless communication chips for tracking monitored items.
