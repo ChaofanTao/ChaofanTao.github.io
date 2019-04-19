@@ -23,7 +23,7 @@ __I am looking for my PhD position. If you’re interested at self-motivated stu
 # Biography
 Hi, my name is Chaofan Tao. I am an undergraduate student in the [School of Mathematical Science](http://www.math.uestc.edu.cn/) and [Yingcai Honors College](http://www.yingcai.uestc.edu.cn/) (elite school of top 2% students), [University of Electronic Science and Technology of China (UESTC)](https://www.uestc.edu.cn/). UESTC is one of the top universities in China admitted into the nation's ["Project 211" and "Project 985"](https://en.uestc.edu.cn/index.php?m=content&c=index&a=lists&catid=72). 
 
-I am doing research in the field of __transfer learning__ currently, under the supervision of [Prof. Lixin Duan](http://lxduan.info/) at the [Data Intelligence group](https://dig.uestc.cn/). My general research interests are __deep learning__, __transfer learning__ and __computer vision__. I focus on the following aspects: (1) Enable the machine to learn fast and efficiently on the new tasks. (2) Learn robust representations from unlabeled data. (3) Learn how to learn. 
+I am doing research in the field of __transfer learning__ currently, under the supervision of [Prof. Lixin Duan](http://lxduan.info/) at the [Big Data Research Center](http://www.ebigdata.org/). My general research interests are __deep learning__, __transfer learning__ and __computer vision__. I focus on the following aspects: (1) Enable the machine to learn fast and efficiently on the new tasks. (2) Learn robust representations from unlabeled data. (3) Learn how to learn. 
 
  
 
