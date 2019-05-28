@@ -33,7 +33,7 @@ I am doing research in the field of __transfer learning__ currently, under the s
 
 # Selected Articles
 * __Chaofan Tao__, Fengmao Lv, Lixin Duan and Min Wu. "Minimax Entropy Network: Learning Categorical-Invariant Features for Domain Adaptation" (under review)
-* Yi Bin, __Chaofan Tao__, Yang Yang, Zi Huang, Jingjing Li and Heng Tao Shen. "MR-NET: Exploiting Mutual Relation for Visual  Relationship Detection" , AAAI-19 (CCF A tier).
+* Yi Bin, Yang Yang, __Chaofan Tao__, Zi Huang, Jingjing Li and Heng Tao Shen. "MR-NET: Exploiting Mutual Relation for Visual  Relationship Detection" , AAAI-19 (CCF A tier).
 
 # Transcript
 * Transcript of University of Electronic Science and Technology of China  
