@@ -37,7 +37,7 @@ I am doing research in the field of __transfer learning__ currently, under the s
 
 # Transcript
 * Transcript of University of Electronic Science and Technology of China 
-<a href="https://github.com/ChaofanTao/ChaofanTao.github.io/blob/master/files/Transcript.pdf">PDF</a>
+<a href="https://github.com/ChaofanTao/ChaofanTao.github.io/blob/master/files/Transcript.pdf">PDF</a>  
    GPA: 3.98/4.0 -- 90.45/100.00    
    _Take professional courses in Mathematics , Computer Science and Physics_
 * Language: IELTS 7.5 (R:8.5 L:8.5 W:6.5 S:6.0), GRE 321+3
