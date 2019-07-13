@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Chaofan Tao's homepage"
+title: "Chaofan Tao"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
@@ -33,13 +33,13 @@ I am doing research in the field of __transfer learning__ currently, under the s
 
 # Selected Articles
 * __Chaofan Tao__, Fengmao Lv, Lixin Duan and Min Wu. "Minimax Entropy Network: Learning Categorical-Invariant Features for Domain Adaptation" (under review)
-* Yi Bin, Yang Yang, __Chaofan Tao__, Zi Huang, Jingjing Li and Heng Tao Shen. "MR-NET: Exploiting Mutual Relation for Visual  Relationship Detection" , AAAI-19 (CCF A tier).
+* Yi Bin, Yang Yang, __Chaofan Tao__, Zi Huang, Jingjing Li and Heng Tao Shen. "MR-NET: Exploiting Mutual Relation for Visual  Relationship Detection" , AAAI-19.
 
 # Transcript
-* Transcript of University of Electronic Science and Technology of China  [PDF](https://github.com/ChaofanTao/ChaofanTao.github.io/blob/master/files/Transcript.pdf)
-   GPA: 3.98/4.0 -- 90.45/100.00  
+* Transcript of University of Electronic Science and Technology of China    [PDF](https://github.com/ChaofanTao/ChaofanTao.github.io/blob/master/files/Transcript.pdf)  
+   GPA: 3.98/4.0 -- 90.45/100.00    
    _Take professional courses in Mathematics , Computer Science and Physics_
-* Language: IELTS 7.5 (R:8.5 L:8.5 W:6.5 S:6.0)
+* Language: IELTS 7.5 (R:8.5 L:8.5 W:6.5 S:6.0), GRE 321+3
 
 # Professional Experience
 * Nov. 2018 - Mar. 2019: Student researcher for learning robust features for domain adaptation
