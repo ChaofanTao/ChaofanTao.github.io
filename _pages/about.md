@@ -28,6 +28,7 @@ I am doing research in the field of __transfer learning__ currently, under the s
  
 
 # News
+* [Jun. 2019] I will intern at [SenseTime](https://www.sensetime.com/en/) and focus on automatic driving.
 * [Apr. 2019] I was selected into the study-abroad elite camp jointly organized by [UESTC](https://www.uestc.edu.cn/) and [New Oriental](http://www.neworiental.org/english/) (20 people in 5000)
 
 
