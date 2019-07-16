@@ -15,7 +15,7 @@ No.2006, Xiyuan Ave, West Hi-Tech Zone
 Chengdu, Sichuan, China  
 
 Email: tcftrees@gmail.com  
-Here is my [CV](https://github.com/ChaofanTao/ChaofanTao.github.io/blob/master/files/CV__Chaofan-Tao.pdf).  
+Here is my [CV](https://github.com/ChaofanTao/ChaofanTao.github.io/blob/master/files/CV_Chaofan-Tao%20%E9%99%B6%E8%B6%85%E5%87%A1.pdf).  
 
 __I am looking for my PhD position. If you’re interested at self-motivated students, I am always an option!__
 
@@ -32,8 +32,8 @@ I am doing research in the field of __transfer learning__ currently, under the s
 
 
 # Selected Articles
-* __Chaofan Tao__, Fengmao Lv, Lixin Duan and Min Wu. "Minimax Entropy Network: Learning Categorical-Invariant Features for Domain Adaptation" (under review)
-* Yi Bin, Yang Yang, __Chaofan Tao__, Zi Huang, Jingjing Li and Heng Tao Shen. "MR-NET: Exploiting Mutual Relation for Visual  Relationship Detection" , AAAI-19.
+* __Chaofan Tao__, Fengmao Lv, Lixin Duan and Min Wu. "Minimax Entropy Network: Learning Categorical-Invariant Features for Domain Adaptation" arXiv:1904.09601v2, 2019. 
+* Yi Bin, Yang Yang, __Chaofan Tao__, Zi Huang, Jingjing Li and Heng Tao Shen. "MR-NET: Exploiting Mutual Relation for Visual  Relationship Detection", AAAI-19.
 
 # Transcript
 * Transcript of University of Electronic Science and Technology of China 
