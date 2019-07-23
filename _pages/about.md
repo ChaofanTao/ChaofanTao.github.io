@@ -17,7 +17,7 @@ Chengdu, Sichuan, China
 Email: tcftrees@gmail.com  
 Here is my [CV](https://github.com/ChaofanTao/ChaofanTao.github.io/blob/master/files/CV_Chaofan-Tao%20%E9%99%B6%E8%B6%85%E5%87%A1.pdf).  
 
-__I am looking for my PhD position. If you’re interested at self-motivated students, I am always an option!__
+
 
 
 # Biography
