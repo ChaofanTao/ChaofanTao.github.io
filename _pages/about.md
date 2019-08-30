@@ -15,8 +15,7 @@ No.2006, Xiyuan Ave, West Hi-Tech Zone
 Chengdu, Sichuan, China  
 
 Email: tcftrees@gmail.com  
-Here is my [CV](https://github.com/ChaofanTao/ChaofanTao.github.io/blob/master/files/CV_Chaofan-Tao%20%E9%99%B6%E8%B6%85%E5%87%A1.pdf).  
-
+Here is my [CV](https://github.com/ChaofanTao/ChaofanTao.github.io/blob/master/files/CV-Chaofan_Tao.pdf).  
 
 
 
@@ -28,7 +27,7 @@ I am doing research in the field of __transfer learning__ currently, under the s
  
 
 # News
-* [Jun. 2019] I will intern at [SenseTime](https://www.sensetime.com/en/) soon and focus on autonomous driving.
+* [Jun. 2019] I interned at [SenseTime](https://www.sensetime.com/en/) soon and focus on autonomous driving.
 * [Apr. 2019] I was selected into the study-abroad elite camp jointly organized by [UESTC](https://www.uestc.edu.cn/) and [New Oriental](http://www.neworiental.org/english/) (20 people in 5000)
 
 
@@ -38,8 +37,7 @@ I am doing research in the field of __transfer learning__ currently, under the s
 
 # Transcript
 * Transcript of University of Electronic Science and Technology of China 
-<a href="https://github.com/ChaofanTao/ChaofanTao.github.io/blob/master/files/Transcript.pdf">PDF</a>  
-   GPA: 3.98/4.0 -- 90.45/100.00    
+   GPA: 3.98/4.0 -- 90.51/100.00    
    _Take professional courses in Mathematics , Computer Science and Physics_
 * Language: IELTS 7.5 (R:8.5 L:8.5 W:6.5 S:6.0), GRE 321+3
 
