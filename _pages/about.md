@@ -27,7 +27,7 @@ I am doing research in the field of __transfer learning__ currently, under the s
  
 
 # News
-* [Jun. 2019] I interned at [SenseTime](https://www.sensetime.com/en/) soon and focus on autonomous driving.
+* [Aug. 2019] I interned at [SenseTime](https://www.sensetime.com/en/) and focus on autonomous driving.
 * [Apr. 2019] I was selected into the study-abroad elite camp jointly organized by [UESTC](https://www.uestc.edu.cn/) and [New Oriental](http://www.neworiental.org/english/) (20 people in 5000)
 
 
@@ -36,7 +36,7 @@ I am doing research in the field of __transfer learning__ currently, under the s
 * Yi Bin, Yang Yang, __Chaofan Tao__, Zi Huang, Jingjing Li and Heng Tao Shen. "MR-NET: Exploiting Mutual Relation for Visual  Relationship Detection", AAAI-19.
 
 # Transcript
-* Transcript of University of Electronic Science and Technology of China 
+* Transcript of University of Electronic Science and Technology of China  
    GPA: 3.98/4.0 -- 90.51/100.00    
    _Take professional courses in Mathematics , Computer Science and Physics_
 * Language: IELTS 7.5 (R:8.5 L:8.5 W:6.5 S:6.0), GRE 321+3
@@ -104,4 +104,4 @@ Player of Basketball Team, Yingcai Honors College
 
 
 ===================  
-Last Updated: July 13, 2019.
+Last Updated: Aug 30, 2019.
