@@ -6,9 +6,6 @@ author_profile: true
 ---
 
 
-{% include base_path %}
-
-
 [Google Scholar](https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F5DfisY6qynQkPPreVmBlpCYV8WALf-n4aVHphvfHF9GAmm2cYErmRxuXccCwkrSglgJN4L6s2t4Cn5Ei6r5jEfLOvnoA&user=gjmfLroAAAAJ)
 
 * __Chaofan Tao__, Qinhong Jiang, Lixin Duan, and Ping Luo. Dynamic and Static Context-aware LSTM for Multi-agent Motion Prediction, ECCV-20 [PDF](https://arxiv.org/abs/2008.00777), [BibTex](https://scholar.googleusercontent.com/scholar.bib?q=info:daaZIYrCg00J:scholar.google.com/&output=citation&scisdr=CgWs7p_JEJHk-d5mvkQ:AAGBfm0AAAAAXyljpkQjUtDLkEZlWo_FyDwwTL9YyEty&scisig=AAGBfm0AAAAAXyljpmMMgyt2z7y34eUZ10bm1jkPX9Fs&scisf=4&ct=citation&cd=-1&hl=en)
