@@ -8,38 +8,20 @@ redirect_from:
   - /about.html
 ---
 
-School of Mathematical Sciences  
-Yingcai Honors College  
-University of Electronic Science and Technology of China  
-No.2006, Xiyuan Ave, West Hi-Tech Zone  
-Chengdu, Sichuan, China  
-
-Email: tcftrees@gmail.com  
-Here is my [CV](https://github.com/ChaofanTao/ChaofanTao.github.io/blob/master/files/CV_ChaofanTao.pdf).  
-
-
 
 # Biography
-Hi, my name is Chaofan Tao. I am an undergraduate student in the [School of Mathematical Science](http://www.math.uestc.edu.cn/) and [Yingcai Honors College](http://www.yingcai.uestc.edu.cn/) (elite school of  2% students), [University of Electronic Science and Technology of China (UESTC)](https://www.uestc.edu.cn/). UESTC is one of the top universities in China admitted into the nation's ["Project 211" and "Project 985"](https://en.uestc.edu.cn/index.php?m=content&c=index&a=lists&catid=72). 
+Hi, my name is Chaofan Tao. I am an upcoming PhD student in the EEE department, [Univerisity of Hong Kong](https://www.hku.hk/), supervised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/). I received my BSc in the [Yingcai Honors College](http://www.yingcai.uestc.edu.cn/) (elite school of  2% students), [University of Electronic Science and Technology of China (UESTC)](https://www.uestc.edu.cn/) in 2020.
 
-I am doing research in the field of __transfer learning__ currently, under the supervision of [Prof. Lixin Duan](http://lxduan.info/) at the [Big Data Research Center](http://www.ebigdata.org/). My general research interests are __deep learning__, __transfer learning__ and __computer vision__. I focus on the following aspects: (1) Enable the machine to learn efficiently on the new tasks. (2) Enhance the interpretability of machine from theoretical insight. 3) Learn robust representations from unlabeled data.
+My general research interest is __hardware-efficient machine learning__, including model compression and acceleration, transfer learning and model deployment. 
 
  
-
 # News
+* [Jul. 2020] I was working as a visiting scholar in the [School of Microelectronics, Southern University of Science and Technology](https://sme.sustech.edu.cn/).
+* [Jun. 2020] I received my BSc in the University of Electronic Science and Technology of China.
 * [Aug. 2019] I interned at [SenseTime](https://www.sensetime.com/en/) and focus on autonomous driving.
 * [Apr. 2019] I was selected into the study-abroad elite camp jointly organized by [UESTC](https://www.uestc.edu.cn/) and [New Oriental](http://www.neworiental.org/english/) (20 people in 5000)
 
 
-# Selected Articles
-* __Chaofan Tao__, Fengmao Lv, Lixin Duan and Min Wu. "Minimax Entropy Network: Learning Categorical-Invariant Features for Domain Adaptation" arXiv:1904.09601v2, 2019. 
-* Yi Bin, Yang Yang, __Chaofan Tao__, Zi Huang, Jingjing Li and Heng Tao Shen. "MR-NET: Exploiting Mutual Relation for Visual  Relationship Detection", AAAI-19.
-
-# Transcript
-* Transcript of University of Electronic Science and Technology of China  
-   GPA: 3.98/4.0 -- 90.51/100.00    
-   _Take professional courses in Mathematics , Computer Science and Physics_
-* Language: IELTS 7.5 (R:8.5 L:8.5 W:6.5 S:6.0), GRE 321+3
 
 # Professional Experience
 * Nov. 2018 - Mar. 2019: Student researcher for learning robust features for domain adaptation
@@ -82,18 +64,11 @@ Awarded “Honorable Mention”
 * Some Curriculum Designs
   + Course Algorithm Desgin and Analysis and ACM-ICPC contests holden by UESTC. [Code](https://github.com/ChaofanTao/AlgorithmDesign)
  
-
-# Awards and Honors
-* Outstanding Student Scholarship, Year 2018  
-* Honorable Prize in Mathematical Contest and Interdisciplinary Contest in Modeling, Year 2018 
-* Recommendation Letter of Management Innovation Programme, National University of Singapore, Year 2018   
-* Outstanding Student Scholarship, Year 2017  
-* Prize for finishing National University Student Marathon League, Year 2017  
-* 2nd Prize in the Undergraduate Physics Knowledge Competition in Sichuan Province, Year 2017  
+ 
 
 # Skills
-Programming: C, C++, Python, Matlab, SQL, Shell  
-Languages: Chinese (native), English (fluent)    
+Programming: C++, Python, Matlab, Java (Basic), Shell  
+Languages: Chinese (native); English (fluent), IELTS: 7.5, GRE: 321+3  
 Tools: Mathcad, Multisim, Jupyter, SPSS, Latex  
 
 # Extracurricular Activities
@@ -104,4 +79,4 @@ Player of Basketball Team, Yingcai Honors College
 
 
 ===================  
-Last Updated: Aug 30, 2019.
+Last Updated: Aug. 4, 2020.
