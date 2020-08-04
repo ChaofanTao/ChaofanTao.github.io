@@ -81,12 +81,12 @@ analytics:
 # Site Author
 author:
   name             : "Chaofan Tao (陶超凡)"
-  avatar           : "tcf4.jpg_2_forest.jpeg"
+  avatar           : "cftaojpeg"
   bio              : "The style of head portrait is created by an AI machine."
-  location         : "Chengdu, China"
+  location         : "Hong Kong"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : 
+  googlescholar    : https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F5DfisY6qynQkPPreVmBlpCYV8WALf-n4aVHphvfHF9GAmm2cYErmRxuXccCwkrSglgJN4L6s2t4Cn5Ei6r5jEfLOvnoA&user=gjmfLroAAAAJ
   email            : "tcftrees@gmail.com"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
