@@ -8,6 +8,7 @@ redirect_from:
   - /about.html
 ---
 
+![avatar](../images/cftao.jpg)
 
 # Biography
 Hi, my name is Chaofan Tao. I am an upcoming PhD student in the EEE department, [Univerisity of Hong Kong](https://www.hku.hk/), supervised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/).
