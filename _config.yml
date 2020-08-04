@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Chaofan Tao's Homepage"
+title                    : "About me"
 title_separator          : "-"
 name                     : &name "Chaofan Tao"
 description              : &description "personal description"
