@@ -81,8 +81,8 @@ analytics:
 # Site Author
 author:
   name             : "Chaofan Tao (陶超凡)"
-  avatar           : "cftaojpeg"
-  bio              : "The style of head portrait is created by an AI machine."
+  avatar           : "cftao.jpg"
+  bio              : 
   location         : "Hong Kong"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
