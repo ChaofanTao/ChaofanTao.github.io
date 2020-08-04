@@ -9,7 +9,6 @@ redirect_from:
 
 {% include base_path %}
 
-# Professional Experience
 * Nov. 2018 - Mar. 2019: Student researcher for learning robust features for domain adaptation
   + Proposed a novel method for unsupervised domain adaptation by injecting target categorical knowledge directly into the model in an adversarial fashion.
   + Provided theoretical insights about why the proposed model enables fine-grained domain invariance within each category based on the relations between decision boundaries of classifiers and objective functions.
