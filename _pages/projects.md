@@ -27,7 +27,7 @@ redirect_from:
   + Proposed a method to mitigate the problem of data sparsity for doctors clustering by utilizing various types of clue (e.g. rating number and comment text).
   + Crawled various types of data and built an auto-encoder for discriminative representation learning.
 
-* Feb. 2018 - Jan. 2018:Assessment of Undergraduates’ Stress Level Based on Multi-Contributors Mining [PDF](https://github.com/ChaofanTao/ChaofanTao.github.io/blob/master/files/Assessment%20of%20Undergraduates%E2%80%99%20Stress%20Level%20Based%20on%20Multi-Contributors%20Mining.pdf)  
+* Feb. 2018 - Jan. 2018:Assessment of Undergraduates’ Stress Level Based on Multi-Contributors Mining [PDF](../files/Assessment of Undergraduates’ Stress Level Based on Multi-Contributors Mining.pdf)  
   + Evaluate the level of mental stress in undergraduates and analyse factors that contribute to it by principal component analysis and entropy weight method.
   
 * July. 2017 - Sept. 2017 Intern at Center for Future Media, UESTC
@@ -42,7 +42,7 @@ Awarded “Honorable Mention”
 	+ Project 3: Measuring the Evolution and Influence in Society’s Information Networks [Project](https://github.com/ChaofanTao/MCM/blob/master/2016-COMAP)
 	+ Project 4: An Evaluation System for Smart Growth of a City  [Project](https://github.com/ChaofanTao/MCM/blob/master/2017-COMAP/)
 
-*  Apr. 2018 - Jun. 2018 Fire Alarm Circuit Based on Temperature with Tunable Sensitivity (_Chinese_) [PDF](https://github.com/ChaofanTao/ChaofanTao.github.io/blob/master/files/%E5%A3%B0%E5%85%89%E7%81%AB%E7%81%BE%E6%8A%A5%E8%AD%A6%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1%E6%8A%A5%E5%91%8A-%E9%99%B6%E8%B6%85%E5%87%A1.pdf)
+*  Apr. 2018 - Jun. 2018 Fire Alarm Circuit Based on Temperature with Tunable Sensitivity (_Chinese_) [PDF](../files/audio_visual_alert.pdf)
 	+ Designed a circuit that keeps silent and provide no visual or acoustic signal in normal temperature. Once the temperature reachs an abnormal value, the circuit rings the buzzer and light the LED.  
 	+ The sensitivity or the temperature threshold can be easily tuned by adjusting the variable resistor.
 
