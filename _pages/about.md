@@ -28,15 +28,14 @@ My general research interest is __hardware-efficient machine learning__, includi
  
 
 # Skills
-Programming: C++, Python, Matlab, Java (Basic), Shell  
+Programming: C++, Python, Matlab, Shell  
 Languages: Chinese (native); English (fluent), IELTS: 7.5, GRE: 321+3  
 Tools: Mathcad, Multisim, Jupyter, SPSS, Latex  
 
-# Extracurricular Activities
-Assistant of the director of student affairs office, Yingcai Honors College  
-Commissioner of student administration committee, Yingcai Honors College  
-Debater of Debate Team, College of Life and Science and Technology  
-Player of Basketball Team, Yingcai Honors College  
+# Hobbies
+- Basketball
+- Photographing
+- Jogging
 
 
 ===================  
