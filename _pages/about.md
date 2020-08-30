@@ -8,16 +8,20 @@ redirect_from:
   - /about.html
 ---
 
-<img src="../images/cftao.jpg" width="450" height="300"/>
+<img src="../images/cftao.jpg" width="300" height="200"/>
 
 # Biography
-Hi, my name is Chaofan Tao. I am an upcoming PhD student in the EEE department, [Univerisity of Hong Kong (HKU)](https://www.hku.hk/), supervised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/).
+Hi, my name is Chaofan Tao. I am a first-year PhD student in the EEE department, [Univerisity of Hong Kong (HKU)](https://www.hku.hk/), supervised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/). 
+
+My general research interest is __hardware-efficient machine learning__, including Model compression and acceleration and Efficient deployment on devices.
 
 I received my B.S. in the [Yingcai Honors College](http://www.yingcai.uestc.edu.cn/), [University of Electronic Science and Technology of China (UESTC)](https://www.uestc.edu.cn/).
 
-My general research interest is __hardware-efficient machine learning__, including Model compression and acceleration, Transfer learning and Model deployment.
+Email: tcftrees AT gmail DOT com
 
- 
+<br>
+<br>
+
 # News
 * [Jul. 2020] I was working as a visiting scholar in the [School of Microelectronics, Southern University of Science and Technology](https://sme.sustech.edu.cn/).
 * [Aug. 2019] I interned at [SenseTime](https://www.sensetime.com/en/) and focus on autonomous driving.
@@ -25,11 +29,16 @@ My general research interest is __hardware-efficient machine learning__, includi
 
  
  
+<br>
+<br>
 
 # Skills
 Programming: C++, Python, Matlab, Shell  
 Languages: Chinese (native); English (fluent), IELTS: 7.5, GRE: 321+3  
 Tools: Mathcad, Multisim, Jupyter, SPSS, Latex  
+
+<br>
+<br>
 
 # Hobbies
 - Basketball
