@@ -20,7 +20,8 @@ I received my B.S. in the [Yingcai Honors College](http://www.yingcai.uestc.edu.
 Email: tcftrees AT gmail DOT com
 
 <br>
-<br>
+
+
 
 # News
 * [Jul. 2020] I was working as a visiting scholar in the [School of Microelectronics, Southern University of Science and Technology](https://sme.sustech.edu.cn/).
@@ -30,7 +31,7 @@ Email: tcftrees AT gmail DOT com
  
  
 <br>
-<br>
+
 
 # Skills
 Programming: C++, Python, Matlab, Shell  
@@ -38,7 +39,7 @@ Languages: Chinese (native); English (fluent), IELTS: 7.5, GRE: 321+3
 Tools: Mathcad, Multisim, Jupyter, SPSS, Latex  
 
 <br>
-<br>
+
 
 # Hobbies
 - Basketball
