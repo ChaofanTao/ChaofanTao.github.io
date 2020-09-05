@@ -37,9 +37,9 @@ Email: tcftrees AT gmail DOT com
 
 
 # Skills
-Programming: C++, Python, Matlab, Shell  
-Languages: Chinese (native); English (fluent), IELTS: 7.5, GRE: 321+3  
-Tools: Mathcad, Multisim, Jupyter, SPSS, Latex  
+Programming: C++, Python, Matlab, Shell  <br>
+Languages: Chinese (native); English (fluent), IELTS: 7.5, GRE: 321+3   <br>
+Tools: Mathcad, Multisim, Jupyter, SPSS, Latex   <br>
 
 <br>
 
