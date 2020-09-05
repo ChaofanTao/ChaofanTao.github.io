@@ -19,7 +19,7 @@ My general research interest is __hardware-efficient machine learning__, includi
 I received my B.S. in the [Yingcai Honors College](http://www.yingcai.uestc.edu.cn/), [University of Electronic Science and Technology of China (UESTC)](https://www.uestc.edu.cn/).
 
 Email: tcftrees AT gmail DOT com 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 *Feel free to contact with me !*
 
 <br>
