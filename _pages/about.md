@@ -12,16 +12,15 @@ redirect_from:
 
 
 # Biography
-<pre>
-
 Hi, my name is Chaofan Tao. I am a first-year PhD student in the EEE department, [Univerisity of Hong Kong (HKU)](https://www.hku.hk/), supervised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/). 
 
 My general research interest is __hardware-efficient machine learning__, including Model compression and acceleration, Efficient deployment on devices.
 
 I received my B.S. in the [Yingcai Honors College](http://www.yingcai.uestc.edu.cn/), [University of Electronic Science and Technology of China (UESTC)](https://www.uestc.edu.cn/).
 
-Email: tcftrees AT gmail DOT com       *Feel free to contact with me !*
-</pre>
+Email: tcftrees AT gmail DOT com 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+*Feel free to contact with me !*
 
 <br>
 
