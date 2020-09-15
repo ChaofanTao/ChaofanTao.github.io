@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Chaofan Tao 陶超凡的個人主頁"
+title                    : "Chaofan Tao (陶超凡)"
 title_separator          : "-"
 name                     : &name "Chaofan Tao"
 description              : &description "personal description"
