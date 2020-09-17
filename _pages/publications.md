@@ -13,6 +13,7 @@ author_profile: true
  <img src="../images/paper_cover_image/dscmp.png" style="float:left;" width="280" height="224" alt="markdown">
 <p><b>Chaofan Tao</b>, Qinhong Jiang, Lixin Duan, and Ping Luo. Dynamic and Static Context-aware LSTM for Multi-agent Motion Prediction, ECCV-20,
 <a href="http://www.ecva.net/papers/eccv_2020/papers_ECCV/html/3801_ECCV_2020_paper.php">[PDF]</a>,
+<a href="../files/ECCV20-SM.pdf">[Supplementary material]</a>,
 <a href="../files/ECCV20-demo.mp4">[Demo]</a> 
 </p>
 </div>
