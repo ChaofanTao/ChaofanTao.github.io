@@ -1,0 +1,6 @@
+@article{tao2019minimax,
+  title={Minimax entropy network: Learning category-invariant features for domain adaptation},
+  author={Tao, Chaofan and Lv, Fengmao and Duan, Lixin and Wu, Min},
+  journal={arXiv preprint arXiv:1904.09601},
+  year={2019}
+}
