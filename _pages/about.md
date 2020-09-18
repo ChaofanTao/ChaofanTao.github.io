@@ -16,7 +16,7 @@ Hi, I am Chaofan Tao (陶超凡). I am a first-year PhD student in the EEE depar
 
 My general research interest is __hardware-efficient machine learning__, including network compression and hardware acceleration. I hope that the ML model could be efficiently deployed on edge devices.
 
-I received my B.S. in the [Yingcai Honors College](http://www.yingcai.uestc.edu.cn/), [University of Electronic Science and Technology of China (UESTC)](https://www.uestc.edu.cn/). I work closely with [Prof. Lixin Duan](http://lxduan.info/) at that time.
+I received my B.S. in the [Yingcai Honors College](http://www.yingcai.uestc.edu.cn/), [University of Electronic Science and Technology of China (UESTC)](https://www.uestc.edu.cn/). I worked closely with [Prof. Lixin Duan](http://lxduan.info/) at that time.
 
 Email: tcftrees AT gmail DOT com 
 &nbsp;&nbsp;&nbsp;&nbsp;
