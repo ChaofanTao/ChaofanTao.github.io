@@ -27,6 +27,7 @@ Email: tcftrees AT gmail DOT com
 
 
 # News
+* [Jul. 2020] One paper is accepted in [ECCV-20](https://eccv2020.eu/).
 * [Jul. 2020] Visiting scholar in the [School of Microelectronics, Southern University of Science and Technology](https://sme.sustech.edu.cn/).
 * [Aug. 2019] Research interned at [MIG, SenseTime](https://www.sensetime.com/en/).
 * [Apr. 2019] Member of study-abroad elite camp jointly organized by [UESTC](https://www.uestc.edu.cn/) and [New Oriental](http://www.neworiental.org/english/) (20 people in 5000).
@@ -37,9 +38,8 @@ Email: tcftrees AT gmail DOT com
 
 
 # Skills
-Programming: C++, Python, Matlab, Shell  <br>
+Programming: C++/C, Python  <br>
 Languages: Chinese (native); English (fluent), IELTS: 7.5, GRE: 321+3   <br>
-Tools: Mathcad, Multisim, Jupyter, SPSS, Latex   <br>
 
 <br>
 
@@ -51,7 +51,7 @@ Tools: Mathcad, Multisim, Jupyter, SPSS, Latex   <br>
 
 
 ===================  
-Last Updated: Sept. 6, 2020.
+Last Updated: Sept. 20, 2020.
 
 <br>
 <br>
