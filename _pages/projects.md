@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: archive
 title: "Projects"
 permalink: /projects/
@@ -47,4 +47,4 @@ Awarded “Honorable Mention”
 	+ The sensitivity or the temperature threshold can be easily tuned by adjusting the variable resistor.
 
 * Some Curriculum Designs
-  + Course Algorithm Desgin and Analysis and ACM-ICPC contests holden by UESTC. [Code](https://github.com/ChaofanTao/AlgorithmDesign)
+  + Course Algorithm Desgin and Analysis and ACM-ICPC contests holden by UESTC. [Code](https://github.com/ChaofanTao/AlgorithmDesign) -->
