@@ -1,4 +1,4 @@
----
+<!-- ---
 permalink: /
 title: ""
 excerpt: "About me"
@@ -41,7 +41,7 @@ Email: tcftrees AT gmail DOT com
 <br> -->
 
 
-
+<!-- 
 # Skills
 Programming: C++/C, Python  <br>
 Languages: Chinese (native); English (fluent), IELTS: 7.5, GRE: 321+3   <br>
@@ -56,8 +56,8 @@ Languages: Chinese (native); English (fluent), IELTS: 7.5, GRE: 321+3   <br>
 
 
 ===================  
-Last Updated: Sept. 20, 2020.
+Last Updated: Sept. 20, 2020. -->
 
+<!-- <br>
 <br>
-<br>
-<br>
+<br> --> -->
