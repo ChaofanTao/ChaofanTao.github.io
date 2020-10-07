@@ -1,8 +1,0 @@
-@inproceedings{bin2019mr,
-  title={MR-NET: Exploiting Mutual Relation for Visual Relationship Detection},
-  author={Bin, Yi and Yang, Yang and Tao, Chaofan and Huang, Zi and Li, Jingjing and Shen, Heng Tao},
-  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
-  volume={33},
-  pages={8110--8117},
-  year={2019}
-}

@@ -1,6 +1,0 @@
-@article{tao2020dynamic,
-  title={Dynamic and Static Context-aware LSTM for Multi-agent Motion Prediction},
-  author={Tao, Chaofan and Jiang, Qinhong and Duan, Lixin and Luo, Ping},
-  journal={arXiv preprint arXiv:2008.00777},
-  year={2020}
-}
