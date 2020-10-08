@@ -29,7 +29,7 @@ I received my B.S. in the [Yingcai Honors College](http://www.yingcai.uestc.edu.
 * [Jul. 2020] One paper is accepted in [ECCV-20](https://eccv2020.eu/).
 * [Jul. 2020] Visiting scholar in the [School of Microelectronics, Southern University of Science and Technology](https://sme.sustech.edu.cn/).
 * [Aug. 2019] Research interned at [MIG, SenseTime](https://www.sensetime.com/en/).
-* [Apr. 2019] Member of study-abroad elite camp jointly organized by [UESTC](https://www.uestc.edu.cn/) and [New Oriental](http://www.neworiental.org/english/) (20 people in 5000).
+<!-- * [Apr. 2019] Member of study-abroad elite camp jointly organized by [UESTC](https://www.uestc.edu.cn/) and [New Oriental](http://www.neworiental.org/english/) (20 people in 5000). -->
 
  
  
