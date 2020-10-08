@@ -47,10 +47,10 @@ Languages: Chinese (native); English (fluent), IELTS: 7.5, GRE: 321+3   <br> -->
 
 <br>
 
-# Hobbies
+<!-- # Hobbies
 - Basketball
 - Photographing
-- Jogging
+- Jogging -->
 
 
 ===================  
