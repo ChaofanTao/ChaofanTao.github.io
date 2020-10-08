@@ -12,7 +12,7 @@ redirect_from:
 
 
 # Biography
-I am an EEE PhD student. My general research interest is __hardware-efficient machine learning__, including network compression and hardware acceleration. I hope that the ML model could be efficiently deployed on edge devices.
+I am a PhD student that general research interest is __hardware-efficient machine learning__, including network compression and hardware acceleration. I hope that the ML model could be efficiently deployed on edge devices.
 
 
 Email: tcftrees AT gmail DOT com 
