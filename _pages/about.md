@@ -12,7 +12,7 @@ redirect_from:
 
 
 # Biography
-My general research interest is __hardware-efficient machine learning__, including network compression and hardware acceleration. I hope that the ML model could be efficiently deployed on edge devices.
+I am Chaofan Tao. My general research interest is __hardware-efficient machine learning__, including network compression and hardware acceleration. I hope that the ML model could be efficiently deployed on edge devices.
 
 
 Email: tcftrees AT gmail DOT com 
@@ -48,9 +48,9 @@ Languages: Chinese (native); English (fluent), IELTS: 7.5, GRE: 321+3   <br> -->
 <br>
 
 <!-- # Hobbies
-- Basketball
+- Basketball [Dunk when in youth]()
 - Photographing
-- Jogging -->
+- Hiking -->
 
 
 ===================  
