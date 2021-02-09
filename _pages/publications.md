@@ -15,6 +15,7 @@ author_profile: true
 <a href="http://www.ecva.net/papers/eccv_2020/papers_ECCV/html/3801_ECCV_2020_paper.php">[PDF]</a>,
 <a href="../files/ECCV20-SM.pdf">[Supplementary material]</a>,
 <a href="../files/ECCV20-demo.mp4">[Demo]</a>,
+<a href="../files/ECCV20_long.mp4">[Talk]</a>,
 <a href="../files/bib/dscmp_eccv20.txt">[Cite]</a>
 </p>
 </div>
