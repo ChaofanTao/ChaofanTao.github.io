@@ -9,12 +9,12 @@ author_profile: true
 [Google Scholar](https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F5DfisY6qynQkPPreVmBlpCYV8WALf-n4aVHphvfHF9GAmm2cYErmRxuXccCwkrSglgJN4L6s2t4Cn5Ei6r5jEfLOvnoA&user=gjmfLroAAAAJ)
 
 
+
 <div style="display:inline-block; border:2px; margin:10px;">
  <img src="../images/paper_cover_image/fat.png" style="float:left;" width="280" height="224" alt="markdown">
 <p><b>Chaofan Tao</b>, Lin, Rui and Chen, Quan and Zhang, Zhaoyang and Luo, Ping and Wong, Ngai. FAT: Learning Low-Bitwidth Parametric Representation via Frequency-Aware Transformation
 <a href="https://arxiv.org/abs/2102.07444">[PDF]</a>,
 <a href="https://github.com/ChaofanTao/FAT_Quantization">[Code]</a>,
-
 </p>
 </div>
 
