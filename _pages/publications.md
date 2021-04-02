@@ -10,12 +10,20 @@ author_profile: true
 
 
 <div style="display:inline-block; border:2px; margin:10px;">
+ <img src="../images/paper_cover_image/fat.png" style="float:left;" width="280" height="224" alt="markdown">
+<p><b>Chaofan Tao</b>, Lin, Rui and Chen, Quan and Zhang, Zhaoyang and Luo, Ping and Wong, Ngai. FAT: Learning Low-Bitwidth Parametric Representation via Frequency-Aware Transformation
+<a href="https://arxiv.org/abs/2102.07444">[PDF]</a>,
+<a href="https://github.com/ChaofanTao/FAT_Quantization">[Code]</a>,
+
+</p>
+</div>
+
+<div style="display:inline-block; border:2px; margin:10px;">
  <img src="../images/paper_cover_image/dscmp.png" style="float:left;" width="280" height="224" alt="markdown">
 <p><b>Chaofan Tao</b>, Qinhong Jiang, Lixin Duan, and Ping Luo. Dynamic and Static Context-aware LSTM for Multi-agent Motion Prediction, ECCV-20,
 <a href="http://www.ecva.net/papers/eccv_2020/papers_ECCV/html/3801_ECCV_2020_paper.php">[PDF]</a>,
 <a href="../files/ECCV20-SM.pdf">[Supplementary material]</a>,
 <a href="../files/ECCV20-demo.mp4">[Demo]</a>,
-<a href="../files/ECCV20_long.mp4">[Talk]</a>,
 <a href="../files/bib/dscmp_eccv20.txt">[Cite]</a>
 </p>
 </div>
