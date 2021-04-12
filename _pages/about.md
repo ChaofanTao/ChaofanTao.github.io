@@ -12,11 +12,11 @@ redirect_from:
 
 
 # Biography
-I am Chaofan Tao. My general research interest is __hardware-efficient machine learning__, including network compression and hardware acceleration. I hope that the ML model could be efficiently deployed on edge devices.
+I am Chaofan Tao. My general research interest is __high-performance machine learning__, including network compression, efficient training and mobile deployment. I hope that the ML model could be efficiently trained and deployed.
 
 
 Email: tcftrees AT gmail DOT com \\
-Feel free to contact with me if you have any questions or ideas~
+Feel free to contact with me if you have any questions or ideas.
 &nbsp;&nbsp;&nbsp;&nbsp;
 
 <!-- [Univerisity of Hong Kong (HKU)](https://www.hku.hk/), supervised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/). 
