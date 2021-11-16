@@ -10,7 +10,7 @@ author_profile: true
 
 
 <div style="display:inline-block; border:2px; margin:10px;">
- <img src="../images/paper_cover_image/litegt.png" style="float:left;" width="280" height="224" alt="markdown">
+ <img src="../images/paper_cover_image/litegt.png" style="float:left;" width="280" height="160" alt="markdown">
 <p>Cong Chen, <b>Chaofan Tao</b> and Wong, Ngai. LiteGT: Efficient and Lightweight Graph Transformers, CIKM-21
 <a href="https://dl.acm.org/doi/pdf/10.1145/3459637.3482272">[PDF]</a>,
 <a href="https://github.com/ChaofanTao/litegt">[Code]</a>,
