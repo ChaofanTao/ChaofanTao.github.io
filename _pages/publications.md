@@ -9,6 +9,15 @@ author_profile: true
 [Google Scholar](https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F5DfisY6qynQkPPreVmBlpCYV8WALf-n4aVHphvfHF9GAmm2cYErmRxuXccCwkrSglgJN4L6s2t4Cn5Ei6r5jEfLOvnoA&user=gjmfLroAAAAJ)
 
 
+<div style="display:inline-block; border:2px; margin:10px;">
+ <img src="../images/paper_cover_image/litegt.png" style="float:left;" width="280" height="224" alt="markdown">
+<p>Cong Chen, <b>Chaofan Tao</b> and Wong, Ngai. LiteGT: Efficient and Lightweight Graph Transformers, CIKM-21
+<a href="https://dl.acm.org/doi/pdf/10.1145/3459637.3482272">[PDF]</a>,
+<a href="https://github.com/ChaofanTao/litegt">[Code]</a>,
+<a href="https://underline.io/lecture/36309-litegt-efficient-and-lightweight-graph-transformers">[Video]</a>,
+
+</p>
+</div>
 
 <div style="display:inline-block; border:2px; margin:10px;">
  <img src="../images/paper_cover_image/fat.png" style="float:left;" width="280" height="224" alt="markdown">
