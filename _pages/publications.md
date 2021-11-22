@@ -17,7 +17,7 @@ author_profile: true
 <a href="https://underline.io/lecture/36309-litegt-efficient-and-lightweight-graph-transformers">[Video]</a>,
 <br>
 
-<i>TL,DR: LiteGT is an efficient leaner on arbitrary graphs, which saves computation, memory and model size altogether.</i>
+<i>TL,DR: LiteGT is an efficient learner on arbitrary graphs, which saves computation, memory and model size altogether.</i>
 </p>
 </div>
 
