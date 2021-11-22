@@ -12,7 +12,7 @@ redirect_from:
 
 
 # Biography
-I am Chaofan Tao. My general research interest is __high-performance machine learning__(i.e. network compression, efficient training and deployment), which applies for both vision (CV) and language (NLP) tasks.
+I am Chaofan Tao. My general research interest is __high-performance machine learning__ (i.e. network compression, efficient training and deployment), which applies for both vision (CV) and language (NLP) tasks.
 
 Email: tcftrees AT gmail DOT com \\
 Feel free to contact with me if you have any questions or ideas.

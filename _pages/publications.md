@@ -16,6 +16,7 @@ author_profile: true
 <a href="https://github.com/ChaofanTao/litegt">[Code]</a>,
 <a href="https://underline.io/lecture/36309-litegt-efficient-and-lightweight-graph-transformers">[Video]</a>,
 
+<i>TL,DR: LiteGT is an efficient leaner on arbitrary graphs, which saves computation, memory and model size altogether.</i>
 </p>
 </div>
 
@@ -24,6 +25,8 @@ author_profile: true
 <p><b>Chaofan Tao</b>, Lin, Rui and Chen, Quan and Zhang, Zhaoyang and Luo, Ping and Wong, Ngai. FAT: Learning Low-Bitwidth Parametric Representation via Frequency-Aware Transformation
 <a href="https://arxiv.org/abs/2102.07444">[PDF]</a>,
 <a href="https://github.com/ChaofanTao/FAT_Quantization">[Code]</a>,
+
+<i>TL,DR: FAT is a quantization method that models the task of quantization via a representation transform and a standard quantizer.</i>
 </p>
 </div>
 
@@ -34,6 +37,8 @@ author_profile: true
 <a href="../files/ECCV20-SM.pdf">[Supplementary material]</a>,
 <a href="../files/ECCV20-demo.mp4">[Demo]</a>,
 <a href="../files/bib/dscmp_eccv20.txt">[Cite]</a>
+
+<i>TL,DR: DSCMP is a trajectory predictor that considers  spatio-temporal interactions among agents and scene layout.</i>
 </p>
 </div>
 
@@ -42,6 +47,8 @@ author_profile: true
 <p><b>Chaofan Tao</b>, Fengmao Lv, Lixin Duan and Min Wu. "Minimax Entropy Network: Learning Categorical-Invariant Features for Domain Adaptation".
 <a href="https://arxiv.org/abs/1904.09601">[PDF]</a>,
 <a href="../files/bib/mmen.txt">[Cite]</a>
+
+<i>TL,DR:  This work utilizes fine-grained category-level information for domain adaptation.</i>
 </p>
 </div>
 
@@ -50,6 +57,8 @@ author_profile: true
 <p>Yi Bin, Yang Yang, <b>Chaofan Tao</b>, Zi Huang, Jingjing Li and Heng Tao Shen. "MR-NET: Exploiting Mutual Relation for Visual  Relationship Detection", AAAI-19. 
 <a href="https://www.aaai.org/ojs/index.php/AAAI/article/view/4819">[PDF]</a>,
 <a href="../files/bib/mrnet_aaai19.txt">[Cite]</a>
+
+<i>TL,DR: MR-Net detects the visual relationships in images by exploring the mutual relation between paired objects. </i>
 </p>
 </div>
 
