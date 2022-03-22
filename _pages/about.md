@@ -11,8 +11,10 @@ redirect_from:
 <!-- <img src="../images/cftao.jpg" width="300" height="200"/> -->
 
 
-# Biography
-I am Chaofan Tao (陶超凡), a PhD candidate in The Univerisity of Hong Kong (HKU), supervised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/) . My general research interest is to understand __high-performance machine learning__ (i.e. network compression and acceleration), and apply them for both vision and language tasks. My research papers are published in ACL/ECCV/CIKM/AAAI, .etc.
+# Short Biography
+I am Chaofan Tao (陶超凡), a PhD candidate in The Univerisity of Hong Kong (HKU), supervised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/) . 
+
+My general research interest is to understand __high-performance machine learning__ (i.e. network compression and acceleration), and apply them for both vision and language tasks. My research papers are published in ACL/ECCV/CIKM/AAAI, .etc.
 
 Email: tcftrees AT gmail DOT com \\
 Feel free to contact with me if you have any questions or ideas.
@@ -21,15 +23,6 @@ Feel free to contact with me if you have any questions or ideas.
 <!-- [Univerisity of Hong Kong (HKU)](https://www.hku.hk/), supervised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/). 
 I received my B.S. in the [Yingcai Honors College](http://www.yingcai.uestc.edu.cn/),  -->
 
-
-<br>
-<!-- 
-# News
-* [Aug. 2021] One paper is accepted in CIKM-21.
-* [Jul. 2020] One paper is accepted in ECCV-20.
-* [Jul. 2020] Visiting scholar in the [School of Microelectronics, Southern University of Science and Technology](https://sme.sustech.edu.cn/).
-* [Aug. 2019] Research interned at [MIG, SenseTime](https://www.sensetime.com/en/). -->
-<!-- * [Apr. 2019] Member of study-abroad elite camp jointly organized by [UESTC](https://www.uestc.edu.cn/) and [New Oriental](http://www.neworiental.org/english/) (20 people in 5000). -->
 
  
  
