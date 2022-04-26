@@ -9,7 +9,7 @@ author_profile: true
 [Google Scholar](https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F5DfisY6qynQkPPreVmBlpCYV8WALf-n4aVHphvfHF9GAmm2cYErmRxuXccCwkrSglgJN4L6s2t4Cn5Ei6r5jEfLOvnoA&user=gjmfLroAAAAJ)
 
 
-<div style="display:inline-block; border:2px; margin:10px;">
+<!-- <div style="display:inline-block; border:2px; margin:10px;">
  <img src="../images/paper_cover_image/robust.png" style="float:left;" width="280" height="160" alt="markdown">
 <p>Binxiao Huang, <b>Chaofan Tao</b>, Rui Lin, Ngai Wong. What Do Adversarially trained Neural Networks Focus: A Fourier Domain-based Study, Preprint
 <a href="https://arxiv.org/abs/2203.08739">[PDF]</a>,
@@ -17,14 +17,13 @@ author_profile: true
 <br>
 <i>TL,DR: We understand model robustness from a Fourier domain-based study.</i>
 </p>
-</div>
+</div> -->
 
 
 <div style="display:inline-block; border:2px; margin:10px;">
  <img src="../images/paper_cover_image/quangpt.png" style="float:left;" width="280" height="160" alt="markdown">
 <p><b>Chaofan Tao</b>, Lu Hou, Wei Zhang, Lifeng Shang, Xin Jiang, Qun Liu, Ping Luo, Ngai Wong. Compression of Generative Pre-trained Language Models via Quantization, ACL-2022
 <a href="https://arxiv.org/abs/2203.10705">[PDF]</a>,
-<a href="">[Code will be available]</a>,
 <a href="https://mp.weixin.qq.com/s/H0ydIEAef-wh-341RZtzng">[Blog(中文解读)]</a>,
 <br>
 <i>TL,DR: We firstly explore compressing generative PLMs (i.e. GPT, BART) by quantizing the parameters from full-precision to lower bits.</i>
