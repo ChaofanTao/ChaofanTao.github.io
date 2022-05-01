@@ -21,7 +21,7 @@ author_profile: true
 
 
 <div style="display:inline-block; border:2px; margin:10px;">
- <img src="../images/paper_cover_image/quangpt.png" style="float:left;" width="280" height="224"  alt="markdown" align="left" hspace="10px">
+ <img src="../images/paper_cover_image/quantgpt.png" style="float:left;" width="280" height="224"  alt="markdown" align="left" hspace="10px">
 <p><b>Chaofan Tao</b>, Lu Hou, Wei Zhang, Lifeng Shang, Xin Jiang, Qun Liu, Ping Luo, Ngai Wong. Compression of Generative Pre-trained Language Models via Quantization, ACL-2022 <font style="color:#dddd00">(oral)</font>
 <a href="https://arxiv.org/abs/2203.10705">[PDF]</a>,
 <a href="">[Code will be available]</a>,
