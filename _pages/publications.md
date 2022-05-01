@@ -15,20 +15,19 @@ author_profile: true
 <a href="https://arxiv.org/abs/2203.08739">[PDF]</a>,
 <a href="">[Code will be available]</a>,
 <br>
-<i>TL,DR: We understand model robustness from a Fourier domain-based study.</i>
+<i><b>TL,DR</b>: We understand model robustness from a Fourier domain-based study.</i>
 </p>
 </div> -->
 
 
 <div style="display:inline-block; border:2px; margin:10px;">
  <img src="../images/paper_cover_image/quangpt.png" style="float:left;" width="280" height="224"  alt="markdown">
-<p><b>Chaofan Tao</b>, Lu Hou, Wei Zhang, Lifeng Shang, Xin Jiang, Qun Liu, Ping Luo, Ngai Wong. Compression of Generative Pre-trained Language Models via Quantization, ACL-2022 <div style="color:#00ffff">(oral)</div>
-
+<p><b>Chaofan Tao</b>, Lu Hou, Wei Zhang, Lifeng Shang, Xin Jiang, Qun Liu, Ping Luo, Ngai Wong. Compression of Generative Pre-trained Language Models via Quantization, ACL-2022 <font style="color:#dddd00">(oral)</font>
 <a href="https://arxiv.org/abs/2203.10705">[PDF]</a>,
 <a href="">[Code will be available]</a>,
 <a href="https://mp.weixin.qq.com/s/H0ydIEAef-wh-341RZtzng">[Blog(中文解读)]</a>,
 <br>
-<i>TL,DR: We firstly explore compressing generative PLMs (i.e. GPT, BART) by quantizing the parameters from full-precision to lower bits.</i>
+<i><b>TL,DR</b>: We firstly explore compressing generative PLMs (i.e. GPT, BART) by quantizing the parameters from full-precision to lower bits.</i>
 </p>
 </div>
 
@@ -41,7 +40,7 @@ author_profile: true
 <a href="https://underline.io/lecture/36309-litegt-efficient-and-lightweight-graph-transformers">[Video]</a>,
 <br>
 
-<i>TL,DR: LiteGT is an efficient learner on arbitrary graphs, which saves computation, memory and model size altogether.</i>
+<i><b><b>TL,DR</b></b>: LiteGT is an efficient learner on arbitrary graphs, which saves computation, memory and model size altogether.</i>
 </p>
 </div>
 
@@ -52,7 +51,7 @@ author_profile: true
 <a href="https://github.com/ChaofanTao/FAT_Quantization">[Code]</a>,
 <br>
 
-<i>TL,DR: FAT is a quantization method that models the task of quantization via a representation transform and a standard quantizer.</i>
+<i><b><b>TL,DR</b></b>: FAT is a quantization method that models the task of quantization via a representation transform and a standard quantizer.</i>
 </p>
 </div>
 
@@ -65,7 +64,7 @@ author_profile: true
 <a href="../files/bib/dscmp_eccv20.txt">[Cite]</a>
 <br>
 
-<i>TL,DR: DSCMP is a trajectory predictor that considers  spatio-temporal interactions among agents and scene layout.</i>
+<i><b><b>TL,DR</b></b>: DSCMP is a trajectory predictor that considers  spatio-temporal interactions among agents and scene layout.</i>
 </p>
 </div>
 
@@ -76,7 +75,7 @@ author_profile: true
 <a href="../files/bib/mmen.txt">[Cite]</a>
 <br>
 
-<i>TL,DR:  This work utilizes fine-grained category-level information for domain adaptation.</i>
+<i><b><b>TL,DR</b></b>:  This work utilizes fine-grained category-level information for domain adaptation.</i>
 </p>
 </div>
 
@@ -87,7 +86,7 @@ author_profile: true
 <a href="../files/bib/mrnet_aaai19.txt">[Cite]</a>
 <br>
 
-<i>TL,DR: MR-Net detects the visual relationships in images by exploring the mutual relation between paired objects. </i>
+<i><b><b>TL,DR</b></b>: MR-Net detects the visual relationships in images by exploring the mutual relation between paired objects. </i>
 </p>
 </div>
 
