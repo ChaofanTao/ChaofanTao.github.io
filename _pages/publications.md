@@ -24,7 +24,6 @@ author_profile: true
  <img src="../images/paper_cover_image/quantgpt.png" style="float:left;" width="280" height="256"  alt="markdown" align="left" hspace="10px">
 <p><b>Chaofan Tao</b>, Lu Hou, Wei Zhang, Lifeng Shang, Xin Jiang, Qun Liu, Ping Luo, Ngai Wong. Compression of Generative Pre-trained Language Models via Quantization, ACL-2022 <font style="color:#dddd00">(oral)</font>
 <a href="https://arxiv.org/abs/2203.10705">[PDF]</a>,
-<a href="">[Code will be available]</a>,
 <a href="https://mp.weixin.qq.com/s/H0ydIEAef-wh-341RZtzng">[Blog(中文解读)]</a>
 <i><b>TL,DR</b>: We firstly explore compressing generative PLMs (i.e. GPT, BART) by quantizing the parameters from full-precision to lower bits.</i>
 </p>
