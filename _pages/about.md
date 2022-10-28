@@ -34,8 +34,8 @@ I received my B.S. in the [Yingcai Honors College](http://www.yingcai.uestc.edu.
 
 # Services
 * Reviewer of: <br>
-[Conference] ICCV-2021, CVPR-2022, ICML-2022, ECCV-2022, NeurIPS-2022 <br>
-[Journal] T-NNLS
+```Conference:```  ICCV-2021, CVPR-2022, ICML-2022, ECCV-2022, NeurIPS-2022 <br>
+```Journal:``` T-NNLS
  
 <br>
 <!-- # Services
