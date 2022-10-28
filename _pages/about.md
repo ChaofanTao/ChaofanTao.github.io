@@ -12,12 +12,15 @@ redirect_from:
 
 
 # Short Biography
-I am Chaofan Tao (陶超凡), a PhD candidate in The Univerisity of Hong Kong (HKU), supervised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/) . 
+I am Chaofan Tao (陶超凡), a PhD candidate in The Univerisity of Hong Kong (HKU), supervised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/). My research papers are published in ACL/EMNLP/ECCV/T-NNLS/CIKM, .etc. 
 
-My general research interest is to understand __high-performance machine learning__ (i.e. network compression and acceleration), and apply them for both vision and language tasks. My research papers are published in ACL/ECCV/CIKM/AAAI, .etc.
+My research interests are 
+* ```Network compression & acceleration``` (Pruning, Quantization, Distillation, .etc)
+*  ```Pre-trained Language Models```  (Mainly for generative models which scales up to > 10B models)
+* ```Multi-modal learning``` (Video & Image & Text multi-task learnning)
 
 Email: tcftrees AT gmail DOT com \\
-Feel free to contact with me if you have any questions or ideas.
+Feel free to contact with me if u are interested.
 <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
 <!--  -->
 <!-- [Univerisity of Hong Kong (HKU)](https://www.hku.hk/), supervised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/). 
@@ -30,7 +33,9 @@ I received my B.S. in the [Yingcai Honors College](http://www.yingcai.uestc.edu.
 
 
 # Services
-* Reviewer of ICCV-2021, CVPR-2022, ICML-2022, ECCV-2022
+* Reviewer of: <br>
+[Conference] ICCV-2021, CVPR-2022, ICML-2022, ECCV-2022, NeurIPS-2022 <br>
+[Journal] T-NNLS
  
 <br>
 <!-- # Services
@@ -52,7 +57,7 @@ Languages: Chinese (native); English (fluent), IELTS: 7.5, GRE: 321+3   <br> -->
 
 
 ===================  
-Last Updated: Mar. 22, 2022. 
+Last Updated: Oct. 28, 2022. 
 
 <br>
 <br>

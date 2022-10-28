@@ -19,13 +19,20 @@ author_profile: true
 </p>
 </div> -->
 
+<div style="display:inline-block; border:2px; margin:10px;">
+ <img src="../images/paper_cover_image/quantgpt.png" style="float:left;" width="280" height="256"  alt="markdown" align="left" hspace="10px">
+<p>Dongsheng Chen, <b>Chaofan Tao</b>, Lu Hou, Lifeng Shang, Xin Jiang, Qun Liu. LiteVL: Efficient Video-Language Learning with Enhanced Spatial-Temporal Modeling, EMNLP-2022
+<a href="https://arxiv.org/abs/2210.11929">[PDF]</a>,
+<i><b>TL,DR</b>: We achieve SOTA video-language performance on  text-video retrieval/videoQA, without any video-language pre-training, based on a simple-yet-effective adaptation from a pre-trained image-language model.</i>
+</p>
+</div>
 
 <div style="display:inline-block; border:2px; margin:10px;">
  <img src="../images/paper_cover_image/quantgpt.png" style="float:left;" width="280" height="256"  alt="markdown" align="left" hspace="10px">
-<p><b>Chaofan Tao</b>, Lu Hou, Wei Zhang, Lifeng Shang, Xin Jiang, Qun Liu, Ping Luo, Ngai Wong. Compression of Generative Pre-trained Language Models via Quantization, ACL-2022 <font style="color:#dddd00">(oral)</font>
+<p><b>Chaofan Tao</b>, Lu Hou, Wei Zhang, Lifeng Shang, Xin Jiang, Qun Liu, Ping Luo, Ngai Wong. Compression of Generative Pre-trained Language Models via Quantization, ACL-2022 <font style="color:#dddd00">(outstanding paper)</font>
 <a href="https://arxiv.org/abs/2203.10705">[PDF]</a>,
 <a href="https://mp.weixin.qq.com/s/H0ydIEAef-wh-341RZtzng">[Blog(中文解读)]</a>
-<i><b>TL,DR</b>: We firstly explore compressing generative PLMs (i.e. GPT, BART) by quantizing the parameters from full-precision to lower bits.</i>
+<i><b>TL,DR</b>: We firstly explore compressing generative PLMs (i.e. GPT-2, BART) by quantizing the parameters from full-precision to lower bits, and apply to language modeling/summarization/dialogue tasks</i>
 </p>
 </div>
 
@@ -42,8 +49,8 @@ author_profile: true
 
 <div style="display:inline-block; border:2px; margin:10px;">
  <img src="../images/paper_cover_image/fat.png" style="float:left;" width="280" height="224" alt="markdown"  align="left" hspace="10px">
-<p><b>Chaofan Tao</b>, Lin, Rui and Chen, Quan and Zhang, Zhaoyang and Luo, Ping and Wong, Ngai. FAT: Learning Low-Bitwidth Parametric Representation via Frequency-Aware Transformation, Preprint
-<a href="https://arxiv.org/abs/2102.07444">[PDF]</a>,
+<p><b>Chaofan Tao</b>, Lin, Rui and Chen, Quan and Zhang, Zhaoyang and Luo, Ping and Wong, Ngai. FAT: Frequency-Aware Transformation for Bridging Full-Precision and Low-Precision Deep Representations, T-NNLS
+<a href="https://ieeexplore.ieee.org/document/9837828">[PDF]</a>,
 <a href="https://github.com/ChaofanTao/FAT_Quantization">[Code]</a>
 <i><b>TL,DR</b>: FAT is a quantization method that models the task of quantization via a representation transform and a standard quantizer.</i>
 </p>
