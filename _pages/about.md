@@ -15,9 +15,9 @@ redirect_from:
 I am Chaofan Tao (陶超凡), a PhD candidate in The Univerisity of Hong Kong (HKU), supervised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/). My research papers are published in ACL/EMNLP/ECCV/T-NNLS/CIKM, .etc. 
 
 My research interests are: <br>
-```Network Compression & Acceleration```  Pruning, Quantization, Distillation, .etc <br>
-```Pre-trained Language Models```  Mainly for generative models, which scales from 100M to 10B models <br>
-```Multi-modal Learning``` Video & Text multi-task learnning <br>
+```Network Compression & Acceleration```  Pruning, quantization, distillation .etc to reduce model size and speedup inference. <br>
+```Pre-trained Language Models```  Multi-task pre-trained (generative) models, which scales from 100M to 10B models <br>
+```Multi-modal Learning``` Video & Text multi-task learning <br>
 
 Email: tcftrees AT gmail DOT com \\
 Feel free to contact with me if u are interested.
