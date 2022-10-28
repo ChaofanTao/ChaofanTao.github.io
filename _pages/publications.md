@@ -20,7 +20,7 @@ author_profile: true
 </div> -->
 
 <div style="display:inline-block; border:2px; margin:10px;">
- <img src="../images/paper_cover_image/quantgpt.png" style="float:left;" width="280" height="256"  alt="markdown" align="left" hspace="10px">
+ <img src="../images/paper_cover_image/litevl.png" style="float:left;" width="280" height="256"  alt="markdown" align="left" hspace="10px">
 <p>Dongsheng Chen, <b>Chaofan Tao</b>, Lu Hou, Lifeng Shang, Xin Jiang, Qun Liu. LiteVL: Efficient Video-Language Learning with Enhanced Spatial-Temporal Modeling, EMNLP-2022
 <a href="https://arxiv.org/abs/2210.11929">[PDF]</a>,
 <i><b>TL,DR</b>: We achieve SOTA video-language performance on  text-video retrieval/videoQA, without any video-language pre-training, based on a simple-yet-effective adaptation from a pre-trained image-language model.</i>
