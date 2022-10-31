@@ -63,7 +63,7 @@ author_profile: true
 <a href="../files/ECCV20-SM.pdf">[Supplementary material]</a>,
 <a href="../files/ECCV20-demo.mp4">[Demo]</a>,
 <a href="../files/bib/dscmp_eccv20.txt">[Cite]</a>
-<i><b>TL,DR</b>: DSCMP is a trajectory predictor that considers  spatio-temporal interactions among agents and scene layout.</i>
+<i><b>TL,DR</b>: DSCMP is a multi-modal trajectory predictor that considers  spatio-temporal interactions among agents and scene layout.</i>
 </p>
 </div>
 
