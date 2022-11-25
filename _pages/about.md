@@ -20,7 +20,7 @@ My research interests are: <br>
 ```Multi-modal Learning``` Video & Text multi-task learning <br>
 
 Email: tcftrees AT gmail DOT com \\
-Feel free to contact with me if u are interested.
+**I am looking for machine learning-related internship in 2023, please directly email me if u are interested !**
 <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
 <!--  -->
 <!-- [Univerisity of Hong Kong (HKU)](https://www.hku.hk/), supervised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/). 
