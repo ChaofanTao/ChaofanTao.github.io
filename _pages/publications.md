@@ -1,4 +1,4 @@
-<!-- ---
+---
 layout: archive
 title: "Publications"
 permalink: /publications/
@@ -19,7 +19,7 @@ author_profile: true
 </p>
 </div> -->
 
-<!-- 
+
 <div style="display:inline-block; border:2px; margin:10px;">
  <img src="../images/paper_cover_image/litevl.png" style="float:left;" width="279" height="256"  alt="markdown" align="left" hspace="10px">
 <p>Dongsheng Chen, <b>Chaofan Tao</b>, Lu Hou, Lifeng Shang, Xin Jiang, Qun Liu. LiteVL: Efficient Video-Language Learning with Enhanced Spatial-Temporal Modeling, EMNLP-2022
@@ -85,4 +85,4 @@ author_profile: true
 <i><b>TL,DR</b>: MR-Net detects the visual relationships in images by exploring the mutual relation between paired objects. </i>
 </p>
 </div>
- --> -->
+ 
