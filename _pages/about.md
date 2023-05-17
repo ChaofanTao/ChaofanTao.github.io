@@ -14,14 +14,13 @@ redirect_from:
 # Short Biography
 I am Chaofan Tao (陶超凡), a PhD candidate in The Univerisity of Hong Kong (HKU), supervised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/). My research papers are published in ACL/EMNLP/ECCV/T-NNLS/CIKM, .etc. 
 
-My research interests are: <br>
+<!-- My research interests are: <br>
 1. ```Network Compression & Acceleration:```  Pruning, quantization, distillation .etc to reduce model size and speedup inference. <br>
 2. ```Pre-trained Language Models:```  Multi-task pre-trained (generative) models, which scales from 100M to 10B models <br>
-3. ```Multi-modal Learning:``` Video & Text multi-task learning <br>
+3. ```Multi-modal Learning:``` Video & Text multi-task learning <br> -->
 
 Email: tcftrees AT gmail DOT com  <br>
 
-**I am looking for machine learning-related internship in 2023, please directly email me if u are interested !**
 <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
 <!--  -->
 <!-- [Univerisity of Hong Kong (HKU)](https://www.hku.hk/), supervised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/). 
@@ -32,7 +31,7 @@ I received my B.S. in the [Yingcai Honors College](http://www.yingcai.uestc.edu.
 
 # Services
 * Reviewer of: <br>
-```Conference:```  ICCV-2021, CVPR-2022, ICML-2022, ECCV-2022, NeurIPS-2022, EMNLP-2022, CVPR-2023 <br>
+```Conference:```  ICCV-2021, CVPR-(2022,2023), ICML-(2022,2023), ECCV-2022, NeurIPS-(2022,2023), EMNLP-2022, ACL-2023 <br>
 ```Journal:``` T-NNLS
 <br>
 
@@ -59,7 +58,7 @@ Languages: Chinese (native); English (fluent), IELTS: 7.5, GRE: 321+3   <br>
 
 
 ===================  
-Last Updated: Oct. 28, 2022. 
+Last Updated: May 15, 2023. 
 
 <br>
 <br>
