@@ -20,6 +20,7 @@ I am Chaofan Tao (陶超凡), a PhD candidate in The Univerisity of Hong Kong (H
 3. ```Multi-modal Learning:``` Video & Text multi-task learning <br> -->
 
 Email: tcftrees AT gmail DOT com  <br>
+Feel free to contact me :)
 
 <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
 <!--  -->
