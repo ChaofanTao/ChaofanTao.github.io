@@ -5,9 +5,7 @@ permalink: /publications/
 author_profile: true
 ---
 
-
 [Google Scholar](https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F5DfisY6qynQkPPreVmBlpCYV8WALf-n4aVHphvfHF9GAmm2cYErmRxuXccCwkrSglgJN4L6s2t4Cn5Ei6r5jEfLOvnoA&user=gjmfLroAAAAJ)
-
 
 <!-- <div style="display:inline-block; border:2px; margin:10px;">
  <img src="../images/paper_cover_image/robust.png" style="float:left;" width="280" height="160" alt="markdown">
@@ -18,7 +16,17 @@ author_profile: true
 <i>TL,DR: We understand model robustness from a Fourier domain-based study.</i>
 </p>
 </div> -->
+<!-- acl-2023 -->
 
+<div style="display:inline-block; border:2px; margin:10px;">
+ <img src="../images/paper_cover_image/upop.png" style="float:left;" width="279" height="256"  alt="markdown" align="left" hspace="10px">
+<p>Dachuan Shi, <b>Chaofan Tao</b>, Ying Jin, Zhendong Yang, Chun Yuan, Jiaqi Wang. Upop: Unified and Progressive Pruning for Compressing Vision-Language Transformers, ICML-2023
+<a href="https://arxiv.org/pdf/2301.13741.pdf">[PDF]</a>,
+<a href="https://github.com/sdc17/UPop">[Code]</a>,
+<a href="https://dachuanshi.com/UPop-Project/">[Project]</a>,
+<i><b>TL,DR</b>: UPop is the first structured pruning framework for vision-language Transformers. It enables effective structured pruning on various multi-modal & uni-modal tasks, datasets, and model architectures.</i>
+</p>
+</div>
 
 <div style="display:inline-block; border:2px; margin:10px;">
  <img src="../images/paper_cover_image/litevl.png" style="float:left;" width="279" height="256"  alt="markdown" align="left" hspace="10px">
@@ -36,7 +44,6 @@ author_profile: true
 <i><b>TL,DR</b>: We firstly explore compressing generative PLMs (i.e. GPT-2, BART) by quantizing the parameters from full-precision to lower bits, and apply to language modeling/summarization/dialogue tasks.</i>
 </p>
 </div>
-
 
 <div style="display:inline-block; border:2px; margin:10px;">
  <img src="../images/paper_cover_image/litegt.png" style="float:left;" width="280" height="224" alt="markdown" align="left" hspace="10px">
@@ -85,4 +92,3 @@ author_profile: true
 <i><b>TL,DR</b>: MR-Net detects the visual relationships in images by exploring the mutual relation between paired objects. </i>
 </p>
 </div>
- 
