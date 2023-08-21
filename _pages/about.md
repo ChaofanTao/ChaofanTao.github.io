@@ -20,7 +20,7 @@ My research interests are: <br>
 2. `Pre-trained Language Models:` Multi-task multi-modal large models, which supports diverse tasks with different modalities.<br>
 
 Email: tcftrees AT gmail DOT com <br>
-**I am looking for a full-time job in 2024,**email me if you are interested :)
+**I am looking for a full-time job in 2024,** email me if you are interested!
 
 <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
 <!--  -->
