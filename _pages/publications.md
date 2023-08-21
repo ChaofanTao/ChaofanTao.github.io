@@ -7,16 +7,13 @@ author_profile: true
 
 [Google Scholar](https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F5DfisY6qynQkPPreVmBlpCYV8WALf-n4aVHphvfHF9GAmm2cYErmRxuXccCwkrSglgJN4L6s2t4Cn5Ei6r5jEfLOvnoA&user=gjmfLroAAAAJ)
 
-<!-- <div style="display:inline-block; border:2px; margin:10px;">
- <img src="../images/paper_cover_image/robust.png" style="float:left;" width="280" height="160" alt="markdown">
-<p>Binxiao Huang, <b>Chaofan Tao</b>, Rui Lin, Ngai Wong. What Do Adversarially trained Neural Networks Focus: A Fourier Domain-based Study, Preprint
-<a href="https://arxiv.org/abs/2203.08739">[PDF]</a>,
-<a href="">[Code will be available]</a>,
-<br>
-<i>TL,DR: We understand model robustness from a Fourier domain-based study.</i>
+<div style="display:inline-block; border:2px; margin:10px;">
+ <img src="../images/paper_cover_image/simple.png" style="float:left;" width="280" height="256"  alt="markdown" align="left" hspace="10px">
+<p><b>Chaofan Tao</b>, Lu Hou, Haoli Bai, Jiansheng Wei, Xin Jiang, Qun Liu, Ping Luo, Ngai Wong. Structured Pruning for Efficient Generative Pre-trained Language Models, Findings of ACL-2023 
+<a href="https://aclanthology.org/2023.findings-acl.692/">[PDF]</a>,
+<i><b>TL,DR</b>: We propose a multi-dimensional structured pruning framework, SIMPLE, for generative PLMs (i.e. GPT-2, BART), which can also be easily extended to block pruning and unstructured pruning.</i>
 </p>
-</div> -->
-<!-- acl-2023 -->
+</div>
 
 <div style="display:inline-block; border:2px; margin:10px;">
  <img src="../images/paper_cover_image/upop.png" style="float:left;" width="279" height="256"  alt="markdown" align="left" hspace="10px">
@@ -36,10 +33,11 @@ author_profile: true
 </p>
 </div>
 
-<!-- <font style="color:#dddd00">(outstanding paper)</font> -->
 <div style="display:inline-block; border:2px; margin:10px;">
  <img src="../images/paper_cover_image/quantgpt.png" style="float:left;" width="280" height="256"  alt="markdown" align="left" hspace="10px">
-<p><b>Chaofan Tao</b>, Lu Hou, Wei Zhang, Lifeng Shang, Xin Jiang, Qun Liu, Ping Luo, Ngai Wong. Compression of Generative Pre-trained Language Models via Quantization, ACL-2022 <a href="https://arxiv.org/abs/2203.10705">[PDF]</a>,
+<p><b>Chaofan Tao</b>, Lu Hou, Wei Zhang, Lifeng Shang, Xin Jiang, Qun Liu, Ping Luo, Ngai Wong. Compression of Generative Pre-trained Language Models via Quantization, ACL-2022 
+<font style="color:#dddd00">(outstanding paper award)</font>
+<a href="https://arxiv.org/abs/2203.10705">[PDF]</a>,
 <a href="https://mp.weixin.qq.com/s/H0ydIEAef-wh-341RZtzng">[Blog(中文解读)]</a>
 <i><b>TL,DR</b>: We firstly explore compressing generative PLMs (i.e. GPT-2, BART) by quantizing the parameters from full-precision to lower bits, and apply to language modeling/summarization/dialogue tasks.</i>
 </p>
