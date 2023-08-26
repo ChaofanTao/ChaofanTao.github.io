@@ -32,7 +32,7 @@ I received my B.S. in the [Yingcai Honors College](http://www.yingcai.uestc.edu.
 # Services
 
 - Reviewer of: <br>
-  `Conference:` ICCV-2021, CVPR-(2022,2023), ICML-(2022,2023), ECCV-2022, NeurIPS-(2022,2023), EMNLP-2022, ACL-2023 <br>
+  `Conference:` ICML, ICLR, ECCV, NeurIPS, ACL, EMNLP, ICCV, CVPR <br>
   `Journal:` T-NNLS
   <br>
 
@@ -54,7 +54,7 @@ Languages: Chinese (native); English (fluent), IELTS: 7.5, GRE: 321+3   <br>
 - Hiking -->
 
 ===================  
-Last Updated: May 15, 2023.
+Last Updated: Aug. 15, 2023.
 
 <br>
 <br>
