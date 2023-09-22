@@ -14,7 +14,7 @@ redirect_from:
 
 I am Chaofan Tao (陶超凡), a final-year PhD candidate in The Univerisity of Hong Kong (HKU), supervised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/). I received my Bachelor degree from the Honors College in the University of Electronic Science and Technology of China.
 
-I have industrial internship in <u>Meta (USA)</u>, <u>Amazon (USA)</u>, <u>Huawei (China)</u> and <u>SenseTime (China)</u>. My research papers are published in ACL/EMNLP/ECCV/T-NNLS/ICML, .etc. See the selected publications [here](https://chaofantao.top/publications/).
+I have industrial internships in <u>Amazon (USA)</u>, <u>Huawei (China)</u> and <u>SenseTime (China)</u>. My research papers are published in ACL/EMNLP/ECCV/T-NNLS/ICML, .etc. See the selected publications [here](https://chaofantao.top/publications/).
 
 My research interests are: <br>
 
