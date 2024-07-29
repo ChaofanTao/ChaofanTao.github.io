@@ -7,6 +7,16 @@ author_profile: true
 
 [Google Scholar](https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F5DfisY6qynQkPPreVmBlpCYV8WALf-n4aVHphvfHF9GAmm2cYErmRxuXccCwkrSglgJN4L6s2t4Cn5Ei6r5jEfLOvnoA&user=gjmfLroAAAAJ)
 
+
+<div style="display:inline-block; border:2px; margin:10px;">
+ <img src="../images/paper_cover_image/scaling_v.png" style="float:left;" width="280" height="256"  alt="markdown" align="left" hspace="10px">
+<p><b>Chaofan Tao</b>, Qian Liu, Longxu Dou, Niklas Muennighoff, Zhongwei Wan, Ping Luo, Min Lin, Ngai Wong. Scaling Laws with Vocabulary: Larger Models Deserve Larger Vocabularies
+<a href="https://arxiv.org/abs/2407.13623">[PDF]</a>,
+<a href="https://github.com/sail-sg/scaling-with-vocab">[Code]</a>,
+<i><b>TL,DR</b>: This paper investigates models with different vocabularies, substantiating a scaling law that optimizes computational resources with the consideration of vocabulary and other attributes jointly.</i>
+</p>
+</div>
+
 <div style="display:inline-block; border:2px; margin:10px;">
  <img src="../images/paper_cover_image/simple.png" style="float:left;" width="280" height="256"  alt="markdown" align="left" hspace="10px">
 <p><b>Chaofan Tao</b>, Lu Hou, Haoli Bai, Jiansheng Wei, Xin Jiang, Qun Liu, Ping Luo, Ngai Wong. Structured Pruning for Efficient Generative Pre-trained Language Models, Findings of ACL-2023 

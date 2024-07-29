@@ -12,9 +12,9 @@ redirect_from:
 
 # Short Biography
 
-I am Chaofan Tao (陶超凡), a final-year PhD candidate in The Univerisity of Hong Kong (HKU), supervised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/). I received my Bachelor degree from the Honors College in the University of Electronic Science and Technology of China.
+I am Chaofan Tao (陶超凡), a 4th-year PhD candidate in The Univerisity of Hong Kong (HKU), supervised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/). I received my Bachelor degree from the Honors College in the University of Electronic Science and Technology of China.
 
-I am an applied scientist intern in Amazon now. My research papers are published in ACL/EMNLP/ECCV/T-NNLS/ICML, .etc. See the selected publications [here](https://chaofantao.top/publications/).
+Previously, I worked at ```Sea AI Lab```, ```Amazon Web Service```, ```Huawei``` and ```SenseTime``` as research intern. My research papers are published in ACL/EMNLP/ECCV/T-NNLS/ICML, .etc. See the selected publications [here](https://chaofantao.top/publications/).
 
 My research interests are: <br>
 
@@ -22,7 +22,6 @@ My research interests are: <br>
 2. `Multi-modal Pre-trained Models:` Multi-task large models, which supports diverse tasks with different modalities.<br>
 
 Email: tcftrees AT gmail DOT com <br>
-**I am looking for a full-time job in 2024,** email me if you are interested!
 
 <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
 <!--  -->
@@ -55,7 +54,7 @@ Languages: Chinese (native); English (fluent), IELTS: 7.5, GRE: 321+3 <br>
 - Hiking -->
 
 ===================  
-Last Updated: Aug. 15, 2023.
+Last Updated: Aug. 1, 2024.
 
 <br>
 <br>
