@@ -18,6 +18,15 @@ author_profile: true
 </div>
 
 <div style="display:inline-block; border:2px; margin:10px;">
+ <img src="../images/paper_cover_image/crossget.png" style="float:left;" width="279" height="256"  alt="markdown" align="left" hspace="10px">
+<p>Dachuan Shi, <b>Chaofan Tao</b>, Anyi Rao, Zhendong Yang, Chun Yuan, Jiaqi Wang. CrossGET: Cross-Guided Ensemble of Tokens for Accelerating Vision-Language Transformers, ICML-2024
+<a href="https://arxiv.org/abs/2305.17455">[PDF]</a>,
+<a href="https://github.com/sdc17/CrossGET">[Code]</a>,
+<i><b>TL,DR</b>: CrossGET is a general acceleration framework for vision-language Transformers. This framework adaptively combines tokens in real-time during inference, significantly reducing computational costs.</i>
+</p>
+</div>
+
+<div style="display:inline-block; border:2px; margin:10px;">
  <img src="../images/paper_cover_image/simple.png" style="float:left;" width="280" height="256"  alt="markdown" align="left" hspace="10px">
 <p><b>Chaofan Tao</b>, Lu Hou, Haoli Bai, Jiansheng Wei, Xin Jiang, Qun Liu, Ping Luo, Ngai Wong. Structured Pruning for Efficient Generative Pre-trained Language Models, Findings of ACL-2023 
 <a href="https://aclanthology.org/2023.findings-acl.692/">[PDF]</a>,
@@ -55,7 +64,7 @@ author_profile: true
 
 <div style="display:inline-block; border:2px; margin:10px;">
  <img src="../images/paper_cover_image/litegt.png" style="float:left;" width="280" height="224" alt="markdown" align="left" hspace="10px">
-<p>Cong Chen, <b>Chaofan Tao</b> and Wong, Ngai. LiteGT: Efficient and Lightweight Graph Transformers, CIKM-2021
+<p>Cong Chen, <b>Chaofan Tao</b> and Ngai Wong. LiteGT: Efficient and Lightweight Graph Transformers, CIKM-2021
 <a href="https://dl.acm.org/doi/pdf/10.1145/3459637.3482272">[PDF]</a>,
 <a href="https://github.com/ChaofanTao/litegt">[Code]</a>,
 <a href="https://underline.io/lecture/36309-litegt-efficient-and-lightweight-graph-transformers">[Video]</a>,
@@ -71,6 +80,15 @@ author_profile: true
 <i><b>TL,DR</b>: FAT is a quantization method that models the task of quantization via a representation transform and a standard quantizer.</i>
 </p>
 </div>
+
+<div style="display:inline-block; border:2px; margin:10px;">
+ <img src="../images/paper_cover_image/odgq.png" style="float:left;" width="280" height="224" alt="markdown" align="left" hspace="10px">
+<b>Chaofan Tao</b>, Ngai Wong", ODG-Q: Robust Quantization via Online Domain Generalization, ICPR-2022. 
+<a href="https://arxiv.org/abs/2210.08701">[PDF]</a>,
+<i><b>TL,DR</b>: We propose an efficient way to improve the robustness of quantized models on the large-scale datasets. </i>
+</p>
+</div>
+
 
 <div style="display:inline-block; border:2px; margin:10px;">
  <img src="../images/paper_cover_image/dscmp.png" style="float:left;" width="280" height="224" alt="markdown"  align="left" hspace="10px">
@@ -92,11 +110,3 @@ author_profile: true
 </p>
 </div>
 
-<div style="display:inline-block; border:2px; margin:10px;">
- <img src="../images/paper_cover_image/mrnet.png" style="float:left;" width="280" height="224" alt="markdown" align="left" hspace="10px">
-<p>Yi Bin, Yang Yang, <b>Chaofan Tao</b>, Zi Huang, Jingjing Li and Heng Tao Shen. "MR-NET: Exploiting Mutual Relation for Visual  Relationship Detection", AAAI-2019. 
-<a href="https://www.aaai.org/ojs/index.php/AAAI/article/view/4819">[PDF]</a>,
-<a href="../files/bib/mrnet_aaai19.txt">[Cite]</a>
-<i><b>TL,DR</b>: MR-Net detects the visual relationships in images by exploring the mutual relation between paired objects. </i>
-</p>
-</div>
