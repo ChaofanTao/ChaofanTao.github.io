@@ -13,6 +13,9 @@ author_profile: true
 <p><b>Chaofan Tao</b>, Qian Liu, Longxu Dou, Niklas Muennighoff, Zhongwei Wan, Ping Luo, Min Lin, Ngai Wong. Scaling Laws with Vocabulary: Larger Models Deserve Larger Vocabularies, <b>NeurIPS-2024</b> 
 <a href="https://arxiv.org/abs/2407.13623">[PDF]</a>,
 <a href="https://github.com/sail-sg/scaling-with-vocab">[Code]</a>,
+<a href="https://huggingface.co/spaces/sail/scaling-with-vocab-demo">[Demo]</a>,
+<a href="../files/scaling-vocab_v2.pdf">[Slide]</a>,
+
 <i><b>TL,DR</b>: This paper investigates models with different vocabularies, substantiating a scaling law that optimizes computational resources with the consideration of vocabulary and other attributes jointly.</i>
 </p>
 </div>
