@@ -6,8 +6,7 @@ author_profile: true
 ---
 
 [Google Scholar](https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F5DfisY6qynQkPPreVmBlpCYV8WALf-n4aVHphvfHF9GAmm2cYErmRxuXccCwkrSglgJN4L6s2t4Cn5Ei6r5jEfLOvnoA&user=gjmfLroAAAAJ)
-
-The marker $\ddagger$ denotes the corresponding author.
+ The marker $\ddagger$ denotes the corresponding author.
 
 <div style="display:inline-block; border:2px; margin:10px;">
  <img src="../images/paper_cover_image/auto.png" style="float:left;" width="280" height="256"  alt="markdown" align="left" hspace="10px">
@@ -16,7 +15,7 @@ Jing Xiong, Gongye Liu, Lun Huang, Chengyue Wu, Taiqiang Wu, Yao Mu, Yuan Yao, H
 <a href="https://github.com/ChaofanTao/Autoregressive-Models-in-Vision-Survey">[Code]</a>,
 
 <i><b>TL,DR</b>: 
-We provide a comprehensive and timely literature review of visual autoregressive models. We divide the fundamental frameworks based on the representation strategy of the visual sequence. Then we explore the applications in computer vision, including image generation, video generation, 3D generation,  multi-modal generation, and the emerging domains such as embodied AI and 3D medical AI. We also highlight challenges, and offer future research directions.</i>
+We provide a comprehensive and timely literature review of visual autoregressive models. We divide the fundamental frameworks based on the representation strategy of the visual sequence. Then we explore the applications in computer vision, including image generation, video generation, 3D generation,  multi-modal generation, and the emerging domains such as embodied AI and 3D medical AI. </i>
 </p>
 </div>
 
