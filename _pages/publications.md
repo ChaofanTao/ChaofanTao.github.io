@@ -11,9 +11,15 @@ The marker $\ddagger$ denotes the corresponding author.
 
 <div style="display:inline-block; border:2px; margin:10px;">
  <img src="../images/paper_cover_image/auto.png" style="float:left;" width="280" height="256"  alt="markdown" align="left" hspace="10px">
-Jing Xiong, Gongye Liu, Lun Huang, Chengyue Wu, Taiqiang Wu, Yao Mu, Yuan Yao, Hui Shen, Zhongwei Wan, Jinfa Huang, <b>Chaofan Tao</b>, Shen Yan, Huaxiu Yao, Lingpeng Kong, Hongxia Yang, Mi Zhang, Guillermo Sapiro, Jiebo Luo, Ping Luo, Ngai Wong
+Jing Xiong, Gongye Liu, Lun Huang, Chengyue Wu, Taiqiang Wu, Yao Mu, Yuan Yao, Hui Shen, Zhongwei Wan, Jinfa Huang, <b>Chaofan Tao $\ddagger$</b>, Shen Yan, Huaxiu Yao, Lingpeng Kong, Hongxia Yang, Mi Zhang, Guillermo Sapiro, Jiebo Luo, Ping Luo, Ngai Wong
 <a href="https://arxiv.org/pdf/2411.05902v1">[PDF]</a>,
 <a href="https://github.com/ChaofanTao/Autoregressive-Models-in-Vision-Survey">[Code]</a>,
+
+<i><b>TL,DR</b>: 
+We provide a comprehensive and timely literature review of visual autoregressive models. We divide the fundamental frameworks based on the representation strategy of the visual sequence. Then we explore the applications in computer vision, including image generation, video generation, 3D generation,  multi-modal generation, and the emerging domains such as embodied AI and 3D medical AI. We also highlight challenges, and offer future research directions.</i>
+</p>
+</div>
+
 
 
 <div style="display:inline-block; border:2px; margin:10px;">
