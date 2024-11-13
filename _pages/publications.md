@@ -15,7 +15,6 @@ Jing Xiong, Gongye Liu, Lun Huang, Chengyue Wu, Taiqiang Wu, Yao Mu, Yuan Yao, H
 <a href="https://github.com/ChaofanTao/Autoregressive-Models-in-Vision-Survey">[Code]</a>,
 
 <i><b>TL,DR</b>: We provide a comprehensive and timely literature review of visual autoregressive models. We divide the fundamental frameworks based on the representation strategy of the visual sequence. Then we explore the applications in computer vision, including image generation, video generation, 3D generation,  multi-modality, and the emerging domains such as embodied AI and 3D medical AI.</i>
-</p>
 </div>
 
 
