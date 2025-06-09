@@ -10,7 +10,7 @@ redirect_from:
 
 
 # 🌟 Short Biography  
-I am Chaofan Tao (陶超凡), currently a Research Scientist at Huawei Noah's Ark Lab. I got my PhD from The University of Hong Kong (HKU), guided by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/) as a member of the [MMLAB@HKU](https://mmlab.hk/) family. My academic roots trace back to the Yingcai Honors College at University of Electronic Science and Technology of China, where I completed my Bachelor’s degree.  <br><br>
+I am Chaofan Tao (陶超凡). I got my PhD from The University of Hong Kong (HKU), guided by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/) as a member of the [MMLAB@HKU](https://mmlab.hk/) family. My academic roots trace back to the Yingcai Honors College at University of Electronic Science and Technology of China, where I completed my Bachelor’s degree.  <br><br>
 
 
 🌱 **Career Milestones**:  
@@ -39,7 +39,3 @@ tcftrees AT gmail DOT com  <br><br>
 **Reviewer Experience**:  
 - **Conferences**: ICML, ICLR, ECCV, NeurIPS, ACL, EMNLP, ICCV, CVPR  
 - **Journals**: T-NNLS  
-
-
----  
-**Last Updated**: June 1, 2025  
