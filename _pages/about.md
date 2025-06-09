@@ -14,7 +14,7 @@ I am Chaofan Tao (陶超凡), currently a Research Scientist at Huawei Noah's Ar
 
 
 🌱 **Career Milestones**:  
-Past internships at Sea AI Lab (Singapore), Amazon Web Service (Bellevue), Huawei (Shenzhen), and SenseTime (Shanghai) shaped my research journey.  <br><br>
+Past internships at Sea AI Lab (Singapore), Amazon Web Service (Bellevue), Huawei (Shenzhen), and SenseTime (Shanghai).  <br><br>
 
 
 🔍 **Research Passions**:  
@@ -26,9 +26,9 @@ Past internships at Sea AI Lab (Singapore), Amazon Web Service (Bellevue), Huawe
 Check out my [**publications**](https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F5DfisY6qynQkPPreVmBlpCYV8WALf-n4aVHphvfHF9GAmm2cYErmRxuXccCwkrSglgJN4L6s2t4Cn5Ei6r5jEfLOvnoA&user=gjmfLroAAAAJ) published in top venues like **ACL / EMNLP / ECCV / NeurIPS / ICML / T-NNLS**, including an ACL  Outstanding Paper Award 🏆 in 2022.  <br><br>
 
 
-🚀 **[Hiring~] Looking for Talents!**  
+🚀 **[Hiring] Looking for Talents!**  
 Seeking **research/engineering interns** with skills in **LLMs**, **Multi-modality**, or **Efficient ML**.  
-💬 Drop me an email to chat about projects!  <br><br>
+💬 Drop me an email to chat about potential projects!  <br><br>
 
 
 📩 **Contact Me**:  
