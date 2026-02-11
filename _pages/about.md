@@ -76,13 +76,6 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **TL;DR (EN):** On-policy Verbal Distillation replaces token-level matching with trajectory-level distillation using discrete teacher scores, reducing memory and improving student performance on web QA and math reasoning.  
   **TL;DR:** 提出 On-policy Verbal Distillation：用教师0–9离散评分做轨迹级对齐替代token级匹配，显著降低内存并提升学生模型在Web Search Agent场景与数学推理上的蒸馏效果。  
 
-- **Title:** Locate, Steer, and Improve: A Practical Survey of Actionable Mechanistic Interpretability in Large Language Models  
-  **Authors:** Hengyuan Zhang, Zhihao Zhang, Mingyang Wang, Zunhai Su, Yiwei Wang, Qianli Wang, Shuzhou Yuan, Ercong Nie, Xufeng Duan, Qibo Xue, Zeping Yu, Chenming Shang, Xiao Liang, Jing Xiong, Hui Shen, Chaofan Tao, Zhengwu Liu, Senjie Jin, Zhiheng Xi, Dongdong Zhang, Sophia Ananiadou, Tao Gui, Ruobing Xie, Hayden Kwok-Hay So, Hinrich Schütze, Xuanjing Huang, Qi Zhang, Ngai Wong  
-  **Year:** 2026  
-  **Venue:** arXiv preprint arXiv:2601.14004  
-  **URL:** [arXiv:2601.14004](https://arxiv.org/abs/2601.14004)  
-  **TL;DR (EN):** This survey frames actionable mechanistic interpretability as a “Locate–Steer–Improve” pipeline, categorizing localization and intervention methods to enable improvements in alignment, capability, and efficiency.  
-  **TL;DR:** 提出“Locate–Steer–Improve”行动化机理可解释性综述框架，系统整理LLM在问题定位、规划并给出可操作的动作的方面的工作，用于改进LLM的对齐、能力与效率。  
 
 - **Title:** From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for Reinforcement Learning of Open-ended Generation  
   **Authors:** Yuxin Jiang, Yufei Wang, Qiyuan Zhang, Xingshan Zeng, Liangyou Li, Jierun Chen, Chaofan Tao, Haoli Bai, Lifeng Shang  
@@ -100,13 +93,6 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **TL;DR (EN):** PhyX introduces a 3K-question multimodal benchmark spanning six physics domains to test physics-grounded reasoning, revealing large gaps between top models and human experts.  
   **TL;DR:** 提出 PhyX：覆盖6大物理域/25子域的3K多模态物理推理的测评Benchmark，揭示 SOTA 模型在真实物理约束推理上与人类仍有显著差距。  
 
-- **Title:** Robocodex: Multimodal code generation for robotic behavior synthesis  
-  **Authors:** Yao Mu, Junting Chen, Qinglong Zhang, Shoufa Chen, Qiaojun Yu, Chongjian Ge, Runjian Chen, Zhixuan Liang, Mengkang Hu, Chaofan Tao, Peize Sun, Haibao Yu, Chao Yang, Wenqi Shao, Wenhai Wang, Jifeng Dai, Yu Qiao, Mingyu Ding, Ping Luo  
-  **Year:** 2024  
-  **Venue:** International Conference on Machine Learning  
-  **URL:** [arXiv:2402.16117](https://arxiv.org/abs/2402.16117)  
-  **TL;DR (EN):** RoboCodeX uses tree-structured multimodal code generation to decompose instructions into object-centric manipulation units and generate platform-agnostic robotic control, achieving strong simulator and real-robot results.  
-  **TL;DR:** 提出 RoboCodeX 树结构多模态“代码生成→机器人行为”框架，将指令分解为对象中心操作单元并结合专用推理数据与迭代自更新SFT，实现跨平台泛化控制。  
 
 - **Title:** Scaling laws with vocabulary: Larger models deserve larger vocabularies  
   **Authors:** Chaofan Tao, Qian Liu, Longxu Dou, Niklas Muennighoff, Zhongwei Wan, Ping Luo, Min Lin, Ngai Wong  
@@ -185,13 +171,6 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **TL;DR (EN):** It proposes structured pruning across multiple generative-PLM components using learnable masks and sparse training to extract size-flexible subnets with significant speedups.  
   **TL;DR:** 提出覆盖隐藏维、embedding、LN等结构的生成式语言模型的结构化剪枝：用可学习mask+稀疏训练找冗余并导出不同规模子网，在显著减参下带来GPU/CPU加速且可与量化叠加。  
 
-- **Title:** Dybit: Dynamic bit-precision numbers for efficient quantized neural network inference  
-  **Authors:** Jie Zhou, Jianqiao Wu, Yufei Gao, Yuyang Ding, Chaofan Tao, Bing Li, Fan Tu, K T Cheng, H K H So, Ngai Wong  
-  **Year:** 2023  
-  **Venue:** IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems  
-  **URL:** [DOI:10.1109/TCAD.2023.3342730](https://doi.org/10.1109/TCAD.2023.3342730)  
-  **TL;DR (EN):** DyBit introduces variable-length dynamic bit-precision numbers and a hardware-aware mixed-precision framework to improve very-low-bit quantized inference accuracy and speed.  
-  **TL;DR:** 提出 DyBit 可变长度动态比特精度表示与硬件感知量化框架，在极低比特量化下更好权衡精度/速度，并在ImageNet等任务实现更高准确率与显著加速。  
 
 - **Title:** Compression of Generative Pre-trained Language Models via Quantization  
   **Authors:** Chaofan Tao, Lu Hou, Wei Zhang, Lifeng Shang, Xin Jiang, Qun Liu, Ping Luo, Ngai Wong  
@@ -205,14 +184,6 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
 
 <details markdown="1">
 <summary><strong>3) Large Vision-Language Models</strong></summary>
-
-- **Title:** MEIT: Multimodal electrocardiogram instruction tuning on large language models for report generation  
-  **Authors:** Zhongwei Wan, Che Liu, Xin Wang, Chaofan Tao, Hui Shen, Jing Xiong, Rossella Arcucci, Huaxiu Yao, Mi Zhang  
-  **Year:** 2025  
-  **Venue:** Findings of the association for computational linguistics: ACL 2025  
-  **URL:** [arXiv:2403.04945](https://arxiv.org/abs/2403.04945)  
-  **TL;DR (EN):** MEIT frames ECG report generation as multimodal instruction tuning, aligning ECG signals with textual reports and benchmarking at scale to produce higher-quality, more robust reports.  
-  **TL;DR:** 提出 MEIT 多模态ECG指令微调框架与评测基准，对齐ECG信号与文本报告表示，在80万+报告上验证可提升报告生成质量、零样本能力与鲁棒性。  
 
 - **Title:** Autoregressive Models in Vision: A Survey  
   **Authors:** Jing Xiong, Gongye Liu, Lun Huang, Chengyue Wu, Taiqiang Wu, Yao Mu, Yuan Yao, Hui Shen, Zhongwei Wan, Jinfa Huang, Chaofan Tao, Shen Yan, Huaxiu Yao, Lingpeng Kong, Hongxia Yang, Mi Zhang, Guillermo Sapiro, Jiebo Luo, Ping Luo, Ngai Wong  
@@ -254,13 +225,6 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **TL;DR (EN):** UPop is a unified progressive pruning framework that searches multimodal subnets in a continuous space and progressively retrains to achieve high compression for vision-language Transformers.  
   **TL;DR:** 提出 UPop 统一且渐进的多模态Transformer剪枝框架，在连续空间搜索跨模态子网并逐步搜索-重训以获得更高压缩率，适用于多种视觉-语言任务与架构。  
 
-- **Title:** LiteVL: Efficient Video-Language Learning with Enhanced Spatial-Temporal Modeling  
-  **Authors:** Dongsheng Chen, Chaofan Tao, Lu Hou, Lifeng Shang, Xin Jiang, Qun Liu  
-  **Year:** 2022  
-  **Venue:** Conference on Empirical Methods in Natural Language Processing (EMNLP-2022)  
-  **URL:** [DOI:10.18653/v1/2022.emnlp-main.545](https://doi.org/10.18653/v1/2022.emnlp-main.545)  
-  **TL;DR (EN):** LiteVL efficiently adapts an image-language model (BLIP) to video-language tasks via temporal attention and text-conditioned pooling, avoiding heavy video-text pretraining while beating prior methods.  
-  **TL;DR:** 提出 LiteVL：无需大规模视频-文本预训练，直接把图文模型BLIP适配为视频文本模型（加时序注意力与条件池化），在检索/VQA上超过多种视频预训练模型。  
 
 </details>
 
