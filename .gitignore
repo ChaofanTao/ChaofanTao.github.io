@@ -1,2 +1,9 @@
 _site/
 
+
+# Paper figures (generated assets; keep local)
+images/paper_figures_2022plus_coarse/
+images/paper_figures_2022plus_fine/
+
+# Local publication working file
+scholar_2024plus_classified_short.md
