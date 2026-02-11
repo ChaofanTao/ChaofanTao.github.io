@@ -42,7 +42,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Venue:** arXiv preprint arXiv:2601.01426  
   **URL:** [arXiv:2601.01426](https://arxiv.org/abs/2601.01426)  
   **TL;DR (EN):** SWE-Lego presents a strong SFT-only recipe (new dataset + curriculum/error masking) and studies verifier-based test-time scaling, pushing open 8B/32B models to SOTA on SWE-bench Verified.  
-  **TL;DR:** 提出 SWE-Lego：用高质量真实+合成数据与难度课程/错误mask的SFT, 且研究了SWE场景下test-time scaling的表现规律，把开源8B/32B模型在 SWE-bench Verified 上推到SOTA。  
+  **TL;DR:** 提出 SWE-Lego：用高质量真实+合成数据与难度课程/错误mask的SFT, 且研究了软件工程场景下code agent做test-time scaling的表现规律，把开源8B/32B模型在 SWE-bench Verified 上推到SOTA。  
 
 - **Title:** MMFormalizer: Multimodal Autoformalization in the Wild  
   **Authors:** Jing Xiong, Qi Han, Yunta Hsieh, Hui Shen, Huajian Xin, Chaofan Tao, Chenyang Zhao, Hengyuan Zhang, Taiqiang Wu, Zhen Zhang, Haochen Wang, Zhongwei Wan, Lingpeng Kong, Ngai Wong  
@@ -58,7 +58,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Venue:** International Conference on Learning Representations (oral)  
   **URL:** [arXiv:2505.23932](https://arxiv.org/abs/2505.23932)  
   **TL;DR (EN):** SwingArena is a CI-driven competitive framework where LLMs act as submitters and reviewers, paired with retrieval-augmented code generation to handle long-context, multi-language GitHub issue solving.  
-  **TL;DR:** 提出 SwingArena：让 LLM 以“提交者/审阅者”在 CI 回路中对抗迭代的真实软件开发式评测框架，并用检索增强代码生成模块解决长上下文与多语言问题。  
+  **TL;DR:** 提出 SwingArena：让 LLM 以“提交者/审阅者”在 CI 回路中对抗迭代的真实软件开发式评测框架，并用检索增强代码生成模块解决长上下文与多编程语言问题。  
 
 - **Title:** Mmsearch-plus: Benchmarking provenance-aware search for multimodal browsing agents  
   **Authors:** Xijia Tao, Yihua Teng, Xinxing Su, Xinyu Fu, Jihao Wu, Chaofan Tao, Ziru Liu, Haoli Bai, Rui Liu, Lingpeng Kong  
@@ -66,7 +66,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Venue:** International Conference on Learning Representations  
   **URL:** [arXiv:2508.21475](https://arxiv.org/abs/2508.21475)  
   **TL;DR (EN):** MMSearch-Plus is a 311-task benchmark and agent framework with set-of-mark tools that require provenance-aware, vision-in-the-loop search and cross-validation under retrieval noise.  
-  **TL;DR:** 提出 MMSearch-Plus（311题）与 SoM 标注/裁剪工具链，强制在噪声检索下通过“视觉线索→检索→交叉验证”进行可追溯的多模态搜索推理，从而更严格评测浏览型多模态代理能力。  
+  **TL;DR:** 提出 MMSearch-Plus（311题）与 SoM 标注/裁剪工具链，强制在噪声检索下通过“视觉线索→检索→交叉验证”进行可追溯的多模态搜索推理，从而更严格评测浏览型多模态agent能力。  
 
 - **Title:** OVD: On-policy Verbal Distillation  
   **Authors:** Jing Xiong, Hui Shen, Shansan Gong, Yuxin Cheng, Jianghan Shen, Chaofan Tao, Haochen Tan, Haoli Bai, Lifeng Shang, Ngai Wong  
@@ -74,7 +74,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Venue:** arXiv preprint arXiv:2601.21968  
   **URL:** [arXiv:2601.21968](https://arxiv.org/abs/2601.21968)  
   **TL;DR (EN):** On-policy Verbal Distillation replaces token-level matching with trajectory-level distillation using discrete teacher scores, reducing memory and improving student performance on web QA and math reasoning.  
-  **TL;DR:** 提出 On-policy Verbal Distillation：用教师0–9离散口头评分做轨迹级对齐替代token级匹配，显著降低内存并提升学生模型在Web QA与数学推理上的蒸馏效果。  
+  **TL;DR:** 提出 On-policy Verbal Distillation：用教师0–9离散评分做轨迹级对齐替代token级匹配，显著降低内存并提升学生模型在Web Search Agent场景与数学推理上的蒸馏效果。  
 
 - **Title:** Locate, Steer, and Improve: A Practical Survey of Actionable Mechanistic Interpretability in Large Language Models  
   **Authors:** Hengyuan Zhang, Zhihao Zhang, Mingyang Wang, Zunhai Su, Yiwei Wang, Qianli Wang, Shuzhou Yuan, Ercong Nie, Xufeng Duan, Qibo Xue, Zeping Yu, Chenming Shang, Xiao Liang, Jing Xiong, Hui Shen, Chaofan Tao, Zhengwu Liu, Senjie Jin, Zhiheng Xi, Dongdong Zhang, Sophia Ananiadou, Tao Gui, Ruobing Xie, Hayden Kwok-Hay So, Hinrich Schütze, Xuanjing Huang, Qi Zhang, Ngai Wong  
@@ -82,7 +82,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Venue:** arXiv preprint arXiv:2601.14004  
   **URL:** [arXiv:2601.14004](https://arxiv.org/abs/2601.14004)  
   **TL;DR (EN):** This survey frames actionable mechanistic interpretability as a “Locate–Steer–Improve” pipeline, categorizing localization and intervention methods to enable improvements in alignment, capability, and efficiency.  
-  **TL;DR:** 提出“Locate–Steer–Improve”行动化机理可解释性综述框架，系统整理定位与干预方法并给出可操作的干预协议，用于改进对齐、能力与效率。  
+  **TL;DR:** 提出“Locate–Steer–Improve”行动化机理可解释性综述框架，系统整理LLM在问题定位、规划并给出可操作的动作的方面的工作，用于改进LLM的对齐、能力与效率。  
 
 - **Title:** From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for Reinforcement Learning of Open-ended Generation  
   **Authors:** Yuxin Jiang, Yufei Wang, Qiyuan Zhang, Xingshan Zeng, Liangyou Li, Jierun Chen, Chaofan Tao, Haoli Bai, Lifeng Shang  
@@ -98,7 +98,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Venue:** arXiv preprint arXiv:2505.15929  
   **URL:** [arXiv:2505.15929](https://arxiv.org/abs/2505.15929)  
   **TL;DR (EN):** PhyX introduces a 3K-question multimodal benchmark spanning six physics domains to test physics-grounded reasoning, revealing large gaps between top models and human experts.  
-  **TL;DR:** 提出 PhyX：覆盖6大物理域/25子域的3K多模态物理推理基准与评测协议，揭示 SOTA 模型在真实物理约束推理上与人类仍有显著差距。  
+  **TL;DR:** 提出 PhyX：覆盖6大物理域/25子域的3K多模态物理推理的测评Benchmark，揭示 SOTA 模型在真实物理约束推理上与人类仍有显著差距。  
 
 - **Title:** Robocodex: Multimodal code generation for robotic behavior synthesis  
   **Authors:** Yao Mu, Junting Chen, Qinglong Zhang, Shoufa Chen, Qiaojun Yu, Chongjian Ge, Runjian Chen, Zhixuan Liang, Mengkang Hu, Chaofan Tao, Peize Sun, Haibao Yu, Chao Yang, Wenqi Shao, Wenhai Wang, Jifeng Dai, Yu Qiao, Mingyu Ding, Ping Luo  
@@ -143,7 +143,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Venue:** arXiv preprint arXiv:2510.10925  
   **URL:** [arXiv:2510.10925](https://arxiv.org/abs/2510.10925)  
   **TL;DR (EN):** PerSyn “routes then generates” by assigning each prompt to its best teacher via a router that considers student learnability and teacher quality, improving synthetic-data distillation efficiency.  
-  **TL;DR:** 提出 PerSyn（Route-then-Generate）：用查询级router为每个prompt选择最适合该学生的教师再合成数据，更高效且在指令微调与数学推理上优于“永远用最强教师”的做法。  
+  **TL;DR:** 提出 PerSyn（Route-then-Generate）：用查询级router为每个prompt选择最适合该学生的教师再合成数据，更高效且在指令微调与数学推理上优于常规蒸馏的做法。  
 
 - **Title:** AnchorTP: Resilient LLM Inference with State-Preserving Elastic Tensor Parallelism  
   **Authors:** Wendong Xu, Chujie Chen, He Xiao, Kuan Li, Jing Xiong, Chen Zhang, Wenyong Zhou, Chaofan Tao, Yang Bai, Bei Yu, Ngai Wong  
@@ -167,7 +167,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Venue:** International Conference on Machine Learning  
   **URL:** [arXiv:2305.17455](https://arxiv.org/abs/2305.17455)  
   **TL;DR (EN):** CrossGET accelerates vision-language Transformers by cross-modally matching and ensembling tokens with efficient soft matching, reducing compute with minimal accuracy loss.  
-  **TL;DR:** 提出 CrossGET：利用跨模态引导的token软匹配与合并，在推理时动态集成token以加速多种视觉-语言Transformer，同时保持多项下游任务性能。  
+  **TL;DR:** 提出 CrossGET：利用跨模态引导的token软匹配与合并，在推理时动态集成核心的token以加速多种视觉-语言Transformer，同时保持多项下游任务性能。  
 
 - **Title:** Rethinking kullback-leibler divergence in knowledge distillation for large language models  
   **Authors:** Taiqiang Wu, Chaofan Tao, Jiahao Wang, Runming Yang, Zhe Zhao, Ngai Wong  
@@ -175,7 +175,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Venue:** Proceedings of the 31st International Conference on Computational Linguistics  
   **URL:** [arXiv:2404.02657](https://arxiv.org/abs/2404.02657)  
   **TL;DR (EN):** It shows forward and reverse KL behave similarly in LLM distillation with enough training but emphasize head vs. tail early; Adaptive KL combines them to improve generation quality and diversity.  
-  **TL;DR:** 重新审视KD中的FKL/RKL，指出二者优化目标等价但早期关注分布头/尾不同，并提出自适应加权的AKL以提升蒸馏后LLM的生成质量与多样性。  
+  **TL;DR:** 重新审视蒸馏问题中的FKL/RKL，指出二者优化目标等价但早期关注分布头/尾不同，并提出自适应加权的AKL以提升蒸馏后LLM的生成质量与多样性。  
 
 - **Title:** Structured pruning for efficient generative pre-trained language models  
   **Authors:** Chaofan Tao, Lu Hou, Haoli Bai, Jiansheng Wei, Xin Jiang, Qun Liu, Ping Luo, Ngai Wong  
@@ -183,7 +183,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Venue:** Findings of the Association for Computational Linguistics: ACL 2023  
   **URL:** [DOI:10.18653/v1/2023.findings-acl.692](https://doi.org/10.18653/v1/2023.findings-acl.692)  
   **TL;DR (EN):** It proposes structured pruning across multiple generative-PLM components using learnable masks and sparse training to extract size-flexible subnets with significant speedups.  
-  **TL;DR:** 提出覆盖隐藏维、embedding、LN等结构的生成式PLM结构化剪枝：用可学习mask+稀疏训练找冗余并导出不同规模子网，在显著减参下带来GPU/CPU加速且可与量化叠加。  
+  **TL;DR:** 提出覆盖隐藏维、embedding、LN等结构的生成式语言模型的结构化剪枝：用可学习mask+稀疏训练找冗余并导出不同规模子网，在显著减参下带来GPU/CPU加速且可与量化叠加。  
 
 - **Title:** Dybit: Dynamic bit-precision numbers for efficient quantized neural network inference  
   **Authors:** Jie Zhou, Jianqiao Wu, Yufei Gao, Yuyang Ding, Chaofan Tao, Bing Li, Fan Tu, K T Cheng, H K H So, Ngai Wong  
@@ -199,7 +199,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Venue:** ACL 2022 (outstanding)  
   **URL:** [arXiv:2203.10705](https://arxiv.org/abs/2203.10705)  
   **TL;DR (EN):** It adapts quantization to generative PLMs, addressing embedding homogenization with token-level contrastive distillation and module-wise dynamic scaling to achieve 13–14× compression at near full precision.  
-  **TL;DR:** 提出面向生成式PLM的量化方法：用token级对比蒸馏缓解词向量同质化，并用模块级动态缩放适配权重分布，实现GPT-2/BART在近似全精度下的10×+压缩。  
+  **TL;DR:** 提出面向生成式语言模型的量化方法：用token级对比蒸馏缓解词向量同质化问题，并用模块级动态缩放适配权重分布，实现GPT-2/BART在近似全精度下的10×+压缩。  
 
 </details>
 
@@ -244,7 +244,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Venue:** arXiv preprint arXiv:2408.09511  
   **URL:** [arXiv:2408.09511](https://arxiv.org/abs/2408.09511)  
   **TL;DR (EN):** NAVERO introduces the AARO benchmark and negative-text augmentation with a negative-augmented matching loss to improve video-language compositional understanding and retrieval.  
-  **TL;DR:** 提出AARO组合理解基准与 NAVERO 负例增强训练/匹配损失，提升视频-语言模型对动作与关系等细粒度组合语义的辨别与检索性能。  
+  **TL;DR:** 提出多模态组件的解耦式理解方案与负例增强训练/匹配损失，提升视频-语言模型对动作与关系等细粒度组合语义的辨别与检索性能。  
 
 - **Title:** Upop: Unified and progressive pruning for compressing vision-language transformers  
   **Authors:** Dachuan Shi, Chaofan Tao, Ying Jin, Zhendong Yang, Chun Yuan, Jiaqi Wang  
@@ -266,5 +266,5 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
 
 ## Services
 **Reviewer Experience**  
-- **Conferences**: ICML, ICLR, ECCV, NeurIPS, ACL, EMNLP, ICCV, CVPR  
+- **Conferences**: ICML, ICLR,  NeurIPS, ACL, EMNLP, ICCV, CVPR，ECCV 
 - **Journals**: T-NNLS  
