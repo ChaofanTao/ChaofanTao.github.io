@@ -10,8 +10,6 @@ redirect_from:
 
 
 ## Chaofan Tao (陶超凡)
-**Agentic Coding & Reasoning · Efficient ML · Multimodal Reasoning**
-
 I am a researcher at Huawei Foundation Model Lab. I got my PhD from The University of Hong Kong (HKU), advised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/), as a member of the [MMLAB@HKU](https://mmlab.hk/) family.  I completed my Bachelor’s degree from Yingcai Honors College at University of Electronic Science and Technology of China. Previously, I interned at Sea AI Lab (Singapore), Amazon Web Services (Bellevue), Huawei (Shenzhen), and SenseTime (Shanghai).
 
 ## Research focus
@@ -35,7 +33,7 @@ If you’d like to join or collaborate, email me with **[Interest] + your profil
 ## Publications (2022+)
 Below are my recent papers organized by topic. Each entry includes URL + bilingual TL;DR for quick scanning.
 
-<details open>
+<details open markdown="1">
 <summary><strong>1) Agentic Coding, Reasonings and Evaluation</strong></summary>
 
 - **Title:** Swe-lego: Pushing the limits of supervised fine-tuning for software issue resolving  
@@ -120,7 +118,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
 
 </details>
 
-<details>
+<details markdown="1">
 <summary><strong>2) Efficient ML</strong></summary>
 
 - **Title:** ATTS: Asynchronous Test-Time Scaling via Conformal Prediction  
@@ -205,7 +203,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
 
 </details>
 
-<details>
+<details markdown="1">
 <summary><strong>3) Large Vision-Language Models</strong></summary>
 
 - **Title:** MEIT: Multimodal electrocardiogram instruction tuning on large language models for report generation  
