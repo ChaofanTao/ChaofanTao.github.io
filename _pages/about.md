@@ -41,7 +41,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Venue:** <span style="color: #1e3a8a;">arXiv preprint arXiv:2601.01426</span>  
   **URL:** [arXiv:2601.01426](https://arxiv.org/abs/2601.01426)  
   **TL;DR (EN):** SWE-Lego presents a strong SFT-only recipe (new dataset + curriculum/error masking) and studies verifier-based test-time scaling, pushing open 8B/32B models to SOTA on SWE-bench Verified.  
-  **TL;DR:** SWE-Lego提出仅用监督微调的强配方（新数据集+课程学习/错误掩码），并研究基于验证器的测试时扩展，将开源8B/32B模型在SWE-bench Verified上推至SOTA。  
+  **TL;DR:** SWE-Lego提出仅用监督微调的软工代码智能体配方（真实+合成数据集+课程学习/错误掩码），并研究了软工场景的测试时扩展，将开源8B/32B模型在SWE-bench Verified上推至SOTA。  
 
 - **Title:** <span style="color: #92400e;">MMFormalizer: Multimodal Autoformalization in the Wild</span>  
   **Authors:** Jing Xiong, Qi Han, Yunta Hsieh, Hui Shen, Huajian Xin, Chaofan Tao, Chenyang Zhao, Hengyuan Zhang, Taiqiang Wu, Zhen Zhang, Haochen Wang, Zhongwei Wan, Lingpeng Kong, Ngai Wong  
@@ -49,15 +49,15 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Venue:** <span style="color: #1e3a8a;">arXiv preprint arXiv:2601.03017</span>  
   **URL:** [arXiv:2601.03017](https://arxiv.org/abs/2601.03017)  
   **TL;DR (EN):** MMFormalizer extends autoformalization to multimodal math/physics by grounding visual entities and recursively composing axioms, enabling formal statements for real-world problems (including classical mechanics) on the PhyX-AF benchmark.  
-  **TL;DR:** MMFormalizer将自动形式化扩展到多模态数学/物理领域，通过将视觉实体落地并递归组合公理，在PhyX-AF基准上实现真实世界问题（包括经典力学）的形式化表述。  
+  **TL;DR:** MMFormalizer将自动形式化扩展到多模态数学/物理领域，在PhyX-AF基准上实现真实世界问题（包括经典力学）的形式化表述。  
 
 - **Title:** <span style="color: #92400e;">SwingArena: Competitive Programming Arena for Long-context GitHub Issue Solving</span>  
   **Authors:** Wendong Xu, Jing Xiong, Chenyang Zhao, Qiujiang Chen, Haoran Wang, Hui Shen, Zhongwei Wan, Jianbo Dai, Taiqiang Wu, He Xiao, Chaofan Tao, Z Morley Mao, Ying Sheng, Zhijiang Guo, Hongxia Yang, Bei Yu, Lingpeng Kong, Quanquan Gu, Ngai Wong  
   **Year:** 2026  
   **Venue:** <span style="color: #1e3a8a;">International Conference on Learning Representations (oral)</span>  
   **URL:** [arXiv:2505.23932](https://arxiv.org/abs/2505.23932)  
-  **TL;DR (EN):** SwingArena is a CI-driven competitive framework where LLMs act as submitters and reviewers, paired with retrieval-augmented code generation to handle long-context, multi-language GitHub issue solving.  
-  **TL;DR:** SwingArena是一个CI驱动的竞争框架，让大语言模型扮演提交者和审阅者角色，配合检索增强的代码生成来处理长上下文、多语言的GitHub问题解决。  
+  **TL;DR (EN):** SwingArena is a CI-driven competitive benchmark where LLMs act as submitters and reviewers, paired with retrieval-augmented code generation to handle long-context, multi-language GitHub issue solving.  
+  **TL;DR:** SwingArena是一个CI驱动的测评框架，让大语言模型扮演代码的提交者和审阅者角色，配合检索增强的代码生成来处理长上下文、多编程语言的GitHub问题解决。  
 
 - **Title:** <span style="color: #92400e;">Mmsearch-plus: Benchmarking provenance-aware search for multimodal browsing agents</span>  
   **Authors:** Xijia Tao, Yihua Teng, Xinxing Su, Xinyu Fu, Jihao Wu, Chaofan Tao, Ziru Liu, Haoli Bai, Rui Liu, Lingpeng Kong  
@@ -65,7 +65,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Venue:** <span style="color: #1e3a8a;">International Conference on Learning Representations</span>  
   **URL:** [arXiv:2508.21475](https://arxiv.org/abs/2508.21475)  
   **TL;DR (EN):** MMSearch-Plus is a 311-task benchmark and agent framework with set-of-mark tools that require provenance-aware, vision-in-the-loop search and cross-validation under retrieval noise.  
-  **TL;DR:** MMSearch-Plus是一个包含311个任务的基准和智能体框架，配备set-of-mark工具，要求在检索噪声下进行可追溯、视觉在环的搜索和交叉验证。  
+  **TL;DR:** MMSearch-Plus是一个包含311个任务的benchmark和多模态智能体搜索问答框架，配备set-of-mark工具，要求在检索噪声下进行可追溯、引入视觉搜索和交叉验证。  
 
 - **Title:** <span style="color: #92400e;">OVD: On-policy Verbal Distillation</span>  
   **Authors:** Jing Xiong, Hui Shen, Shansan Gong, Yuxin Cheng, Jianghan Shen, Chaofan Tao, Haochen Tan, Haoli Bai, Lifeng Shang, Ngai Wong  
@@ -73,7 +73,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Venue:** <span style="color: #1e3a8a;">arXiv preprint arXiv:2601.21968</span>  
   **URL:** [arXiv:2601.21968](https://arxiv.org/abs/2601.21968)  
   **TL;DR (EN):** On-policy Verbal Distillation replaces token-level matching with trajectory-level distillation using discrete teacher scores, reducing memory and improving student performance on web QA and math reasoning.  
-  **TL;DR:** On-policy Verbal Distillation用轨迹级蒸馏替代token级匹配，使用离散的教师评分，降低内存占用并在网络问答和数学推理上提升学生模型性能。  
+  **TL;DR:** On-policy Verbal Distillation用轨迹级蒸馏替代token级匹配蒸馏，使用离散的教师评分，降低内存占用并在网络搜索问答和数学推理上提升学生模型性能。  
 
 
 - **Title:** <span style="color: #92400e;">From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for Reinforcement Learning of Open-ended Generation</span>  
@@ -82,7 +82,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Venue:** <span style="color: #1e3a8a;">International Conference on Learning Representations</span>  
   **URL:** [arXiv:2601.18533](https://arxiv.org/abs/2601.18533)  
   **TL;DR (EN):** RLVRR turns single verifiable end rewards into ordered reference-derived reward chains (content + style) to make RL for open-ended generation more efficient and less prone to reward hacking.  
-  **TL;DR:** RLVRR将单一的可验证终端奖励转化为有序的参考衍生奖励链（内容+风格），使开放式生成的强化学习更高效且更不易出现奖励破解。  
+  **TL;DR:** RLVRR将传统RL里单一的可验证终端奖励转化为有序的参考衍生奖励链（内容+风格），使开放式生成的强化学习更高效且更不易出现奖励破解。  
 
 - **Title:** <span style="color: #92400e;">PhyX: Does Your Model Have the "Wits" for Physical Reasoning?</span>  
   **Authors:** Hui Shen, Taiqiang Wu, Qi Han, Yunta Hsieh, Jizhou Wang, Yuyue Zhang, Yuxin Cheng, Zijian Hao, Yuansheng Ni, Xin Wang, Zhongwei Wan, Kai Zhang, Wendong Xu, Jing Xiong, Ping Luo, Wenhu Chen, Chaofan Tao, Zhuoqing Mao, Ngai Wong  
@@ -90,7 +90,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Venue:** <span style="color: #1e3a8a;">arXiv preprint arXiv:2505.15929</span>  
   **URL:** [arXiv:2505.15929](https://arxiv.org/abs/2505.15929)  
   **TL;DR (EN):** PhyX introduces a 3K-question multimodal benchmark spanning six physics domains to test physics-grounded reasoning, revealing large gaps between top models and human experts.  
-  **TL;DR:** PhyX引入一个包含3000个问题的多模态基准，覆盖六个物理领域，用于测试基于物理的推理，揭示了顶级模型与人类专家之间的巨大差距。  
+  **TL;DR:** PhyX引入一个包含3000个问题的多模态基准，覆盖六个物理领域，用于测试基于物理的推理，观察道顶级模型与人类专家之间的较大差距。  
 
 
 - **Title:** <span style="color: #92400e;">Scaling laws with vocabulary: Larger models deserve larger vocabularies</span>  
@@ -107,7 +107,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Venue:** <span style="color: #1e3a8a;">Transactions on Machine Learning Research (TMLR-2025)</span>  
   **URL:** [arXiv:2411.05902](https://arxiv.org/abs/2411.05902)  
   **TL;DR (EN):** A comprehensive survey of visual autoregressive modeling, covering representation strategies and applications across image, video, 3D, and multimodal generation, plus open challenges.  
-  **TL;DR:** 全面综述视觉自回归建模方法，涵盖表示策略及其在图像、视频、3D和多模态生成中的应用，并讨论开放挑战。  
+  **TL;DR:** 全面综述视觉自回归模型的建模方法，涵盖表示策略及其在图像、视频、3D和多模态生成中的应用，并讨论开放挑战。  
 
 - **Title:** <span style="color: #92400e;">Srpo: Enhancing multimodal llm reasoning via reflection-aware reinforcement learning</span>  
   **Authors:** Zhongwei Wan, Zhihao Dou, Che Liu, Yu Zhang, Dongfei Cui, Qinjian Zhao, Hui Shen, Jing Xiong, Yi Xin, Yifan Jiang, Chaofan Tao, Yangfan He, Mi Zhang, Shen Yan  
@@ -115,7 +115,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Venue:** <span style="color: #1e3a8a;">arXiv preprint arXiv:2506.01713</span>  
   **URL:** [arXiv:2506.01713](https://arxiv.org/abs/2506.01713)  
   **TL;DR (EN):** SRPO is a reflection-aware RL framework that teaches MLLMs self-reflection and then optimizes concise, meaningful reflections with GRPO-style rewards to improve multimodal reasoning.  
-  **TL;DR:** SRPO是一个反思感知的强化学习框架，先训练多模态大模型学会自我反思，再用GRPO式奖励优化简洁有效的反思，从而提升多模态推理能力。  
+  **TL;DR:** SRPO是一个反思感知的多模态RL框架，先训练多模态大模型学会自我反思，再用GRPO式奖励优化简洁有效的反思，从而提升多模态推理能力。  
 
 - **Title:** <span style="color: #92400e;">The synergy dilemma of long-cot sft and rl: Investigating post-training techniques for reasoning vlms</span>  
   **Authors:** Jierun Chen, Tiezheng Yu, Haoli Bai, Lewei Yao, Jiannan Wu, Kaican Li, Fei Mi, Chaofan Tao, Lei Zhu, Manyi Zhang, Xiaohui Li, Lu Hou, Lifeng Shang, Qun Liu  
@@ -123,7 +123,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Venue:** <span style="color: #1e3a8a;">arXiv preprint arXiv:2507.07562</span>  
   **URL:** [arXiv:2507.07562](https://arxiv.org/abs/2507.07562)  
   **TL;DR (EN):** The study compares long-CoT SFT vs. RL for reasoning VLMs and finds their combination often fails to yield additive gains, instead trading off accuracy, verbosity, and style.  
-  **TL;DR:** 比较长链思维监督微调与强化学习在视觉语言模型推理中的作用，发现两者组合往往无法带来叠加收益，而是在准确率、冗长程度和风格之间权衡。  
+  **TL;DR:** 比较长链思维监督微调（SFT）与强化学习（RL）在视觉语言模型推理中的作用，发现两者组合往往无法带来叠加收益，而是在准确率、冗长程度和风格之间权衡。  
 
 - **Title:** <span style="color: #92400e;">NAVERO: Unlocking Fine-Grained Semantics for Video-Language Compositionality</span>  
   **Authors:** Chaofan Tao, Gukyeong Kwon, Varad Gunjal, Hao Yang, Zhaowei Cai, Yonatan Dukler, Ashwin Swaminathan, R Manmatha, Colin Jon Taylor, Stefano Soatto  
@@ -144,7 +144,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Venue:** <span style="color: #1e3a8a;">International Conference on Learning Representations</span>  
   **URL:** [arXiv:2509.15148](https://arxiv.org/abs/2509.15148)  
   **TL;DR (EN):** ATTS is an asynchronous, conformal-prediction-based test-time scaling method that cuts synchronization overhead and accelerates scaling with statistical guarantees and no accuracy loss.  
-  **TL;DR:** ATTS是一种基于一致性预测的异步测试时扩展方法，减少同步开销，在统计保证和无准确率损失的情况下加速扩展。  
+  **TL;DR:** ATTS是一种基于一致性预测的异步测试时扩展方法，减少同步开销，在尽可能最小化准确率损失的情况下加速扩展。  
 
 - **Title:** <span style="color: #92400e;">UNCOMP: Can Matrix Entropy Uncover Sparsity? - A Compressor Design from an Uncertainty-Aware Perspective</span>  
   **Authors:** Jing Xiong, Jianghan Shen, Fanghua Ye, Chaofan Tao, Zhongwei Wan, Jianqiao Lu, Xun Wu, Chuanyang Zheng, Zhijiang Guo, Min Yang, Lingpeng Kong, Ngai Wong  
@@ -168,7 +168,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Venue:** <span style="color: #1e3a8a;">DATE</span>  
   **URL:** [arXiv:2511.11617](https://arxiv.org/abs/2511.11617)  
   **TL;DR (EN):** AnchorTP provides state-preserving elastic tensor parallelism with a GPU-resident daemon and bandwidth-aware migration planning, enabling fast recovery from single-GPU failures.  
-  **TL;DR:** AnchorTP提供状态保持的弹性张量并行，通过GPU常驻守护进程和带宽感知的迁移规划，实现从单GPU故障的快速恢复。  
+  **TL;DR:** AnchorTP提供状态保持的弹性张量并行，通过GPU常驻守护进程和带宽感知的迁移规划，实现单GPU故障场景的快速恢复。  
 
 - **Title:** <span style="color: #92400e;">Dynamic Discriminative Operations for Efficient Long-Context Inference of Large Language Models</span>  
   **Authors:** Zhongwei Wan, Xinjian Wu, Yu Zhang, Yi Xin, Chaofan Tao, Zhihong Zhu, Xin Wang, Siqi Luo, Jing Xiong, Longyue Wang, Mi Zhang  
@@ -184,7 +184,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Venue:** <span style="color: #1e3a8a;">International Conference on Machine Learning</span>  
   **URL:** [arXiv:2305.17455](https://arxiv.org/abs/2305.17455)  
   **TL;DR (EN):** CrossGET accelerates vision-language Transformers by cross-modally matching and ensembling tokens with efficient soft matching, reducing compute with minimal accuracy loss.  
-  **TL;DR:** CrossGET通过跨模态匹配和集成token，使用高效的相似token匹配加速视觉-语言Transformer，在最小准确率损失下减少计算量。  
+  **TL;DR:** CrossGET通过跨模态匹配和集成token，使用相似token匹配和合并加速视觉-语言Transformer，在最小准确率损失下减少计算量。  
 
 - **Title:** <span style="color: #92400e;">Rethinking kullback-leibler divergence in knowledge distillation for large language models</span>  
   **Authors:** Taiqiang Wu, Chaofan Tao, Jiahao Wang, Runming Yang, Zhe Zhao, Ngai Wong  
@@ -192,7 +192,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Venue:** <span style="color: #1e3a8a;">Proceedings of the 31st International Conference on Computational Linguistics</span>  
   **URL:** [arXiv:2404.02657](https://arxiv.org/abs/2404.02657)  
   **TL;DR (EN):** It shows forward and reverse KL behave similarly in LLM distillation with enough training but emphasize head vs. tail early; Adaptive KL combines them to improve generation quality and diversity.  
-  **TL;DR:** 研究表明在充分训练下，前向和反向KL在大语言模型蒸馏中表现相似，但早期分别关注分布头部和尾部；自适应KL结合两者以提升生成质量和多样性。  
+  **TL;DR:** 研究表明在充分训练下，前向和反向KL在大语言模型蒸馏中表现相似，但早期分别关注分布头部和尾部；自适应KL结合两种蒸馏方式的优势，以提升模型的生成质量和多样性。  
 
 - **Title:** <span style="color: #92400e;">Structured pruning for efficient generative pre-trained language models</span>  
   **Authors:** Chaofan Tao, Lu Hou, Haoli Bai, Jiansheng Wei, Xin Jiang, Qun Liu, Ping Luo, Ngai Wong  
@@ -208,8 +208,8 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
   **Year:** 2022  
   **Venue:** <span style="color: #1e3a8a;">ACL 2022 (outstanding)</span>  
   **URL:** [arXiv:2203.10705](https://arxiv.org/abs/2203.10705)  
-  **TL;DR (EN):** It adapts quantization to generative PLMs, addressing embedding homogenization with token-level contrastive distillation and module-wise dynamic scaling to achieve 13–14× compression at near full precision.  
-  **TL;DR:** 将量化方法适配到生成式预训练语言模型，通过token级对比蒸馏解决嵌入同质化问题，并用模块级动态缩放实现接近全精度的13-14倍压缩。  
+  **TL;DR (EN):** It adapts quantization to generative PLMs （e.g. GPT-2, BART）, addressing embedding homogenization with token-level contrastive distillation and module-wise dynamic scaling to achieve 13–14× compression at near full precision.  
+  **TL;DR:** 将量化方法适配到生成式预训练语言模型（e.g. GPT-2, BART），通过token级对比蒸馏解决嵌入同质化问题，并用模块级动态缩放实现接近全精度的13-14倍压缩。  
 
 - **Title:** <span style="color: #92400e;">Upop: Unified and progressive pruning for compressing vision-language transformers</span>  
   **Authors:** Dachuan Shi, Chaofan Tao, Ying Jin, Zhendong Yang, Chun Yuan, Jiaqi Wang  
