@@ -23,7 +23,7 @@ latest_posts:
   enabled: false
 ---
 
-## Chaofan Tao (陶超凡)
+## Biography
 
 I am a researcher and developer at Huawei Foundation Model Lab. I received my PhD from [The University of Hong Kong](https://www.hku.hk/), advised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/), as a member of the [MMLAB@HKU](https://mmlab.hk/) family. I completed my bachelor's degree at the Yingcai Honors College of the University of Electronic Science and Technology of China. Previously, I interned at Sea AI Lab, Amazon Web Services, Huawei, and SenseTime.
 
