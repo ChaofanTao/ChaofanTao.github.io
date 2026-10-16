@@ -8,7 +8,7 @@ profile:
   image: prof_pic.png
   image_circular: false
   more_info: >
-    <p>Email: tcftrees@gmail.com</p>
+    <p>Email: <a href="mailto:tcftrees@gmail.com">tcftrees@gmail.com</a></p>
 
 selected_papers: false
 social: false
