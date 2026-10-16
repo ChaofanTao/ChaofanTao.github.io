@@ -2,14 +2,13 @@
 layout: about
 title: about
 permalink: /
-subtitle: Researcher and developer at Huawei Foundation Model Lab · PhD, The University of Hong Kong
 
 profile:
   align: right
   image: prof_pic.png
   image_circular: false
   more_info: >
-    <p><a href="https://www.legox.net/">LegoX</a> · Frontier Agentic Intelligence</p>
+    <p>Frontier Agentic Intelligence</p>
     <p><a href="mailto:tcftrees@gmail.com">tcftrees@gmail.com</a></p>
 
 selected_papers: false
