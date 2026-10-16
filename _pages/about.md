@@ -24,11 +24,11 @@ latest_posts:
 
 ## Biography
 
-I am a researcher and developer at Huawei Foundation Model Lab. I received my PhD from [The University of Hong Kong](https://www.hku.hk/), advised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/), as a member of the [MMLAB@HKU](https://mmlab.hk/) family. I completed my bachelor's degree at the Yingcai Honors College of the University of Electronic Science and Technology of China. Previously, I interned at Sea AI Lab, Amazon Web Services, Huawei, and SenseTime.
+I am a researcher and developer at Huawei Foundation Model Lab, working on **agentic intelligence** and **efficient machine learning**. My paper [**Compression of Generative Pre-trained Language Models via Quantization**](https://arxiv.org/abs/2203.10705) received the **ACL 2022 Outstanding Paper Award**, and I have publications at **ICLR, ICML, NeurIPS, ACL, EMNLP, COLM, and ECCV**, as well as related journals.
 
-My work focuses on **agentic intelligence** and **efficient machine learning**. I have publications at **ICLR, ICML, NeurIPS, ACL, EMNLP, COLM, and ECCV**, as well as related journals. My paper [**Compression of Generative Pre-trained Language Models via Quantization**](https://arxiv.org/abs/2203.10705) received the **ACL 2022 Outstanding Paper Award**.
+I received my PhD from [The University of Hong Kong](https://www.hku.hk/), advised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/), as a member of the [MMLAB@HKU](https://mmlab.hk/) family. I completed my bachelor's degree at the Yingcai Honors College of the University of Electronic Science and Technology of China. Previously, I interned at Sea AI Lab, Amazon Web Services, Huawei, and SenseTime.
 
-I am deeply involved in [**LegoX**](https://www.legox.net/), an open-source collection advancing frontier agentic intelligence across agentic data pipelines, training frameworks, evaluation benchmarks, and foundation models. Explore the work at [legox.net](https://www.legox.net/) or the [LegoX GitHub organization](https://github.com/LegoX).
+I am actively involved in [**LegoX**](https://www.legox.net/), an open-source collection advancing frontier agentic intelligence across agentic data pipelines, training frameworks, evaluation benchmarks, and foundation models. Explore the work at [legox.net](https://www.legox.net/) or the [LegoX GitHub organization](https://github.com/LegoX).
 
 ### Research interests
 
@@ -60,16 +60,45 @@ I am looking for **research/engineering interns** and **collaborators** who are 
     LegoX         remote svg 100x100   ink   64.0 x  60.0 / 100       -> h 0.6000
 
   What matters visually is the ink HEIGHT (a logo and a letterform are not comparable by
-  area), so each icon is sized to land on a 12px ink height. Widths then differ by
-  design, because the artwork aspect ratios differ -- that is correct, not a bug.
+  area), so every icon is driven from one --link-ink variable and each factor below
+  converts that target ink height into the value its own source needs:
+
+    font icons   font-size = ink / (ink fraction of em)     -> 1.3333, 1.0585 of ink
+    <img> icons  box size  = ink / (ink fraction of canvas) -> 1.0827, 1.6667 of ink
+
+  The --link-box variable is the square each icon is centred in, and every factor is
+  expressed as a fraction of it so the whole row keeps its proportions at any width:
+
+    --link-box: clamp(3rem, 14vw, 3.75rem)   48px floor, 60px cap
+    font icons: 0.8    x box   (glyph ink 0.7500 of em  -> 0.6 x box)
+    GitHub:     0.6352 x box   (glyph ink 0.9446 of em  -> 0.6 x box)
+    HF img:     0.7016 x box   (canvas ink 81.28 / 95   -> 0.6 x box)
+    LegoX img:  1.0    x box   (canvas ink 60 / 100     -> 0.6 x box)
+
+  So all five land on 0.6 x --link-box: 36px ink at the 60px cap, 28.8px at the 48px
+  floor. A 5-column grid keeps them on ONE row down to 320px, which a flex row with a
+  fixed gap could not (the old boxes were unequal, so their optical centres were uneven).
 -->
 <style>
+  .about-links-card {
+    box-sizing: border-box;
+    max-width: 40rem;
+    margin: 1rem 0 0.75rem;
+    padding: 1.1rem 1.1rem 1rem;
+    border: 1px solid var(--global-divider-color, rgba(0, 0, 0, 0.1));
+    border-radius: 0.6rem;
+    background: var(--global-card-bg-color, transparent);
+  }
+
   .about-links {
-    display: flex;
+    --link-box: clamp(3rem, 14vw, 3.75rem);
+    display: grid;
+    /* Five equal columns, so the icons stay evenly spaced and on one row at 320px. */
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    justify-items: center;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 0.85rem;
-    margin: 0.75rem 0 0.45rem;
+    gap: 0.4rem;
+    margin: 0;
   }
 
   .about-link {
@@ -77,72 +106,113 @@ I am looking for **research/engineering interns** and **collaborators** who are 
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    /* One uniform anchor for all five, so their optical centres are evenly spaced by
-       the flex gap. The artwork is sized INSIDE this box (below), never the box itself. */
-    width: 1.25rem; /* 20px */
-    height: 1.25rem;
+    /* One uniform square per icon, so their optical centres are evenly spaced by the
+       grid. The artwork is sized INSIDE this box, never the box itself. */
+    width: var(--link-box);
+    height: var(--link-box);
+    border-radius: 0.4rem;
     line-height: 1;
     text-decoration: none;
+    transition:
+      transform 0.15s ease,
+      background-color 0.15s ease,
+      opacity 0.15s ease;
   }
 
-  /* Font icons: font-size decides ink height, so it is set per icon (see below). */
+  .about-link:hover,
+  .about-link:focus-visible {
+    transform: translateY(-2px);
+    background-color: var(--global-code-bg-color, rgba(0, 0, 0, 0.05));
+  }
+
+  /* Font icons: font-size decides ink height. 0.8 x box makes the glyph ink land on
+     0.6 x box, the same target the two images are sized to. */
   .about-link i {
     display: block;
-    font-size: 1rem;
+    font-size: calc(var(--link-box) * 0.8);
     line-height: 1;
     text-align: center;
   }
 
-  /* ink 0.7500 of em -> 1rem (16px) font-size yields 12.0px ink height.
-     Brand colours, kept as-is in both themes because they are recognisable marks
-     and each already meets contrast on either background. */
+  /* Brand colours, kept in both themes: they are recognisable marks and each already
+     reads on either background. */
   .about-link-email {
     color: #d93025;
   }
 
   /* FA7 sets width: var(--fa-width, 1.25em) on the .fa* base rule, so the element is
-     wider than the glyph; the flex box centres it. */
+     wider than the glyph; the flex box centres it. The GitHub mark is monochrome and
+     must follow the theme, or it disappears against the dark background
+     (html[data-theme=dark] sets #e8e8e8 text on #1c1c1d). */
   .about-link-github {
-    /* The GitHub mark is monochrome and must follow the theme, or it disappears
-       against the dark background (html[data-theme=dark] sets #e8e8e8 text on #1c1c1d). */
     color: var(--global-text-color, #24292f);
   }
 
-  /* ink 0.9446 of em -> 0.794rem (12.70px) font-size yields 12.0px ink height */
+  /* fa-github ink is 0.9446 of em, so a smaller font-size than the other glyphs is
+     needed for the SAME ink height: 0.8 / 0.9446 x 0.75 = 0.6352. */
   .about-link-github i {
-    font-size: 0.794rem;
+    font-size: calc(var(--link-box) * 0.6352);
   }
 
-  /* Academicons ink is 0.6719 of em wide on a 0.75em advance, so the glyph looks
-     smaller than its font-size suggests; ink height 0.7500 of em -> 1rem font-size. */
+  /* Academicons ink is 0.6719 of em wide on a 0.75em advance, so the glyph reads
+     smaller than its font-size suggests; its ink height is 0.7500 of em like the
+     envelope, so it shares the 0.8 factor. */
   .about-link-scholar {
     color: #4285f4;
   }
 
   /* The two SVG icons are <img>, so object-fit: contain fits the WHOLE canvas into the
      element and each file's own padding shrinks the visible artwork. Their sizes are
-     therefore per file rather than equal, so the ink still lands on 12px. */
+     therefore per file rather than equal, so the ink still lands on 0.6 x box. */
   .about-link-image img {
     display: block;
     object-fit: contain;
   }
 
-  /* HuggingFace canvas 95x88 holds ink 88.0 x 81.3, so a 0.877rem square yields 12.0px ink */
+  /* HuggingFace canvas 95x88 holds ink 88.0 x 81.3: 0.7016 x box yields 0.6 x box ink. */
   .about-link-hf img {
-    width: 0.877rem;
-    height: 0.877rem;
+    width: calc(var(--link-box) * 0.7016);
+    height: calc(var(--link-box) * 0.7016);
   }
 
   /* LegoX canvas 100x100 holds ink 64 x 60 (artwork centred in a padded viewBox),
-     so a 1.25rem square yields 12.0px ink */
+     so a full-box square yields 0.6 x box ink. */
   .about-link-legox img {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: var(--link-box);
+    height: var(--link-box);
   }
 
   .about-links-note {
-    margin-top: 0.35rem;
-    line-height: 1.5;
+    margin: 0.85rem 0 0;
+    line-height: 1.55;
+  }
+
+  .about-links-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 2.75rem; /* 44px: the iOS minimum comfortable tap target */
+    margin-top: 0.85rem;
+    padding: 0 1.1rem;
+    border-radius: 2rem;
+    background: var(--global-theme-color, #b509ac);
+    color: #ffffff;
+    font-weight: 500;
+    text-decoration: none;
+    transition:
+      opacity 0.15s ease,
+      transform 0.15s ease;
+  }
+
+  .about-links-cta:hover,
+  .about-links-cta:focus-visible {
+    opacity: 0.88;
+    transform: translateY(-1px);
+    color: #ffffff;
+  }
+
+  .about-links-cta i {
+    font-size: 1em;
   }
 
   @media (max-width: 576px) {
@@ -157,21 +227,39 @@ I am looking for **research/engineering interns** and **collaborators** who are 
       text-align: center;
     }
 
+    .about-links-card {
+      padding: 1rem 0.75rem 0.9rem;
+    }
+
     .about-links {
-      gap: 0.7rem;
+      --link-box: clamp(3rem, 16vw, 3.75rem);
+      gap: 0.25rem;
+    }
+
+    .about-links-cta {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      box-sizing: border-box;
     }
   }
 </style>
 
-<div class="about-links" aria-label="Contact and profile links">
-  <a class="about-link about-link-email" href="mailto:tcftrees@gmail.com" title="Email" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
-  <a class="about-link about-link-github" href="https://github.com/ChaofanTao" title="GitHub" aria-label="GitHub" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
-  <a class="about-link about-link-scholar" href="https://scholar.google.com/citations?user=gjmfLroAAAAJ" title="Google Scholar" aria-label="Google Scholar" rel="external nofollow noopener" target="_blank"><i class="ai ai-google-scholar" aria-hidden="true"></i></a>
-  <a class="about-link about-link-image about-link-hf" href="https://huggingface.co/tcftrees" title="Hugging Face" aria-label="Hugging Face" rel="external nofollow noopener" target="_blank"><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="" aria-hidden="true"></a>
-  <a class="about-link about-link-image about-link-legox" href="https://www.legox.net/" title="LegoX" aria-label="LegoX" rel="external nofollow noopener" target="_blank"><img src="https://www.legox.net/logo/legox-parallel-pipeline.svg" alt="" aria-hidden="true"></a>
-</div>
+<div class="about-links-card" aria-label="Contact and profile links">
+  <div class="about-links">
+    <a class="about-link about-link-email" href="mailto:tcftrees@gmail.com" title="Email" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+    <a class="about-link about-link-github" href="https://github.com/ChaofanTao" title="GitHub" aria-label="GitHub" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+    <a class="about-link about-link-scholar" href="https://scholar.google.com/citations?user=gjmfLroAAAAJ" title="Google Scholar" aria-label="Google Scholar" rel="external nofollow noopener" target="_blank"><i class="ai ai-google-scholar" aria-hidden="true"></i></a>
+    <a class="about-link about-link-image about-link-hf" href="https://huggingface.co/tcftrees" title="Hugging Face" aria-label="Hugging Face" rel="external nofollow noopener" target="_blank"><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="" aria-hidden="true"></a>
+    <a class="about-link about-link-image about-link-legox" href="https://www.legox.net/" title="LegoX" aria-label="LegoX" rel="external nofollow noopener" target="_blank"><img src="https://www.legox.net/logo/legox-parallel-pipeline.svg" alt="" aria-hidden="true"></a>
+  </div>
 
-<p class="about-links-note">For research, engineering, collaboration, and LegoX inquiries, email me directly.</p>
+  <p class="about-links-note">
+    If any of this resonates, I'd love to hear from you — an email with a line about what you're working on and one or two links (a paper, GitHub, blog, or demo) is plenty. Research, engineering, collaboration, and LegoX inquiries all welcome.
+  </p>
+
+  <a class="about-links-cta" href="mailto:tcftrees@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i>Email me</a>
+</div>
 
 ## Publications (2022+)
 
