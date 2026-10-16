@@ -41,12 +41,134 @@ I am looking for **research/engineering interns** and **collaborators** who are 
 
 ### Links
 
+<!--
+  Icon sizing note.
+
+  al-folio v1 renders _includes/head.liquid from the al_folio_core gem, which never
+  included _includes/head/custom.html. The style block lives on this page instead,
+  which is reliably rendered; a _includes/ override would also work but would shadow a
+  gem-owned file and drift on every upgrade.
+
+  These five icons come from three different sources whose artwork fills its box by a
+  different fraction, so one shared font-size/box CANNOT make them look the same size.
+  Ink (visible artwork) as a fraction of the icon's own em box / SVG canvas:
+
+    Email         fa-envelope          ink  512.0 x 384.0 / 512 upm   -> h 0.7500
+    GitHub        fa-github            ink  496.0 x 483.6 / 512 upm   -> h 0.9446
+    Scholar       ai-google-scholar    ink  344.0 x 384.0 / 512 upm   -> h 0.7500
+    Hugging Face  remote svg 95x88     ink   88.0 x  81.3 / 88        -> h 0.9236
+    LegoX         remote svg 100x100   ink   64.0 x  60.0 / 100       -> h 0.6000
+
+  What matters visually is the ink HEIGHT (a logo and a letterform are not comparable by
+  area), so each icon is sized to land on a 12px ink height. Widths then differ by
+  design, because the artwork aspect ratios differ -- that is correct, not a bug.
+-->
+<style>
+  .about-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin: 0.75rem 0 0.45rem;
+  }
+
+  .about-link {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* One uniform anchor for all five, so their optical centres are evenly spaced by
+       the flex gap. The artwork is sized INSIDE this box (below), never the box itself. */
+    width: 1.25rem; /* 20px */
+    height: 1.25rem;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  /* Font icons: font-size decides ink height, so it is set per icon (see below). */
+  .about-link i {
+    display: block;
+    font-size: 1rem;
+    line-height: 1;
+    text-align: center;
+  }
+
+  /* ink 0.7500 of em -> 1rem (16px) font-size yields 12.0px ink height.
+     Brand colours, kept as-is in both themes because they are recognisable marks
+     and each already meets contrast on either background. */
+  .about-link-email {
+    color: #d93025;
+  }
+
+  /* FA7 sets width: var(--fa-width, 1.25em) on the .fa* base rule, so the element is
+     wider than the glyph; the flex box centres it. */
+  .about-link-github {
+    /* The GitHub mark is monochrome and must follow the theme, or it disappears
+       against the dark background (html[data-theme=dark] sets #e8e8e8 text on #1c1c1d). */
+    color: var(--global-text-color, #24292f);
+  }
+
+  /* ink 0.9446 of em -> 0.794rem (12.70px) font-size yields 12.0px ink height */
+  .about-link-github i {
+    font-size: 0.794rem;
+  }
+
+  /* Academicons ink is 0.6719 of em wide on a 0.75em advance, so the glyph looks
+     smaller than its font-size suggests; ink height 0.7500 of em -> 1rem font-size. */
+  .about-link-scholar {
+    color: #4285f4;
+  }
+
+  /* The two SVG icons are <img>, so object-fit: contain fits the WHOLE canvas into the
+     element and each file's own padding shrinks the visible artwork. Their sizes are
+     therefore per file rather than equal, so the ink still lands on 12px. */
+  .about-link-image img {
+    display: block;
+    object-fit: contain;
+  }
+
+  /* HuggingFace canvas 95x88 holds ink 88.0 x 81.3, so a 0.877rem square yields 12.0px ink */
+  .about-link-hf img {
+    width: 0.877rem;
+    height: 0.877rem;
+  }
+
+  /* LegoX canvas 100x100 holds ink 64 x 60 (artwork centred in a padded viewBox),
+     so a 1.25rem square yields 12.0px ink */
+  .about-link-legox img {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .about-links-note {
+    margin-top: 0.35rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 576px) {
+    .profile.float-right {
+      float: none !important;
+      width: min(100%, 220px);
+      max-width: 220px;
+      margin: 0 auto 1.25rem;
+    }
+
+    .profile.float-right .more-info {
+      text-align: center;
+    }
+
+    .about-links {
+      gap: 0.7rem;
+    }
+  }
+</style>
+
 <div class="about-links" aria-label="Contact and profile links">
   <a class="about-link about-link-email" href="mailto:tcftrees@gmail.com" title="Email" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
   <a class="about-link about-link-github" href="https://github.com/ChaofanTao" title="GitHub" aria-label="GitHub" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
   <a class="about-link about-link-scholar" href="https://scholar.google.com/citations?user=gjmfLroAAAAJ" title="Google Scholar" aria-label="Google Scholar" rel="external nofollow noopener" target="_blank"><i class="ai ai-google-scholar" aria-hidden="true"></i></a>
-  <a class="about-link about-link-image" href="https://huggingface.co/tcftrees" title="Hugging Face" aria-label="Hugging Face" rel="external nofollow noopener" target="_blank"><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="" aria-hidden="true"></a>
-  <a class="about-link about-link-image" href="https://www.legox.net/" title="LegoX" aria-label="LegoX" rel="external nofollow noopener" target="_blank"><img src="https://www.legox.net/logo/legox-parallel-pipeline.svg" alt="" aria-hidden="true"></a>
+  <a class="about-link about-link-image about-link-hf" href="https://huggingface.co/tcftrees" title="Hugging Face" aria-label="Hugging Face" rel="external nofollow noopener" target="_blank"><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="" aria-hidden="true"></a>
+  <a class="about-link about-link-image about-link-legox" href="https://www.legox.net/" title="LegoX" aria-label="LegoX" rel="external nofollow noopener" target="_blank"><img src="https://www.legox.net/logo/legox-parallel-pipeline.svg" alt="" aria-hidden="true"></a>
 </div>
 
 <p class="about-links-note">For research, engineering, collaboration, and LegoX inquiries, email me directly.</p>
