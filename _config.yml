@@ -6,8 +6,7 @@ title: Chaofan Tao
 first_name: Chaofan
 middle_name:
 last_name: Tao
-contact_note: >
-  For research, engineering, collaboration, and LegoX inquiries, email me directly.
+contact_note:
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Chaofan Tao (陶超凡) is a researcher and developer working on agentic coding, reasoning, and efficient machine learning.
 footer_text: >
