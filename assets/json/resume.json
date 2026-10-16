@@ -6,48 +6,15 @@
     "url": "https://chaofantao.top",
     "summary": "Researcher and developer at Huawei Foundation Model Lab working on agentic coding, reasoning, and efficient machine learning.",
     "profiles": [
-      {
-        "network": "GitHub",
-        "username": "ChaofanTao",
-        "url": "https://github.com/ChaofanTao"
-      },
-      {
-        "network": "Google Scholar",
-        "username": "gjmfLroAAAAJ",
-        "url": "https://scholar.google.com/citations?user=gjmfLroAAAAJ"
-      }
+      {"network": "GitHub", "username": "ChaofanTao", "url": "https://github.com/ChaofanTao"},
+      {"network": "Google Scholar", "username": "gjmfLroAAAAJ", "url": "https://scholar.google.com/citations?user=gjmfLroAAAAJ"}
     ]
   },
-  "work": [
-    {
-      "name": "Huawei Foundation Model Lab",
-      "position": "Researcher and Developer",
-      "summary": "Research on agentic coding, reasoning, and efficient machine learning."
-    }
-  ],
+  "work": [{"name": "Huawei Foundation Model Lab", "position": "Researcher and Developer", "summary": "Research on agentic coding, reasoning, and efficient machine learning."}],
   "education": [
-    {
-      "institution": "The University of Hong Kong",
-      "studyType": "PhD"
-    },
-    {
-      "institution": "University of Electronic Science and Technology of China",
-      "studyType": "Bachelor's degree, Yingcai Honors College"
-    }
+    {"institution": "The University of Hong Kong", "studyType": "PhD"},
+    {"institution": "University of Electronic Science and Technology of China", "studyType": "Bachelor's degree, Yingcai Honors College"}
   ],
-  "awards": [
-    {
-      "title": "ACL 2022 Outstanding Paper Award",
-      "awarder": "Association for Computational Linguistics",
-      "summary": "Compression of Generative Pre-trained Language Models via Quantization"
-    }
-  ],
-  "interests": [
-    {
-      "name": "Agentic coding and reasoning"
-    },
-    {
-      "name": "Efficient machine learning"
-    }
-  ]
+  "awards": [{"title": "ACL 2022 Outstanding Paper Award", "awarder": "Association for Computational Linguistics", "summary": "Compression of Generative Pre-trained Language Models via Quantization"}],
+  "interests": [{"name": "Agentic coding and reasoning"}, {"name": "Efficient machine learning"}]
 }
