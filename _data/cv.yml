@@ -1,0 +1,35 @@
+cv:
+  name: Chaofan Tao
+  label: Researcher and Developer
+  email: tcftrees@gmail.com
+  location: Hong Kong / Shenzhen
+  website: https://chaofantao.top
+  summary: Researcher and developer at Huawei Foundation Model Lab working on agentic coding, reasoning, and efficient machine learning.
+  social_networks:
+    - network: GitHub
+      username: ChaofanTao
+    - network: Google Scholar
+      username: gjmfLroAAAAJ
+  sections:
+    Education:
+      - institution: The University of Hong Kong
+        area: Machine Learning and Computer Engineering
+        studyType: PhD
+      - institution: University of Electronic Science and Technology of China
+        area: Computer Science
+        studyType: Bachelor's degree, Yingcai Honors College
+    Experience:
+      - company: Huawei Foundation Model Lab
+        position: Researcher and Developer
+        location: China
+        start_date: ""
+        end_date: Present
+        summary: Research on agentic coding, reasoning, and efficient machine learning.
+    Awards:
+      - title: ACL 2022 Outstanding Paper Award
+        authors:
+          - Association for Computational Linguistics
+        summary: Compression of Generative Pre-trained Language Models via Quantization
+    Interests:
+      - label: Agentic coding and reasoning
+      - label: Efficient machine learning
