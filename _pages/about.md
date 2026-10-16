@@ -35,7 +35,7 @@ My paper [**Compression of Generative Pre-trained Language Models via Quantizati
 
 ### LegoX
 
-I am deeply involved in [**LegoX**](https://www.legox.net/), an open-source collection advancing frontier agentic intelligence across agentic data pipelines, training frameworks, evaluation benchmarks, and foundation models. Explore the work at [legox.net](https://www.legox.net/) or the [LegoX GitHub organization](https://github.com/lego-x).
+I am deeply involved in [**LegoX**](https://www.legox.net/), an open-source collection advancing frontier agentic intelligence across agentic data pipelines, training frameworks, evaluation benchmarks, and foundation models. Explore the work at [legox.net](https://www.legox.net/) or the [LegoX GitHub organization](https://github.com/LegoX).
 
 ### Research interests
 

@@ -15,7 +15,7 @@ I am a researcher and developer at Huawei Foundation Model Lab. I got my PhD deg
 
 ## Links
 - **Google Scholar**: [publications](https://scholar.google.com/citations?hl=en&view_op=list_works&user=gjmfLroAAAAJ)
-- **Website**: `http://chaofantao.top/`
+- **Website**: `https://chaofantao.top/`
 - **Email**: `tcftrees AT gmail DOT com`
 
 ## Hiring (interns / collaborators)

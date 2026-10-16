@@ -13,7 +13,7 @@ description: Research systems, open-source projects, and collaborations.
 
 [**LegoX — Frontier Agentic Intelligence**](https://www.legox.net/)
 
-I am deeply involved in LegoX, an open-source collection spanning agentic data pipelines, training frameworks, evaluation benchmarks, and foundation models. Visit the [website](https://www.legox.net/), browse the [GitHub organization](https://github.com/lego-x), or explore the latest [research and blogs](https://www.legox.net/).
+I am deeply involved in LegoX, an open-source collection spanning agentic data pipelines, training frameworks, evaluation benchmarks, and foundation models. Visit the [website](https://www.legox.net/), browse the [GitHub organization](https://github.com/LegoX), or explore the latest [research and blogs](https://www.legox.net/).
 
 </div>
 
