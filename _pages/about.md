@@ -13,7 +13,7 @@ profile:
     <p><a href="mailto:tcftrees@gmail.com">tcftrees@gmail.com</a></p>
 
 selected_papers: false
-social: true
+social: false
 redirect_from:
   - /about/
   - /about.html
@@ -23,7 +23,7 @@ latest_posts:
   enabled: false
 ---
 
-## Chaofan Tao (陶超凡)
+## Biography
 
 I am a researcher and developer at Huawei Foundation Model Lab. I received my PhD from [The University of Hong Kong](https://www.hku.hk/), advised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/), as a member of the [MMLAB@HKU](https://mmlab.hk/) family. I completed my bachelor's degree at the Yingcai Honors College of the University of Electronic Science and Technology of China. Previously, I interned at Sea AI Lab, Amazon Web Services, Huawei, and SenseTime.
 
@@ -42,11 +42,15 @@ I am looking for **research/engineering interns** and **collaborators** who are 
 
 ### Links
 
-- [GitHub](https://github.com/ChaofanTao)
-- [Hugging Face](https://huggingface.co/tcftrees)
-- [Google Scholar](https://scholar.google.com/citations?user=gjmfLroAAAAJ)
-- [Email](mailto:tcftrees@gmail.com)
-- [Website](https://chaofantao.top/)
+<div class="about-links" aria-label="Contact and profile links">
+  <a class="about-link about-link-email" href="mailto:tcftrees@gmail.com" title="Email" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+  <a class="about-link about-link-github" href="https://github.com/ChaofanTao" title="GitHub" aria-label="GitHub" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+  <a class="about-link about-link-scholar" href="https://scholar.google.com/citations?user=gjmfLroAAAAJ" title="Google Scholar" aria-label="Google Scholar" rel="external nofollow noopener" target="_blank"><i class="ai ai-google-scholar" aria-hidden="true"></i></a>
+  <a class="about-link about-link-image" href="https://huggingface.co/tcftrees" title="Hugging Face" aria-label="Hugging Face" rel="external nofollow noopener" target="_blank"><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="" aria-hidden="true"></a>
+  <a class="about-link about-link-image" href="https://www.legox.net/" title="LegoX" aria-label="LegoX" rel="external nofollow noopener" target="_blank"><img src="https://www.legox.net/logo/legox-parallel-pipeline.svg" alt="" aria-hidden="true"></a>
+</div>
+
+<p class="about-links-note">For research, engineering, collaboration, and LegoX inquiries, email me directly.</p>
 
 ## Publications (2022+)
 
@@ -157,7 +161,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
 
 </details>
 
-<details markdown="1">
+<details open markdown="1">
 <summary><strong>2) Efficient ML</strong></summary>
 
 - **Title:** <span style="color: #92400e;">ATTS: Asynchronous Test-Time Scaling via Conformal Prediction</span>  

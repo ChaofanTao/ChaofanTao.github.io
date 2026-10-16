@@ -1,16 +1,48 @@
 <style>
-  .contact-icons a {
+  .about-links {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin: 0.75rem 0 0.45rem;
+  }
+
+  .about-link {
+    box-sizing: border-box;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    vertical-align: middle;
+    width: 2rem;
+    height: 2rem;
+    line-height: 1;
+    text-decoration: none;
   }
 
-  .contact-icons a img,
-  .contact-icons a svg {
+  .about-link i {
     display: block;
-    width: 1em;
-    height: 1em;
+    font-size: 1.65rem;
+    line-height: 1;
+  }
+
+  .about-link-email {
+    color: #d93025;
+  }
+
+  .about-link-github {
+    color: #111111;
+  }
+
+  .about-link-scholar {
+    color: #4285f4;
+  }
+
+  .about-link-image img {
+    display: block;
+    width: 1.75rem;
+    height: 1.75rem;
     object-fit: contain;
+  }
+
+  .about-links-note {
+    margin-top: 0.35rem;
   }
 </style>
