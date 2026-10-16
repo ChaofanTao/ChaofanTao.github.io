@@ -8,7 +8,6 @@ profile:
   image: prof_pic.png
   image_circular: false
   more_info: >
-    <p>Frontier Agentic Intelligence</p>
     <p>Email: tcftrees@gmail.com</p>
 
 selected_papers: false
@@ -32,6 +31,77 @@ latest_posts:
     font-size: clamp(1.5rem, 7.4vw, 2.5rem);
     line-height: 1.2;
   }
+
+  /* Section rhythm. The theme zeroes every block's top margin and leaves paragraph
+     bottom margins at 16px, so a paragraph was separated from the following heading by
+     only 16px -- the same as the gap between two paragraphs. Restoring a larger top
+     margin on headings gives each section a visible break, and the space scales down on
+     narrow screens rather than being fixed. */
+  .post article > .clearfix > h2 {
+    margin-top: 2.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .post article > .clearfix > h3 {
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  /* A heading directly after another heading does not need the full gap. */
+  .post article > .clearfix > h2 + h3 {
+    margin-top: 1rem;
+  }
+
+  .post article > .clearfix > p {
+    margin-bottom: 1.1rem;
+  }
+
+  .post article > .clearfix > p + p {
+    margin-top: 1.35rem; /* a bit more air between paragraphs than inside one */
+  }
+
+  .post article > .clearfix > ul {
+    margin-top: 0.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .post article > .clearfix > ul li {
+    margin-bottom: 0.55rem;
+  }
+
+  .post article > .clearfix > ul li:last-child {
+    margin-bottom: 0;
+  }
+
+  /* The profile sidebar's contact line: make the address stand out as a link rather
+     than reading as another line of body text. */
+  .profile .more-info a,
+  .profile .more-info a:visited {
+    color: var(--global-theme-color, #b509ac);
+    text-decoration: none;
+  }
+
+  .profile .more-info a:hover,
+  .profile .more-info a:focus-visible {
+    color: var(--global-hover-color, #b509ac);
+    text-decoration: underline;
+  }
+
+  @media (max-width: 576px) {
+    .post article > .clearfix > h2 {
+      margin-top: 2rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .post article > .clearfix > h3 {
+      margin-top: 1.75rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .post article > .clearfix > p + p {
+      margin-top: 1.1rem;
+    }
+  }
 </style>
 
 ## Biography
@@ -40,9 +110,7 @@ I am a researcher and developer at Huawei Foundation Model Lab, working on **age
 
 I received my PhD from [The University of Hong Kong](https://www.hku.hk/), advised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/), as a member of the [MMLAB@HKU](https://mmlab.hk/) family. I completed my bachelor's degree at the Yingcai Honors College of the University of Electronic Science and Technology of China. Previously, I interned at Sea AI Lab, Amazon Web Services, Huawei, and SenseTime.
 
-I work across the algorithm and infrastructure sides of large models, because I think **a strong model researcher has to understand both**. On the systems side, [**AnchorTP**](https://arxiv.org/abs/2511.11617) makes LLM inference resilient: elastic tensor parallelism plus a GPU-resident daemon preserve parameters and KV cache, so serving recovers from a single-GPU failure without losing state. [**D2O**](https://arxiv.org/abs/2406.13035) compresses the KV cache dynamically at layer and token level without fine-tuning, and **UNComp** (EMNLP 2025) drives the same goal from an uncertainty-aware angle using truncated matrix entropy — together they cut long-context memory while raising throughput. Earlier, [**structured pruning**](https://doi.org/10.18653/v1/2023.findings-acl.692) and the [**ACL 2022 quantization**](https://arxiv.org/abs/2203.10705) work produced smaller, faster models, the latter at 13–14× compression at near-full precision. [**Scaling laws with vocabulary**](https://arxiv.org/abs/2407.13623) then ties tokenizer design to compute-optimal training, so the infrastructure budget and the modeling choice are decided together rather than in sequence.
-
-On the data side, [**PerSyn**](https://arxiv.org/abs/2510.10925) routes each prompt to its best teacher, and [**MMFormalizer**](https://arxiv.org/abs/2601.03017) formalizes multimodal problems — both aimed at synthesizing agentic training data that is actually worth training on.
+I work across the algorithm, data, and infrastructure sides of large models, because I think **a strong model researcher has to understand all three**. My recent work centres on **agentic data and environments** — synthesizing high-quality interactive data and the executable settings agents need to be trained and evaluated in — alongside **inference and efficiency work** that makes long-context serving cheaper and more reliable. The goal in each case is the same: a modelling idea is only as good as the data and the systems that carry it.
 
 I am actively involved in [**LegoX**](https://www.legox.net/), an open-source collection advancing frontier agentic intelligence across agentic data pipelines, training frameworks, evaluation benchmarks, and foundation models. Explore the work at [legox.net](https://www.legox.net/) or the [LegoX GitHub organization](https://github.com/LegoX).
 
@@ -99,23 +167,25 @@ I am looking for **research/engineering interns** and **collaborators** who are 
 <style>
   .about-links-card {
     box-sizing: border-box;
-    max-width: 40rem;
-    margin: 1rem 0 0.75rem;
-    padding: 1.1rem 1.1rem 1rem;
+    width: 100%; /* match the content column rather than sitting narrower than its siblings */
+    margin: 1.25rem 0 1.5rem;
+    padding: 1.4rem 1.5rem 1.3rem;
     border: 1px solid var(--global-divider-color, rgba(0, 0, 0, 0.1));
-    border-radius: 0.6rem;
+    border-radius: 0.75rem;
     background: var(--global-card-bg-color, transparent);
   }
 
   .about-links {
     --link-box: clamp(3rem, 14vw, 3.75rem);
     display: grid;
-    /* Five equal columns, so the icons stay evenly spaced and on one row at 320px. */
+    /* Five equal columns, so the icons stay evenly spaced and on one row at 320px.
+       Capped and centred so a wide card does not spread five icons thinly. */
     grid-template-columns: repeat(5, minmax(0, 1fr));
     justify-items: center;
     align-items: center;
     gap: 0.4rem;
-    margin: 0;
+    max-width: 27rem;
+    margin: 0 auto;
   }
 
   .about-link {
