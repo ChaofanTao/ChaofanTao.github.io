@@ -9,7 +9,7 @@ profile:
   image_circular: false
   more_info: >
     <p>Frontier Agentic Intelligence</p>
-    <p><a href="mailto:tcftrees@gmail.com">tcftrees@gmail.com</a></p>
+    <p>Email: tcftrees@gmail.com</p>
 
 selected_papers: false
 social: false
@@ -22,18 +22,35 @@ latest_posts:
   enabled: false
 ---
 
+<style>
+  /* The page title renders at a fixed 40px, at which "Chaofan Tao (陶超凡)" measures
+     378.6px -- wider than the 345px of content on a 375px phone and the 290px on a
+     320px one, so it wrapped to two lines on every small screen. Scaling with the
+     viewport keeps it on one line: 30px measures 284.0px, which fits 320px with room,
+     while the 2.5rem cap preserves the original size on desktop. */
+  .post-header .post-title {
+    font-size: clamp(1.5rem, 7.4vw, 2.5rem);
+    line-height: 1.2;
+  }
+</style>
+
 ## Biography
 
 I am a researcher and developer at Huawei Foundation Model Lab, working on **agentic intelligence** and **efficient machine learning**. My paper [**Compression of Generative Pre-trained Language Models via Quantization**](https://arxiv.org/abs/2203.10705) received the **ACL 2022 Outstanding Paper Award**, and I have publications at **ICLR, ICML, NeurIPS, ACL, EMNLP, COLM, and ECCV**, as well as related journals.
 
 I received my PhD from [The University of Hong Kong](https://www.hku.hk/), advised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/), as a member of the [MMLAB@HKU](https://mmlab.hk/) family. I completed my bachelor's degree at the Yingcai Honors College of the University of Electronic Science and Technology of China. Previously, I interned at Sea AI Lab, Amazon Web Services, Huawei, and SenseTime.
 
+I work across the algorithm and infrastructure sides of large models, because I think **a strong model researcher has to understand both**. On the systems side, [**AnchorTP**](https://arxiv.org/abs/2511.11617) makes LLM inference resilient: elastic tensor parallelism plus a GPU-resident daemon preserve parameters and KV cache, so serving recovers from a single-GPU failure without losing state. [**D2O**](https://arxiv.org/abs/2406.13035) compresses the KV cache dynamically at layer and token level without fine-tuning, and **UNComp** (EMNLP 2025) drives the same goal from an uncertainty-aware angle using truncated matrix entropy — together they cut long-context memory while raising throughput. Earlier, [**structured pruning**](https://doi.org/10.18653/v1/2023.findings-acl.692) and the [**ACL 2022 quantization**](https://arxiv.org/abs/2203.10705) work produced smaller, faster models, the latter at 13–14× compression at near-full precision. [**Scaling laws with vocabulary**](https://arxiv.org/abs/2407.13623) then ties tokenizer design to compute-optimal training, so the infrastructure budget and the modeling choice are decided together rather than in sequence.
+
+On the data side, [**PerSyn**](https://arxiv.org/abs/2510.10925) routes each prompt to its best teacher, and [**MMFormalizer**](https://arxiv.org/abs/2601.03017) formalizes multimodal problems — both aimed at synthesizing agentic training data that is actually worth training on.
+
 I am actively involved in [**LegoX**](https://www.legox.net/), an open-source collection advancing frontier agentic intelligence across agentic data pipelines, training frameworks, evaluation benchmarks, and foundation models. Explore the work at [legox.net](https://www.legox.net/) or the [LegoX GitHub organization](https://github.com/LegoX).
 
 ### Research interests
 
 - **Agentic coding & reasoning:** long-context understanding, code reasoning and execution semantics, agentic interaction and tool utilization, reliability and verification, and multimodal adaptation.
-- **Efficient ML:** KV-cache efficiency, RL efficiency, data distillation, pruning, quantization, and distillation.
+- **Efficient ML & AI infrastructure:** KV-cache efficiency, inference serving and resilience, quantization, pruning, and distillation.
+- **Data synthesis:** teacher routing, distillation pipelines, and multimodal formalization for agentic training data.
 
 ### Hiring and collaboration
 
