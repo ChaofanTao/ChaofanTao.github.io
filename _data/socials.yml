@@ -1,9 +1,12 @@
-# Personal links shown by al-folio.
-cv_pdf: /files/main.pdf
+# Social links shown at the bottom of the About page.
 email: tcftrees@gmail.com
-rss_icon: true
+github_username: ChaofanTao
 scholar_userid: gjmfLroAAAAJ
-custom_social:
+huggingface:
+  logo: https://huggingface.co/front/assets/huggingface_logo-noborder.svg
+  title: Hugging Face
+  url: https://huggingface.co/tcftrees
+legox:
   logo: https://www.legox.net/logo/legox-parallel-pipeline.svg
   title: LegoX
   url: https://www.legox.net/
