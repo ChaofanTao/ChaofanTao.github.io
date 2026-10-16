@@ -1,12 +1,12 @@
 ---
-layout: archive
-title: "CV"
+layout: cv
 permalink: /cv/
-author_profile: true
+title: CV
+nav: true
+nav_order: 3
+cv_pdf: /files/main.pdf
+cv_format: jsonresume
+description: Curriculum vitae and selected experience.
 redirect_from:
-  - /resume
+  - /CV/
 ---
-
-{% include base_path %}
-
-Coming soon...
