@@ -472,7 +472,7 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
 </details>
 
 <details open markdown="1">
-<summary><strong>2) Efficient ML</strong></summary>
+<summary><strong>2) Efficient ML & AI Infra</strong></summary>
 
 - **Title:** <span style="color: #92400e;">ATTS: Asynchronous Test-Time Scaling via Conformal Prediction</span>  
   **Authors:** Jing Xiong, Qiujiang Chen, Fanghua Ye, Zhongwei Wan, Chuanyang Zheng, Chenyang Zhao, Hui Shen, Alexander Hanbo Li, Chaofan Tao, Haochen Tan, Haoli Bai, Lifeng Shang, Lingpeng Kong, Ngai Wong  
