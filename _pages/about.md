@@ -106,19 +106,11 @@ latest_posts:
 
 ## Biography
 
-I am a researcher and developer at Huawei Foundation Model Lab, working on **agentic intelligence** and **efficient machine learning**. My paper [**Compression of Generative Pre-trained Language Models via Quantization**](https://arxiv.org/abs/2203.10705) received the **ACL 2022 Outstanding Paper Award**, and I have publications at **ICLR, ICML, NeurIPS, ACL, EMNLP, COLM, and ECCV**, as well as related journals.
+I am a researcher and developer at Huawei Foundation Model Lab, working on **agentic intelligence** and **efficient machine learning**. My paper [**Compression of Generative Pre-trained Language Models via Quantization**](https://arxiv.org/abs/2203.10705) received the **ACL 2022 Outstanding Paper Award**, and I have publications at **ICLR, ICML, NeurIPS, ACL, EMNLP, COLM, and ECCV**, as well as related journals. My research spans **model compression, KV-cache efficiency, inference serving, and AI infrastructure** — work that makes large models faster, cheaper, and more reliable in production.
 
 I received my PhD from [The University of Hong Kong](https://www.hku.hk/), advised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/), as a member of the [MMLAB@HKU](https://mmlab.hk/) family. I completed my bachelor's degree at the Yingcai Honors College of the University of Electronic Science and Technology of China. Previously, I interned at Sea AI Lab, Amazon Web Services, Huawei, and SenseTime.
 
-I work across the algorithm, data, and infrastructure sides of large models, because I think **a strong model researcher has to understand all three**. My recent work centres on **agentic data and environments** — synthesizing high-quality interactive data and the executable settings agents need to be trained and evaluated in — alongside **inference and efficiency work** that makes long-context serving cheaper and more reliable. The goal in each case is the same: a modelling idea is only as good as the data and the systems that carry it.
-
-I am actively involved in [**LegoX**](https://www.legox.net/), an open-source collection advancing frontier agentic intelligence across agentic data pipelines, training frameworks, evaluation benchmarks, and foundation models. Explore the work at [legox.net](https://www.legox.net/) or the [LegoX GitHub organization](https://github.com/LegoX).
-
-### Research interests
-
-- **Agentic coding & reasoning:** long-context understanding, code reasoning and execution semantics, agentic interaction and tool utilization, reliability and verification, and multimodal adaptation.
-- **Efficient ML & AI infrastructure:** KV-cache efficiency, inference serving and resilience, quantization, pruning, and distillation.
-- **Data synthesis:** teacher routing, distillation pipelines, and multimodal formalization for agentic training data.
+I am actively involved in [**LegoX**](https://www.legox.net/), an open-source collection advancing frontier agentic intelligence across agentic data pipelines, training frameworks, evaluation benchmarks, and foundation models. Recent work includes [**LegoFlow**](https://www.legox.net/blog/legoflow/), which organizes the end-to-end coding data pipeline as modular workflow blocks that agents can orchestrate; [**Lego-RL**](https://www.legox.net/blog/lego-rl/), enabling RL training directly inside production harnesses like OpenHands and Claude Code; [**Terminal-Lego**](https://www.legox.net/blog/terminal-lego/), providing 15k+ verified terminal tasks where visible reasoning loops outperform opaque strong-model trajectories; and [**SWE-Lego**](https://www.legox.net/blog/swe-lego/), achieving state-of-the-art software issue resolution through curriculum learning and test-time verification over 32k real and synthetic problems. Explore the work at [legox.net](https://www.legox.net/) or the [LegoX GitHub organization](https://github.com/LegoX).
 
 ### Hiring and collaboration
 
