@@ -87,6 +87,21 @@ latest_posts:
     text-decoration: underline;
   }
 
+  /* LegoX project links in the biography: use theme color so they read as links
+     rather than plain text. */
+  .post article ul li a[href*="legox.net/blog"],
+  .post article ul li a[href*="legox.net/blog"]:visited {
+    color: var(--global-theme-color, #b509ac);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .post article ul li a[href*="legox.net/blog"]:hover,
+  .post article ul li a[href*="legox.net/blog"]:focus-visible {
+    color: var(--global-hover-color, #b509ac);
+    text-decoration: underline;
+  }
+
   @media (max-width: 576px) {
     .post article > .clearfix > h2 {
       margin-top: 2rem;
@@ -106,11 +121,18 @@ latest_posts:
 
 ## Biography
 
-I am a researcher and developer at Huawei Foundation Model Lab, working on **agentic intelligence** and **efficient machine learning**. My paper [**Compression of Generative Pre-trained Language Models via Quantization**](https://arxiv.org/abs/2203.10705) received the **ACL 2022 Outstanding Paper Award**, and I have publications at **ICLR, ICML, NeurIPS, ACL, EMNLP, COLM, and ECCV**, as well as related journals. My research spans **model compression, KV-cache efficiency, inference serving, and AI infrastructure** — work that makes large models faster, cheaper, and more reliable in production.
+I am a researcher and developer at Huawei Foundation Model Lab, working on **agentic intelligence** and **AI infrastructure**. My paper [**Compression of Generative Pre-trained Language Models via Quantization**](https://arxiv.org/abs/2203.10705) received the **ACL 2022 Outstanding Paper Award**, and I have publications at **ICLR, ICML, NeurIPS, ACL, EMNLP, COLM, and ECCV**, as well as related journals.
 
 I received my PhD from [The University of Hong Kong](https://www.hku.hk/), advised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/), as a member of the [MMLAB@HKU](https://mmlab.hk/) family. I completed my bachelor's degree at the Yingcai Honors College of the University of Electronic Science and Technology of China. Previously, I interned at Sea AI Lab, Amazon Web Services, Huawei, and SenseTime.
 
-I am actively involved in [**LegoX**](https://www.legox.net/), an open-source collection advancing frontier agentic intelligence across agentic data pipelines, training frameworks, evaluation benchmarks, and foundation models. Recent work includes [**LegoFlow**](https://www.legox.net/blog/legoflow/), which organizes the end-to-end coding data pipeline as modular workflow blocks that agents can orchestrate; [**Lego-RL**](https://www.legox.net/blog/lego-rl/), enabling RL training directly inside production harnesses like OpenHands and Claude Code; [**Terminal-Lego**](https://www.legox.net/blog/terminal-lego/), providing 15k+ verified terminal tasks where visible reasoning loops outperform opaque strong-model trajectories; and [**SWE-Lego**](https://www.legox.net/blog/swe-lego/), achieving state-of-the-art software issue resolution through curriculum learning and test-time verification over 32k real and synthetic problems. Explore the work at [legox.net](https://www.legox.net/) or the [LegoX GitHub organization](https://github.com/LegoX).
+I am actively involved in [**LegoX**](https://www.legox.net/), an open-source collection advancing frontier agentic intelligence across agentic data pipelines, training frameworks, evaluation benchmarks, and foundation models. Recent work includes:
+
+- [**SWE-Lego**](https://www.legox.net/blog/swe-lego/): supervised fine-tuning with error masking and curriculum learning on 32k task instances, achieving 52.6% Pass@1 and 58.8% with test-time scaling on SWE-bench Verified.
+- [**Lego-RL**](https://www.legox.net/blog/lego-rl/): reinforcement learning training directly inside unmodified coding harnesses (OpenHands, Claude Code, OpenCode) via in-process proxying and MoE routing replay, reaching 66.6–70.4% on SWE-bench Verified in single training runs.
+- [**Terminal-Lego**](https://www.legox.net/blog/terminal-lego/): 15k+ executable terminal tasks demonstrating that environment-grounded trajectories with explicit observe-act-verify cycles outperform imitation of stronger but less grounded teachers, achieving comparable performance with 30× fewer examples.
+- [**LegoFlow**](https://www.legox.net/blog/legoflow/): an agent-orchestrated code data engineering framework modularizing the full pipeline as composable blocks, driving recursive self-improvement from 7.6% to 64.4% on SWE-bench Verified across two iterations.
+
+Explore the work at [legox.net](https://www.legox.net/) or the [LegoX GitHub organization](https://github.com/LegoX).
 
 ### Hiring and collaboration
 
