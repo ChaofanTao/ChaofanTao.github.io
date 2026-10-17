@@ -127,10 +127,10 @@ I received my PhD from [The University of Hong Kong](https://www.hku.hk/), advis
 
 I am actively involved in [**LegoX**](https://www.legox.net/), an open-source collection advancing frontier agentic intelligence across agentic data pipelines, training frameworks, evaluation benchmarks, and foundation models. Recent work includes:
 
-- [**LegoFlow**](https://www.legox.net/blog/legoflow/): an agent-orchestrated code data engineering framework modularizing the full pipeline as composable blocks, driving recursive self-improvement from 7.6% to 64.4% on SWE-bench Verified across two iterations.
-- [**Lego-RL**](https://www.legox.net/blog/lego-rl/): reinforcement learning training directly inside unmodified coding harnesses (OpenHands, Claude Code, OpenCode) via in-process proxying and MoE routing replay, reaching 66.6–70.4% on SWE-bench Verified in single training runs.
-- [**Terminal-Lego**](https://www.legox.net/blog/terminal-lego/): 15k+ executable terminal tasks demonstrating that environment-grounded trajectories with explicit observe-act-verify cycles outperform imitation of stronger but less grounded teachers, achieving comparable performance with 30× fewer examples.
-- [**SWE-Lego**](https://www.legox.net/blog/swe-lego/): supervised fine-tuning with error masking and curriculum learning on 32k task instances, achieving 52.6% Pass@1 and 58.8% with test-time scaling on SWE-bench Verified.
+- [**LegoFlow**](https://www.legox.net/blog/legoflow/): an agent-orchestrated code data engineering framework that modularizes the full pipeline — from repository discovery to evaluation — into composable blocks agents invoke directly.
+- [**Lego-RL**](https://www.legox.net/blog/lego-rl/): reinforcement learning training inside unmodified coding harnesses (OpenHands, Claude Code, OpenCode), preserving token-level generation fidelity via in-process proxying and MoE routing replay.
+- [**Terminal-Lego**](https://www.legox.net/blog/terminal-lego/): 15k+ executable terminal tasks showing that environment-grounded trajectories with explicit observe-act-verify cycles outperform imitation of stronger but less grounded teachers, with 30× fewer training examples.
+- [**SWE-Lego**](https://www.legox.net/blog/swe-lego/): supervised fine-tuning for software issue resolution, combining error masking and curriculum learning over 32k real and synthetic task instances.
 
 Explore the work at [legox.net](https://www.legox.net/) or the [LegoX GitHub organization](https://github.com/LegoX).
 
