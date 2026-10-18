@@ -1,0 +1,12 @@
+# Social links shown at the bottom of the About page.
+email: tcftrees@gmail.com
+github_username: ChaofanTao
+scholar_userid: gjmfLroAAAAJ
+huggingface:
+  logo: https://huggingface.co/front/assets/huggingface_logo-noborder.svg
+  title: Hugging Face
+  url: https://huggingface.co/tcftrees
+legox:
+  logo: https://www.legox.net/logo/legox-parallel-pipeline.svg
+  title: LegoX
+  url: https://www.legox.net/

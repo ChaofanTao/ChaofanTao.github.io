@@ -1,36 +1,372 @@
----  
-permalink: /  
-title: ""  
-excerpt: "About me"  
-author_profile: true  
-redirect_from:  
-  - /about/  
-  - /about.html  
----  
+---
+layout: about
+title: about
+permalink: /
 
+profile:
+  align: right
+  image: prof_pic.png
+  image_circular: false
+  more_info: >
+    <p>Email: <a href="mailto:tcftrees@gmail.com">tcftrees@gmail.com</a></p>
 
-## Chaofan Tao (陶超凡)
-I am a researcher and developer at Huawei Foundation Model Lab. I got my PhD degree from The University of Hong Kong (HKU), advised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/), as a member of the [MMLAB@HKU](https://mmlab.hk/) family.  I completed my Bachelor’s degree from Yingcai Honors College at University of Electronic Science and Technology of China. Previously, I interned at Sea AI Lab (Singapore), Amazon Web Services (Bellevue), Huawei (Shenzhen), and SenseTime (Shanghai).
+selected_papers: false
+social: false
+redirect_from:
+  - /about/
+  - /about.html
+announcements:
+  enabled: false
+latest_posts:
+  enabled: false
+---
 
-## Research Interests
-- **Agentic coding & reasoning**: Long-Context Understanding,  Code Reasoning and Execution Semantics, Agentic Interaction and Tool Utilization， Reliability and Verification, Multimodal Adaptation.
-- **Efficient ML**:  KV-cache Efficiency, RL Efficiency， Data Distillation，Pruning/Quantization/Distillation.
+<style>
+  /* The page title renders at a fixed 40px, at which "Chaofan Tao (陶超凡)" measures
+     378.6px -- wider than the 345px of content on a 375px phone and the 290px on a
+     320px one, so it wrapped to two lines on every small screen. Scaling with the
+     viewport keeps it on one line: 30px measures 284.0px, which fits 320px with room,
+     while the 2.5rem cap preserves the original size on desktop. */
+  .post-header .post-title {
+    font-size: clamp(1.5rem, 7.4vw, 2.5rem);
+    line-height: 1.2;
+  }
 
-## Links
-- **Google Scholar**: [publications](https://scholar.google.com/citations?hl=en&view_op=list_works&user=gjmfLroAAAAJ)
-- **Website**: `http://chaofantao.top/`
-- **Email**: `tcftrees AT gmail DOT com`
+  /* Section rhythm. The theme zeroes every block's top margin and leaves paragraph
+     bottom margins at 16px, so a paragraph was separated from the following heading by
+     only 16px -- the same as the gap between two paragraphs. Restoring a larger top
+     margin on headings gives each section a visible break, and the space scales down on
+     narrow screens rather than being fixed. */
+  .post article > .clearfix > h2 {
+    margin-top: 2.75rem;
+    margin-bottom: 1rem;
+  }
 
-## Hiring (interns / collaborators)
-I’m looking for **research/engineering interns** and **collaborators** who are excited about AI.
+  .post article > .clearfix > h3 {
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+  }
 
-- **Primary need**: agentic coding & reasoning (verifiers, CI-based evaluation, long-context codebase navigation, retrieval/tooling, .etc).
-- **Also welcome**: efficient LLM training/inference and multimodal learning.
+  /* A heading directly after another heading does not need the full gap. */
+  .post article > .clearfix > h2 + h3 {
+    margin-top: 1rem;
+  }
 
-If you’d like to join or collaborate, email me with **[Interest] + your profile + 1–2 representative links** (paper / GitHub / blog / demo).
+  .post article > .clearfix > p {
+    margin-bottom: 1.1rem;
+  }
+
+  .post article > .clearfix > p + p {
+    margin-top: 1.35rem; /* a bit more air between paragraphs than inside one */
+  }
+
+  .post article > .clearfix > ul {
+    margin-top: 0.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .post article > .clearfix > ul li {
+    margin-bottom: 0.55rem;
+  }
+
+  .post article > .clearfix > ul li:last-child {
+    margin-bottom: 0;
+  }
+
+  /* The profile sidebar's contact line: make the address stand out as a link rather
+     than reading as another line of body text. */
+  .profile .more-info a,
+  .profile .more-info a:visited {
+    color: var(--global-theme-color, #b509ac);
+    text-decoration: none;
+  }
+
+  .profile .more-info a:hover,
+  .profile .more-info a:focus-visible {
+    color: var(--global-hover-color, #b509ac);
+    text-decoration: underline;
+  }
+
+  /* LegoX project links in the biography: use theme color so they read as links
+     rather than plain text. */
+  .post article ul li a[href*="legox.net/blog"],
+  .post article ul li a[href*="legox.net/blog"]:visited {
+    color: var(--global-theme-color, #b509ac);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .post article ul li a[href*="legox.net/blog"]:hover,
+  .post article ul li a[href*="legox.net/blog"]:focus-visible {
+    color: var(--global-hover-color, #b509ac);
+    text-decoration: underline;
+  }
+
+  @media (max-width: 576px) {
+    .post article > .clearfix > h2 {
+      margin-top: 2rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .post article > .clearfix > h3 {
+      margin-top: 1.75rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .post article > .clearfix > p + p {
+      margin-top: 1.1rem;
+    }
+  }
+</style>
+
+## Biography
+
+I am a researcher and developer at Huawei Foundation Model Lab, working on **agentic intelligence** and **AI infrastructure**. My paper [**Compression of Generative Pre-trained Language Models via Quantization**](https://arxiv.org/abs/2203.10705) received the **ACL 2022 Outstanding Paper Award**, and I have publications at **ICLR, ICML, NeurIPS, ACL, EMNLP, COLM, and ECCV**, as well as related journals.
+
+I received my PhD from [The University of Hong Kong](https://www.hku.hk/), advised by [Prof. Ngai Wong](https://www.eee.hku.hk/~nwong/) and [Prof. Ping Luo](http://luoping.me/), as a member of the [MMLAB@HKU](https://mmlab.hk/) family. I completed my bachelor's degree at the Yingcai Honors College of the University of Electronic Science and Technology of China. Previously, I interned at Sea AI Lab, Amazon Web Services, Huawei, and SenseTime.
+
+I am actively involved in [**LegoX**](https://www.legox.net/), an open-source collection advancing frontier agentic intelligence across agentic data pipelines, training frameworks, evaluation benchmarks, and foundation models. Recent work includes:
+
+- [**LegoFlow**](https://www.legox.net/blog/legoflow/): an agent-orchestrated code data engineering framework that modularizes the full pipeline — from repository discovery to evaluation — into composable blocks agents invoke directly.
+- [**Lego-RL**](https://www.legox.net/blog/lego-rl/): reinforcement learning training inside unmodified coding harnesses (OpenHands, Claude Code, OpenCode), preserving token-level generation fidelity via in-process proxying and MoE routing replay.
+- [**Terminal-Lego**](https://www.legox.net/blog/terminal-lego/): 15k+ executable terminal tasks showing that environment-grounded trajectories with explicit observe-act-verify cycles outperform imitation of stronger but less grounded teachers, with 30× fewer training examples.
+- [**SWE-Lego**](https://www.legox.net/blog/swe-lego/): supervised fine-tuning for software issue resolution, combining error masking and curriculum learning over 32k real and synthetic task instances.
+
+Explore the work at [legox.net](https://www.legox.net/) or the [LegoX GitHub organization](https://github.com/LegoX).
+
+### Hiring and collaboration
+
+I am looking for **research/engineering interns** and **collaborators** who are excited about AI. Please email me with **[Interest] + your profile + 1–2 representative links** (paper, GitHub, blog, or demo).
+
+### Links
+
+<!--
+  Icon sizing note.
+
+  al-folio v1 renders _includes/head.liquid from the al_folio_core gem, which never
+  included _includes/head/custom.html. The style block lives on this page instead,
+  which is reliably rendered; a _includes/ override would also work but would shadow a
+  gem-owned file and drift on every upgrade.
+
+  These five icons come from three different sources whose artwork fills its box by a
+  different fraction, so one shared font-size/box CANNOT make them look the same size.
+  Ink (visible artwork) as a fraction of the icon's own em box / SVG canvas:
+
+    Email         fa-envelope          ink  512.0 x 384.0 / 512 upm   -> h 0.7500
+    GitHub        fa-github            ink  496.0 x 483.6 / 512 upm   -> h 0.9446
+    Scholar       ai-google-scholar    ink  344.0 x 384.0 / 512 upm   -> h 0.7500
+    Hugging Face  remote svg 95x88     ink   88.0 x  81.3 / 88        -> h 0.9236
+    LegoX         remote svg 100x100   ink   64.0 x  60.0 / 100       -> h 0.6000
+
+  What matters visually is the ink HEIGHT (a logo and a letterform are not comparable by
+  area), so every icon is driven from one --link-ink variable and each factor below
+  converts that target ink height into the value its own source needs:
+
+    font icons   font-size = ink / (ink fraction of em)     -> 1.3333, 1.0585 of ink
+    <img> icons  box size  = ink / (ink fraction of canvas) -> 1.0827, 1.6667 of ink
+
+  The --link-box variable is the square each icon is centred in, and every factor is
+  expressed as a fraction of it so the whole row keeps its proportions at any width:
+
+    --link-box: clamp(3rem, 14vw, 3.75rem)   48px floor, 60px cap
+    font icons: 0.8    x box   (glyph ink 0.7500 of em  -> 0.6 x box)
+    GitHub:     0.6352 x box   (glyph ink 0.9446 of em  -> 0.6 x box)
+    HF img:     0.7016 x box   (canvas ink 81.28 / 95   -> 0.6 x box)
+    LegoX img:  1.0    x box   (canvas ink 60 / 100     -> 0.6 x box)
+
+  So all five land on 0.6 x --link-box: 36px ink at the 60px cap, 28.8px at the 48px
+  floor. A 5-column grid keeps them on ONE row down to 320px, which a flex row with a
+  fixed gap could not (the old boxes were unequal, so their optical centres were uneven).
+-->
+<style>
+  .about-links-card {
+    box-sizing: border-box;
+    width: 100%; /* match the content column rather than sitting narrower than its siblings */
+    margin: 1.25rem 0 1.5rem;
+    padding: 1.4rem 1.5rem 1.3rem;
+    border: 1px solid var(--global-divider-color, rgba(0, 0, 0, 0.1));
+    border-radius: 0.75rem;
+    background: var(--global-card-bg-color, transparent);
+  }
+
+  .about-links {
+    --link-box: clamp(3rem, 14vw, 3.75rem);
+    display: grid;
+    /* Five equal columns, so the icons stay evenly spaced and on one row at 320px.
+       Capped and centred so a wide card does not spread five icons thinly. */
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    justify-items: center;
+    align-items: center;
+    gap: 0.4rem;
+    max-width: 27rem;
+    margin: 0 auto;
+  }
+
+  .about-link {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* One uniform square per icon, so their optical centres are evenly spaced by the
+       grid. The artwork is sized INSIDE this box, never the box itself. */
+    width: var(--link-box);
+    height: var(--link-box);
+    border-radius: 0.4rem;
+    line-height: 1;
+    text-decoration: none;
+    transition:
+      transform 0.15s ease,
+      background-color 0.15s ease,
+      opacity 0.15s ease;
+  }
+
+  .about-link:hover,
+  .about-link:focus-visible {
+    transform: translateY(-2px);
+    background-color: var(--global-code-bg-color, rgba(0, 0, 0, 0.05));
+  }
+
+  /* Font icons: font-size decides ink height. 0.8 x box makes the glyph ink land on
+     0.6 x box, the same target the two images are sized to. */
+  .about-link i {
+    display: block;
+    font-size: calc(var(--link-box) * 0.8);
+    line-height: 1;
+    text-align: center;
+  }
+
+  /* Brand colours, kept in both themes: they are recognisable marks and each already
+     reads on either background. */
+  .about-link-email {
+    color: #d93025;
+  }
+
+  /* FA7 sets width: var(--fa-width, 1.25em) on the .fa* base rule, so the element is
+     wider than the glyph; the flex box centres it. The GitHub mark is monochrome and
+     must follow the theme, or it disappears against the dark background
+     (html[data-theme=dark] sets #e8e8e8 text on #1c1c1d). */
+  .about-link-github {
+    color: var(--global-text-color, #24292f);
+  }
+
+  /* fa-github ink is 0.9446 of em, so a smaller font-size than the other glyphs is
+     needed for the SAME ink height: 0.8 / 0.9446 x 0.75 = 0.6352. */
+  .about-link-github i {
+    font-size: calc(var(--link-box) * 0.6352);
+  }
+
+  /* Academicons ink is 0.6719 of em wide on a 0.75em advance, so the glyph reads
+     smaller than its font-size suggests; its ink height is 0.7500 of em like the
+     envelope, so it shares the 0.8 factor. */
+  .about-link-scholar {
+    color: #4285f4;
+  }
+
+  /* The two SVG icons are <img>, so object-fit: contain fits the WHOLE canvas into the
+     element and each file's own padding shrinks the visible artwork. Their sizes are
+     therefore per file rather than equal, so the ink still lands on 0.6 x box. */
+  .about-link-image img {
+    display: block;
+    object-fit: contain;
+  }
+
+  /* HuggingFace canvas 95x88 holds ink 88.0 x 81.3: 0.7016 x box yields 0.6 x box ink. */
+  .about-link-hf img {
+    width: calc(var(--link-box) * 0.7016);
+    height: calc(var(--link-box) * 0.7016);
+  }
+
+  /* LegoX canvas 100x100 holds ink 64 x 60 (artwork centred in a padded viewBox),
+     so a full-box square yields 0.6 x box ink. */
+  .about-link-legox img {
+    width: var(--link-box);
+    height: var(--link-box);
+  }
+
+  .about-links-note {
+    margin: 0.85rem 0 0;
+    line-height: 1.55;
+  }
+
+  .about-links-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 2.75rem; /* 44px: the iOS minimum comfortable tap target */
+    margin-top: 0.85rem;
+    padding: 0 1.1rem;
+    border-radius: 2rem;
+    background: var(--global-theme-color, #b509ac);
+    color: #ffffff;
+    font-weight: 500;
+    text-decoration: none;
+    transition:
+      opacity 0.15s ease,
+      transform 0.15s ease;
+  }
+
+  .about-links-cta:hover,
+  .about-links-cta:focus-visible {
+    opacity: 0.88;
+    transform: translateY(-1px);
+    color: #ffffff;
+  }
+
+  .about-links-cta i {
+    font-size: 1em;
+  }
+
+  @media (max-width: 576px) {
+    .profile.float-right {
+      float: none !important;
+      width: min(100%, 220px);
+      max-width: 220px;
+      margin: 0 auto 1.25rem;
+    }
+
+    .profile.float-right .more-info {
+      text-align: center;
+    }
+
+    .about-links-card {
+      padding: 1rem 0.75rem 0.9rem;
+    }
+
+    .about-links {
+      --link-box: clamp(3rem, 16vw, 3.75rem);
+      gap: 0.25rem;
+    }
+
+    .about-links-cta {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+</style>
+
+<div class="about-links-card" aria-label="Contact and profile links">
+  <div class="about-links">
+    <a class="about-link about-link-email" href="mailto:tcftrees@gmail.com" title="Email" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+    <a class="about-link about-link-github" href="https://github.com/ChaofanTao" title="GitHub" aria-label="GitHub" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+    <a class="about-link about-link-scholar" href="https://scholar.google.com/citations?user=gjmfLroAAAAJ" title="Google Scholar" aria-label="Google Scholar" rel="external nofollow noopener" target="_blank"><i class="ai ai-google-scholar" aria-hidden="true"></i></a>
+    <a class="about-link about-link-image about-link-hf" href="https://huggingface.co/tcftrees" title="Hugging Face" aria-label="Hugging Face" rel="external nofollow noopener" target="_blank"><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="" aria-hidden="true"></a>
+    <a class="about-link about-link-image about-link-legox" href="https://www.legox.net/" title="LegoX" aria-label="LegoX" rel="external nofollow noopener" target="_blank"><img src="https://www.legox.net/logo/legox-parallel-pipeline.svg" alt="" aria-hidden="true"></a>
+  </div>
+
+  <p class="about-links-note">
+    If any of this resonates, I'd love to hear from you — an email with a line about what you're working on and one or two links (a paper, GitHub, blog, or demo) is plenty. Research, engineering, collaboration, and LegoX inquiries all welcome.
+  </p>
+
+  <a class="about-links-cta" href="mailto:tcftrees@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i>Email me</a>
+</div>
 
 ## Publications (2022+)
+
 Below are my recent papers organized by topic. Each entry includes URL + bilingual TL;DR for quick scanning.
+
+
 
 <details open markdown="1">
 <summary><strong>1) Agentic Coding, Reasonings and Evaluation</strong></summary>
@@ -135,8 +471,8 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
 
 </details>
 
-<details markdown="1">
-<summary><strong>2) Efficient ML</strong></summary>
+<details open markdown="1">
+<summary><strong>2) Efficient ML & AI Infra</strong></summary>
 
 - **Title:** <span style="color: #92400e;">ATTS: Asynchronous Test-Time Scaling via Conformal Prediction</span>  
   **Authors:** Jing Xiong, Qiujiang Chen, Fanghua Ye, Zhongwei Wan, Chuanyang Zheng, Chenyang Zhao, Hui Shen, Alexander Hanbo Li, Chaofan Tao, Haochen Tan, Haoli Bai, Lifeng Shang, Lingpeng Kong, Ngai Wong  
@@ -221,7 +557,10 @@ Below are my recent papers organized by topic. Each entry includes URL + bilingu
 
 </details>
 
+
 ## Services
-**Reviewer Experience**  
-- **Conferences**: ICML, ICLR,  NeurIPS, ACL, EMNLP, ICCV, CVPR，ECCV 
-- **Journals**: T-NNLS  
+
+**Reviewer experience**
+
+- **Conferences:** ICLR, ICML, NeurIPS, ACL, EMNLP, COLM, ICCV, CVPR, ECCV
+- **Journals:** T-NNLS
