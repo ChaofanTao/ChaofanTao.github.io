@@ -1,0 +1,267 @@
+{
+  "publications": [
+    {
+      "title": "SWE-Lego: Pushing the Limits of Supervised Fine-tuning for Software Issue Resolving",
+      "authors": "Chaofan Tao, Jierun Chen, Yuxin Jiang, Kaiqi Kou, Shaowei Wang, Ruoyu Wang, Xiaohui Li, Sidi Yang, Yiming Du, Jianbo Dai, Zhiming Mao, Xinyu Wang, Lifeng Shang, Haoli Bai",
+      "short_authors": "Chaofan Tao, Jierun Chen, Yuxin Jiang, et al.",
+      "year": 2026,
+      "venue": "arXiv",
+      "url": "https://arxiv.org/abs/2601.01426",
+      "group": "agentic",
+      "abstract_en": "SWE-Lego presents a strong SFT-only recipe (new dataset + curriculum/error masking) and studies verifier-based test-time scaling, pushing open 8B/32B models to SOTA on SWE-bench Verified.",
+      "abstract_zh": "SWE-Lego提出仅用监督微调的软工代码智能体配方（真实+合成数据集+课程学习/错误掩码），并研究了软工场景的测试时扩展，将开源8B/32B模型在SWE-bench Verified上推至SOTA。",
+      "selected_order": 1,
+      "takeaway": "A supervised fine-tuning recipe for software issue resolution, combining verified data, error masking, and curriculum learning.",
+      "code": "https://github.com/SWE-Lego/SWE-Lego"
+    },
+    {
+      "title": "MMFormalizer: Multimodal Autoformalization in the Wild",
+      "authors": "Jing Xiong, Qi Han, Yunta Hsieh, Hui Shen, Huajian Xin, Chaofan Tao, Chenyang Zhao, Hengyuan Zhang, Taiqiang Wu, Zhen Zhang, Haochen Wang, Zhongwei Wan, Lingpeng Kong, Ngai Wong",
+      "short_authors": "Jing Xiong, Qi Han, …, Chaofan Tao, …",
+      "year": 2026,
+      "venue": "arXiv",
+      "url": "https://arxiv.org/abs/2601.03017",
+      "group": "agentic",
+      "abstract_en": "MMFormalizer extends autoformalization to multimodal math/physics by grounding visual entities and recursively composing axioms, enabling formal statements for real-world problems (including classical mechanics) on the PhyX-AF benchmark.",
+      "abstract_zh": "MMFormalizer将自动形式化扩展到多模态数学/物理领域，在PhyX-AF基准上实现真实世界问题（包括经典力学）的形式化表述。"
+    },
+    {
+      "title": "SwingArena: Competitive Programming Arena for Long-context GitHub Issue Solving",
+      "authors": "Wendong Xu, Jing Xiong, Chenyang Zhao, Qiujiang Chen, Haoran Wang, Hui Shen, Zhongwei Wan, Jianbo Dai, Taiqiang Wu, He Xiao, Chaofan Tao, Z Morley Mao, Ying Sheng, Zhijiang Guo, Hongxia Yang, Bei Yu, Lingpeng Kong, Quanquan Gu, Ngai Wong",
+      "short_authors": "Wendong Xu, Jing Xiong, …, Chaofan Tao, …",
+      "year": 2026,
+      "venue": "ICLR · Oral",
+      "url": "https://arxiv.org/abs/2505.23932",
+      "group": "agentic",
+      "abstract_en": "SwingArena is a CI-driven competitive benchmark where LLMs act as submitters and reviewers, paired with retrieval-augmented code generation to handle long-context, multi-language GitHub issue solving.",
+      "abstract_zh": "SwingArena是一个CI驱动的测评框架，让大语言模型扮演代码的提交者和审阅者角色，配合检索增强的代码生成来处理长上下文、多编程语言的GitHub问题解决。"
+    },
+    {
+      "title": "MMSearch-Plus: Benchmarking Provenance-Aware Search for Multimodal Browsing Agents",
+      "authors": "Xijia Tao, Yihua Teng, Xinxing Su, Xinyu Fu, Jihao Wu, Chaofan Tao, Ziru Liu, Haoli Bai, Rui Liu, Lingpeng Kong",
+      "short_authors": "Xijia Tao, Yihua Teng, …, Chaofan Tao, …",
+      "year": 2026,
+      "venue": "ICLR",
+      "url": "https://arxiv.org/abs/2508.21475",
+      "group": "agentic",
+      "abstract_en": "MMSearch-Plus is a 311-task benchmark and agent framework with set-of-mark tools that require provenance-aware, vision-in-the-loop search and cross-validation under retrieval noise.",
+      "abstract_zh": "MMSearch-Plus是一个包含311个任务的benchmark和多模态智能体搜索问答框架，配备set-of-mark工具，要求在检索噪声下进行可追溯、引入视觉搜索和交叉验证。"
+    },
+    {
+      "title": "OVD: On-policy Verbal Distillation",
+      "authors": "Jing Xiong, Hui Shen, Shansan Gong, Yuxin Cheng, Jianghan Shen, Chaofan Tao, Haochen Tan, Haoli Bai, Lifeng Shang, Ngai Wong",
+      "short_authors": "Jing Xiong, Hui Shen, …, Chaofan Tao, …",
+      "year": 2026,
+      "venue": "arXiv",
+      "url": "https://arxiv.org/abs/2601.21968",
+      "group": "agentic",
+      "abstract_en": "On-policy Verbal Distillation replaces token-level matching with trajectory-level distillation using discrete teacher scores, reducing memory and improving student performance on web QA and math reasoning.",
+      "abstract_zh": "On-policy Verbal Distillation用轨迹级蒸馏替代token级匹配蒸馏，使用离散的教师评分，降低内存占用并在网络搜索问答和数学推理上提升学生模型性能。"
+    },
+    {
+      "title": "From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for Reinforcement Learning of Open-ended Generation",
+      "authors": "Yuxin Jiang, Yufei Wang, Qiyuan Zhang, Xingshan Zeng, Liangyou Li, Jierun Chen, Chaofan Tao, Haoli Bai, Lifeng Shang",
+      "short_authors": "Yuxin Jiang, Yufei Wang, …, Chaofan Tao, …",
+      "year": 2026,
+      "venue": "ICLR",
+      "url": "https://arxiv.org/abs/2601.18533",
+      "group": "agentic",
+      "abstract_en": "RLVRR turns single verifiable end rewards into ordered reference-derived reward chains (content + style) to make RL for open-ended generation more efficient and less prone to reward hacking.",
+      "abstract_zh": "RLVRR将传统RL里单一的可验证终端奖励转化为有序的参考衍生奖励链（内容+风格），使开放式生成的强化学习更高效且更不易出现奖励破解。"
+    },
+    {
+      "title": "PhyX: Does Your Model Have the \"Wits\" for Physical Reasoning?",
+      "authors": "Hui Shen, Taiqiang Wu, Qi Han, Yunta Hsieh, Jizhou Wang, Yuyue Zhang, Yuxin Cheng, Zijian Hao, Yuansheng Ni, Xin Wang, Zhongwei Wan, Kai Zhang, Wendong Xu, Jing Xiong, Ping Luo, Wenhu Chen, Chaofan Tao, Zhuoqing Mao, Ngai Wong",
+      "short_authors": "Hui Shen, Taiqiang Wu, …, Chaofan Tao, …",
+      "year": 2025,
+      "venue": "arXiv",
+      "url": "https://arxiv.org/abs/2505.15929",
+      "group": "agentic",
+      "abstract_en": "PhyX introduces a 3K-question multimodal benchmark spanning six physics domains to test physics-grounded reasoning, revealing large gaps between top models and human experts.",
+      "abstract_zh": "PhyX引入一个包含3000个问题的多模态基准，覆盖六个物理领域，用于测试基于物理的推理，观察到顶级模型与人类专家之间的较大差距。"
+    },
+    {
+      "title": "Scaling Laws with Vocabulary: Larger Models Deserve Larger Vocabularies",
+      "authors": "Chaofan Tao, Qian Liu, Longxu Dou, Niklas Muennighoff, Zhongwei Wan, Ping Luo, Min Lin, Ngai Wong",
+      "short_authors": "Chaofan Tao, Qian Liu, Longxu Dou, et al.",
+      "year": 2024,
+      "venue": "NeurIPS",
+      "url": "https://arxiv.org/abs/2407.13623",
+      "group": "agentic",
+      "abstract_en": "The paper derives compute-optimal vocabulary scaling laws and shows larger models benefit from larger vocabularies, improving downstream accuracy at fixed FLOPs.",
+      "abstract_zh": "推导了计算最优的词表规模扩展规律，证明更大模型需要更大词表，在相同计算量下提升下游任务准确率。",
+      "selected_order": 2,
+      "takeaway": "Compute-optimal vocabulary scaling connects tokenizer design with model size and training budgets.",
+      "code": "https://github.com/sail-sg/scaling-with-vocab",
+      "demo": "https://huggingface.co/spaces/sail/scaling-with-vocab-demo"
+    },
+    {
+      "title": "Autoregressive Models in Vision: A Survey",
+      "authors": "Jing Xiong, Gongye Liu, Lun Huang, Chengyue Wu, Taiqiang Wu, Yao Mu, Yuan Yao, Hui Shen, Zhongwei Wan, Jinfa Huang, Chaofan Tao, Shen Yan, Huaxiu Yao, Lingpeng Kong, Hongxia Yang, Mi Zhang, Guillermo Sapiro, Jiebo Luo, Ping Luo, Ngai Wong",
+      "short_authors": "Jing Xiong, Gongye Liu, …, Chaofan Tao, …",
+      "year": 2025,
+      "venue": "TMLR",
+      "url": "https://arxiv.org/abs/2411.05902",
+      "group": "agentic",
+      "abstract_en": "A comprehensive survey of visual autoregressive modeling, covering representation strategies and applications across image, video, 3D, and multimodal generation, plus open challenges.",
+      "abstract_zh": "全面综述视觉自回归模型的建模方法，涵盖表示策略及其在图像、视频、3D和多模态生成中的应用，并讨论开放挑战。"
+    },
+    {
+      "title": "SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning",
+      "authors": "Zhongwei Wan, Zhihao Dou, Che Liu, Yu Zhang, Dongfei Cui, Qinjian Zhao, Hui Shen, Jing Xiong, Yi Xin, Yifan Jiang, Chaofan Tao, Yangfan He, Mi Zhang, Shen Yan",
+      "short_authors": "Zhongwei Wan, Zhihao Dou, …, Chaofan Tao, …",
+      "year": 2025,
+      "venue": "arXiv",
+      "url": "https://arxiv.org/abs/2506.01713",
+      "group": "agentic",
+      "abstract_en": "SRPO is a reflection-aware RL framework that teaches MLLMs self-reflection and then optimizes concise, meaningful reflections with GRPO-style rewards to improve multimodal reasoning.",
+      "abstract_zh": "SRPO是一个反思感知的多模态RL框架，先训练多模态大模型学会自我反思，再用GRPO式奖励优化简洁有效的反思，从而提升多模态推理能力。"
+    },
+    {
+      "title": "The Synergy Dilemma of Long-CoT SFT and RL: Investigating Post-training Techniques for Reasoning VLMs",
+      "authors": "Jierun Chen, Tiezheng Yu, Haoli Bai, Lewei Yao, Jiannan Wu, Kaican Li, Fei Mi, Chaofan Tao, Lei Zhu, Manyi Zhang, Xiaohui Li, Lu Hou, Lifeng Shang, Qun Liu",
+      "short_authors": "Jierun Chen, Tiezheng Yu, …, Chaofan Tao, …",
+      "year": 2025,
+      "venue": "arXiv",
+      "url": "https://arxiv.org/abs/2507.07562",
+      "group": "agentic",
+      "abstract_en": "The study compares long-CoT SFT vs. RL for reasoning VLMs and finds their combination often fails to yield additive gains, instead trading off accuracy, verbosity, and style.",
+      "abstract_zh": "比较长链思维监督微调（SFT）与强化学习（RL）在视觉语言模型推理中的作用，发现两者组合往往无法带来叠加收益，而是在准确率、冗长程度和风格之间权衡。"
+    },
+    {
+      "title": "NAVERO: Unlocking Fine-Grained Semantics for Video-Language Compositionality",
+      "authors": "Chaofan Tao, Gukyeong Kwon, Varad Gunjal, Hao Yang, Zhaowei Cai, Yonatan Dukler, Ashwin Swaminathan, R Manmatha, Colin Jon Taylor, Stefano Soatto",
+      "short_authors": "Chaofan Tao, Gukyeong Kwon, Varad Gunjal, et al.",
+      "year": 2024,
+      "venue": "arXiv",
+      "url": "https://arxiv.org/abs/2408.09511",
+      "group": "agentic",
+      "abstract_en": "NAVERO introduces the AARO benchmark and negative-text augmentation with a negative-augmented matching loss to improve video-language compositional understanding and retrieval.",
+      "abstract_zh": "NAVERO提出AARO基准，并通过负文本增强和负增强匹配损失，提升视频-语言模型对组合语义的理解和检索能力。"
+    },
+    {
+      "title": "ATTS: Asynchronous Test-Time Scaling via Conformal Prediction",
+      "authors": "Jing Xiong, Qiujiang Chen, Fanghua Ye, Zhongwei Wan, Chuanyang Zheng, Chenyang Zhao, Hui Shen, Alexander Hanbo Li, Chaofan Tao, Haochen Tan, Haoli Bai, Lifeng Shang, Lingpeng Kong, Ngai Wong",
+      "short_authors": "Jing Xiong, Qiujiang Chen, …, Chaofan Tao, …",
+      "year": 2026,
+      "venue": "ICLR",
+      "url": "https://arxiv.org/abs/2509.15148",
+      "group": "efficient",
+      "abstract_en": "ATTS is an asynchronous, conformal-prediction-based test-time scaling method that cuts synchronization overhead and accelerates scaling with statistical guarantees and no accuracy loss.",
+      "abstract_zh": "ATTS是一种基于一致性预测的异步测试时扩展方法，减少同步开销，在尽可能最小化准确率损失的情况下加速扩展。"
+    },
+    {
+      "title": "UNCOMP: Can Matrix Entropy Uncover Sparsity? - A Compressor Design from an Uncertainty-Aware Perspective",
+      "authors": "Jing Xiong, Jianghan Shen, Fanghua Ye, Chaofan Tao, Zhongwei Wan, Jianqiao Lu, Xun Wu, Chuanyang Zheng, Zhijiang Guo, Min Yang, Lingpeng Kong, Ngai Wong",
+      "short_authors": "Jing Xiong, Jianghan Shen, …, Chaofan Tao, …",
+      "year": 2025,
+      "venue": "EMNLP",
+      "url": "https://doi.org/10.48448/v1xq-f328",
+      "group": "efficient",
+      "abstract_en": "UNComp uses uncertainty (via truncated matrix entropy) to uncover KV-cache sparsity and perform adaptive compression for long-context inference, greatly shrinking cache while boosting throughput.",
+      "abstract_zh": "UNComp使用不确定性（通过截断矩阵熵）来发现KV缓存的稀疏性，并对长上下文推理进行自适应压缩，大幅缩小缓存同时提升吞吐量。"
+    },
+    {
+      "title": "Find Your Optimal Teacher: Personalized Data Synthesis via Router-Guided Multi-Teacher Distillation",
+      "authors": "Hengyuan Zhang, Shiping Yang, Xiao Liang, Chenming Shang, Yuxuan Jiang, Chaofan Tao, Jing Xiong, Hayden Kwok-Hay So, Ruobing Xie, Angel X Chang, Ngai Wong",
+      "short_authors": "Hengyuan Zhang, Shiping Yang, …, Chaofan Tao, …",
+      "year": 2025,
+      "venue": "arXiv",
+      "url": "https://arxiv.org/abs/2510.10925",
+      "group": "efficient",
+      "abstract_en": "PerSyn \"routes then generates\" by assigning each prompt to its best teacher via a router that considers student learnability and teacher quality, improving synthetic-data distillation efficiency.",
+      "abstract_zh": "PerSyn采用\"先路由后生成\"策略，通过考虑学生学习能力和教师质量的路由器为每个提示分配最佳教师，提高合成数据蒸馏效率。"
+    },
+    {
+      "title": "AnchorTP: Resilient LLM Inference with State-Preserving Elastic Tensor Parallelism",
+      "authors": "Wendong Xu, Chujie Chen, He Xiao, Kuan Li, Jing Xiong, Chen Zhang, Wenyong Zhou, Chaofan Tao, Yang Bai, Bei Yu, Ngai Wong",
+      "short_authors": "Wendong Xu, Chujie Chen, …, Chaofan Tao, …",
+      "year": 2026,
+      "venue": "DATE",
+      "url": "https://arxiv.org/abs/2511.11617",
+      "group": "efficient",
+      "abstract_en": "AnchorTP provides state-preserving elastic tensor parallelism with a GPU-resident daemon and bandwidth-aware migration planning, enabling fast recovery from single-GPU failures.",
+      "abstract_zh": "AnchorTP提供状态保持的弹性张量并行，通过GPU常驻守护进程和带宽感知的迁移规划，实现单GPU故障场景的快速恢复。"
+    },
+    {
+      "title": "Dynamic Discriminative Operations for Efficient Long-Context Inference of Large Language Models",
+      "authors": "Zhongwei Wan, Xinjian Wu, Yu Zhang, Yi Xin, Chaofan Tao, Zhihong Zhu, Xin Wang, Siqi Luo, Jing Xiong, Longyue Wang, Mi Zhang",
+      "short_authors": "Zhongwei Wan, Xinjian Wu, …, Chaofan Tao, …",
+      "year": 2024,
+      "venue": "ICLR",
+      "url": "https://arxiv.org/abs/2406.13035",
+      "group": "efficient",
+      "abstract_en": "D2O dynamically compresses KV cache at layer and token levels with allocation and recall/merge compensation, saving memory and improving long-context throughput without fine-tuning.",
+      "abstract_zh": "D2O在层和token级别动态压缩KV缓存，通过分配和召回/合并补偿，无需微调即可节省内存并提升长上下文吞吐量。"
+    },
+    {
+      "title": "CrossGET: Cross-Guided Ensemble of Tokens for Accelerating Vision-Language Transformers",
+      "authors": "Dachuan Shi, Chaofan Tao, Anyi Rao, Zhendong Yang, Chun Yuan, Jiaqi Wang",
+      "short_authors": "Dachuan Shi, Chaofan Tao, Anyi Rao, et al.",
+      "year": 2024,
+      "venue": "ICML",
+      "url": "https://arxiv.org/abs/2305.17455",
+      "group": "efficient",
+      "abstract_en": "CrossGET accelerates vision-language Transformers by cross-modally matching and ensembling tokens with efficient soft matching, reducing compute with minimal accuracy loss.",
+      "abstract_zh": "CrossGET通过跨模态匹配和集成token，使用相似token匹配和合并加速视觉-语言Transformer，在最小准确率损失下减少计算量。"
+    },
+    {
+      "title": "Rethinking Kullback-Leibler Divergence in Knowledge Distillation for Large Language Models",
+      "authors": "Taiqiang Wu, Chaofan Tao, Jiahao Wang, Runming Yang, Zhe Zhao, Ngai Wong",
+      "short_authors": "Taiqiang Wu, Chaofan Tao, Jiahao Wang, et al.",
+      "year": 2024,
+      "venue": "COLING",
+      "url": "https://arxiv.org/abs/2404.02657",
+      "group": "efficient",
+      "abstract_en": "It shows forward and reverse KL behave similarly in LLM distillation with enough training but emphasize head vs. tail early; Adaptive KL combines them to improve generation quality and diversity.",
+      "abstract_zh": "研究表明在充分训练下，前向和反向KL在大语言模型蒸馏中表现相似，但早期分别关注分布头部和尾部；自适应KL结合两种蒸馏方式的优势，以提升模型的生成质量和多样性。"
+    },
+    {
+      "title": "Structured Pruning for Efficient Generative Pre-trained Language Models",
+      "authors": "Chaofan Tao, Lu Hou, Haoli Bai, Jiansheng Wei, Xin Jiang, Qun Liu, Ping Luo, Ngai Wong",
+      "short_authors": "Chaofan Tao, Lu Hou, Haoli Bai, et al.",
+      "year": 2023,
+      "venue": "Findings of ACL",
+      "url": "https://doi.org/10.18653/v1/2023.findings-acl.692",
+      "group": "efficient",
+      "abstract_en": "It proposes structured pruning across multiple generative-PLM components using learnable masks and sparse training to extract size-flexible subnets with significant speedups.",
+      "abstract_zh": "提出对生成式预训练语言模型多个组件的结构化剪枝，使用可学习掩码和稀疏训练提取尺寸灵活的子网络，实现显著加速。"
+    },
+    {
+      "title": "Compression of Generative Pre-trained Language Models via Quantization",
+      "authors": "Chaofan Tao, Lu Hou, Wei Zhang, Lifeng Shang, Xin Jiang, Qun Liu, Ping Luo, Ngai Wong",
+      "short_authors": "Chaofan Tao, Lu Hou, Wei Zhang, et al.",
+      "year": 2022,
+      "venue": "ACL",
+      "url": "https://arxiv.org/abs/2203.10705",
+      "group": "efficient",
+      "abstract_en": "It adapts quantization to generative PLMs （e.g. GPT-2, BART）, addressing embedding homogenization with token-level contrastive distillation and module-wise dynamic scaling to achieve 13–14× compression at near full precision.",
+      "abstract_zh": "将量化方法适配到生成式预训练语言模型（e.g. GPT-2, BART），通过token级对比蒸馏解决嵌入同质化问题，并用模块级动态缩放实现接近全精度的13-14倍压缩。",
+      "selected_order": 3,
+      "takeaway": "Quantization methods that compress generative language models while preserving generation quality.",
+      "award": "ACL 2022 Outstanding Paper Award",
+      "award_url": "https://aclanthology.org/2022.acl-long.331/"
+    },
+    {
+      "title": "UPop: Unified and Progressive Pruning for Compressing Vision-Language Transformers",
+      "authors": "Dachuan Shi, Chaofan Tao, Ying Jin, Zhendong Yang, Chun Yuan, Jiaqi Wang",
+      "short_authors": "Dachuan Shi, Chaofan Tao, Ying Jin, et al.",
+      "year": 2023,
+      "venue": "ICML",
+      "url": "https://arxiv.org/abs/2301.13741",
+      "group": "efficient",
+      "abstract_en": "UPop is a unified progressive pruning framework that searches multimodal subnets in a continuous space and progressively retrains to achieve high compression for vision-language Transformers.",
+      "abstract_zh": "UPop是一个统一的渐进式剪枝框架，在连续空间中搜索多模态子网络并逐步重训练，实现视觉-语言Transformer的高压缩率。"
+    }
+  ],
+  "groups": [
+    {
+      "id": "agentic",
+      "title": "Agentic Coding, Reasoning and Evaluation"
+    },
+    {
+      "id": "efficient",
+      "title": "Efficient ML & AI Infrastructure"
+    }
+  ]
+}

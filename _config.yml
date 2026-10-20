@@ -8,7 +8,7 @@ middle_name:
 last_name: Tao
 contact_note:
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Chaofan Tao (陶超凡) is a researcher and developer working on agentic coding, reasoning, and efficient machine learning.
+  Chaofan Tao (陶超凡) researches coding agents, agentic data and environments, and efficient training and inference infrastructure.
 footer_text: >
   Built with <a href="https://github.com/alshedivat/al-folio">al-folio</a> and hosted on GitHub Pages.
 keywords: Chaofan Tao, agentic coding, reasoning, efficient machine learning, LegoX
@@ -93,7 +93,7 @@ al_folio:
 # -----------------------------------------------------------------------------
 
 navbar_fixed: true
-footer_fixed: true
+footer_fixed: false
 search_enabled: false
 socials_in_search: false
 posts_in_search: true
