@@ -105,6 +105,11 @@ redirect_from:
     font-size: 1.04rem;
   }
 
+  .home-intro > .home-actions {
+    margin-top: 0;
+    margin-bottom: 1.1rem;
+  }
+
   .home-photo {
     grid-column: 2;
     grid-row: 1 / span 2;
@@ -273,10 +278,6 @@ redirect_from:
   .home-page .home-award {
     color: var(--global-theme-color);
     font-weight: 500;
-  }
-
-  .home-background {
-    max-width: 49rem;
   }
 
   .home-publication-group {
@@ -513,12 +514,11 @@ redirect_from:
       {% include figure.liquid loading="eager" path="assets/img/prof_pic.png" class="img-fluid" sizes="(max-width: 640px) 128px, 220px" alt="Chaofan Tao at Sydney Harbour" cache_bust=true %}
     </div>
     <div class="home-intro" id="biography">
-      <p>I am a researcher and developer at Huawei Foundation Model Lab, working on <strong>coding agents</strong>, <strong>agentic data and environments</strong>, and <strong>efficient training and inference infrastructure</strong>.</p>
-      <p>My work on generative model quantization received an <a href="https://aclanthology.org/2022.acl-long.331/">ACL 2022 Outstanding Paper Award</a>.</p>
       <div class="home-actions">
         <a class="home-button home-primary" href="mailto:tcftrees@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i>Email me</a>
         <a class="home-button" href="https://scholar.google.com/citations?user=gjmfLroAAAAJ">Google Scholar</a>
       </div>
+      <p>I am a researcher and developer at Huawei Foundation Model Lab, working on <strong>coding agents</strong>, <strong>agentic data and environments</strong>, and <strong>efficient training and inference infrastructure</strong>. I received my PhD from <a href="https://www.hku.hk/">The University of Hong Kong</a>, advised by <a href="https://www.eee.hku.hk/~nwong/">Prof. Ngai Wong</a> and <a href="http://luoping.me/">Prof. Ping Luo</a>, as a member of the <a href="https://mmlab.hk/">MMLAB@HKU</a> family. I completed my bachelor's degree at the Yingcai Honors College of the University of Electronic Science and Technology of China. Previously, I interned at Sea AI Lab, Amazon Web Services, Huawei, and SenseTime. My work on generative model quantization received an <a href="https://aclanthology.org/2022.acl-long.331/">ACL 2022 Outstanding Paper Award</a>. My work has appeared at ICLR, ICML, NeurIPS, ACL, EMNLP, COLM, and ECCV, as well as related journals.</p>
     </div>
   </section>
 
@@ -594,12 +594,6 @@ redirect_from:
         </li>
       {% endfor %}
     </ol>
-  </section>
-
-  <section class="home-section home-background" id="background" aria-labelledby="background-heading">
-    <div class="home-section-heading"><h2 id="background-heading">Background</h2></div>
-    <p>I received my PhD from <a href="https://www.hku.hk/">The University of Hong Kong</a>, advised by <a href="https://www.eee.hku.hk/~nwong/">Prof. Ngai Wong</a> and <a href="http://luoping.me/">Prof. Ping Luo</a>, as a member of the <a href="https://mmlab.hk/">MMLAB@HKU</a> family. I completed my bachelor's degree at the Yingcai Honors College of the University of Electronic Science and Technology of China.</p>
-    <p>Previously, I interned at Sea AI Lab, Amazon Web Services, Huawei, and SenseTime. My work has appeared at ICLR, ICML, NeurIPS, ACL, EMNLP, COLM, and ECCV, as well as related journals.</p>
   </section>
 
   <section class="home-section" id="all-publications" aria-labelledby="all-publications-heading">
