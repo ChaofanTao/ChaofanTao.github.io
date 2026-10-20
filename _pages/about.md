@@ -565,7 +565,7 @@ redirect_from:
         <p>A supervised fine-tuning recipe for software issue resolution, combining verified data, error masking, and curriculum learning.</p>
         <div class="home-resources" aria-label="SWE-Lego resources">
           <a href="https://www.legox.net/blog/swe-lego/">Overview</a>
-          <a href="https://github.com/SWE-Lego/SWE-Lego">Code</a>
+          <a href="https://github.com/LegoX/SWE-Lego">Code</a>
           <a href="https://arxiv.org/abs/2601.01426">Paper</a>
         </div>
       </article>
@@ -588,6 +588,8 @@ redirect_from:
           <div class="home-resources" aria-label="Resources for {{ paper.title | escape }}">
             <a href="{{ paper.url | escape }}">Paper</a>
             {% if paper.code %}<a href="{{ paper.code | escape }}">Code</a>{% endif %}
+            {% if paper.repository %}<a href="{{ paper.repository | escape }}">GitHub</a>{% endif %}
+            {% if paper.slides %}<a href="{{ paper.slides | escape }}">Slides</a>{% endif %}
             {% if paper.data %}<a href="{{ paper.data | escape }}">Data</a>{% endif %}
             {% if paper.demo %}<a href="{{ paper.demo | escape }}">Demo</a>{% endif %}
           </div>
@@ -613,6 +615,8 @@ redirect_from:
               <div class="home-resources" aria-label="Resources for {{ paper.title | escape }}">
                 <a href="{{ paper.url | escape }}">Paper</a>
                 {% if paper.code %}<a href="{{ paper.code | escape }}">Code</a>{% endif %}
+                {% if paper.repository %}<a href="{{ paper.repository | escape }}">GitHub</a>{% endif %}
+                {% if paper.slides %}<a href="{{ paper.slides | escape }}">Slides</a>{% endif %}
                 {% if paper.data %}<a href="{{ paper.data | escape }}">Data</a>{% endif %}
                 {% if paper.demo %}<a href="{{ paper.demo | escape }}">Demo</a>{% endif %}
               </div>
