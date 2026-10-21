@@ -518,7 +518,7 @@ redirect_from:
         <a class="home-button home-primary" href="mailto:tcftrees@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i>Email me</a>
         <a class="home-button" href="https://scholar.google.com/citations?user=gjmfLroAAAAJ">Google Scholar</a>
       </div>
-      <p>I am a researcher and developer at Huawei Foundation Model Lab, working on <strong>coding agents</strong>, <strong>agentic data and environments</strong>, and <strong>efficient training and inference infrastructure</strong>. I received my PhD from <a href="https://www.hku.hk/">The University of Hong Kong</a>, advised by <a href="https://www.eee.hku.hk/~nwong/">Prof. Ngai Wong</a> and <a href="http://luoping.me/">Prof. Ping Luo</a>, as a member of the <a href="https://mmlab.hk/">MMLAB@HKU</a> family. I completed my bachelor's degree at the Yingcai Honors College of the University of Electronic Science and Technology of China. Previously, I interned at Sea AI Lab, Amazon Web Services, Huawei, and SenseTime. My work on generative model quantization received an <a href="https://aclanthology.org/2022.acl-long.331/">ACL 2022 Outstanding Paper Award</a>. My work has appeared at ICLR, ICML, NeurIPS, ACL, EMNLP, COLM, and ECCV, as well as related journals.</p>
+      <p>I am a researcher and developer at Huawei Foundation Model Lab, working on <strong>coding agents</strong>, <strong>agentic data and environments</strong>, and <strong>efficient training and inference infrastructure</strong>. I received my PhD from <a href="https://www.hku.hk/">The University of Hong Kong</a>, advised by <a href="https://www.eee.hku.hk/~nwong/">Prof. Ngai Wong</a> and <a href="http://luoping.me/">Prof. Ping Luo</a>, as a member of the <a href="https://mmlab.hk/">MMLAB@HKU</a> family. I completed my bachelor's degree at the Yingcai Honors College of the University of Electronic Science and Technology of China. Previously, I interned at Sea AI Lab, Amazon Web Services, Huawei, and SenseTime. My work on generative model quantization received an <a href="https://aclanthology.org/2022.acl-long.331/">ACL 2022 Outstanding Paper Award</a>. My work has appeared at ICLR, ICML, NeurIPS, ICSE, ACL, EMNLP, COLM, and ECCV, as well as related journals.</p>
     </div>
   </section>
 
@@ -599,7 +599,7 @@ redirect_from:
   </section>
 
   <section class="home-section" id="all-publications" aria-labelledby="all-publications-heading">
-    <div class="home-section-heading"><h2 id="all-publications-heading">All publications <span class="home-count">2022–2026</span></h2></div>
+    <div class="home-section-heading"><h2 id="all-publications-heading">All publications <span class="home-count">since 2022</span></h2></div>
     <p class="home-section-description">Browse by topic. Each paper includes its full author list and a Chinese summary under “Authors &amp; 中文摘要”.</p>
     {% for group in site.data.homepage.groups %}
       {% assign papers = site.data.homepage.publications | where: "group", group.id %}

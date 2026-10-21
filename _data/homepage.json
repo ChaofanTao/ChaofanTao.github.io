@@ -1,6 +1,17 @@
 {
   "publications": [
     {
+      "title": "REAgent: Requirement-Driven LLM Agents for Software Issue Resolution",
+      "authors": "Shiqi Kuang, Zhao Tian, Kaiwei Lin, Chaofan Tao, Shaowei Wang, Haoli Bai, Lifeng Shang, Junjie Chen",
+      "short_authors": "Shiqi Kuang, Zhao Tian, …, Chaofan Tao, …",
+      "year": 2027,
+      "venue": "ICSE",
+      "url": "https://arxiv.org/abs/2604.06861",
+      "group": "agentic",
+      "abstract_en": "REAgent turns issue descriptions into structured, information-rich requirements, detects and iteratively refines low-quality requirements, and uses the refined specifications to guide more accurate software patches.",
+      "abstract_zh": "REAgent将软件问题描述转化为结构化、信息丰富的需求规范，识别并迭代完善低质量需求，以引导大语言模型生成更准确的软件补丁。"
+    },
+    {
       "title": "SWE-Lego: Pushing the Limits of Supervised Fine-tuning for Software Issue Resolving",
       "authors": "Chaofan Tao, Jierun Chen, Yuxin Jiang, Kaiqi Kou, Shaowei Wang, Ruoyu Wang, Xiaohui Li, Sidi Yang, Yiming Du, Jianbo Dai, Zhiming Mao, Xinyu Wang, Lifeng Shang, Haoli Bai",
       "short_authors": "Chaofan Tao, Jierun Chen, Yuxin Jiang, et al.",
