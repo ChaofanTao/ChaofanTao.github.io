@@ -633,7 +633,6 @@ redirect_from:
     <p>Whether you have a concrete project or an early idea, I'd love to hear from you. A short introduction and a link to something you've worked on are plenty.</p>
     <div class="home-actions">
       <a class="home-button home-primary" href="mailto:tcftrees@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i>Email me</a>
-      <a href="mailto:tcftrees@gmail.com">tcftrees@gmail.com</a>
     </div>
     <p class="home-intern-note">For internship inquiries, please use “[Interest]” in the subject and include your profile and 1–2 representative links: a paper, GitHub repository, blog, or demo.</p>
     <div class="home-socials" id="links" aria-label="Contact and profile links">
