@@ -1,0 +1,52 @@
+---
+permalink: /llms.txt
+layout: null
+sitemap: false
+---
+# Chaofan Tao (陶超凡)
+
+> Chaofan Tao is an AI researcher at LegoX (https://www.legox.net/), an open-source effort on agentic data, training infrastructure, evaluation, and models for coding agents. He is also a researcher at Huawei Foundation Model Lab. His work covers LLM coding agents, agentic reinforcement learning, agentic data and environments, multimodal LLM reasoning, and efficient LLM training and inference. He received his PhD from The University of Hong Kong (advised by Prof. Ngai Wong and Prof. Ping Luo, MMLAB@HKU) and his bachelor's degree from the Yingcai Honors College, UESTC. His paper on generative language model quantization received the ACL 2022 Outstanding Paper Award.
+
+Key facts:
+
+- Name: Chaofan Tao (Chinese: 陶超凡)
+- Primary affiliation: LegoX; also Huawei Foundation Model Lab
+- Education: PhD, The University of Hong Kong; bachelor's degree, Yingcai Honors College, University of Electronic Science and Technology of China
+- Research areas: coding agents, software-engineering agents (SWE-bench), terminal agents, agentic RL, multimodal LLMs, quantization and pruning, KV cache compression, scaling laws
+- Award: ACL 2022 Outstanding Paper Award
+- Publications: {{ site.data.homepage.publications.size }} papers since 2022 at venues including ICLR, ICML, NeurIPS, ICSE, ACL, EMNLP, COLM, TMLR
+- Contact: tcftrees@gmail.com (internship inquiries: put "[Interest]" in the subject)
+
+## Profiles
+
+- [Homepage]({{ site.url }}/): biography, projects, and all publications with English and Chinese summaries
+- [Google Scholar](https://scholar.google.com/citations?user=gjmfLroAAAAJ)
+- [ORCID](https://orcid.org/0000-0002-6093-0854)
+- [OpenReview](https://openreview.net/profile?id=~Chaofan_Tao1)
+- [Semantic Scholar](https://www.semanticscholar.org/author/Chaofan-Tao/144259094)
+- [DBLP](https://dblp.org/pid/239/5831.html)
+- [GitHub](https://github.com/ChaofanTao)
+- [Hugging Face](https://huggingface.co/tcftrees)
+
+## Research overviews
+
+- [Coding agents, agentic data and agentic RL]({{ site.url }}/research/coding-agents/): LegoFlow, SWE-Lego, Terminal-Lego and Lego-RL with verified key results (e.g. Lego-RL reaches 70.4% on SWE-bench Verified in OpenHands SDK; SWE-Lego-Qwen3-32B reaches 52.6% with SFT only). Chinese: {{ site.url }}/zh/research/coding-agents/
+- [Efficient LLM training and inference]({{ site.url }}/research/efficient-llm/): vocabulary scaling laws, quantization (ACL 2022 Outstanding Paper), KV cache compression, fast test-time scaling, distillation. Chinese: {{ site.url }}/zh/research/efficient-llm/
+- [Multimodal reasoning and agents]({{ site.url }}/research/multimodal-reasoning/): SFT vs. RL for reasoning VLMs, PhyX physical reasoning, MMSearch-Plus, RoboCodeX code generation for robots. Chinese: {{ site.url }}/zh/research/multimodal-reasoning/
+
+## Projects (LegoX)
+
+- [LegoFlow](https://www.legox.net/blog/legoflow/): agent-orchestrated framework for building verified coding tasks and training trajectories, from repository discovery to evaluation. Code: https://github.com/LegoX/LegoFlow
+- [Lego-RL](https://www.legox.net/blog/lego-rl/): reinforcement learning inside unmodified coding-agent harnesses (e.g. OpenHands, Claude Code, OpenCode), preserving generation-time tokens and MoE routing for faithful training. Code: https://github.com/LegoX/Lego-RL
+- [Terminal-Lego](https://www.legox.net/blog/terminal-lego/): executable tasks and grounded interaction trajectories for terminal-agent training. Code: https://github.com/SWE-Lego/terminal-lego · Data: https://huggingface.co/datasets/SWE-Lego/Terminal-Lego-15k
+- [SWE-Lego](https://www.legox.net/blog/swe-lego/): supervised fine-tuning recipe for software issue resolution with verified data, error masking, and curriculum learning. Paper: https://arxiv.org/abs/2601.01426
+
+## Selected publications
+{% assign selected_papers = site.data.homepage.publications | where_exp: "paper", "paper.selected_order" | sort: "selected_order" %}
+{%- for paper in selected_papers %}
+- [{{ paper.title }}]({{ paper.url }}) ({% if paper.award %}{{ paper.award }}{% else %}{{ paper.venue }} {{ paper.year }}{% endif %}): {{ paper.takeaway }}
+{%- endfor %}
+
+## Optional
+
+- [Full publication list with abstracts]({{ site.url }}/llms-full.txt)

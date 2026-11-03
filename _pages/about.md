@@ -2,6 +2,7 @@
 layout: default
 title: About
 permalink: /
+last_modified_at: 2026-11-03
 redirect_from:
   - /about/
   - /about.html
@@ -338,10 +339,10 @@ redirect_from:
   .home-socials {
     --link-box: clamp(2.75rem, 14vw, 3.75rem);
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(9, minmax(0, 1fr));
     align-items: start;
     gap: 0.3rem;
-    max-width: 27rem;
+    max-width: 48rem;
     margin: 1.5rem auto 0;
     padding-top: 1rem;
     border-top: 1px solid var(--global-divider-color);
@@ -403,6 +404,23 @@ redirect_from:
   .home-social-legox img {
     width: var(--link-box);
     height: var(--link-box);
+  }
+
+  .home-social-orcid .home-social-icon {
+    color: #a6ce39;
+  }
+
+  .home-social-s2 .home-social-icon {
+    color: #1857b6;
+  }
+
+  .home-social-dblp .home-social-icon {
+    color: #004f9f;
+  }
+
+  .home-social-openreview img {
+    width: calc(var(--link-box) * 0.6);
+    height: calc(var(--link-box) * 0.6);
   }
 
   .home-social-label {
@@ -481,6 +499,11 @@ redirect_from:
     .home-social-label {
       font-size: 0.7rem;
     }
+
+    .home-socials {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      max-width: 24rem;
+    }
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -494,9 +517,132 @@ redirect_from:
   }
 </style>
 
+{% assign person_id = site.url | append: '/#person' %}
+{% assign legox_id = 'https://www.legox.net/#organization' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": "{{ site.url }}/#profilepage",
+      "url": "{{ site.url }}/",
+      "name": {{ site.title | jsonify }},
+      "description": {{ site.description | strip | jsonify }},
+      "inLanguage": "en",
+      "dateModified": "{{ site.time | date_to_xmlschema }}",
+      "isPartOf": { "@id": "{{ site.url }}/#website" },
+      "mainEntity": { "@id": "{{ person_id }}" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url }}/#website",
+      "url": "{{ site.url }}/",
+      "name": {{ site.title | jsonify }},
+      "inLanguage": ["en", "zh-Hans"],
+      "publisher": { "@id": "{{ person_id }}" }
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ person_id }}",
+      "name": "Chaofan Tao",
+      "alternateName": ["陶超凡", "Tao Chaofan", "C. Tao"],
+      "givenName": "Chaofan",
+      "familyName": "Tao",
+      "url": "{{ site.url }}/",
+      "image": "{{ site.url }}/assets/img/prof_pic.png",
+      "email": "mailto:tcftrees@gmail.com",
+      "jobTitle": "AI Researcher",
+      "description": "Chaofan Tao (陶超凡) is an AI researcher at LegoX working on LLM coding agents, agentic reinforcement learning, agentic data and environments, and efficient LLM training and inference. He received his PhD from The University of Hong Kong and an ACL 2022 Outstanding Paper Award.",
+      "worksFor": [
+        { "@id": "{{ legox_id }}" },
+        { "@type": "Organization", "name": "Huawei Foundation Model Lab", "parentOrganization": { "@type": "Organization", "name": "Huawei Technologies", "url": "https://www.huawei.com/" } }
+      ],
+      "affiliation": [
+        { "@id": "{{ legox_id }}" },
+        { "@type": "Organization", "name": "Huawei Foundation Model Lab" }
+      ],
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "The University of Hong Kong", "url": "https://www.hku.hk/" },
+        { "@type": "CollegeOrUniversity", "name": "University of Electronic Science and Technology of China", "url": "https://www.uestc.edu.cn/" }
+      ],
+      "award": "ACL 2022 Outstanding Paper Award",
+      "knowsAbout": [
+        "Large language models",
+        "Coding agents",
+        "Software engineering agents",
+        "SWE-bench",
+        "Agentic reinforcement learning",
+        "Agentic data and environments",
+        "Terminal agents",
+        "Multimodal large language models",
+        "Vision-language models",
+        "Efficient LLM training and inference",
+        "Model quantization and pruning",
+        "KV cache compression",
+        "Scaling laws"
+      ],
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "ORCID",
+        "value": "0000-0002-6093-0854",
+        "url": "https://orcid.org/0000-0002-6093-0854"
+      },
+      "sameAs": [
+        "https://orcid.org/0000-0002-6093-0854",
+        "https://scholar.google.com/citations?user=gjmfLroAAAAJ",
+        "https://openreview.net/profile?id=~Chaofan_Tao1",
+        "https://www.semanticscholar.org/author/Chaofan-Tao/144259094",
+        "https://dblp.org/pid/239/5831",
+        "https://github.com/ChaofanTao",
+        "https://huggingface.co/tcftrees",
+        "https://www.alphaxiv.org/@chaofan-tao"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "{{ legox_id }}",
+      "name": "LegoX",
+      "url": "https://www.legox.net/",
+      "logo": "https://www.legox.net/logo/legox-parallel-pipeline.svg",
+      "description": "An open-source effort connecting agentic data, training infrastructure, evaluation, and models for coding agents.",
+      "sameAs": ["https://github.com/LegoX", "https://huggingface.co/Lego-X"]
+    },
+    {% assign projects = "LegoFlow|https://www.legox.net/blog/legoflow/|https://github.com/LegoX/LegoFlow|An agent-orchestrated framework for building verified coding tasks and training trajectories, from repository discovery to evaluation.;Lego-RL|https://www.legox.net/blog/lego-rl/|https://github.com/LegoX/Lego-RL|Reinforcement learning inside unmodified coding-agent harnesses, preserving generation-time tokens and MoE routing for faithful training.;Terminal-Lego|https://www.legox.net/blog/terminal-lego/|https://github.com/SWE-Lego/terminal-lego|Executable tasks and grounded interaction trajectories for terminal-agent training.;SWE-Lego|https://www.legox.net/blog/swe-lego/|https://github.com/LegoX/SWE-Lego|A supervised fine-tuning recipe for software issue resolution, combining verified data, error masking, and curriculum learning." | split: ";" %}
+    {% for project in projects %}
+    {% assign p = project | split: "|" %}
+    {
+      "@type": "SoftwareSourceCode",
+      "name": {{ p[0] | jsonify }},
+      "url": {{ p[1] | jsonify }},
+      "codeRepository": {{ p[2] | jsonify }},
+      "description": {{ p[3] | jsonify }},
+      "publisher": { "@id": "{{ legox_id }}" },
+      "contributor": { "@id": "{{ person_id }}" }
+    },
+    {% endfor %}
+    {% for paper in site.data.homepage.publications %}
+    {% assign names = paper.authors | split: ", " %}
+    {
+      "@type": "ScholarlyArticle",
+      "@id": {{ paper.url | jsonify }},
+      "headline": {{ paper.title | jsonify }},
+      "url": {{ paper.url | jsonify }},
+      "datePublished": "{{ paper.year }}",
+      "publication": { "@type": "PublicationEvent", "name": {{ paper.venue | append: " " | append: paper.year | jsonify }} },
+      {% if paper.award %}"award": {{ paper.award | jsonify }},{% endif %}
+      "abstract": {{ paper.abstract_en | jsonify }},
+      "author": [{% for name in names %}{% if name == "Chaofan Tao" %}{ "@id": "{{ person_id }}" }{% else %}{ "@type": "Person", "name": {{ name | strip | jsonify }} }{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}]
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+
 <div class="home-page">
   <nav class="home-section-links" aria-label="Page sections" data-homepage-navigation>
     <a href="#projects">Projects</a>
+    <a href="{{ '/research/' | relative_url }}">Research</a>
     <a href="#publications">Publications</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -506,7 +652,7 @@ redirect_from:
       <h1 id="home-name">{{ site.title }}</h1>
     </header>
     <div class="home-photo">
-      {% include figure.liquid loading="eager" path="assets/img/prof_pic.png" class="img-fluid" sizes="(max-width: 640px) 128px, 220px" alt="Chaofan Tao at Sydney Harbour" cache_bust=true %}
+      {% include figure.liquid loading="eager" path="assets/img/prof_pic.png" class="img-fluid" sizes="(max-width: 640px) 128px, 220px" alt="Portrait of Chaofan Tao (陶超凡)" cache_bust=true %}
     </div>
     <div class="home-intro" id="biography">
       <p>I am a researcher and developer at Huawei Foundation Model Lab, working on <strong>coding agents</strong>, <strong>agentic data and environments</strong>, and <strong>efficient training and inference infrastructure</strong>. I received my PhD from <a href="https://www.hku.hk/">The University of Hong Kong</a>, advised by <a href="https://www.eee.hku.hk/~nwong/">Prof. Ngai Wong</a> and <a href="http://luoping.me/">Prof. Ping Luo</a>, as a member of the <a href="https://mmlab.hk/">MMLAB@HKU</a> family. I completed my bachelor's degree at the Yingcai Honors College of the University of Electronic Science and Technology of China. Previously, I interned at Sea AI Lab, Amazon Web Services, Huawei, and SenseTime. My work on generative model quantization received an <a href="https://aclanthology.org/2022.acl-long.331/">ACL 2022 Outstanding Paper Award</a>. My work has appeared at ICLR, ICML, NeurIPS, ICSE, ACL, EMNLP, COLM, and ECCV, as well as related journals.</p>
@@ -595,7 +741,7 @@ redirect_from:
 
   <section class="home-section" id="all-publications" aria-labelledby="all-publications-heading">
     <div class="home-section-heading"><h2 id="all-publications-heading">All publications <span class="home-count">since 2022</span></h2></div>
-    <p class="home-section-description">Browse by topic. Each paper includes its full author list and a Chinese summary under “Authors &amp; 中文摘要”.</p>
+    <p class="home-section-description">Browse by topic. Each paper includes its full author list and a Chinese summary under “Authors &amp; 中文摘要”. Research overviews with key results: <a href="{{ '/research/coding-agents/' | relative_url }}">coding agents</a>, <a href="{{ '/research/efficient-llm/' | relative_url }}">efficient LLMs</a>, and <a href="{{ '/research/multimodal-reasoning/' | relative_url }}">multimodal reasoning</a> (<a href="{{ '/zh/research/' | relative_url }}" lang="zh">中文</a>).</p>
     {% for group in site.data.homepage.groups %}
       {% assign papers = site.data.homepage.publications | where: "group", group.id %}
       <details class="home-publication-group">
@@ -647,6 +793,22 @@ redirect_from:
       <a class="home-social-link home-social-scholar" href="https://scholar.google.com/citations?user=gjmfLroAAAAJ" aria-label="Chaofan Tao on Google Scholar">
         <span class="home-social-icon"><i class="ai ai-google-scholar" aria-hidden="true"></i></span>
         <span class="home-social-label">Scholar</span>
+      </a>
+      <a class="home-social-link home-social-orcid" href="https://orcid.org/0000-0002-6093-0854" aria-label="Chaofan Tao on ORCID">
+        <span class="home-social-icon"><i class="ai ai-orcid" aria-hidden="true"></i></span>
+        <span class="home-social-label">ORCID</span>
+      </a>
+      <a class="home-social-link home-social-openreview" href="https://openreview.net/profile?id=~Chaofan_Tao1" aria-label="Chaofan Tao on OpenReview">
+        <span class="home-social-icon"><img src="https://openreview.net/images/openreview_logo_512.png" alt="" aria-hidden="true" loading="lazy"></span>
+        <span class="home-social-label">OpenReview</span>
+      </a>
+      <a class="home-social-link home-social-s2" href="https://www.semanticscholar.org/author/Chaofan-Tao/144259094" aria-label="Chaofan Tao on Semantic Scholar">
+        <span class="home-social-icon"><i class="ai ai-semantic-scholar" aria-hidden="true"></i></span>
+        <span class="home-social-label">Semantic Scholar</span>
+      </a>
+      <a class="home-social-link home-social-dblp" href="https://dblp.org/pid/239/5831.html" aria-label="Chaofan Tao on DBLP">
+        <span class="home-social-icon"><i class="ai ai-dblp" aria-hidden="true"></i></span>
+        <span class="home-social-label">DBLP</span>
       </a>
       <a class="home-social-link home-social-hf" href="https://huggingface.co/tcftrees" aria-label="Chaofan Tao on Hugging Face">
         <span class="home-social-icon"><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="" aria-hidden="true" loading="lazy"></span>

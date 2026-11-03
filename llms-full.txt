@@ -1,0 +1,27 @@
+---
+permalink: /llms-full.txt
+layout: null
+sitemap: false
+---
+# Chaofan Tao (陶超凡): full publication list
+
+> AI researcher at LegoX and Huawei Foundation Model Lab working on LLM coding agents, agentic RL, agentic data and environments, and efficient LLM training and inference. PhD, The University of Hong Kong. ACL 2022 Outstanding Paper Award. Homepage: {{ site.url }}/ · Summary: {{ site.url }}/llms.txt
+{% for group in site.data.homepage.groups %}
+{% assign papers = site.data.homepage.publications | where: "group", group.id %}
+## {{ group.title }}
+{% for paper in papers %}
+### {{ paper.title }}
+
+- Venue: {{ paper.venue }} {{ paper.year }}{% if paper.award %}
+- Award: {{ paper.award }}{% endif %}
+- Authors: {{ paper.authors }}
+- Paper: {{ paper.url }}{% if paper.code %}
+- Code: {{ paper.code }}{% endif %}{% if paper.repository %}
+- Repository: {{ paper.repository }}{% endif %}{% if paper.data %}
+- Data: {{ paper.data }}{% endif %}
+
+{{ paper.abstract_en }}
+
+中文摘要：{{ paper.abstract_zh }}
+{% endfor %}
+{% endfor %}
