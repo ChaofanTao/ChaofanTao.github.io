@@ -21,10 +21,6 @@ Key facts:
 
 - [Homepage]({{ site.url }}/): biography, projects, and all publications with English and Chinese summaries
 - [Google Scholar](https://scholar.google.com/citations?user=gjmfLroAAAAJ)
-- [ORCID](https://orcid.org/0000-0002-6093-0854)
-- [OpenReview](https://openreview.net/profile?id=~Chaofan_Tao1)
-- [Semantic Scholar](https://www.semanticscholar.org/author/Chaofan-Tao/144259094)
-- [DBLP](https://dblp.org/pid/239/5831.html)
 - [GitHub](https://github.com/ChaofanTao)
 - [Hugging Face](https://huggingface.co/tcftrees)
 

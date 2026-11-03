@@ -339,10 +339,10 @@ redirect_from:
   .home-socials {
     --link-box: clamp(2.75rem, 14vw, 3.75rem);
     display: grid;
-    grid-template-columns: repeat(9, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     align-items: start;
     gap: 0.3rem;
-    max-width: 48rem;
+    max-width: 27rem;
     margin: 1.5rem auto 0;
     padding-top: 1rem;
     border-top: 1px solid var(--global-divider-color);
@@ -405,24 +405,6 @@ redirect_from:
     width: var(--link-box);
     height: var(--link-box);
   }
-
-  .home-social-orcid .home-social-icon {
-    color: #a6ce39;
-  }
-
-  .home-social-s2 .home-social-icon {
-    color: #1857b6;
-  }
-
-  .home-social-dblp .home-social-icon {
-    color: #004f9f;
-  }
-
-  .home-social-openreview img {
-    width: calc(var(--link-box) * 0.6);
-    height: calc(var(--link-box) * 0.6);
-  }
-
   .home-social-label {
     padding: 0 0.1rem 0.4rem;
     font-size: 0.75rem;
@@ -498,13 +480,7 @@ redirect_from:
 
     .home-social-label {
       font-size: 0.7rem;
-    }
-
-    .home-socials {
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      max-width: 24rem;
-    }
-  }
+    }  }
 
   @media (prefers-reduced-motion: no-preference) {
     .home-project {
@@ -793,22 +769,6 @@ redirect_from:
       <a class="home-social-link home-social-scholar" href="https://scholar.google.com/citations?user=gjmfLroAAAAJ" aria-label="Chaofan Tao on Google Scholar">
         <span class="home-social-icon"><i class="ai ai-google-scholar" aria-hidden="true"></i></span>
         <span class="home-social-label">Scholar</span>
-      </a>
-      <a class="home-social-link home-social-orcid" href="https://orcid.org/0000-0002-6093-0854" aria-label="Chaofan Tao on ORCID">
-        <span class="home-social-icon"><i class="ai ai-orcid" aria-hidden="true"></i></span>
-        <span class="home-social-label">ORCID</span>
-      </a>
-      <a class="home-social-link home-social-openreview" href="https://openreview.net/profile?id=~Chaofan_Tao1" aria-label="Chaofan Tao on OpenReview">
-        <span class="home-social-icon"><img src="https://openreview.net/images/openreview_logo_512.png" alt="" aria-hidden="true" loading="lazy"></span>
-        <span class="home-social-label">OpenReview</span>
-      </a>
-      <a class="home-social-link home-social-s2" href="https://www.semanticscholar.org/author/Chaofan-Tao/144259094" aria-label="Chaofan Tao on Semantic Scholar">
-        <span class="home-social-icon"><i class="ai ai-semantic-scholar" aria-hidden="true"></i></span>
-        <span class="home-social-label">Semantic Scholar</span>
-      </a>
-      <a class="home-social-link home-social-dblp" href="https://dblp.org/pid/239/5831.html" aria-label="Chaofan Tao on DBLP">
-        <span class="home-social-icon"><i class="ai ai-dblp" aria-hidden="true"></i></span>
-        <span class="home-social-label">DBLP</span>
       </a>
       <a class="home-social-link home-social-hf" href="https://huggingface.co/tcftrees" aria-label="Chaofan Tao on Hugging Face">
         <span class="home-social-icon"><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="" aria-hidden="true" loading="lazy"></span>
