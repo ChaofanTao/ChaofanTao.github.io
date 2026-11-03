@@ -1,0 +1,47 @@
+# Chaofan Tao (陶超凡)
+
+> Chaofan Tao is an AI researcher at LegoX (https://www.legox.net/), an open-source effort on agentic data, training infrastructure, evaluation, and models for coding agents. He is also a researcher at Huawei Foundation Model Lab. His work covers LLM coding agents, agentic reinforcement learning, agentic data and environments, multimodal LLM reasoning, and efficient LLM training and inference. He received his PhD from The University of Hong Kong (advised by Prof. Ngai Wong and Prof. Ping Luo, MMLAB@HKU) and his bachelor's degree from the Yingcai Honors College, UESTC. His paper on generative language model quantization received the ACL 2022 Outstanding Paper Award.
+
+Key facts:
+
+- Name: Chaofan Tao (Chinese: 陶超凡)
+- Primary affiliation: LegoX; also Huawei Foundation Model Lab
+- Education: PhD, The University of Hong Kong; bachelor's degree, Yingcai Honors College, University of Electronic Science and Technology of China
+- Research areas: coding agents, software-engineering agents (SWE-bench), terminal agents, agentic RL, multimodal LLMs, quantization and pruning, KV cache compression, scaling laws
+- Award: ACL 2022 Outstanding Paper Award
+- Publications: 25 papers since 2022 at venues including ICLR, ICML, NeurIPS, ICSE, ACL, EMNLP, COLM, TMLR
+- Contact: tcftrees@gmail.com (internship inquiries: put "[Interest]" in the subject)
+
+## Profiles
+
+- [Homepage](https://chaofantao.top/): biography, projects, and all publications with English and Chinese summaries
+- [Google Scholar](https://scholar.google.com/citations?user=gjmfLroAAAAJ)
+- [ORCID](https://orcid.org/0000-0002-6093-0854)
+- [OpenReview](https://openreview.net/profile?id=~Chaofan_Tao1)
+- [Semantic Scholar](https://www.semanticscholar.org/author/Chaofan-Tao/144259094)
+- [DBLP](https://dblp.org/pid/239/5831.html)
+- [GitHub](https://github.com/ChaofanTao)
+- [Hugging Face](https://huggingface.co/tcftrees)
+
+## Research overviews
+
+- [Coding agents, agentic data and agentic RL](https://chaofantao.top/research/coding-agents/): LegoFlow, SWE-Lego, Terminal-Lego and Lego-RL with verified key results (e.g. Lego-RL reaches 70.4% on SWE-bench Verified in OpenHands SDK; SWE-Lego-Qwen3-32B reaches 52.6% with SFT only). Chinese: https://chaofantao.top/zh/research/coding-agents/
+- [Efficient LLM training and inference](https://chaofantao.top/research/efficient-llm/): vocabulary scaling laws, quantization (ACL 2022 Outstanding Paper), KV cache compression, fast test-time scaling, distillation. Chinese: https://chaofantao.top/zh/research/efficient-llm/
+- [Multimodal reasoning and agents](https://chaofantao.top/research/multimodal-reasoning/): SFT vs. RL for reasoning VLMs, PhyX physical reasoning, MMSearch-Plus, RoboCodeX code generation for robots. Chinese: https://chaofantao.top/zh/research/multimodal-reasoning/
+
+## Projects (LegoX)
+
+- [LegoFlow](https://www.legox.net/blog/legoflow/): agent-orchestrated framework for building verified coding tasks and training trajectories, from repository discovery to evaluation. Code: https://github.com/LegoX/LegoFlow
+- [Lego-RL](https://www.legox.net/blog/lego-rl/): reinforcement learning inside unmodified coding-agent harnesses (e.g. OpenHands, Claude Code, OpenCode), preserving generation-time tokens and MoE routing for faithful training. Code: https://github.com/LegoX/Lego-RL
+- [Terminal-Lego](https://www.legox.net/blog/terminal-lego/): executable tasks and grounded interaction trajectories for terminal-agent training. Code: https://github.com/SWE-Lego/terminal-lego · Data: https://huggingface.co/datasets/SWE-Lego/Terminal-Lego-15k
+- [SWE-Lego](https://www.legox.net/blog/swe-lego/): supervised fine-tuning recipe for software issue resolution with verified data, error masking, and curriculum learning. Paper: https://arxiv.org/abs/2601.01426
+
+## Selected publications
+
+- [SWE-Lego: Pushing the Limits of Supervised Fine-tuning for Software Issue Resolving](https://arxiv.org/abs/2601.01426) (arXiv 2026): A supervised fine-tuning recipe for software issue resolution, combining verified data, error masking, and curriculum learning.
+- [Scaling Laws with Vocabulary: Larger Models Deserve Larger Vocabularies](https://arxiv.org/abs/2407.13623) (NeurIPS 2024): Compute-optimal vocabulary scaling connects tokenizer design with model size and training budgets.
+- [Compression of Generative Pre-trained Language Models via Quantization](https://arxiv.org/abs/2203.10705) (ACL 2022 Outstanding Paper Award): Quantization methods that compress generative language models while preserving generation quality.
+
+## Optional
+
+- [Full publication list with abstracts](https://chaofantao.top/llms-full.txt)

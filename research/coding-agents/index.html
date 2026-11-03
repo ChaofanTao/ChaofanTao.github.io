@@ -1,0 +1,242 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Coding Agents, Agentic Data and Agentic RL | Chaofan Tao (陶超凡) </title> <meta name="author" content="Chaofan Tao"> <meta name="description" content="Chaofan Tao's open research on LLM coding agents at LegoX: verified SWE task construction, SFT recipes, terminal-agent trajectories, and RL inside Claude Code, OpenHands and OpenCode."> <meta name="keywords" content="Chaofan Tao, 陶超凡, LegoX, large language models, LLM, coding agents, software engineering agents, SWE-bench, agentic reinforcement learning, multimodal LLM, efficient LLM training and inference, quantization, scaling laws"> <meta property="og:site_name" content="Chaofan Tao (陶超凡)"> <meta property="og:type" content="website"> <meta property="og:title" content="Chaofan Tao (陶超凡) | Coding Agents, Agentic Data and Agentic RL"> <meta property="og:url" content="https://chaofantao.top/research/coding-agents/"> <meta property="og:description" content="Chaofan Tao's open research on LLM coding agents at LegoX: verified SWE task construction, SFT recipes, terminal-agent trajectories, and RL inside Claude Code, OpenHands and OpenCode."> <meta property="og:image" content="https://chaofantao.top/assets/img/og-image.png"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Coding Agents, Agentic Data and Agentic RL"> <meta name="twitter:description" content="Chaofan Tao's open research on LLM coding agents at LegoX: verified SWE task construction, SFT recipes, terminal-agent trajectories, and RL inside Claude Code, OpenHands and OpenCode."> <meta name="twitter:image" content="https://chaofantao.top/assets/img/og-image.png"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/favicon.png?v=3188b4ee0feda062be9fabb3a75f1eaf"> <link rel="apple-touch-icon" href="/assets/img/favicon.png?v=3188b4ee0feda062be9fabb3a75f1eaf"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://chaofantao.top/research/coding-agents/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav sticky-bottom-footer"> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Chaofan Tao (陶超凡) </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About </a> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <style>
+  .research-page {
+    --research-muted: #59616b;
+    max-width: 52rem;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    line-height: 1.7;
+  }
+
+  html[data-theme="dark"] .research-page {
+    --research-muted: #b5bdc8;
+  }
+
+  .research-page :is(section, h2, [id]) {
+    scroll-margin-top: 5.5rem;
+  }
+
+  .research-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+    color: var(--research-muted);
+    font-size: 0.85rem;
+  }
+
+  .research-breadcrumb a {
+    color: inherit;
+  }
+
+  .research-page h1 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.6rem, 6vw, 2.3rem);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+  }
+
+  .research-meta {
+    margin: 0 0 1.5rem;
+    color: var(--research-muted);
+    font-size: 0.88rem;
+  }
+
+  .research-lead {
+    font-size: 1.08rem;
+  }
+
+  .research-page h2 {
+    margin: 2.5rem 0 0.75rem;
+    font-size: 1.45rem;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .research-page h3 {
+    margin: 1.25rem 0 0.4rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  .research-table-wrap {
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+
+  .research-page table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  .research-page th,
+  .research-page td {
+    padding: 0.55rem 0.6rem;
+    border-bottom: 1px solid var(--global-divider-color);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .research-page th {
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .research-page blockquote {
+    margin: 1.25rem 0;
+    padding: 0.6rem 1rem;
+    border-left: 3px solid var(--global-theme-color);
+    color: var(--research-muted);
+  }
+
+  .research-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .research-card {
+    padding: 1.1rem 1.2rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.5rem;
+  }
+
+  .research-card h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+  }
+
+  .research-card p {
+    margin: 0;
+    font-size: 0.92rem;
+  }
+
+  .research-papers {
+    padding-left: 1.2rem;
+  }
+
+  .research-paper {
+    margin-bottom: 1.1rem;
+  }
+
+  .research-paper h3 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .research-paper p {
+    margin: 0.15rem 0;
+    font-size: 0.9rem;
+  }
+
+  .research-paper-meta {
+    color: var(--research-muted);
+  }
+
+  .research-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .research-faq details {
+    margin: 0.5rem 0;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.4rem;
+  }
+
+  .research-faq summary {
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .research-faq details p {
+    margin: 0.5rem 0 0;
+  }
+
+  .research-page pre {
+    overflow-x: auto;
+    padding: 0.8rem 1rem;
+    border-radius: 0.4rem;
+    background: var(--global-code-bg-color);
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 640px) {
+    .research-cards {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style> <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://chaofantao.top/research/coding-agents/#page",
+      "url": "https://chaofantao.top/research/coding-agents/",
+      "name": "Coding Agents, Agentic Data and Agentic RL",
+      "description": "Chaofan Tao's open research on LLM coding agents at LegoX: verified SWE task construction, SFT recipes, terminal-agent trajectories, and RL inside Claude Code, OpenHands and OpenCode.",
+      "inLanguage": "en",
+      "datePublished": "2026-11-03",
+      "dateModified": "2026-11-03",
+      "isPartOf": { "@id": "https://chaofantao.top/#website" },
+      "author": { "@id": "https://chaofantao.top/#person" },
+      "about": [{ "@type": "Thing", "name": "Coding agents" }, { "@type": "Thing", "name": "Software engineering agents" }, { "@type": "Thing", "name": "SWE-bench" }, { "@type": "Thing", "name": "Agentic reinforcement learning" }, { "@type": "Thing", "name": "Terminal agents" }, { "@type": "Thing", "name": "Agentic data" }],
+      "breadcrumb": { "@id": "https://chaofantao.top/research/coding-agents/#breadcrumb" },
+      
+      "hasPart": [{ "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2604.06861", "headline": "REAgent: Requirement-Driven LLM Agents for Software Issue Resolution", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2601.01426", "headline": "SWE-Lego: Pushing the Limits of Supervised Fine-tuning for Software Issue Resolving", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2606.03461", "headline": "What Makes Interaction Trajectories Effective for Training Terminal Agents?", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2505.23932", "headline": "SwingArena: Competitive Programming Arena for Long-context GitHub Issue Solving", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2601.18533", "headline": "From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for Reinforcement Learning of Open-ended Generation", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2402.16117", "headline": "RoboCodeX: Multimodal Code Generation for Robotic Behavior Synthesis", "author": { "@id": "https://chaofantao.top/#person" } }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://chaofantao.top/research/coding-agents/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Chaofan Tao", "item": "https://chaofantao.top/" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://chaofantao.top/research/" },
+        { "@type": "ListItem", "position": 3, "name": "Coding Agents, Agentic Data and Agentic RL", "item": "https://chaofantao.top/research/coding-agents/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://chaofantao.top/research/coding-agents/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is SWE-Lego?", "acceptedAnswer": { "@type": "Answer", "text": "SWE-Lego is a supervised fine-tuning recipe for software issue resolution by Chaofan Tao and collaborators. It combines a dataset of 32k task instances and 18k validated trajectories with error masking and a difficulty-based curriculum. SWE-Lego-Qwen3-8B and SWE-Lego-Qwen3-32B reach 42.2% and 52.6% on SWE-bench Verified with SFT only, and 49.6% and 58.8% with verifier-based test-time scaling (TTS@16), evaluated without Git hacking." } },
+        { "@type": "Question", "name": "What is Lego-RL?", "acceptedAnswer": { "@type": "Answer", "text": "Lego-RL is a harness-native reinforcement learning framework for coding agents from LegoX. It trains a policy inside an unmodified agent harness (OpenHands SDK, Claude Code or OpenCode) while preserving token-level fidelity and MoE rollout-routing replay. Starting from Qwen3.5-35B-A3B, one training run per harness improves SWE-bench Verified from 64.0, 62.4 and 57.2 to 70.4, 68.2 and 66.6." } },
+        { "@type": "Question", "name": "Are the LegoX datasets, models and code open source?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Code is on GitHub (LegoX/SWE-Lego, LegoX/LegoFlow, LegoX/Lego-RL, SWE-Lego/terminal-lego), and datasets and models are on Hugging Face under the Lego-X and SWE-Lego organizations, including LegoFlow-SWE and Terminal-Lego-15k." } },
+        { "@type": "Question", "name": "Do stronger coding agents make better teachers for distillation?", "acceptedAnswer": { "@type": "Answer", "text": "Not necessarily. In the Terminal-Lego study, Claude Opus 4.6 scores 69.4 on Terminal-Bench 2.0 but its trajectories train weaker Qwen3 students than those of DeepSeek-V3.2 (39.3). Trajectories that visibly inspect, act and verify through the harness transfer best, a property the paper calls environment-grounded supervision." } },
+        { "@type": "Question", "name": "How can I collaborate with Chaofan Tao or apply for an internship?", "acceptedAnswer": { "@type": "Answer", "text": "Use the Email me button in the contact section of chaofantao.top, put [Interest] in the subject, and include a short introduction and one or two links to your work such as a paper, GitHub repository, blog or demo." } }
+      ]
+    }
+  ]
+}
+</script> <div class="research-page"> <nav class="research-breadcrumb" aria-label="Breadcrumb"> <a href="/">Chaofan Tao</a><span aria-hidden="true">/</span> <a href="/research/">Research</a><span aria-hidden="true">/</span> <span>Coding agents</span> <span aria-hidden="true">·</span><a href="/zh/research/coding-agents/" lang="zh-Hans">中文版</a> </nav> <h1>Coding Agents, Agentic Data and Agentic RL</h1> <p class="research-meta">By <a href="/">Chaofan Tao (陶超凡)</a>, LegoX · Last updated <time datetime="2026-11-03">November 3, 2026</time></p> <p class="research-lead"><strong>Chaofan Tao builds open training recipes for LLM software-engineering and terminal agents at <a href="https://www.legox.net/" rel="external nofollow noopener" target="_blank">LegoX</a>.</strong> The work covers the full loop: verified tasks mined from real GitHub pull requests (LegoFlow), supervised fine-tuning with error masking and a difficulty curriculum (SWE-Lego), environment-grounded trajectories for terminal agents (Terminal-Lego), and reinforcement learning inside unmodified agent harnesses such as OpenHands, Claude Code and OpenCode (Lego-RL). Code, data and models are open.</p> <h2 id="key-results">Key results</h2> <div class="research-table-wrap"> <table> <thead> <tr> <th>Project</th> <th>Model and setting</th> <th>Benchmark</th> <th>Result</th> <th>Source</th> </tr> </thead> <tbody> <tr> <td>Lego-RL</td> <td>Qwen3.5-35B-A3B, one RL run per harness</td> <td>SWE-bench Verified</td> <td>OpenHands SDK 64.0 → 70.4<br>Claude Code 62.4 → 68.2<br>OpenCode 57.2 → 66.6</td> <td><a href="https://www.legox.net/blog/lego-rl/" rel="external nofollow noopener" target="_blank">Blog</a></td> </tr> <tr> <td>LegoFlow</td> <td>Qwen3.5-35B-A3B-Base, two agent-managed iterations, 512 trajectories</td> <td>SWE-bench Verified</td> <td>7.6% → 64.4%</td> <td><a href="https://www.legox.net/blog/legoflow/" rel="external nofollow noopener" target="_blank">Blog</a></td> </tr> <tr> <td>LegoFlow-SWE</td> <td>Qwen3.5-35B-A3B-Base, about 1K trajectories</td> <td>SWE-bench Verified / Pro / Multilingual</td> <td>70.2% / 48.8% / 57.0%</td> <td><a href="https://www.legox.net/blog/legoflow/" rel="external nofollow noopener" target="_blank">Blog</a></td> </tr> <tr> <td>SWE-Lego</td> <td>Qwen3-8B / Qwen3-32B, SFT only, hack-free evaluation</td> <td>SWE-bench Verified</td> <td>42.2% / 52.6%<br>TTS@16: 49.6% / 58.8%</td> <td><a href="https://arxiv.org/abs/2601.01426" rel="external nofollow noopener" target="_blank">arXiv:2601.01426</a></td> </tr> <tr> <td>Terminal-Lego</td> <td>Qwen3-32B, 15.3k trajectories</td> <td>Terminal-Bench 2.0</td> <td>24.3%, with about 30× less data than prior results</td> <td><a href="https://arxiv.org/abs/2606.03461" rel="external nofollow noopener" target="_blank">arXiv:2606.03461</a></td> </tr> </tbody> </table> </div> <h2 id="verified-tasks">How do you build verified coding-agent tasks at scale?</h2> <p>A task is only useful for training if the environment can prove it: the buggy version must fail the tests and the reference fix must pass them. LegoFlow's Curator block discovers merged pull requests, rewrites each one as a leak-free task, assembles it in the Harbor task format with an isolated environment, and keeps it only after this fail-then-pass check. Every block (Curator, Tracer, Trainer, Evaluator) is packaged as a plugin skill that a coding agent such as Claude Code or Codex can run.</p> <p>For the LegoFlow-SWE release, filtering started from more than 700K repositories and 12M candidate pull requests and kept 5,000 verified tasks across 8 programming languages and 20 task tags, or 0.0417% of the pool. GLM-5.2 produced 9,767 rollouts, of which 2,780 passed verification. Under the same teacher, scaffold and budget, LegoFlow-SWE beats SWE-rebench-v2 by 5.8, 1.9 and 1.0 points on SWE-bench Verified, Pro and Multilingual.</p> <h2 id="sft">Can supervised fine-tuning alone produce a strong SWE agent?</h2> <p>Yes, for open models of 8B to 32B parameters. SWE-Lego combines 32k executable task instances and 18k validated trajectories from real and synthetic sources, masks erroneous steps during training, and orders data by difficulty. In the ablation, the dataset adds 25.6 points, refined SFT adds 3.8, and test-time scaling with a trained verifier adds 6.2, lifting Qwen3-32B from 23.2% to 58.8% on SWE-bench Verified. Trajectories that recover solutions from Git history are filtered out, and results are reported on hack-free images.</p> <h2 id="harness-native-rl">Why train RL inside the agent's native harness?</h2> <p>Because the harness changes what the model learns from. The same Qwen3.5-35B-A3B checkpoint scores 64.0, 62.4 and 57.2 on SWE-bench Verified under OpenHands SDK, Claude Code and OpenCode, a 6.8-point spread from the harness alone. Lego-RL trains inside each harness without changing its control flow, keeps token-in/token-out fidelity and history alignment, and replays MoE routing from rollout. Train/inference sampled-token probabilities correlate at r ≥ 0.998, and asynchronous training runs 2.5× faster than synchronous (about 1.9× after compute-throughput correction).</p> <p>All three runs use the same 2,699 tasks and a 200k context budget for 126 steps. In sampled OpenHands SDK trajectories, the share of runs that reread an edited file rose from 73.6% to 98.1% after training.</p> <h2 id="teachers">Do stronger agents make better teachers?</h2> <p>No. In the Terminal-Lego study, Claude Opus 4.6 is the strongest solver on Terminal-Bench 2.0 (69.4), yet Qwen3-8B and Qwen3-32B students trained on its trajectories reach only 5.6 and 15.5. Students trained on DeepSeek-V3.2 (39.3) reach 10.5 and 20.6. The difference follows the share of actions backed by a relevant prior observation, not the teacher's score.</p> <blockquote>“The best solver is the worst teacher.” — <a href="https://www.legox.net/blog/terminal-lego/" rel="external nofollow noopener" target="_blank">LegoX, Terminal-Lego</a> </blockquote> <p>Terminal-Lego turns Stack Overflow problems into more than 15,000 Docker-verified terminal tasks across 90+ technical domains in 13 categories.</p> <h2 id="evaluation">How should coding agents be evaluated?</h2> <p>Static pass/fail on a fixed set misses how software is actually built. <a href="https://arxiv.org/abs/2505.23932" rel="external nofollow noopener" target="_blank">SwingArena</a> (ICLR 2026 Oral) pairs LLMs as patch submitters and test-writing reviewers inside CI pipelines, over 400+ real GitHub issues in C++, Python, Rust and Go. <a href="https://arxiv.org/abs/2604.06861" rel="external nofollow noopener" target="_blank">REAgent</a> (ICSE 2027) treats the issue text itself as a requirement to be checked and refined before patching, and outperforms five baselines on three benchmarks. RL reward design beyond code is studied in <a href="https://arxiv.org/abs/2601.18533" rel="external nofollow noopener" target="_blank">RLVRR</a> (ICLR 2026), which turns a single verifiable reward into a chain of reference-based rewards.</p> <h2 id="resources">Code, data and models</h2> <ul> <li>LegoFlow: <a href="https://github.com/LegoX/LegoFlow" rel="external nofollow noopener" target="_blank">GitHub</a> · <a href="https://huggingface.co/collections/Lego-X/legoflow" rel="external nofollow noopener" target="_blank">Hugging Face</a> · <a href="https://www.legox.net/blog/legoflow/" rel="external nofollow noopener" target="_blank">overview</a> </li> <li>Lego-RL: <a href="https://github.com/LegoX/Lego-RL" rel="external nofollow noopener" target="_blank">GitHub</a> · <a href="https://huggingface.co/collections/Lego-X/lego-rl" rel="external nofollow noopener" target="_blank">Hugging Face</a> · <a href="https://www.legox.net/blog/lego-rl/" rel="external nofollow noopener" target="_blank">overview</a> </li> <li>Terminal-Lego: <a href="https://github.com/SWE-Lego/terminal-lego" rel="external nofollow noopener" target="_blank">GitHub</a> · <a href="https://huggingface.co/datasets/SWE-Lego/Terminal-Lego-15k" rel="external nofollow noopener" target="_blank">Terminal-Lego-15k</a> · <a href="https://www.legox.net/blog/terminal-lego/" rel="external nofollow noopener" target="_blank">overview</a> </li> <li>SWE-Lego: <a href="https://github.com/LegoX/SWE-Lego" rel="external nofollow noopener" target="_blank">GitHub</a> · <a href="https://arxiv.org/abs/2601.01426" rel="external nofollow noopener" target="_blank">paper</a> · <a href="https://www.legox.net/blog/swe-lego/" rel="external nofollow noopener" target="_blank">overview</a> </li> </ul> <h2 id="papers">Papers</h2> <ol class="research-papers"> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2604.06861" rel="external nofollow noopener" target="_blank">REAgent: Requirement-Driven LLM Agents for Software Issue Resolution</a></h3> <p class="research-paper-meta">ICSE · 2027</p> <p>Shiqi Kuang, Zhao Tian, Kaiwei Lin, <strong>Chaofan Tao</strong>, Shaowei Wang, Haoli Bai, Lifeng Shang, Junjie Chen</p> <p>REAgent turns issue descriptions into structured, information-rich requirements, detects and iteratively refines low-quality requirements, and uses the refined specifications to guide more accurate software patches.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2604.06861" rel="external nofollow noopener" target="_blank">Paper</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2601.01426" rel="external nofollow noopener" target="_blank">SWE-Lego: Pushing the Limits of Supervised Fine-tuning for Software Issue Resolving</a></h3> <p class="research-paper-meta">arXiv · 2026</p> <p><strong>Chaofan Tao</strong>, Jierun Chen, Yuxin Jiang, Kaiqi Kou, Shaowei Wang, Ruoyu Wang, Xiaohui Li, Sidi Yang, Yiming Du, Jianbo Dai, Zhiming Mao, Xinyu Wang, Lifeng Shang, Haoli Bai</p> <p>SWE-Lego presents a strong SFT-only recipe (new dataset + curriculum/error masking) and studies verifier-based test-time scaling, pushing open 8B/32B models to SOTA on SWE-bench Verified.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2601.01426" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/LegoX/SWE-Lego" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2606.03461" rel="external nofollow noopener" target="_blank">What Makes Interaction Trajectories Effective for Training Terminal Agents?</a></h3> <p class="research-paper-meta">arXiv · 2026</p> <p>Sidi Yang, <strong>Chaofan Tao</strong>, Jierun Chen, Tiezheng Yu, Ruoyu Wang, Yuxin Jiang, Yiming Du, Wendong Xu, Jing Xiong, Taiqiang Wu, Lifeng Shang, Xiaohui Li, Ngai Wong, Haoli Bai</p> <p>Using Terminal-Lego, a pipeline that turns real-world issues into environment-verified terminal tasks, the paper finds a pedagogical paradox: stronger agents are not better teachers. Environment-grounded inspect-act-verify trajectories transfer best, letting Qwen3-32B reach 24.3% on Terminal-Bench 2.0 with only 15.3k trajectories, about 30× less data than prior results.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2606.03461" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/SWE-Lego/terminal-lego" rel="external nofollow noopener" target="_blank">Code</a> <a href="https://huggingface.co/datasets/SWE-Lego/Terminal-Lego-15k" rel="external nofollow noopener" target="_blank">Data</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2505.23932" rel="external nofollow noopener" target="_blank">SwingArena: Competitive Programming Arena for Long-context GitHub Issue Solving</a></h3> <p class="research-paper-meta">ICLR · Oral · 2026</p> <p>Wendong Xu, Jing Xiong, Chenyang Zhao, Qiujiang Chen, Haoran Wang, Hui Shen, Zhongwei Wan, Jianbo Dai, Taiqiang Wu, He Xiao, <strong>Chaofan Tao</strong>, Z Morley Mao, Ying Sheng, Zhijiang Guo, Hongxia Yang, Bei Yu, Lingpeng Kong, Quanquan Gu, Ngai Wong</p> <p>SwingArena is a CI-driven competitive benchmark where LLMs take turns as submitters and reviewers, paired with retrieval-augmented code generation to handle long-context, multi-language GitHub issue solving.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2505.23932" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/menik1126/Swing-Bench" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2601.18533" rel="external nofollow noopener" target="_blank">From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for Reinforcement Learning of Open-ended Generation</a></h3> <p class="research-paper-meta">ICLR · 2026</p> <p>Yuxin Jiang, Yufei Wang, Qiyuan Zhang, Xingshan Zeng, Liangyou Li, Jierun Chen, <strong>Chaofan Tao</strong>, Haoli Bai, Lifeng Shang</p> <p>RLVRR turns single verifiable end rewards into ordered reference-derived reward chains (content + style) to make RL for open-ended generation more efficient and less prone to reward hacking.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2601.18533" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/YJiangcm/RLVRR" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2402.16117" rel="external nofollow noopener" target="_blank">RoboCodeX: Multimodal Code Generation for Robotic Behavior Synthesis</a></h3> <p class="research-paper-meta">ICML · 2024</p> <p>Yao Mu, Junting Chen, Qinglong Zhang, Shoufa Chen, Qiaojun Yu, Chongjian Ge, Runjian Chen, Zhixuan Liang, Mengkang Hu, <strong>Chaofan Tao</strong>, Peize Sun, Haibao Yu, Chao Yang, Wenqi Shao, Wenhai Wang, Jifeng Dai, Yu Qiao, Mingyu Ding, Ping Luo</p> <p>RoboCodeX is a tree-structured multimodal code generation framework that decomposes high-level instructions into object-centric manipulation units with affordance and safety constraints, generalizing across robot platforms and reaching state-of-the-art results on manipulation and navigation tasks in simulation and on real robots.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2402.16117" rel="external nofollow noopener" target="_blank">Paper</a> </div> </li> </ol> <section class="research-faq" id="faq" aria-labelledby="faq-heading"> <h2 id="faq-heading">FAQ</h2> <details> <summary>What is SWE-Lego?</summary> <p>SWE-Lego is a supervised fine-tuning recipe for software issue resolution by Chaofan Tao and collaborators. It combines a dataset of 32k task instances and 18k validated trajectories with error masking and a difficulty-based curriculum. SWE-Lego-Qwen3-8B and SWE-Lego-Qwen3-32B reach 42.2% and 52.6% on SWE-bench Verified with SFT only, and 49.6% and 58.8% with verifier-based test-time scaling (TTS@16), evaluated without Git hacking.</p> </details> <details> <summary>What is Lego-RL?</summary> <p>Lego-RL is a harness-native reinforcement learning framework for coding agents from LegoX. It trains a policy inside an unmodified agent harness (OpenHands SDK, Claude Code or OpenCode) while preserving token-level fidelity and MoE rollout-routing replay. Starting from Qwen3.5-35B-A3B, one training run per harness improves SWE-bench Verified from 64.0, 62.4 and 57.2 to 70.4, 68.2 and 66.6.</p> </details> <details> <summary>Are the LegoX datasets, models and code open source?</summary> <p>Yes. Code is on GitHub (LegoX/SWE-Lego, LegoX/LegoFlow, LegoX/Lego-RL, SWE-Lego/terminal-lego), and datasets and models are on Hugging Face under the Lego-X and SWE-Lego organizations, including LegoFlow-SWE and Terminal-Lego-15k.</p> </details> <details> <summary>Do stronger coding agents make better teachers for distillation?</summary> <p>Not necessarily. In the Terminal-Lego study, Claude Opus 4.6 scores 69.4 on Terminal-Bench 2.0 but its trajectories train weaker Qwen3 students than those of DeepSeek-V3.2 (39.3). Trajectories that visibly inspect, act and verify through the harness transfer best, a property the paper calls environment-grounded supervision.</p> </details> <details> <summary>How can I collaborate with Chaofan Tao or apply for an internship?</summary> <p>Use the Email me button in the contact section of chaofantao.top, put [Interest] in the subject, and include a short introduction and one or two links to your work such as a paper, GitHub repository, blog or demo.</p> </details> </section> <h2 id="cite">How to cite</h2> <pre><code>@article{tao2026swelego,
+  title   = {SWE-Lego: Pushing the Limits of Supervised Fine-tuning for Software Issue Resolving},
+  author  = {Tao, Chaofan and Chen, Jierun and Jiang, Yuxin and Kou, Kaiqi and Wang, Shaowei and Wang, Ruoyu and Li, Xiaohui and Yang, Sidi and Du, Yiming and Dai, Jianbo and Mao, Zhiming and Wang, Xinyu and Shang, Lifeng and Bai, Haoli},
+  journal = {arXiv preprint arXiv:2601.01426},
+  year    = {2026}
+}
+
+@article{yang2026interactiontrajectories,
+  title   = {What Makes Interaction Trajectories Effective for Training Terminal Agents?},
+  author  = {Yang, Sidi and Tao, Chaofan and Chen, Jierun and Yu, Tiezheng and Wang, Ruoyu and Jiang, Yuxin and Du, Yiming and Xu, Wendong and Xiong, Jing and Wu, Taiqiang and Shang, Lifeng and Li, Xiaohui and Wong, Ngai and Bai, Haoli},
+  journal = {arXiv preprint arXiv:2606.03461},
+  year    = {2026}
+}</code></pre> <p>Related: <a href="/research/efficient-llm/">Efficient LLM training and inference</a> · <a href="/research/multimodal-reasoning/">Multimodal reasoning and agents</a> · <a href="/llms.txt">llms.txt</a></p> </div> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> © Copyright 2026 Chaofan Tao. Built with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> and hosted on GitHub Pages. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> </body> </html>

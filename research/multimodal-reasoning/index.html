@@ -1,0 +1,229 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Multimodal Reasoning and Agents | Chaofan Tao (陶超凡) </title> <meta name="author" content="Chaofan Tao"> <meta name="description" content="Chaofan Tao's research on multimodal LLMs: RL and long-CoT post-training for reasoning VLMs, physical reasoning benchmarks, multimodal browsing agents, and code generation for robots."> <meta name="keywords" content="Chaofan Tao, 陶超凡, LegoX, large language models, LLM, coding agents, software engineering agents, SWE-bench, agentic reinforcement learning, multimodal LLM, efficient LLM training and inference, quantization, scaling laws"> <meta property="og:site_name" content="Chaofan Tao (陶超凡)"> <meta property="og:type" content="website"> <meta property="og:title" content="Chaofan Tao (陶超凡) | Multimodal Reasoning and Agents"> <meta property="og:url" content="https://chaofantao.top/research/multimodal-reasoning/"> <meta property="og:description" content="Chaofan Tao's research on multimodal LLMs: RL and long-CoT post-training for reasoning VLMs, physical reasoning benchmarks, multimodal browsing agents, and code generation for robots."> <meta property="og:image" content="https://chaofantao.top/assets/img/og-image.png"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Multimodal Reasoning and Agents"> <meta name="twitter:description" content="Chaofan Tao's research on multimodal LLMs: RL and long-CoT post-training for reasoning VLMs, physical reasoning benchmarks, multimodal browsing agents, and code generation for robots."> <meta name="twitter:image" content="https://chaofantao.top/assets/img/og-image.png"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/favicon.png?v=3188b4ee0feda062be9fabb3a75f1eaf"> <link rel="apple-touch-icon" href="/assets/img/favicon.png?v=3188b4ee0feda062be9fabb3a75f1eaf"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://chaofantao.top/research/multimodal-reasoning/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav sticky-bottom-footer"> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Chaofan Tao (陶超凡) </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About </a> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <style>
+  .research-page {
+    --research-muted: #59616b;
+    max-width: 52rem;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    line-height: 1.7;
+  }
+
+  html[data-theme="dark"] .research-page {
+    --research-muted: #b5bdc8;
+  }
+
+  .research-page :is(section, h2, [id]) {
+    scroll-margin-top: 5.5rem;
+  }
+
+  .research-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+    color: var(--research-muted);
+    font-size: 0.85rem;
+  }
+
+  .research-breadcrumb a {
+    color: inherit;
+  }
+
+  .research-page h1 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.6rem, 6vw, 2.3rem);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+  }
+
+  .research-meta {
+    margin: 0 0 1.5rem;
+    color: var(--research-muted);
+    font-size: 0.88rem;
+  }
+
+  .research-lead {
+    font-size: 1.08rem;
+  }
+
+  .research-page h2 {
+    margin: 2.5rem 0 0.75rem;
+    font-size: 1.45rem;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .research-page h3 {
+    margin: 1.25rem 0 0.4rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  .research-table-wrap {
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+
+  .research-page table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  .research-page th,
+  .research-page td {
+    padding: 0.55rem 0.6rem;
+    border-bottom: 1px solid var(--global-divider-color);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .research-page th {
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .research-page blockquote {
+    margin: 1.25rem 0;
+    padding: 0.6rem 1rem;
+    border-left: 3px solid var(--global-theme-color);
+    color: var(--research-muted);
+  }
+
+  .research-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .research-card {
+    padding: 1.1rem 1.2rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.5rem;
+  }
+
+  .research-card h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+  }
+
+  .research-card p {
+    margin: 0;
+    font-size: 0.92rem;
+  }
+
+  .research-papers {
+    padding-left: 1.2rem;
+  }
+
+  .research-paper {
+    margin-bottom: 1.1rem;
+  }
+
+  .research-paper h3 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .research-paper p {
+    margin: 0.15rem 0;
+    font-size: 0.9rem;
+  }
+
+  .research-paper-meta {
+    color: var(--research-muted);
+  }
+
+  .research-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .research-faq details {
+    margin: 0.5rem 0;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.4rem;
+  }
+
+  .research-faq summary {
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .research-faq details p {
+    margin: 0.5rem 0 0;
+  }
+
+  .research-page pre {
+    overflow-x: auto;
+    padding: 0.8rem 1rem;
+    border-radius: 0.4rem;
+    background: var(--global-code-bg-color);
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 640px) {
+    .research-cards {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style> <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://chaofantao.top/research/multimodal-reasoning/#page",
+      "url": "https://chaofantao.top/research/multimodal-reasoning/",
+      "name": "Multimodal Reasoning and Agents",
+      "description": "Chaofan Tao's research on multimodal LLMs: RL and long-CoT post-training for reasoning VLMs, physical reasoning benchmarks, multimodal browsing agents, and code generation for robots.",
+      "inLanguage": "en",
+      "datePublished": "2026-11-03",
+      "dateModified": "2026-11-03",
+      "isPartOf": { "@id": "https://chaofantao.top/#website" },
+      "author": { "@id": "https://chaofantao.top/#person" },
+      "about": [{ "@type": "Thing", "name": "Multimodal large language models" }, { "@type": "Thing", "name": "Vision-language models" }, { "@type": "Thing", "name": "Multimodal reasoning" }, { "@type": "Thing", "name": "Reinforcement learning for VLMs" }, { "@type": "Thing", "name": "Physical reasoning" }, { "@type": "Thing", "name": "Multimodal search agents" }, { "@type": "Thing", "name": "Embodied AI" }],
+      "breadcrumb": { "@id": "https://chaofantao.top/research/multimodal-reasoning/#breadcrumb" },
+      
+      "hasPart": [{ "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2508.21475", "headline": "MMSearch-Plus: Benchmarking Provenance-Aware Search for Multimodal Browsing Agents", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2505.15929", "headline": "PhyX: Does Your Model Have the \"Wits\" for Physical Reasoning?", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2402.16117", "headline": "RoboCodeX: Multimodal Code Generation for Robotic Behavior Synthesis", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2411.05902", "headline": "Autoregressive Models in Vision: A Survey", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2506.01713", "headline": "SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2507.07562", "headline": "The Synergy Dilemma of Long-CoT SFT and RL: Investigating Post-training Techniques for Reasoning VLMs", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2408.09511", "headline": "NAVERO: Unlocking Fine-Grained Semantics for Video-Language Compositionality", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2305.17455", "headline": "CrossGET: Cross-Guided Ensemble of Tokens for Accelerating Vision-Language Transformers", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2301.13741", "headline": "UPop: Unified and Progressive Pruning for Compressing Vision-Language Transformers", "author": { "@id": "https://chaofantao.top/#person" } }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://chaofantao.top/research/multimodal-reasoning/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Chaofan Tao", "item": "https://chaofantao.top/" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://chaofantao.top/research/" },
+        { "@type": "ListItem", "position": 3, "name": "Multimodal Reasoning and Agents", "item": "https://chaofantao.top/research/multimodal-reasoning/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://chaofantao.top/research/multimodal-reasoning/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        { "@type": "Question", "name": "Does combining long chain-of-thought SFT and RL help reasoning VLMs?", "acceptedAnswer": { "@type": "Answer", "text": "Not additively. The Synergy Dilemma study (TMLR 2025) finds that long-CoT SFT helps on hard questions but adds verbosity and hurts easy ones, while RL improves all difficulty levels and shortens answers. Two-stage, interleaved and progressive training, data mixing and model merging all trade off accuracy, reasoning style and length instead of adding the benefits." } },
+        { "@type": "Question", "name": "What is PhyX?", "acceptedAnswer": { "@type": "Answer", "text": "PhyX is a benchmark of 3K multimodal questions on physics-grounded reasoning, covering 6 physics domains and 25 sub-domains. GPT-4o, Claude 3.7 Sonnet and o4-mini reach 32.5%, 42.2% and 45.8%, more than 29 points below human experts." } },
+        { "@type": "Question", "name": "What is MMSearch-Plus?", "acceptedAnswer": { "@type": "Answer", "text": "MMSearch-Plus is a 311-task benchmark for multimodal browsing agents that requires extracting fine-grained visual cues and cross-validating them through image and text search. The strongest system reaches 36.0% end-to-end accuracy, and the set-of-mark module adds up to 3.9 points." } },
+        { "@type": "Question", "name": "Does Chaofan Tao work on embodied AI?", "acceptedAnswer": { "@type": "Answer", "text": "His main focus is coding agents and efficient LLMs. Embodied-related contributions include RoboCodeX (ICML 2024), a multimodal code generation framework for robotic behavior synthesis evaluated in simulation and on real robots, and PhyX, a physical reasoning benchmark for multimodal models." } }
+      ]
+    }
+  ]
+}
+</script> <div class="research-page"> <nav class="research-breadcrumb" aria-label="Breadcrumb"> <a href="/">Chaofan Tao</a><span aria-hidden="true">/</span> <a href="/research/">Research</a><span aria-hidden="true">/</span> <span>Multimodal reasoning</span> <span aria-hidden="true">·</span><a href="/zh/research/multimodal-reasoning/" lang="zh-Hans">中文版</a> </nav> <h1>Multimodal Reasoning and Agents</h1> <p class="research-meta">By <a href="/">Chaofan Tao (陶超凡)</a> · Last updated <time datetime="2026-11-03">November 3, 2026</time></p> <p class="research-lead"><strong>This work studies how vision-language models reason, search and act.</strong> It covers reflection-aware RL for multimodal reasoning (SRPO), the interplay of long chain-of-thought SFT and RL in reasoning VLMs, physics-grounded evaluation (PhyX), provenance-aware multimodal browsing agents (MMSearch-Plus), compositional video-language understanding (NAVERO), and multimodal code generation for robot behavior (RoboCodeX).</p> <h2 id="key-results">Key results</h2> <div class="research-table-wrap"> <table> <thead> <tr> <th>Paper</th> <th>Question</th> <th>Finding</th> </tr> </thead> <tbody> <tr> <td> <a href="https://arxiv.org/abs/2507.07562" rel="external nofollow noopener" target="_blank">Synergy Dilemma</a> (TMLR 2025)</td> <td>Do long-CoT SFT and RL add up for VLMs?</td> <td>No: five combination strategies all trade off accuracy, style and length</td> </tr> <tr> <td> <a href="https://arxiv.org/abs/2506.01713" rel="external nofollow noopener" target="_blank">SRPO</a> (NeurIPS 2025)</td> <td>Can MLLMs learn to self-reflect?</td> <td>Two-stage reflection-aware GRPO improves Qwen2.5-VL-7B/32B on MathVista, MathVision, MathVerse and MMMU-Pro</td> </tr> <tr> <td> <a href="https://arxiv.org/abs/2505.15929" rel="external nofollow noopener" target="_blank">PhyX</a> (TMLR 2026)</td> <td>Can models reason about physics in images?</td> <td>3K questions; best models 32.5–45.8%, over 29 points below human experts</td> </tr> <tr> <td> <a href="https://arxiv.org/abs/2508.21475" rel="external nofollow noopener" target="_blank">MMSearch-Plus</a> (ICLR 2026)</td> <td>Can browsing agents use visual evidence?</td> <td>311 tasks; best system 36.0%; set-of-mark adds up to 3.9 points</td> </tr> <tr> <td> <a href="https://arxiv.org/abs/2402.16117" rel="external nofollow noopener" target="_blank">RoboCodeX</a> (ICML 2024)</td> <td>Can code generation drive robot behavior?</td> <td>State of the art on four manipulation task types and one navigation task, in simulation and on real robots</td> </tr> </tbody> </table> </div> <h2 id="sft-rl">Does RL or long-CoT SFT make vision-language models reason better?</h2> <p>They help in different places, and combining them does not simply add their gains. Long chain-of-thought SFT improves hard questions through structured reasoning but makes answers verbose and hurts easy questions. RL improves every difficulty level and keeps answers short, with smaller gains on the hardest problems. Two-stage, interleaved and progressive schedules, data mixing and model merging all land on a trade-off instead of a sum, which the paper calls the <a href="https://arxiv.org/abs/2507.07562" rel="external nofollow noopener" target="_blank">synergy dilemma</a>.</p> <h2 id="reflection">How can multimodal LLMs learn to self-reflect?</h2> <p><a href="https://arxiv.org/abs/2506.01713" rel="external nofollow noopener" target="_blank">SRPO</a> first builds a reflection-focused dataset in which a stronger MLLM critiques initial answers, so the policy learns both reasoning and reflection. It then adds a GRPO reward that favors short, meaningful reflection over redundant self-talk.</p> <h2 id="physics">Can multimodal models reason about physics?</h2> <p>Not yet at human level. <a href="https://arxiv.org/abs/2505.15929" rel="external nofollow noopener" target="_blank">PhyX</a> spans thermodynamics, electromagnetism, mechanics, modern physics, optics, and waves and acoustics. Failure analysis points to over-reliance on memorized formulas and surface-level visual pattern matching rather than physical understanding.</p> <h2 id="search">What makes multimodal search agents fail?</h2> <p>Locating the right web page and telling apart visually similar events. <a href="https://arxiv.org/abs/2508.21475" rel="external nofollow noopener" target="_blank">MMSearch-Plus</a> builds questions whose answers depend on spatial and temporal cues inside an image, and gives agents a set-of-mark tool to crop, zoom and launch targeted searches.</p> <h2 id="embodied">From multimodal reasoning to embodied agents</h2> <p><a href="https://arxiv.org/abs/2402.16117" rel="external nofollow noopener" target="_blank">RoboCodeX</a> decomposes instructions into object-centric manipulation units with affordance and safety constraints and expresses them as code, which lets one model generalize across robot platforms. PhyX measures the physical reasoning such agents need, and the <a href="https://arxiv.org/abs/2411.05902" rel="external nofollow noopener" target="_blank">survey of autoregressive models in vision</a> (TMLR 2025, about 250 references, <a href="https://github.com/ChaofanTao/Autoregressive-Models-in-Vision-Survey" rel="external nofollow noopener" target="_blank">800+ GitHub stars</a>) covers applications including embodied AI.</p> <h2 id="papers">Papers</h2> <ol class="research-papers"> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2508.21475" rel="external nofollow noopener" target="_blank">MMSearch-Plus: Benchmarking Provenance-Aware Search for Multimodal Browsing Agents</a></h3> <p class="research-paper-meta">ICLR · 2026</p> <p>Xijia Tao, Yihua Teng, Xinxing Su, Xinyu Fu, Jihao Wu, <strong>Chaofan Tao</strong>, Ziru Liu, Haoli Bai, Rui Liu, Lingpeng Kong</p> <p>MMSearch-Plus is a 311-task benchmark and agent framework with set-of-mark tools that require provenance-aware, vision-in-the-loop search and cross-validation under retrieval noise.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2508.21475" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/mmsearch-plus/MMSearch-Plus" rel="external nofollow noopener" target="_blank">GitHub</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2505.15929" rel="external nofollow noopener" target="_blank">PhyX: Does Your Model Have the "Wits" for Physical Reasoning?</a></h3> <p class="research-paper-meta">TMLR · 2026</p> <p>Hui Shen, Taiqiang Wu, Qi Han, Yunta Hsieh, Jizhou Wang, Yuyue Zhang, Yuxin Cheng, Zijian Hao, Yuansheng Ni, Xin Wang, Zhongwei Wan, Kai Zhang, Wendong Xu, Jing Xiong, Ping Luo, Wenhu Chen, <strong>Chaofan Tao</strong>, Zhuoqing Mao, Ngai Wong</p> <p>PhyX introduces a 3K-question multimodal benchmark spanning six physics domains to test physics-grounded reasoning, revealing large gaps between top models and human experts.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2505.15929" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/killthefullmoon/PhyX" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2402.16117" rel="external nofollow noopener" target="_blank">RoboCodeX: Multimodal Code Generation for Robotic Behavior Synthesis</a></h3> <p class="research-paper-meta">ICML · 2024</p> <p>Yao Mu, Junting Chen, Qinglong Zhang, Shoufa Chen, Qiaojun Yu, Chongjian Ge, Runjian Chen, Zhixuan Liang, Mengkang Hu, <strong>Chaofan Tao</strong>, Peize Sun, Haibao Yu, Chao Yang, Wenqi Shao, Wenhai Wang, Jifeng Dai, Yu Qiao, Mingyu Ding, Ping Luo</p> <p>RoboCodeX is a tree-structured multimodal code generation framework that decomposes high-level instructions into object-centric manipulation units with affordance and safety constraints, generalizing across robot platforms and reaching state-of-the-art results on manipulation and navigation tasks in simulation and on real robots.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2402.16117" rel="external nofollow noopener" target="_blank">Paper</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2411.05902" rel="external nofollow noopener" target="_blank">Autoregressive Models in Vision: A Survey</a></h3> <p class="research-paper-meta">TMLR · 2025</p> <p>Jing Xiong, Gongye Liu, Lun Huang, Chengyue Wu, Taiqiang Wu, Yao Mu, Yuan Yao, Hui Shen, Zhongwei Wan, Jinfa Huang, <strong>Chaofan Tao</strong>, Shen Yan, Huaxiu Yao, Lingpeng Kong, Hongxia Yang, Mi Zhang, Guillermo Sapiro, Jiebo Luo, Ping Luo, Ngai Wong</p> <p>A comprehensive survey of visual autoregressive modeling, covering representation strategies and applications across image, video, 3D, and multimodal generation, plus open challenges.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2411.05902" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/ChaofanTao/Autoregressive-Models-in-Vision-Survey" rel="external nofollow noopener" target="_blank">GitHub</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2506.01713" rel="external nofollow noopener" target="_blank">SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning</a></h3> <p class="research-paper-meta">NeurIPS · 2025</p> <p>Zhongwei Wan, Zhihao Dou, Che Liu, Yu Zhang, Dongfei Cui, Qinjian Zhao, Hui Shen, Jing Xiong, Yi Xin, Yifan Jiang, <strong>Chaofan Tao</strong>, Yangfan He, Mi Zhang, Shen Yan</p> <p>SRPO is a reflection-aware RL framework that teaches MLLMs self-reflection and then optimizes concise, meaningful reflections with GRPO-style rewards to improve multimodal reasoning.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2506.01713" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/SUSTechBruce/SRPO_MLLMs" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2507.07562" rel="external nofollow noopener" target="_blank">The Synergy Dilemma of Long-CoT SFT and RL: Investigating Post-training Techniques for Reasoning VLMs</a></h3> <p class="research-paper-meta">TMLR · 2025</p> <p>Jierun Chen, Tiezheng Yu, Haoli Bai, Lewei Yao, Jiannan Wu, Kaican Li, Fei Mi, <strong>Chaofan Tao</strong>, Lei Zhu, Manyi Zhang, Xiaohui Li, Lu Hou, Lifeng Shang, Qun Liu</p> <p>The study compares long-CoT SFT vs. RL for reasoning VLMs and finds their combination often fails to yield additive gains, instead trading off accuracy, verbosity, and style.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2507.07562" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/JierunChen/SFT-RL-SynergyDilemma" rel="external nofollow noopener" target="_blank">GitHub</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2408.09511" rel="external nofollow noopener" target="_blank">NAVERO: Unlocking Fine-Grained Semantics for Video-Language Compositionality</a></h3> <p class="research-paper-meta">arXiv · 2024</p> <p><strong>Chaofan Tao</strong>, Gukyeong Kwon, Varad Gunjal, Hao Yang, Zhaowei Cai, Yonatan Dukler, Ashwin Swaminathan, R Manmatha, Colin Jon Taylor, Stefano Soatto</p> <p>NAVERO introduces the AARO benchmark and negative-text augmentation with a negative-augmented matching loss to improve video-language compositional understanding and retrieval.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2408.09511" rel="external nofollow noopener" target="_blank">Paper</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2305.17455" rel="external nofollow noopener" target="_blank">CrossGET: Cross-Guided Ensemble of Tokens for Accelerating Vision-Language Transformers</a></h3> <p class="research-paper-meta">ICML · 2024</p> <p>Dachuan Shi, <strong>Chaofan Tao</strong>, Anyi Rao, Zhendong Yang, Chun Yuan, Jiaqi Wang</p> <p>CrossGET accelerates vision-language Transformers by cross-modally matching and ensembling tokens with efficient soft matching, reducing compute with minimal accuracy loss.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2305.17455" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/sdc17/CrossGET" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2301.13741" rel="external nofollow noopener" target="_blank">UPop: Unified and Progressive Pruning for Compressing Vision-Language Transformers</a></h3> <p class="research-paper-meta">ICML · 2023</p> <p>Dachuan Shi, <strong>Chaofan Tao</strong>, Ying Jin, Zhendong Yang, Chun Yuan, Jiaqi Wang</p> <p>UPop is a unified progressive pruning framework that searches multimodal subnets in a continuous space and progressively retrains to achieve high compression for vision-language Transformers.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2301.13741" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/sdc17/UPop" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> </ol> <section class="research-faq" id="faq" aria-labelledby="faq-heading"> <h2 id="faq-heading">FAQ</h2> <details> <summary>Does combining long chain-of-thought SFT and RL help reasoning VLMs?</summary> <p>Not additively. The Synergy Dilemma study (TMLR 2025) finds that long-CoT SFT helps on hard questions but adds verbosity and hurts easy ones, while RL improves all difficulty levels and shortens answers. Two-stage, interleaved and progressive training, data mixing and model merging all trade off accuracy, reasoning style and length instead of adding the benefits.</p> </details> <details> <summary>What is PhyX?</summary> <p>PhyX is a benchmark of 3K multimodal questions on physics-grounded reasoning, covering 6 physics domains and 25 sub-domains. GPT-4o, Claude 3.7 Sonnet and o4-mini reach 32.5%, 42.2% and 45.8%, more than 29 points below human experts.</p> </details> <details> <summary>What is MMSearch-Plus?</summary> <p>MMSearch-Plus is a 311-task benchmark for multimodal browsing agents that requires extracting fine-grained visual cues and cross-validating them through image and text search. The strongest system reaches 36.0% end-to-end accuracy, and the set-of-mark module adds up to 3.9 points.</p> </details> <details> <summary>Does Chaofan Tao work on embodied AI?</summary> <p>His main focus is coding agents and efficient LLMs. Embodied-related contributions include RoboCodeX (ICML 2024), a multimodal code generation framework for robotic behavior synthesis evaluated in simulation and on real robots, and PhyX, a physical reasoning benchmark for multimodal models.</p> </details> </section> <p>Related: <a href="/research/coding-agents/">Coding agents and agentic RL</a> · <a href="/research/efficient-llm/">Efficient LLM training and inference</a> · <a href="/llms.txt">llms.txt</a></p> </div> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> © Copyright 2026 Chaofan Tao. Built with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> and hosted on GitHub Pages. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> </body> </html>

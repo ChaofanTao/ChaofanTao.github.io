@@ -1,0 +1,241 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Efficient LLM Training and Inference | Chaofan Tao (陶超凡) </title> <meta name="author" content="Chaofan Tao"> <meta name="description" content="Chaofan Tao's research on efficient LLMs: vocabulary scaling laws, quantization and pruning of generative models, KV cache compression, fast test-time scaling, and distillation."> <meta name="keywords" content="Chaofan Tao, 陶超凡, LegoX, large language models, LLM, coding agents, software engineering agents, SWE-bench, agentic reinforcement learning, multimodal LLM, efficient LLM training and inference, quantization, scaling laws"> <meta property="og:site_name" content="Chaofan Tao (陶超凡)"> <meta property="og:type" content="website"> <meta property="og:title" content="Chaofan Tao (陶超凡) | Efficient LLM Training and Inference"> <meta property="og:url" content="https://chaofantao.top/research/efficient-llm/"> <meta property="og:description" content="Chaofan Tao's research on efficient LLMs: vocabulary scaling laws, quantization and pruning of generative models, KV cache compression, fast test-time scaling, and distillation."> <meta property="og:image" content="https://chaofantao.top/assets/img/og-image.png"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Efficient LLM Training and Inference"> <meta name="twitter:description" content="Chaofan Tao's research on efficient LLMs: vocabulary scaling laws, quantization and pruning of generative models, KV cache compression, fast test-time scaling, and distillation."> <meta name="twitter:image" content="https://chaofantao.top/assets/img/og-image.png"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/favicon.png?v=3188b4ee0feda062be9fabb3a75f1eaf"> <link rel="apple-touch-icon" href="/assets/img/favicon.png?v=3188b4ee0feda062be9fabb3a75f1eaf"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://chaofantao.top/research/efficient-llm/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav sticky-bottom-footer"> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Chaofan Tao (陶超凡) </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About </a> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <style>
+  .research-page {
+    --research-muted: #59616b;
+    max-width: 52rem;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    line-height: 1.7;
+  }
+
+  html[data-theme="dark"] .research-page {
+    --research-muted: #b5bdc8;
+  }
+
+  .research-page :is(section, h2, [id]) {
+    scroll-margin-top: 5.5rem;
+  }
+
+  .research-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+    color: var(--research-muted);
+    font-size: 0.85rem;
+  }
+
+  .research-breadcrumb a {
+    color: inherit;
+  }
+
+  .research-page h1 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.6rem, 6vw, 2.3rem);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+  }
+
+  .research-meta {
+    margin: 0 0 1.5rem;
+    color: var(--research-muted);
+    font-size: 0.88rem;
+  }
+
+  .research-lead {
+    font-size: 1.08rem;
+  }
+
+  .research-page h2 {
+    margin: 2.5rem 0 0.75rem;
+    font-size: 1.45rem;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .research-page h3 {
+    margin: 1.25rem 0 0.4rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  .research-table-wrap {
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+
+  .research-page table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  .research-page th,
+  .research-page td {
+    padding: 0.55rem 0.6rem;
+    border-bottom: 1px solid var(--global-divider-color);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .research-page th {
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .research-page blockquote {
+    margin: 1.25rem 0;
+    padding: 0.6rem 1rem;
+    border-left: 3px solid var(--global-theme-color);
+    color: var(--research-muted);
+  }
+
+  .research-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .research-card {
+    padding: 1.1rem 1.2rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.5rem;
+  }
+
+  .research-card h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+  }
+
+  .research-card p {
+    margin: 0;
+    font-size: 0.92rem;
+  }
+
+  .research-papers {
+    padding-left: 1.2rem;
+  }
+
+  .research-paper {
+    margin-bottom: 1.1rem;
+  }
+
+  .research-paper h3 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .research-paper p {
+    margin: 0.15rem 0;
+    font-size: 0.9rem;
+  }
+
+  .research-paper-meta {
+    color: var(--research-muted);
+  }
+
+  .research-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .research-faq details {
+    margin: 0.5rem 0;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.4rem;
+  }
+
+  .research-faq summary {
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .research-faq details p {
+    margin: 0.5rem 0 0;
+  }
+
+  .research-page pre {
+    overflow-x: auto;
+    padding: 0.8rem 1rem;
+    border-radius: 0.4rem;
+    background: var(--global-code-bg-color);
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 640px) {
+    .research-cards {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style> <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://chaofantao.top/research/efficient-llm/#page",
+      "url": "https://chaofantao.top/research/efficient-llm/",
+      "name": "Efficient LLM Training and Inference",
+      "description": "Chaofan Tao's research on efficient LLMs: vocabulary scaling laws, quantization and pruning of generative models, KV cache compression, fast test-time scaling, and distillation.",
+      "inLanguage": "en",
+      "datePublished": "2026-11-03",
+      "dateModified": "2026-11-03",
+      "isPartOf": { "@id": "https://chaofantao.top/#website" },
+      "author": { "@id": "https://chaofantao.top/#person" },
+      "about": [{ "@type": "Thing", "name": "Efficient large language models" }, { "@type": "Thing", "name": "Scaling laws" }, { "@type": "Thing", "name": "Tokenizer vocabulary size" }, { "@type": "Thing", "name": "Model quantization" }, { "@type": "Thing", "name": "Structured pruning" }, { "@type": "Thing", "name": "KV cache compression" }, { "@type": "Thing", "name": "Knowledge distillation" }, { "@type": "Thing", "name": "Test-time scaling" }],
+      "breadcrumb": { "@id": "https://chaofantao.top/research/efficient-llm/#breadcrumb" },
+      
+      "hasPart": [{ "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2601.21968", "headline": "OVD: On-policy Verbal Distillation", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2407.13623", "headline": "Scaling Laws with Vocabulary: Larger Models Deserve Larger Vocabularies", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2606.10537", "headline": "Prefilling-dLLM: Predictive Prefilling for Long-Context Inference in Diffusion Language Models", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2509.15148", "headline": "ATTS: Asynchronous Test-Time Scaling via Conformal Prediction", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://doi.org/10.48448/v1xq-f328", "headline": "UNCOMP: Can Matrix Entropy Uncover Sparsity? - A Compressor Design from an Uncertainty-Aware Perspective", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2510.10925", "headline": "Find Your Optimal Teacher: Personalized Data Synthesis via Router-Guided Multi-Teacher Distillation", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2511.11617", "headline": "AnchorTP: Resilient LLM Inference with State-Preserving Elastic Tensor Parallelism", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2406.13035", "headline": "Dynamic Discriminative Operations for Efficient Long-Context Inference of Large Language Models", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2305.17455", "headline": "CrossGET: Cross-Guided Ensemble of Tokens for Accelerating Vision-Language Transformers", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2404.02657", "headline": "Rethinking Kullback-Leibler Divergence in Knowledge Distillation for Large Language Models", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://doi.org/10.18653/v1/2023.findings-acl.692", "headline": "Structured Pruning for Efficient Generative Pre-trained Language Models", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2203.10705", "headline": "Compression of Generative Pre-trained Language Models via Quantization", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2301.13741", "headline": "UPop: Unified and Progressive Pruning for Compressing Vision-Language Transformers", "author": { "@id": "https://chaofantao.top/#person" } }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://chaofantao.top/research/efficient-llm/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Chaofan Tao", "item": "https://chaofantao.top/" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://chaofantao.top/research/" },
+        { "@type": "ListItem", "position": 3, "name": "Efficient LLM Training and Inference", "item": "https://chaofantao.top/research/efficient-llm/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://chaofantao.top/research/efficient-llm/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is the compute-optimal vocabulary size for an LLM?", "acceptedAnswer": { "@type": "Answer", "text": "It grows with the compute budget, so larger models deserve larger vocabularies. Scaling Laws with Vocabulary (NeurIPS 2024) predicts that Llama2-70B should have used at least 216K tokens, 7 times its 32K vocabulary. At a fixed 2.3e21 FLOPs, increasing a 3B model's vocabulary from 32K to 43K raised ARC-Challenge accuracy from 29.1 to 32.0." } },
+        { "@type": "Question", "name": "Which paper by Chaofan Tao received the ACL 2022 Outstanding Paper Award?", "acceptedAnswer": { "@type": "Answer", "text": "Compression of Generative Pre-trained Language Models via Quantization (ACL 2022). It shows that earlier quantization methods fail on generative models because of homogeneous word embeddings and varied weight distributions, and fixes this with token-level contrastive distillation and module-wise dynamic scaling, reaching 14.4x compression on GPT-2 and 13.4x on BART with performance comparable to full precision." } },
+        { "@type": "Question", "name": "How much can KV cache compression save in long-context inference?", "acceptedAnswer": { "@type": "Answer", "text": "In UNComp (EMNLP 2025), uncertainty-guided compression reduces the KV cache to 4.74% of its original size with a 6.4x throughput gain. D2O, which allocates cache per layer and recalls discarded tokens by similarity, improves inference throughput by more than 3x without fine-tuning." } },
+        { "@type": "Question", "name": "Is there code or a demo for the vocabulary scaling law?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Code is at github.com/sail-sg/scaling-with-vocab and an interactive demo that predicts the optimal vocabulary size is on Hugging Face Spaces at huggingface.co/spaces/sail/scaling-with-vocab-demo." } }
+      ]
+    }
+  ]
+}
+</script> <div class="research-page"> <nav class="research-breadcrumb" aria-label="Breadcrumb"> <a href="/">Chaofan Tao</a><span aria-hidden="true">/</span> <a href="/research/">Research</a><span aria-hidden="true">/</span> <span>Efficient LLMs</span> <span aria-hidden="true">·</span><a href="/zh/research/efficient-llm/" lang="zh-Hans">中文版</a> </nav> <h1>Efficient LLM Training and Inference</h1> <p class="research-meta">By <a href="/">Chaofan Tao (陶超凡)</a> · Last updated <time datetime="2026-11-03">November 3, 2026</time></p> <p class="research-lead"><strong>This line of work asks how to get more capability per FLOP and per byte of memory.</strong> It spans compute-optimal vocabulary scaling, quantization and structured pruning of generative language models, KV cache compression for long-context inference, faster test-time scaling, distillation, and fault-tolerant distributed inference. The quantization paper received the ACL 2022 Outstanding Paper Award.</p> <h2 id="key-results">Key results</h2> <div class="research-table-wrap"> <table> <thead> <tr> <th>Paper</th> <th>Problem</th> <th>Result</th> </tr> </thead> <tbody> <tr> <td> <a href="https://arxiv.org/abs/2407.13623" rel="external nofollow noopener" target="_blank">Scaling Laws with Vocabulary</a> (NeurIPS 2024)</td> <td>Compute-optimal vocabulary size</td> <td>Llama2-70B should use ≥216K tokens (7× its 32K); 32K → 43K lifts ARC-Challenge 29.1 → 32.0 at 2.3e21 FLOPs</td> </tr> <tr> <td> <a href="https://arxiv.org/abs/2203.10705" rel="external nofollow noopener" target="_blank">Compression of Generative PLMs via Quantization</a> (ACL 2022, Outstanding Paper)</td> <td>Low-bit generative models</td> <td>14.4× (GPT-2) and 13.4× (BART) compression, comparable to full precision</td> </tr> <tr> <td> <a href="https://arxiv.org/abs/2410.03090" rel="external nofollow noopener" target="_blank">UNComp</a> (EMNLP 2025)</td> <td>KV cache compression</td> <td>Cache reduced to 4.74% of original, 6.4× throughput</td> </tr> <tr> <td><a href="https://arxiv.org/abs/2406.13035" rel="external nofollow noopener" target="_blank">D2O</a></td> <td>KV cache eviction without fine-tuning</td> <td>More than 3× inference throughput</td> </tr> <tr> <td> <a href="https://arxiv.org/abs/2509.15148" rel="external nofollow noopener" target="_blank">ATTS</a> (ICLR 2026)</td> <td>Test-time scaling latency</td> <td>Up to 56.7× speedup in test-time scaling and 4.14× throughput, no accuracy loss</td> </tr> <tr> <td> <a href="https://arxiv.org/abs/2606.10537" rel="external nofollow noopener" target="_blank">Prefilling-dLLM</a> (EMNLP 2026)</td> <td>Long-context diffusion LLMs</td> <td>9.1–28.0× speedup at 8K–32K context, training-free</td> </tr> </tbody> </table> </div> <h2 id="vocabulary">What vocabulary size should an LLM use?</h2> <p>Larger than most models use today. By training models from 33M to 3B parameters on up to 500B characters, <a href="https://arxiv.org/abs/2407.13623" rel="external nofollow noopener" target="_blank">Scaling Laws with Vocabulary</a> derives the compute-optimal vocabulary size three ways (IsoFLOPs analysis, derivative estimation, and a parametric loss fit), and all three agree that the optimum grows with compute. Most open LLMs are under-provisioned: Llama2-70B should have used at least 216K tokens instead of 32K. Try the <a href="https://huggingface.co/spaces/sail/scaling-with-vocab-demo" rel="external nofollow noopener" target="_blank">interactive demo</a> or the <a href="https://github.com/sail-sg/scaling-with-vocab" rel="external nofollow noopener" target="_blank">code</a>.</p> <h2 id="quantization">How do you quantize generative language models without breaking generation?</h2> <p>Fix the word embeddings first. Earlier quantization methods that worked for BERT fail on GPT-2 and BART because low-bit word embeddings become homogeneous and weight distributions vary across modules. Token-level contrastive distillation keeps embeddings distinguishable, and module-wise dynamic scaling adapts each quantizer, giving 14.4× and 13.4× compression with near full-precision quality. Follow-up work applies learnable masks for <a href="https://doi.org/10.18653/v1/2023.findings-acl.692" rel="external nofollow noopener" target="_blank">structured pruning of generative PLMs</a> (Findings of ACL 2023).</p> <h2 id="long-context">How can long-context inference be made cheaper?</h2> <p>By deciding which parts of the KV cache matter. D2O allocates cache budgets per layer from attention density and recalls discarded tokens that are similar to kept ones. UNComp uses truncated matrix entropy as an uncertainty signal to find sparsity, which also exposes retrieval heads and layers. Prefilling-dLLM brings prefill/decode separation to diffusion language models by caching prefix chunks once and decoding over only the most relevant ones.</p> <h2 id="test-time">Can test-time scaling be fast?</h2> <p>Yes, if synchronization is removed. ATTS identifies synchronization, not compute, as the main bottleneck in speculative test-time scaling, and replaces it with asynchronous inference guided by conformal prediction. On MATH, AMC23, AIME24 and AIME25, it reaches up to 56.7× speedup while controlling the rejection rate.</p> <h2 id="distillation">What matters in LLM distillation?</h2> <p>With enough training, forward and reverse KL behave similarly, but early on they emphasize the head and tail of the distribution; <a href="https://arxiv.org/abs/2404.02657" rel="external nofollow noopener" target="_blank">Adaptive KL</a> (COLING 2024) combines them. <a href="https://arxiv.org/abs/2510.10925" rel="external nofollow noopener" target="_blank">PerSyn</a> (ACL 2026) routes each prompt to the teacher a given student can best learn from, and <a href="https://arxiv.org/abs/2601.21968" rel="external nofollow noopener" target="_blank">On-policy Verbal Distillation</a> replaces token-level matching with trajectory-level teacher scores.</p> <h2 id="systems">Efficient vision-language models and resilient serving</h2> <p><a href="https://arxiv.org/abs/2305.17455" rel="external nofollow noopener" target="_blank">CrossGET</a> (ICML 2024) and <a href="https://arxiv.org/abs/2301.13741" rel="external nofollow noopener" target="_blank">UPop</a> (ICML 2023) accelerate and compress vision-language Transformers through token ensembling and progressive pruning. <a href="https://arxiv.org/abs/2511.11617" rel="external nofollow noopener" target="_blank">AnchorTP</a> (DATE 2026) keeps LLM serving alive through single-GPU failures with state-preserving elastic tensor parallelism.</p> <h2 id="papers">Papers</h2> <ol class="research-papers"> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2601.21968" rel="external nofollow noopener" target="_blank">OVD: On-policy Verbal Distillation</a></h3> <p class="research-paper-meta">arXiv · 2026</p> <p>Jing Xiong, Hui Shen, Shansan Gong, Yuxin Cheng, Jianghan Shen, <strong>Chaofan Tao</strong>, Haochen Tan, Haoli Bai, Lifeng Shang, Ngai Wong</p> <p>On-policy Verbal Distillation replaces token-level matching with trajectory-level distillation using discrete teacher scores, reducing memory and improving student performance on web QA and math reasoning.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2601.21968" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/menik1126/OVD-code" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2407.13623" rel="external nofollow noopener" target="_blank">Scaling Laws with Vocabulary: Larger Models Deserve Larger Vocabularies</a></h3> <p class="research-paper-meta">NeurIPS · 2024</p> <p><strong>Chaofan Tao</strong>, Qian Liu, Longxu Dou, Niklas Muennighoff, Zhongwei Wan, Ping Luo, Min Lin, Ngai Wong</p> <p>The paper derives compute-optimal vocabulary scaling laws and shows larger models benefit from larger vocabularies, improving downstream accuracy at fixed FLOPs.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2407.13623" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/sail-sg/scaling-with-vocab" rel="external nofollow noopener" target="_blank">Code</a> <a href="https://nips.cc/media/neurips-2024/Slides/93395.pdf" rel="external nofollow noopener" target="_blank">Slides</a> <a href="https://huggingface.co/spaces/sail/scaling-with-vocab-demo" rel="external nofollow noopener" target="_blank">Demo</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2606.10537" rel="external nofollow noopener" target="_blank">Prefilling-dLLM: Predictive Prefilling for Long-Context Inference in Diffusion Language Models</a></h3> <p class="research-paper-meta">EMNLP · 2026</p> <p>Jing Xiong, Qi Han, Shansan Gong, Yunta Hsieh, Boyuan Zheng, Chengyue Wu, <strong>Chaofan Tao</strong>, Chenyang Zhao, Ngai Wong</p> <p>Prefilling-dLLM separates prefilling from decoding without training: it caches prefix KV representations by chunk, selects query-relevant chunks and tokens, and reuses the sparse cache to accelerate long-context diffusion language model inference.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2606.10537" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/menik1126/Prefilling-dLLM" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2509.15148" rel="external nofollow noopener" target="_blank">ATTS: Asynchronous Test-Time Scaling via Conformal Prediction</a></h3> <p class="research-paper-meta">ICLR · 2026</p> <p>Jing Xiong, Qiujiang Chen, Fanghua Ye, Zhongwei Wan, Chuanyang Zheng, Chenyang Zhao, Hui Shen, Alexander Hanbo Li, <strong>Chaofan Tao</strong>, Haochen Tan, Haoli Bai, Lifeng Shang, Lingpeng Kong, Ngai Wong</p> <p>ATTS is an asynchronous, conformal-prediction-based test-time scaling method that cuts synchronization overhead and accelerates scaling with statistical guarantees and no accuracy loss.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2509.15148" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/menik1126/Asynchronous-Test-Time-Scaling" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://doi.org/10.48448/v1xq-f328" rel="external nofollow noopener" target="_blank">UNCOMP: Can Matrix Entropy Uncover Sparsity? - A Compressor Design from an Uncertainty-Aware Perspective</a></h3> <p class="research-paper-meta">EMNLP · 2025</p> <p>Jing Xiong, Jianghan Shen, Fanghua Ye, <strong>Chaofan Tao</strong>, Zhongwei Wan, Jianqiao Lu, Xun Wu, Chuanyang Zheng, Zhijiang Guo, Min Yang, Lingpeng Kong, Ngai Wong</p> <p>UNComp uses uncertainty (via truncated matrix entropy) to uncover KV-cache sparsity and perform adaptive compression for long-context inference, greatly shrinking cache while boosting throughput.</p> <div class="research-links"> <a href="https://doi.org/10.48448/v1xq-f328" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/menik1126/UNComp" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2510.10925" rel="external nofollow noopener" target="_blank">Find Your Optimal Teacher: Personalized Data Synthesis via Router-Guided Multi-Teacher Distillation</a></h3> <p class="research-paper-meta">ACL (Main Conference) · 2026</p> <p>Hengyuan Zhang, Shiping Yang, Xiao Liang, Chenming Shang, Yuxuan Jiang, <strong>Chaofan Tao</strong>, Jing Xiong, Hayden Kwok-Hay So, Ruobing Xie, Angel X Chang, Ngai Wong</p> <p>PerSyn "routes then generates" by assigning each prompt to its best teacher via a router that considers student learnability and teacher quality, improving synthetic-data distillation efficiency.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2510.10925" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/rattlesnakey/PerSyn" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2511.11617" rel="external nofollow noopener" target="_blank">AnchorTP: Resilient LLM Inference with State-Preserving Elastic Tensor Parallelism</a></h3> <p class="research-paper-meta">DATE · 2026</p> <p>Wendong Xu, Chujie Chen, He Xiao, Kuan Li, Jing Xiong, Chen Zhang, Wenyong Zhou, <strong>Chaofan Tao</strong>, Yang Bai, Bei Yu, Ngai Wong</p> <p>AnchorTP provides state-preserving elastic tensor parallelism with a GPU-resident daemon and bandwidth-aware migration planning, enabling fast recovery from single-GPU failures.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2511.11617" rel="external nofollow noopener" target="_blank">Paper</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2406.13035" rel="external nofollow noopener" target="_blank">Dynamic Discriminative Operations for Efficient Long-Context Inference of Large Language Models</a></h3> <p class="research-paper-meta">ICLR · 2024</p> <p>Zhongwei Wan, Xinjian Wu, Yu Zhang, Yi Xin, <strong>Chaofan Tao</strong>, Zhihong Zhu, Xin Wang, Siqi Luo, Jing Xiong, Longyue Wang, Mi Zhang</p> <p>D2O dynamically compresses KV cache at layer and token levels with allocation and recall/merge compensation, saving memory and improving long-context throughput without fine-tuning.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2406.13035" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/AIoT-MLSys-Lab/D2O" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2305.17455" rel="external nofollow noopener" target="_blank">CrossGET: Cross-Guided Ensemble of Tokens for Accelerating Vision-Language Transformers</a></h3> <p class="research-paper-meta">ICML · 2024</p> <p>Dachuan Shi, <strong>Chaofan Tao</strong>, Anyi Rao, Zhendong Yang, Chun Yuan, Jiaqi Wang</p> <p>CrossGET accelerates vision-language Transformers by cross-modally matching and ensembling tokens with efficient soft matching, reducing compute with minimal accuracy loss.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2305.17455" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/sdc17/CrossGET" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2404.02657" rel="external nofollow noopener" target="_blank">Rethinking Kullback-Leibler Divergence in Knowledge Distillation for Large Language Models</a></h3> <p class="research-paper-meta">COLING · 2024</p> <p>Taiqiang Wu, <strong>Chaofan Tao</strong>, Jiahao Wang, Runming Yang, Zhe Zhao, Ngai Wong</p> <p>It shows forward and reverse KL behave similarly in LLM distillation with enough training but emphasize head vs. tail early; Adaptive KL combines them to improve generation quality and diversity.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2404.02657" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/wutaiqiang/LLM_KD_AKL" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://doi.org/10.18653/v1/2023.findings-acl.692" rel="external nofollow noopener" target="_blank">Structured Pruning for Efficient Generative Pre-trained Language Models</a></h3> <p class="research-paper-meta">Findings of ACL · 2023</p> <p><strong>Chaofan Tao</strong>, Lu Hou, Haoli Bai, Jiansheng Wei, Xin Jiang, Qun Liu, Ping Luo, Ngai Wong</p> <p>It proposes structured pruning across multiple generative-PLM components using learnable masks and sparse training to extract size-flexible subnets with significant speedups.</p> <div class="research-links"> <a href="https://doi.org/10.18653/v1/2023.findings-acl.692" rel="external nofollow noopener" target="_blank">Paper</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2203.10705" rel="external nofollow noopener" target="_blank">Compression of Generative Pre-trained Language Models via Quantization</a></h3> <p class="research-paper-meta">ACL · 2022 · ACL 2022 Outstanding Paper Award</p> <p><strong>Chaofan Tao</strong>, Lu Hou, Wei Zhang, Lifeng Shang, Xin Jiang, Qun Liu, Ping Luo, Ngai Wong</p> <p>It adapts quantization to generative PLMs （e.g. GPT-2, BART）, addressing embedding homogenization with token-level contrastive distillation and module-wise dynamic scaling to achieve 13–14× compression at near full precision.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2203.10705" rel="external nofollow noopener" target="_blank">Paper</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2301.13741" rel="external nofollow noopener" target="_blank">UPop: Unified and Progressive Pruning for Compressing Vision-Language Transformers</a></h3> <p class="research-paper-meta">ICML · 2023</p> <p>Dachuan Shi, <strong>Chaofan Tao</strong>, Ying Jin, Zhendong Yang, Chun Yuan, Jiaqi Wang</p> <p>UPop is a unified progressive pruning framework that searches multimodal subnets in a continuous space and progressively retrains to achieve high compression for vision-language Transformers.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2301.13741" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/sdc17/UPop" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> </ol> <section class="research-faq" id="faq" aria-labelledby="faq-heading"> <h2 id="faq-heading">FAQ</h2> <details> <summary>What is the compute-optimal vocabulary size for an LLM?</summary> <p>It grows with the compute budget, so larger models deserve larger vocabularies. Scaling Laws with Vocabulary (NeurIPS 2024) predicts that Llama2-70B should have used at least 216K tokens, 7 times its 32K vocabulary. At a fixed 2.3e21 FLOPs, increasing a 3B model's vocabulary from 32K to 43K raised ARC-Challenge accuracy from 29.1 to 32.0.</p> </details> <details> <summary>Which paper by Chaofan Tao received the ACL 2022 Outstanding Paper Award?</summary> <p>Compression of Generative Pre-trained Language Models via Quantization (ACL 2022). It shows that earlier quantization methods fail on generative models because of homogeneous word embeddings and varied weight distributions, and fixes this with token-level contrastive distillation and module-wise dynamic scaling, reaching 14.4x compression on GPT-2 and 13.4x on BART with performance comparable to full precision.</p> </details> <details> <summary>How much can KV cache compression save in long-context inference?</summary> <p>In UNComp (EMNLP 2025), uncertainty-guided compression reduces the KV cache to 4.74% of its original size with a 6.4x throughput gain. D2O, which allocates cache per layer and recalls discarded tokens by similarity, improves inference throughput by more than 3x without fine-tuning.</p> </details> <details> <summary>Is there code or a demo for the vocabulary scaling law?</summary> <p>Yes. Code is at github.com/sail-sg/scaling-with-vocab and an interactive demo that predicts the optimal vocabulary size is on Hugging Face Spaces at huggingface.co/spaces/sail/scaling-with-vocab-demo.</p> </details> </section> <h2 id="cite">How to cite</h2> <pre><code>@inproceedings{tao2024scaling,
+  title     = {Scaling Laws with Vocabulary: Larger Models Deserve Larger Vocabularies},
+  author    = {Tao, Chaofan and Liu, Qian and Dou, Longxu and Muennighoff, Niklas and Wan, Zhongwei and Luo, Ping and Lin, Min and Wong, Ngai},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2024}
+}
+
+@inproceedings{tao2022compression,
+  title     = {Compression of Generative Pre-trained Language Models via Quantization},
+  author    = {Tao, Chaofan and Hou, Lu and Zhang, Wei and Shang, Lifeng and Jiang, Xin and Liu, Qun and Luo, Ping and Wong, Ngai},
+  booktitle = {Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics},
+  year      = {2022}
+}</code></pre> <p>Related: <a href="/research/coding-agents/">Coding agents and agentic RL</a> · <a href="/research/multimodal-reasoning/">Multimodal reasoning and agents</a> · <a href="/llms.txt">llms.txt</a></p> </div> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> © Copyright 2026 Chaofan Tao. Built with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> and hosted on GitHub Pages. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> </body> </html>
