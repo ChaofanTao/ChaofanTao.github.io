@@ -26,6 +26,30 @@ SWE-Lego presents a strong SFT-only recipe (new dataset + curriculum/error maski
 
 中文摘要：SWE-Lego提出仅用监督微调的软工代码智能体配方（真实+合成数据集+课程学习/错误掩码），并研究了软工场景的测试时扩展，将开源8B/32B模型在SWE-bench Verified上推至SOTA。
 
+### LEGO-RL: Harness-Native Reinforcement Learning for Coding Agents
+
+- Venue: arXiv 2026
+- Authors: Yiming Du, Yuxin Jiang, Tao Yuan, Jianbo Dai, Shaowei Wang, Jierun Chen, Chaofan Tao, Xianzhi Yu, Lifeng Shang, Kam-Fai Wong, Xiaohui Li, Haoli Bai
+- Paper: https://arxiv.org/abs/2608.17393
+- Code: https://github.com/LegoX/Lego-RL
+- Data: https://huggingface.co/collections/Lego-X/lego-rl
+
+LEGO-RL trains coding agents with reinforcement learning inside unmodified native harnesses, combining token-faithful proxying with MoE routing replay, sandboxed execution with stage-wise anti-hacking defenses, and observable training with live trajectory diagnostics.
+
+中文摘要：LEGO-RL在不修改原生harness的前提下对代码智能体做强化学习，结合保持token一致的代理与MoE路由回放、带分阶段防作弊机制的沙箱执行，以及可实时诊断轨迹的可观测训练。
+
+### SWE-Review: Closing the Loop on Issue Resolution with Agentic Code Review
+
+- Venue: arXiv 2026
+- Authors: Ruoyu Wang, Jierun Chen, Shaowei Wang, Chaofan Tao, Sidi Yang, Yuxin Jiang, Kim-Hui Yap, Lifeng Shang, Xiaohui Li, Haoli Bai
+- Paper: https://arxiv.org/abs/2607.06065
+- Code: https://github.com/LegoX/SWE-Review
+- Data: https://huggingface.co/collections/Lego-X/swe-review
+
+SWE-Review turns one-shot patch generation into a generate-review-revise loop: a reviewer agent explores the repository, traces the root cause on its own, decides whether to accept the PR, and returns structured feedback; review trajectories also transfer to issue resolution and make test-time scaling cheaper.
+
+中文摘要：SWE-Review把一次性的补丁生成变为“生成-审查-修改”闭环：审查智能体独立探索仓库、追溯根因，决定是否接受PR并给出结构化反馈；审查轨迹还能迁移到问题修复，并让测试时扩展更高效。
+
 ### What Makes Interaction Trajectories Effective for Training Terminal Agents?
 
 - Venue: arXiv 2026

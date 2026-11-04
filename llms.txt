@@ -9,7 +9,7 @@ Key facts:
 - Education: PhD, The University of Hong Kong; bachelor's degree, Yingcai Honors College, University of Electronic Science and Technology of China
 - Research areas: coding agents, software-engineering agents (SWE-bench), terminal agents, agentic RL, multimodal LLMs, quantization and pruning, KV cache compression, scaling laws
 - Award: ACL 2022 Outstanding Paper Award
-- Publications: 25 papers since 2022 at venues including ICLR, ICML, NeurIPS, ICSE, ACL, EMNLP, COLM, TMLR
+- Publications: 27 papers since 2022 at venues including ICLR, ICML, NeurIPS, ICSE, ACL, EMNLP, COLM, TMLR
 - Contact: tcftrees@gmail.com (internship inquiries: put "[Interest]" in the subject)
 
 ## Profiles
@@ -21,7 +21,7 @@ Key facts:
 
 ## Research overviews
 
-- [Coding agents, agentic data and agentic RL](https://chaofantao.top/research/coding-agents/): end-to-end open recipes for coding agents — verified task data from real pull requests (LegoFlow, Terminal-Lego), SFT that teaches good debugging habits (SWE-Lego), RL inside unmodified agent harnesses (Lego-RL), and the finding that environment-grounded trajectories make better teachers than the strongest solvers. Chinese: https://chaofantao.top/zh/research/coding-agents/
+- [Coding agents, agentic data and agentic RL](https://chaofantao.top/research/coding-agents/): end-to-end open recipes for coding agents — verified tasks from real pull requests (LegoFlow, Terminal-Lego), trajectory curation and anti-hacking defenses, SFT with error masking and curriculum (SWE-Lego), RL inside unmodified agent harnesses (Lego-RL), and agentic code review (SWE-Review). Chinese: https://chaofantao.top/zh/research/coding-agents/
 - [Efficient LLM training and inference](https://chaofantao.top/research/efficient-llm/): vocabulary size as a scaling dimension, quantization of generative models (ACL 2022 Outstanding Paper), KV cache compression for long context, asynchronous test-time scaling, distillation. Chinese: https://chaofantao.top/zh/research/efficient-llm/
 - [Multimodal reasoning and agents](https://chaofantao.top/research/multimodal-reasoning/): when long-CoT SFT vs. RL helps reasoning VLMs, self-reflection, benchmarks for physical reasoning and multimodal search, and code generation for robots. Chinese: https://chaofantao.top/zh/research/multimodal-reasoning/
 
@@ -31,6 +31,7 @@ Key facts:
 - [Lego-RL](https://www.legox.net/blog/lego-rl/): reinforcement learning inside unmodified coding-agent harnesses (e.g. OpenHands, Claude Code, OpenCode), preserving generation-time tokens and MoE routing for faithful training. Code: https://github.com/LegoX/Lego-RL
 - [Terminal-Lego](https://www.legox.net/blog/terminal-lego/): executable tasks and grounded interaction trajectories for terminal-agent training. Code: https://github.com/SWE-Lego/terminal-lego · Data: https://huggingface.co/datasets/SWE-Lego/Terminal-Lego-15k
 - [SWE-Lego](https://www.legox.net/blog/swe-lego/): supervised fine-tuning recipe for software issue resolution with verified data, error masking, and curriculum learning. Paper: https://arxiv.org/abs/2601.01426
+- [SWE-Review](https://www.legox.net/blog/swe-review/): agentic code review that closes the generate-review-revise loop for issue resolution. Paper: https://arxiv.org/abs/2607.06065
 
 ## Selected publications
 

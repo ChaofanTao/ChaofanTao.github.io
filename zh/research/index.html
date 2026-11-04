@@ -119,27 +119,42 @@
     font-size: 0.92rem;
   }
 
-  .research-highlights {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.75rem;
-    margin: 1.25rem 0 0.5rem;
-    padding: 0;
-    list-style: none;
+  .research-toc {
+    margin: 1rem 0 0.5rem;
+    color: var(--research-muted);
+    font-size: 0.9rem;
+    line-height: 1.8;
   }
 
-  .research-highlights li {
-    padding: 0.85rem 1rem;
-    border: 1px solid var(--global-divider-color);
+  .research-toc a {
+    white-space: nowrap;
+  }
+
+  .research-knowhow {
+    margin: 0.6rem 0 0.4rem;
+    padding: 0.7rem 1rem 0.7rem 2rem;
     border-left: 3px solid var(--global-theme-color);
-    border-radius: 0.4rem;
-    font-size: 0.93rem;
-    line-height: 1.55;
+    background: var(--global-code-bg-color);
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.95rem;
   }
 
-  .research-highlights strong {
-    display: block;
-    margin-bottom: 0.2rem;
+  .research-knowhow li {
+    margin: 0.25rem 0;
+  }
+
+  .research-knowhow-label {
+    margin: 0.9rem 0 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--research-muted);
+  }
+
+  .research-readmore {
+    margin-top: 0.5rem;
+    font-size: 0.88rem;
   }
 
   .research-more {
@@ -213,8 +228,7 @@
   }
 
   @media (max-width: 640px) {
-    .research-cards,
-    .research-highlights {
+    .research-cards {
       grid-template-columns: minmax(0, 1fr);
     }
   }
@@ -246,7 +260,7 @@
     }
   ]
 }
-</script> <div class="research-page" lang="zh-Hans"> <nav class="research-breadcrumb" aria-label="面包屑导航"> <a href="/">陶超凡</a><span aria-hidden="true">/</span> <span>研究方向</span> <span aria-hidden="true">·</span><a href="/research/" lang="en">English</a> </nav> <h1>研究方向</h1> <p class="research-lead"><strong>陶超凡（Chaofan Tao）是 <a href="https://www.legox.net/" rel="external nofollow noopener" target="_blank">LegoX</a> 与华为基础模型实验室（Huawei Foundation Model Lab）的 AI 研究员。</strong>研究覆盖三个相互关联的方向：端到端训练开源大模型代码智能体、降低大模型训练与推理成本、提升多模态模型的推理与行动能力。他博士毕业于香港大学，关于生成式模型量化的工作获得 ACL 2022 杰出论文奖。</p> <div class="research-cards"> <article class="research-card"> <h2><a href="/zh/research/coding-agents/">代码智能体与智能体强化学习</a></h2> <p>来自真实软件历史的可验证任务数据、适配真实智能体工具的微调与强化学习方案，以及哪些轨迹值得学习的经验。</p> </article> <article class="research-card"> <h2><a href="/zh/research/efficient-llm/">高效大模型训练与推理</a></h2> <p>词表规模选择、生成式模型压缩、低成本长上下文推理，以及更快的推理阶段计算。</p> </article> <article class="research-card"> <h2><a href="/zh/research/multimodal-reasoning/">多模态推理与智能体</a></h2> <p>推理型视觉语言模型的后训练经验、自我反思、揭示真实差距的基准，以及面向机器人的代码生成。</p> </article> </div> <p>全部 25 篇论文及中英文摘要见<a href="/#all-publications">主页</a>。</p> </div> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> © Copyright 2026 Chaofan Tao. Built with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> and hosted on GitHub Pages. </div> </footer> <script>
+</script> <div class="research-page" lang="zh-Hans"> <nav class="research-breadcrumb" aria-label="面包屑导航"> <a href="/">陶超凡</a><span aria-hidden="true">/</span> <span>研究方向</span> <span aria-hidden="true">·</span><a href="/research/" lang="en">English</a> </nav> <h1>研究方向</h1> <p class="research-lead"><strong>陶超凡（Chaofan Tao）是 <a href="https://www.legox.net/" rel="external nofollow noopener" target="_blank">LegoX</a> 与华为基础模型实验室（Huawei Foundation Model Lab）的 AI 研究员。</strong>研究覆盖三个相互关联的方向：端到端训练开源大模型代码智能体、降低大模型训练与推理成本、提升多模态模型的推理与行动能力。他博士毕业于香港大学，关于生成式模型量化的工作获得 ACL 2022 杰出论文奖。</p> <div class="research-cards"> <article class="research-card"> <h2><a href="/zh/research/coding-agents/">代码智能体与智能体强化学习</a></h2> <p>来自真实软件历史的可验证任务、可信的轨迹与奖励、在真实智能体 harness 内的微调与强化学习，以及智能体代码审查。</p> </article> <article class="research-card"> <h2><a href="/zh/research/efficient-llm/">高效大模型训练与推理</a></h2> <p>词表规模选择、生成式模型压缩、低成本长上下文推理，以及更快的推理阶段计算。</p> </article> <article class="research-card"> <h2><a href="/zh/research/multimodal-reasoning/">多模态推理与智能体</a></h2> <p>推理型视觉语言模型的后训练经验、自我反思、揭示真实差距的基准，以及面向机器人的代码生成。</p> </article> </div> <p>全部 27 篇论文及中英文摘要见<a href="/#all-publications">主页</a>。</p> </div> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> © Copyright 2026 Chaofan Tao. Built with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> and hosted on GitHub Pages. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
