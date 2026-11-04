@@ -29,7 +29,7 @@ about:
   <div class="research-cards">
     <article class="research-card">
       <h2><a href="{{ '/zh/research/coding-agents/' | relative_url }}">代码智能体与智能体强化学习</a></h2>
-      <p>来自真实软件历史的可验证任务数据、适配真实智能体工具的微调与强化学习方案，以及哪些轨迹值得学习的经验。</p>
+      <p>来自真实软件历史的可验证任务、可信的轨迹与奖励、在真实智能体 harness 内的微调与强化学习，以及智能体代码审查。</p>
     </article>
     <article class="research-card">
       <h2><a href="{{ '/zh/research/efficient-llm/' | relative_url }}">高效大模型训练与推理</a></h2>

@@ -32,6 +32,38 @@
       ]
     },
     {
+      "title": "LEGO-RL: Harness-Native Reinforcement Learning for Coding Agents",
+      "authors": "Yiming Du, Yuxin Jiang, Tao Yuan, Jianbo Dai, Shaowei Wang, Jierun Chen, Chaofan Tao, Xianzhi Yu, Lifeng Shang, Kam-Fai Wong, Xiaohui Li, Haoli Bai",
+      "short_authors": "Yiming Du, Yuxin Jiang, …, Chaofan Tao, …",
+      "year": 2026,
+      "venue": "arXiv",
+      "url": "https://arxiv.org/abs/2608.17393",
+      "group": "agentic",
+      "abstract_en": "LEGO-RL trains coding agents with reinforcement learning inside unmodified native harnesses, combining token-faithful proxying with MoE routing replay, sandboxed execution with stage-wise anti-hacking defenses, and observable training with live trajectory diagnostics.",
+      "abstract_zh": "LEGO-RL在不修改原生harness的前提下对代码智能体做强化学习，结合保持token一致的代理与MoE路由回放、带分阶段防作弊机制的沙箱执行，以及可实时诊断轨迹的可观测训练。",
+      "code": "https://github.com/LegoX/Lego-RL",
+      "data": "https://huggingface.co/collections/Lego-X/lego-rl",
+      "topics": [
+        "coding-agents"
+      ]
+    },
+    {
+      "title": "SWE-Review: Closing the Loop on Issue Resolution with Agentic Code Review",
+      "authors": "Ruoyu Wang, Jierun Chen, Shaowei Wang, Chaofan Tao, Sidi Yang, Yuxin Jiang, Kim-Hui Yap, Lifeng Shang, Xiaohui Li, Haoli Bai",
+      "short_authors": "Ruoyu Wang, Jierun Chen, …, Chaofan Tao, …",
+      "year": 2026,
+      "venue": "arXiv",
+      "url": "https://arxiv.org/abs/2607.06065",
+      "group": "agentic",
+      "abstract_en": "SWE-Review turns one-shot patch generation into a generate-review-revise loop: a reviewer agent explores the repository, traces the root cause on its own, decides whether to accept the PR, and returns structured feedback; review trajectories also transfer to issue resolution and make test-time scaling cheaper.",
+      "abstract_zh": "SWE-Review把一次性的补丁生成变为“生成-审查-修改”闭环：审查智能体独立探索仓库、追溯根因，决定是否接受PR并给出结构化反馈；审查轨迹还能迁移到问题修复，并让测试时扩展更高效。",
+      "code": "https://github.com/LegoX/SWE-Review",
+      "data": "https://huggingface.co/collections/Lego-X/swe-review",
+      "topics": [
+        "coding-agents"
+      ]
+    },
+    {
       "title": "What Makes Interaction Trajectories Effective for Training Terminal Agents?",
       "authors": "Sidi Yang, Chaofan Tao, Jierun Chen, Tiezheng Yu, Ruoyu Wang, Yuxin Jiang, Yiming Du, Wendong Xu, Jing Xiong, Taiqiang Wu, Lifeng Shang, Xiaohui Li, Ngai Wong, Haoli Bai",
       "short_authors": "Sidi Yang, Chaofan Tao, Jierun Chen, et al.",

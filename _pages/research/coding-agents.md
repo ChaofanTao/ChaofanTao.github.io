@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Coding Agents, Agentic Data and Agentic RL"
-description: "Chaofan Tao's open research on training LLM coding agents end to end at LegoX: verified task data, SFT and RL recipes, trajectory know-how, evaluation, and open infrastructure."
+description: "How Chaofan Tao and collaborators at LegoX build open coding agents end to end: verified tasks, trustworthy trajectories and rewards, fine-tuning, harness-native RL, and agentic code review."
 permalink: /research/coding-agents/
 research_lang: en
 last_modified_at: 2026-11-04
@@ -10,17 +10,18 @@ about:
   - Coding agents
   - Software engineering agents
   - Agentic reinforcement learning
-  - Terminal agents
   - Agentic data
+  - Reward hacking
+  - Code review agents
 faq:
+  - q: "What is LegoX?"
+    a: "LegoX is an open-source collection of projects for coding agents that spans data pipelines, training frameworks, evaluation and models. Its projects include LegoFlow, SWE-Lego, Terminal-Lego, Lego-RL and SWE-Review, with code on GitHub and data and models on Hugging Face."
   - q: "What is SWE-Lego?"
-    a: "SWE-Lego is an open supervised fine-tuning recipe for software issue resolution. It shows that a lightweight SFT-only pipeline can train strong open coding agents when the data is right: real and synthetic tasks combined, erroneous steps masked out, training ordered by difficulty, and trajectories that copy answers from Git history removed."
+    a: "SWE-Lego is an open supervised fine-tuning recipe for software issue resolution. It combines real and synthetic tasks, masks the loss on erroneous agent steps, trains with an easy-to-hard curriculum, and adds a generative verifier for test-time scaling."
   - q: "What is Lego-RL?"
-    a: "Lego-RL is LegoX's framework for reinforcement learning inside the unmodified agent harness the model will actually run in, such as OpenHands, Claude Code or OpenCode. It keeps the exact tokens generated during rollout, replays mixture-of-experts routing, trains asynchronously, and makes every trajectory inspectable."
-  - q: "Are the LegoX datasets, code and models open source?"
-    a: "Yes. Code is on GitHub under LegoX and SWE-Lego, and datasets and models are on Hugging Face under the Lego-X and SWE-Lego organizations."
+    a: "Lego-RL is a framework for reinforcement learning of coding agents inside unmodified harnesses such as OpenHands, Claude Code and OpenCode. It records tokens and mixture-of-experts routing at generation time, runs each attempt in a sandbox with anti-cheating defenses, and makes training observable through live trajectory dashboards."
   - q: "Do stronger coding agents make better teachers?"
-    a: "Not necessarily. The Terminal-Lego study found that trajectories which visibly inspect the environment, act on what they saw and verify the result teach students best, even when they come from a weaker agent. Strong agents that jump straight to the answer leave little behavior worth imitating."
+    a: "Not necessarily. Trajectories that visibly inspect the environment, act on what they saw and verify the result teach students best, even when they come from a weaker agent. Stronger agents also tend to be better at hacking the task, for example by finding the upstream fix, so their trajectories need careful filtering."
 ---
 
 {% include research/styles.liquid %}
@@ -37,40 +38,66 @@ faq:
   <h1>Coding Agents, Agentic Data and Agentic RL</h1>
   <p class="research-meta">By <a href="{{ '/' | relative_url }}">Chaofan Tao (陶超凡)</a>, LegoX · Last updated <time datetime="{{ page.last_modified_at | date: '%Y-%m-%d' }}">{{ page.last_modified_at | date: "%B %-d, %Y" }}</time></p>
 
-  <p class="research-lead"><strong>Chaofan Tao works on how to train open LLM coding agents end to end, at <a href="https://www.legox.net/">LegoX</a>.</strong> The focus is the part of the stack that usually stays private: where verified training tasks come from, which agent trajectories are worth learning from, how fine-tuning and reinforcement learning fit the agent tools people actually use, and how agents should be evaluated. The outputs are reusable recipes, open data and infrastructure rather than one-off models.</p>
+  <p class="research-lead"><strong>A coding agent is more than a model.</strong> Its behavior also depends on the harness that manages its tools and context, the tasks it learns from, and the reward that tells it whether it succeeded. Most strong agents are built with pipelines in which these pieces are tightly coupled and rarely released. Chaofan Tao and collaborators at <a href="https://www.legox.net/">LegoX</a> take that pipeline apart into open, reusable blocks (task construction, trajectory curation, fine-tuning, harness-native reinforcement learning and review) and document what each block teaches about building reliable coding agents.</p>
 
-  <ul class="research-highlights">
-    <li><strong>Verified data at scale</strong>Real pull requests and community Q&amp;A turned into executable tasks that the environment itself can check.</li>
-    <li><strong>Training recipes</strong>Fine-tuning that teaches good debugging habits, and RL that runs inside real agent harnesses.</li>
-    <li><strong>Experimental know-how</strong>What makes a trajectory worth imitating, and why the strongest agent is not always the best teacher.</li>
-    <li><strong>Open infrastructure</strong>Agent-operable pipelines, sandboxed environments and dashboards, released as code and data.</li>
+  <p class="research-toc">On this page: <a href="#why">Why open</a> · <a href="#tasks">Verified tasks</a> · <a href="#trajectories">Trajectories and rewards</a> · <a href="#sft">Fine-tuning</a> · <a href="#rl">RL in the native harness</a> · <a href="#review">Review and evaluation</a> · <a href="#resources">Open resources</a></p>
+
+  <h2 id="why">Why build coding agents end to end, in the open?</h2>
+  <p>Because the pieces interact in ways that only show up when you control all of them. The same model can behave quite differently under different harnesses, a strong teacher can quietly copy answers instead of solving tasks, and a rising reward curve can hide broken infrastructure. LegoX packages each stage as a block with its own code, environment and dashboard, and makes the blocks operable by coding agents themselves: Claude Code or Codex can run them as plugin skills. The goal is a system others can rebuild, audit and extend, rather than a single checkpoint.</p>
+  <p class="research-readmore">Read more: <a href="https://www.legox.net/">LegoX</a> · <a href="https://www.legox.net/blog/legoflow/">LegoFlow overview</a></p>
+
+  <h2 id="tasks">Where do verified training tasks come from?</h2>
+  <p>From real software history, kept only when execution proves them. LegoFlow's Curator finds merged pull requests, gathers the issue, commits and tests, rewrites them into a task that does not leak the answer, builds an isolated environment in the Harbor task format, and keeps the task only if the original code fails the tests and the reference fix passes. Passing that check shows a task is usable, not that it is worth training on, so Curator also scores difficulty with a static rubric over patch scope, logic complexity, context breadth, test complexity and instruction detail, with no LLM judge involved. SWE-Lego adds synthetic tasks by injecting bugs through LLM rewriting and syntax-tree transformations, and Terminal-Lego turns Stack Overflow problems into sandboxed command-line tasks.</p>
+  <p class="research-knowhow-label">Know-how</p>
+  <ul class="research-knowhow">
+    <li>Only a tiny fraction of raw pull requests survive verification; quality filters matter more than volume.</li>
+    <li>Real tasks give depth (realistic, multi-file bugs) and synthetic tasks give breadth. Mixing the two helps more than either alone.</li>
+    <li>Harder, multi-file tasks lead teachers to produce longer, richer trajectories, which make better training data.</li>
   </ul>
+  <p class="research-readmore">Read more: <a href="https://www.legox.net/blog/legoflow/">LegoFlow</a> · <a href="https://www.legox.net/blog/legoflow-experiments/">Lessons learned from LegoFlow-SWE</a> · <a href="https://www.legox.net/blog/swe-lego/">SWE-Lego</a> · <a href="https://www.legox.net/blog/terminal-lego/">Terminal-Lego</a></p>
 
-  <h2 id="why">Why does this matter?</h2>
-  <p>Coding agents are now judged by whether they can fix real software, but most strong systems are trained with pipelines that are hard to reproduce: data, environments, training and evaluation are tightly coupled and rarely released. This work breaks that pipeline into reusable blocks, so that others can rebuild, audit and improve each part on its own.</p>
+  <h2 id="trajectories">Which trajectories are worth learning from, and how do you keep rewards honest?</h2>
+  <p>A trajectory is a recorded attempt by a teacher agent, and not every successful one is a good lesson. Three findings shape how LegoX curates them. First, reasoning depth matters more than reasoning coverage: traces that think briefly on every turn teach less than traces that reason in depth when the problem calls for it, and most of the gain comes from removing the shallowest traces. Second, environment-grounded trajectories make better teachers. In the Terminal-Lego study, traces that inspect, act and verify transferred better than those of stronger agents that jump straight to the answer; in the paper's words, “the best solver is the worst teacher.” Third, stronger models are better at hacking: they find the upstream pull request, copy the patch, or compare their change against the reference commit.</p>
+  <p class="research-knowhow-label">Know-how</p>
+  <ul class="research-knowhow">
+    <li>Filter out shallow reasoning traces rather than simply picking the longest ones.</li>
+    <li>Clean trajectories before training: remove Git history that reveals the fix, repair malformed tool calls, keep the tool set small, and recycle runs that found the right file but failed to fix it.</li>
+    <li>Defend against hacking in two layers: tell the agent not to look up solutions, and enforce it in the environment by rewriting Git history and restricting network access while the agent runs, restoring them only for grading.</li>
+  </ul>
+  <p class="research-readmore">Read more: <a href="https://www.legox.net/blog/legoflow-experiments/">Lessons learned from LegoFlow-SWE</a> · <a href="https://arxiv.org/abs/2606.03461">What makes interaction trajectories effective</a></p>
 
-  <h2 id="data">Where does good training data come from?</h2>
-  <p>From real software history, checked by execution. <a href="https://www.legox.net/blog/legoflow/">LegoFlow</a> mines merged pull requests and rewrites each one into a self-contained task with its own environment and tests. A task is kept only if the environment proves it: the original code must fail the tests and the reference fix must pass. <a href="https://www.legox.net/blog/terminal-lego/">Terminal-Lego</a> applies the same discipline to command-line work, turning community Q&amp;A into sandboxed tasks.</p>
-  <p><strong>Know-how:</strong> only a tiny fraction of raw candidates survive verification, and filtering for verifiability and for real reasoning in the trajectories matters more than collecting more data.</p>
+  <h2 id="sft">How far can supervised fine-tuning go?</h2>
+  <p>Further than its reputation suggests, if the data and the loss are right. SWE-Lego is an SFT-only recipe. Error masking keeps the full trajectory as context but excludes erroneous agent steps from the loss, so the model sees its mistakes without imitating them. A difficulty curriculum uses trajectory length as a proxy for difficulty, since longer trajectories are strongly associated with harder tasks, and trains in stages from easy to hard while carrying earlier data forward to avoid forgetting. At inference time, extra compute is best spent first on more interaction turns and then, once that saturates, on parallel attempts ranked by a verifier.</p>
+  <p class="research-knowhow-label">Know-how</p>
+  <ul class="research-knowhow">
+    <li>Mask the loss on wrong steps instead of throwing away imperfect trajectories.</li>
+    <li>A generative verifier, which answers “yes” or “no” as text, ranks attempts better than a regression head because it reuses what the model learned in pre-training.</li>
+  </ul>
+  <p class="research-readmore">Read more: <a href="https://www.legox.net/blog/swe-lego/">SWE-Lego overview</a> · <a href="https://arxiv.org/abs/2601.01426">paper</a></p>
 
-  <h2 id="training">How should coding agents be trained?</h2>
-  <p><strong>Fine-tuning.</strong> <a href="https://arxiv.org/abs/2601.01426">SWE-Lego</a> shows that a lightweight, SFT-only recipe can be strong when the data is right: combine real and synthetic tasks, mask erroneous steps so the model does not imitate its mistakes, order training by difficulty, and drop trajectories that peek at Git history for the answer.</p>
-  <p><strong>Reinforcement learning.</strong> <a href="https://www.legox.net/blog/lego-rl/">Lego-RL</a> trains inside the unmodified harness the agent will run in, such as OpenHands, Claude Code or OpenCode, because the harness decides what the model sees and does. The engineering that makes this work: keep the exact tokens generated during rollout, replay mixture-of-experts routing, run training asynchronously, and make every trajectory inspectable.</p>
+  <h2 id="rl">Why train reinforcement learning inside the agent's native harness?</h2>
+  <p>Because the harness is part of the environment the model learns from. Lego-RL connects unmodified harnesses such as OpenHands, Claude Code and OpenCode to a policy-gradient trainer without changing their control flow. The hard part is faithfulness. Harnesses rewrite their own history by compacting context, re-serializing tool calls and running sub-agents, so a saved transcript is not the token sequence the model actually sampled. An in-process proxy records tokens, log-probabilities and mixture-of-experts routing at generation time, and the routing is replayed during training so that both sides compute the same probabilities. Each attempt runs in its own sandbox with phase-dependent anti-cheating defenses, and dashboards make every trajectory inspectable.</p>
+  <p class="research-knowhow-label">Know-how</p>
+  <ul class="research-knowhow">
+    <li>Check token and probability alignment explicitly; misalignments are silent bugs that look like normal training.</li>
+    <li>Train on tasks the current policy solves only sometimes. Groups that always pass or always fail give no learning signal, and the useful band shifts as the policy improves.</li>
+    <li>Separate policy failures from infrastructure failures, such as tool-call parser mismatches or environment setup errors, before reading a reward curve.</li>
+    <li>After training, agents inspect more files before editing, reread their edits and run tests more often, at the cost of longer interactions.</li>
+  </ul>
+  <p>The same infrastructure supports newer recipes. Mixed-harness RL trains one model that works across several harnesses instead of one model per harness, and Single-Rollout Asynchronous Optimization (SAO) learns from a single attempt per task with a learned critic, which needs warm-up and advantage whitening to stay stable.</p>
+  <p class="research-readmore">Read more: <a href="https://www.legox.net/blog/lego-rl/">Lego-RL</a> · <a href="https://www.legox.net/blog/lego-rl-cross-harness/">RL across harnesses</a> · <a href="https://www.legox.net/blog/lego-rl-sao/">Single-rollout optimization</a> · <a href="https://arxiv.org/abs/2608.17393">paper</a></p>
 
-  <h2 id="teachers">What makes a good teacher trajectory?</h2>
-  <p>Visible grounding, not raw strength. The Terminal-Lego study found that trajectories which inspect the environment, act on what they saw and then verify the result transfer best to students, while strong agents that jump straight to the answer leave little to learn from.</p>
-  <blockquote>“The best solver is the worst teacher.” — <a href="https://www.legox.net/blog/terminal-lego/">LegoX, Terminal-Lego</a></blockquote>
-  <p>The practical takeaway is to design the interaction so that the trace contains behavior worth imitating, a shift the paper calls harness engineering.</p>
+  <h2 id="review">How should coding agents be reviewed and evaluated?</h2>
+  <p>Like human software work: with review, iteration and realistic checks. SWE-Review adds the missing second half of the loop. A reviewer agent explores the repository on its own, traces the root cause, compares its diagnosis with the submitted patch and returns structured feedback, turning one-shot generation into a generate-review-revise loop. Review trajectories also transfer back to issue resolution, and because choosing among attempts is cheaper than generating more of them, review makes test-time scaling more efficient. For evaluation, <a href="https://arxiv.org/abs/2505.23932">SwingArena</a> (ICLR Oral) has models compete as patch submitters and test-writing reviewers in continuous-integration pipelines, <a href="https://arxiv.org/abs/2604.06861">REAgent</a> (ICSE) checks and refines the issue as a requirement before patching, and <a href="https://arxiv.org/abs/2601.18533">RLVRR</a> (ICLR) extends verifiable rewards beyond code to open-ended generation.</p>
+  <p class="research-readmore">Read more: <a href="https://www.legox.net/blog/swe-review/">SWE-Review</a> · <a href="https://arxiv.org/abs/2607.06065">paper</a></p>
 
-  <h2 id="evaluation">How should coding agents be evaluated?</h2>
-  <p>Closer to how software is actually built. <a href="https://arxiv.org/abs/2505.23932">SwingArena</a> (ICLR Oral) puts models in a continuous-integration loop as both patch submitters and test-writing reviewers across several programming languages. <a href="https://arxiv.org/abs/2604.06861">REAgent</a> (ICSE) treats the issue text as a requirement to check and refine before patching. <a href="https://arxiv.org/abs/2601.18533">RLVRR</a> (ICLR) carries verifiable rewards beyond code to open-ended generation.</p>
-
-  <h2 id="resources">Open code and data</h2>
+  <h2 id="resources">Open resources</h2>
   <ul>
-    <li>LegoFlow: <a href="https://github.com/LegoX/LegoFlow">code</a> · <a href="https://huggingface.co/collections/Lego-X/legoflow">data</a> · <a href="https://www.legox.net/blog/legoflow/">overview</a></li>
-    <li>Lego-RL: <a href="https://github.com/LegoX/Lego-RL">code</a> · <a href="https://huggingface.co/collections/Lego-X/lego-rl">models and data</a> · <a href="https://www.legox.net/blog/lego-rl/">overview</a></li>
-    <li>Terminal-Lego: <a href="https://github.com/SWE-Lego/terminal-lego">code</a> · <a href="https://huggingface.co/datasets/SWE-Lego/Terminal-Lego-15k">data</a> · <a href="https://www.legox.net/blog/terminal-lego/">overview</a></li>
-    <li>SWE-Lego: <a href="https://github.com/LegoX/SWE-Lego">code</a> · <a href="https://arxiv.org/abs/2601.01426">paper</a> · <a href="https://www.legox.net/blog/swe-lego/">overview</a></li>
+    <li>LegoFlow: <a href="https://github.com/LegoX/LegoFlow">code</a> · <a href="https://huggingface.co/collections/Lego-X/legoflow">data</a></li>
+    <li>SWE-Lego: <a href="https://github.com/LegoX/SWE-Lego">code</a> · <a href="https://huggingface.co/collections/Lego-X/swe-lego">data and models</a></li>
+    <li>Terminal-Lego: <a href="https://github.com/LegoX/Terminal-Lego">code</a> · <a href="https://huggingface.co/datasets/SWE-Lego/Terminal-Lego-15k">data</a></li>
+    <li>Lego-RL: <a href="https://github.com/LegoX/Lego-RL">code</a> · <a href="https://huggingface.co/collections/Lego-X/lego-rl">models and data</a></li>
+    <li>SWE-Review: <a href="https://github.com/LegoX/SWE-Review">code</a> · <a href="https://huggingface.co/collections/Lego-X/swe-review">models and data</a></li>
   </ul>
 
   {% include research/paper-list.liquid topic="coding-agents" lang="en" %}
@@ -83,6 +110,13 @@ faq:
   title   = {SWE-Lego: Pushing the Limits of Supervised Fine-tuning for Software Issue Resolving},
   author  = {Tao, Chaofan and Chen, Jierun and Jiang, Yuxin and Kou, Kaiqi and Wang, Shaowei and Wang, Ruoyu and Li, Xiaohui and Yang, Sidi and Du, Yiming and Dai, Jianbo and Mao, Zhiming and Wang, Xinyu and Shang, Lifeng and Bai, Haoli},
   journal = {arXiv preprint arXiv:2601.01426},
+  year    = {2026}
+}
+
+@article{du2026legorl,
+  title   = {LEGO-RL: Harness-Native Reinforcement Learning for Coding Agents},
+  author  = {Du, Yiming and Jiang, Yuxin and Yuan, Tao and Dai, Jianbo and Wang, Shaowei and Chen, Jierun and Tao, Chaofan and Yu, Xianzhi and Shang, Lifeng and Wong, Kam-Fai and Li, Xiaohui and Bai, Haoli},
+  journal = {arXiv preprint arXiv:2608.17393},
   year    = {2026}
 }
 

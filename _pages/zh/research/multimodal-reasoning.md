@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "多模态推理与智能体"
-description: "陶超凡的多模态大模型研究：推理型视觉语言模型的后训练经验、自我反思、物理推理与多模态搜索基准，以及面向机器人的代码生成。"
+description: "陶超凡的多模态大模型研究：后训练如何塑造推理型视觉语言模型、教会模型自我反思、揭示真实差距的基准，以及把多模态推理转化为机器人行为。"
 permalink: /zh/research/multimodal-reasoning/
 research_lang: zh
 last_modified_at: 2026-11-04
@@ -18,11 +18,11 @@ faq:
   - q: "推理型视觉语言模型该用长思维链 SFT 还是 RL 训练？"
     a: "两者擅长的地方不同。长思维链 SFT 对难题有帮助，但会让回答冗长并可能损害简单题；RL 提升更全面且回答更简洁。分阶段、交替、渐进式训练以及数据混合、模型合并，往往只是用一种收益换另一种，而不是叠加，论文称之为协同困境。"
   - q: "PhyX 是什么？"
-    a: "PhyX 是一个考察图像中物理推理能力的基准，覆盖六个物理领域。它表明当前多模态模型依赖记忆的公式和表层视觉模式，而非真正的物理理解，与人类专家仍有明显差距。"
+    a: "PhyX 是考察视觉场景中物理推理能力的基准，覆盖六个物理领域。其错误分析表明，当前多模态模型依赖记忆的知识、过度依赖数学公式、匹配表层视觉模式，而不是真正理解物理情境。"
   - q: "MMSearch-Plus 是什么？"
-    a: "MMSearch-Plus 是面向多模态浏览智能体的基准和框架，答案依赖图像中的细粒度视觉线索，必须通过图文检索交叉验证。它提供 set-of-mark 工具，让智能体可以标记、裁剪、放大并发起定向检索。"
+    a: "MMSearch-Plus 是面向多模态浏览的基准和智能体框架，答案依赖图像中的细粒度视觉线索，需要通过图文检索层层传递。它提供 set-of-mark 模块，让智能体在检索前先标记、裁剪和放大图像。"
   - q: "陶超凡做具身智能吗？"
-    a: "他的主要方向是代码智能体和高效大模型。与具身相关的工作包括 RoboCodeX（ICML），根据多模态输入把机器人行为生成为代码；以及 PhyX，一个考察这类智能体所需物理推理能力的基准。"
+    a: "他的主要方向是代码智能体和高效大模型。与具身相关的工作包括 RoboCodeX（ICML），把指令和视觉输入转化为以代码表达的机器人行为；以及 PhyX，一个考察这类智能体所需物理推理能力的基准。"
 ---
 
 {% include research/styles.liquid %}
@@ -39,26 +39,44 @@ faq:
   <h1>多模态推理与智能体</h1>
   <p class="research-meta">作者：<a href="{{ '/' | relative_url }}">陶超凡（Chaofan Tao）</a> · 最后更新 <time datetime="{{ page.last_modified_at | date: '%Y-%m-%d' }}">{{ page.last_modified_at | date: "%Y-%m-%d" }}</time></p>
 
-  <p class="research-lead"><strong>这部分工作研究视觉语言模型如何推理、搜索和行动，并构建能揭示其不足的评测。</strong>贡献包括推理模型的后训练经验、教会模型自我反思的方法、揭示真实差距的基准，以及从多模态推理迈向具身智能体的探索。</p>
+  <p class="research-lead"><strong>视觉语言模型能描述图像、解视觉数学题，但它们何时真正基于所见进行推理，仍不清楚。</strong>这条研究线研究后训练如何塑造它们的推理，教会它们检查自己的答案，并构建揭示其失败之处的基准，从图像中的物理到依赖视觉证据的搜索；进而迈向在物理世界中行动的智能体。</p>
 
-  <ul class="research-highlights">
-    <li><strong>后训练经验</strong>长思维链 SFT 何时有用、RL 何时有用，以及为什么二者难以叠加。</li>
-    <li><strong>自我反思</strong>教会多模态模型检查并修正自己的推理。</li>
-    <li><strong>揭示差距的评测</strong>图像中的物理推理，以及必须依靠视觉证据的搜索。</li>
-    <li><strong>迈向具身智能体</strong>把指令和感知转化为以代码表达的机器人行为。</li>
+  <p class="research-toc">本页内容：<a href="#post-training">后训练</a> · <a href="#reflection">自我反思</a> · <a href="#gaps">模型的不足</a> · <a href="#embodied">迈向具身智能体</a></p>
+
+  <h2 id="post-training">推理型视觉语言模型该用长思维链 SFT 还是 RL 训练？</h2>
+  <p>两者擅长的地方不同，而且结合起来比看上去难。<a href="https://arxiv.org/abs/2507.07562">协同困境</a>研究（TMLR）在多个多模态推理基准上比较了两者。长思维链 SFT 教会模型结构化、深入的推理，对难题有帮助，但会让回答冗长并损害简单题。RL 提升泛化能力、让回答简洁，在各难度上都有稳定提升，只是在最难的题上提升较小。在纯语言模型中两者通常可以叠加；但对视觉语言模型，所有尝试过的组合方式（两阶段、交替、渐进式训练，以及数据混合和模型合并）都只是在准确率、推理风格和回答长度之间互相权衡，而不是收益相加。</p>
+  <p class="research-knowhow-label">经验</p>
+  <ul class="research-knowhow">
+    <li>按目标选择：困难的多步问题用长思维链 SFT；追求广泛稳健和简洁回答用 RL。</li>
+    <li>不要默认纯文本推理模型的训练方案能迁移到视觉语言模型；如何自适应地结合两者仍是开放问题。</li>
   </ul>
-
-  <h2 id="sft-rl">推理型视觉语言模型该用长思维链 SFT 还是 RL？</h2>
-  <p>取决于你的目标，而且二者结合比看上去难。长思维链微调对难题有帮助，但会让回答冗长并可能损害简单题；RL 提升更全面，回答也更简洁。分阶段、交替、渐进式训练以及数据混合、模型合并，往往只是用一种收益换另一种，而不是叠加。<a href="https://arxiv.org/abs/2507.07562">协同困境</a>研究梳理了这些权衡，方便实践者按目标难度和回答长度预算做选择。</p>
+  <p class="research-readmore">延伸阅读：<a href="https://arxiv.org/abs/2507.07562">论文</a> · <a href="https://github.com/JierunChen/SFT-RL-SynergyDilemma">代码</a></p>
 
   <h2 id="reflection">多模态模型如何学会反思？</h2>
-  <p>先从好的反思中学习，再因有用的反思获得奖励。<a href="https://arxiv.org/abs/2506.01713">SRPO</a>（NeurIPS）构建以反思为中心的数据集，由更强的模型评析初始回答，让策略模型同时学会推理和反思；随后的 RL 奖励简洁、有意义的反思，抑制冗余的自言自语。</p>
+  <p>自我反思，即发现并纠正自己的错误，在多模态模型中比纯文本模型更弱，而仅靠提示无法补上模型不具备的知识。<a href="https://arxiv.org/abs/2506.01713">SRPO</a>（NeurIPS）分两个阶段：首先由更强的多模态模型评析策略模型的初始回答，构建以反思为中心的数据集，让模型学会“怎么反思”，而不只是“答什么”；然后在 GRPO 式强化学习中，用奖励鼓励简洁、真正改进推理的反思，抑制冗余的自言自语。</p>
+  <p class="research-knowhow-label">经验</p>
+  <ul class="research-knowhow">
+    <li>先用数据教会好的反思“长什么样”，再用 RL 奖励它。</li>
+    <li>奖励反思是否有用，而不是反思有多长。</li>
+  </ul>
+  <p class="research-readmore">延伸阅读：<a href="https://arxiv.org/abs/2506.01713">论文</a> · <a href="https://github.com/SUSTechBruce/SRPO_MLLMs">代码</a></p>
 
   <h2 id="gaps">多模态模型还差在哪里？</h2>
-  <p>差在物理理解和对视觉证据的运用。<a href="https://arxiv.org/abs/2505.15929">PhyX</a> 在六个物理领域考察图像中的物理推理，发现模型依赖记忆的公式和表层模式。<a href="https://arxiv.org/abs/2508.21475">MMSearch-Plus</a>（ICLR）的问题依赖必须通过检索交叉验证的细粒度视觉线索，最常见的失败是找不到正确网页、分不清视觉上相似的事件。<a href="https://arxiv.org/abs/2408.09511">NAVERO</a> 关注视频-语言模型的细粒度组合理解。</p>
+  <p>基准只有在无法靠捷径解决时才有价值，以下三个评测分别针对特定盲区。<a href="https://arxiv.org/abs/2505.15929">PhyX</a> 在六个物理领域考察视觉场景中的物理推理，错误分析显示模型依赖记忆的教科书知识、过度依赖数学公式、匹配表层视觉模式，而不是理解物理情境。<a href="https://arxiv.org/abs/2508.21475">MMSearch-Plus</a>（ICLR）针对“只看文字就能答对”的浏览基准：它的问题要求提取空间细节、时间痕迹等细粒度视觉线索，并通过多轮图文检索推断出图像之外的事实，例如事件或地点；其智能体框架加入 set-of-mark 模块，可在检索前标记、裁剪和放大。<a href="https://arxiv.org/abs/2408.09511">NAVERO</a> 关注视频中随时间变化的物体与动作关系，构建了基于反例描述的基准，并提出从反例中学习的训练方法。</p>
+  <p class="research-knowhow-label">经验</p>
+  <ul class="research-knowhow">
+    <li>设计“忽略图像就答不对”的问题。</li>
+    <li>搜索智能体的大多数失败来自找不到正确网页、分不清视觉上相似的事件，而不是最后一步推理。</li>
+  </ul>
+  <p class="research-readmore">延伸阅读：<a href="https://github.com/killthefullmoon/PhyX">PhyX</a> · <a href="https://github.com/mmsearch-plus/MMSearch-Plus">MMSearch-Plus</a></p>
 
-  <h2 id="embodied">从多模态推理到具身智能体</h2>
-  <p><a href="https://arxiv.org/abs/2402.16117">RoboCodeX</a>（ICML）把人类指令分解为带有可供性和安全约束、以物体为中心的操作步骤，并用代码表达，使同一个模型能跨机器人平台泛化。<a href="https://arxiv.org/abs/2411.05902">视觉自回归模型综述</a>（TMLR，配有被广泛使用的 <a href="https://github.com/ChaofanTao/Autoregressive-Models-in-Vision-Survey">GitHub 论文列表</a>）涵盖了具身智能等应用。高效视觉语言 Transformer 方面，可参见 token 集成（<a href="https://arxiv.org/abs/2305.17455">CrossGET</a>）和渐进式剪枝（<a href="https://arxiv.org/abs/2301.13741">UPop</a>）。</p>
+  <h2 id="embodied">多模态推理如何转化为机器人行为？</h2>
+  <p>用代码作为感知与控制之间的桥梁。<a href="https://arxiv.org/abs/2402.16117">RoboCodeX</a>（ICML）以树状结构把高层指令分解为以物体为中心的操作单元，每个单元附带可供性、安全约束等物理偏好，再写成代码，使同一个模型能跨机器人平台泛化；它用多模态推理数据做预训练，并用迭代自我更新的方法做微调。<a href="https://arxiv.org/abs/2411.05902">视觉自回归模型综述</a>（TMLR）把视觉生成方法归纳为基于像素、token 和尺度三类，并涵盖具身智能等应用，其 <a href="https://github.com/ChaofanTao/Autoregressive-Models-in-Vision-Survey">GitHub 论文列表</a>被广泛使用。</p>
+  <p class="research-knowhow-label">经验</p>
+  <ul class="research-knowhow">
+    <li>代码是感知与控制之间的好接口：可检查、可组合，并能在不同机器人之间迁移。</li>
+  </ul>
+  <p>如何让视觉语言 Transformer 运行得更便宜，见<a href="{{ '/zh/research/efficient-llm/#vision-language' | relative_url }}">高效大模型页面</a>中的 token 合并与联合剪枝。</p>
 
   {% include research/paper-list.liquid topic="multimodal" lang="zh" %}
 

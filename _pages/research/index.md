@@ -29,7 +29,7 @@ about:
   <div class="research-cards">
     <article class="research-card">
       <h2><a href="{{ '/research/coding-agents/' | relative_url }}">Coding agents and agentic RL</a></h2>
-      <p>Verified task data from real software history, fine-tuning and RL recipes that fit real agent tools, and know-how on which trajectories are worth learning from.</p>
+      <p>Verified tasks from real software history, trustworthy trajectories and rewards, fine-tuning and RL inside real agent harnesses, and agentic code review.</p>
     </article>
     <article class="research-card">
       <h2><a href="{{ '/research/efficient-llm/' | relative_url }}">Efficient LLM training and inference</a></h2>
