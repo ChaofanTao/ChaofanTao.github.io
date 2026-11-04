@@ -9,8 +9,10 @@ on:
       - "**.bib"
       - "**.html"
       - "**.js"
+      - "**.json"
       - "**.liquid"
       - "**/*.md"
+      - "**.txt"
       - "**.yml"
       - "Gemfile"
       - "Gemfile.lock"
@@ -35,8 +37,10 @@ on:
       - "**.bib"
       - "**.html"
       - "**.js"
+      - "**.json"
       - "**.liquid"
       - "**/*.md"
+      - "**.txt"
       - "**.yml"
       - "Gemfile"
       - "Gemfile.lock"
@@ -104,3 +108,10 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: _site
+      - name: Notify IndexNow 🔔
+        if: github.event_name != 'pull_request'
+        continue-on-error: true
+        run: |
+          # GitHub Pages publishes the gh-pages branch a minute or two after the push.
+          sleep 120
+          python3 bin/indexnow.py --site _site
