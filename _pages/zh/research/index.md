@@ -1,10 +1,10 @@
 ---
 layout: default
 title: "研究方向"
-description: "陶超凡（Chaofan Tao）的研究概览：大模型代码智能体与智能体强化学习、高效大模型训练与推理、多模态推理与智能体。"
+description: "陶超凡（Chaofan Tao）的研究概览：端到端训练开源大模型代码智能体、高效大模型训练与推理、多模态推理与智能体。"
 permalink: /zh/research/
 research_lang: zh
-last_modified_at: 2026-11-03
+last_modified_at: 2026-11-04
 og_image: /assets/img/og-image.png
 about:
   - 大语言模型
@@ -29,17 +29,17 @@ about:
   <div class="research-cards">
     <article class="research-card">
       <h2><a href="{{ '/zh/research/coding-agents/' | relative_url }}">代码智能体与智能体强化学习</a></h2>
-      <p>可验证软件工程任务构建（LegoFlow）、监督微调配方（SWE-Lego）、终端智能体轨迹（Terminal-Lego），以及在 Claude Code、OpenHands、OpenCode 内原生训练的强化学习（Lego-RL，SWE-bench Verified 最高 70.4%）。</p>
+      <p>来自真实软件历史的可验证任务数据、适配真实智能体工具的微调与强化学习方案，以及哪些轨迹值得学习的经验。</p>
     </article>
     <article class="research-card">
       <h2><a href="{{ '/zh/research/efficient-llm/' | relative_url }}">高效大模型训练与推理</a></h2>
-      <p>词表规模扩展定律（NeurIPS 2024）、生成式模型量化（ACL 2022 杰出论文）、KV 缓存压缩、快速测试时扩展。</p>
+      <p>词表规模选择、生成式模型压缩、低成本长上下文推理，以及更快的推理阶段计算。</p>
     </article>
     <article class="research-card">
       <h2><a href="{{ '/zh/research/multimodal-reasoning/' | relative_url }}">多模态推理与智能体</a></h2>
-      <p>推理型视觉语言模型的 RL 与长思维链后训练、物理推理（PhyX）、多模态搜索智能体、面向机器人的代码生成（RoboCodeX）。</p>
+      <p>推理型视觉语言模型的后训练经验、自我反思、揭示真实差距的基准，以及面向机器人的代码生成。</p>
     </article>
   </div>
 
-  <p>全部 {{ site.data.homepage.publications.size }} 篇论文及中英文摘要见<a href="{{ '/#all-publications' | relative_url }}">主页</a>。面向 AI 的机器可读摘要：<a href="{{ '/llms.txt' | relative_url }}">llms.txt</a>、<a href="{{ '/llms-full.txt' | relative_url }}">llms-full.txt</a>。</p>
+  <p>全部 {{ site.data.homepage.publications.size }} 篇论文及中英文摘要见<a href="{{ '/#all-publications' | relative_url }}">主页</a>。</p>
 </div>

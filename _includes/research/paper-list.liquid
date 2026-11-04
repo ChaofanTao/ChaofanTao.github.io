@@ -1,19 +1,22 @@
 {% assign topic_papers = site.data.homepage.publications | where_exp: "paper", "paper.topics contains include.topic" %}
-<ol class="research-papers">
-  {% for paper in topic_papers %}
-    <li class="research-paper">
-      <h3><a href="{{ paper.url | escape }}">{{ paper.title | escape }}</a></h3>
-      <p class="research-paper-meta">{{ paper.venue | escape }} · {{ paper.year }}{% if paper.award %} · {{ paper.award | escape }}{% endif %}</p>
-      <p>{{ paper.authors | escape | replace: 'Chaofan Tao', '<strong>Chaofan Tao</strong>' }}</p>
-      <p{% if include.lang == 'zh' %} lang="zh-Hans"{% endif %}>{% if include.lang == 'zh' %}{{ paper.abstract_zh | escape }}{% else %}{{ paper.abstract_en | escape }}{% endif %}</p>
-      <div class="research-links">
-        <a href="{{ paper.url | escape }}">Paper</a>
-        {% if paper.code %}<a href="{{ paper.code | escape }}">Code</a>{% endif %}
-        {% if paper.repository %}<a href="{{ paper.repository | escape }}">GitHub</a>{% endif %}
-        {% if paper.data %}<a href="{{ paper.data | escape }}">Data</a>{% endif %}
-        {% if paper.slides %}<a href="{{ paper.slides | escape }}">Slides</a>{% endif %}
-        {% if paper.demo %}<a href="{{ paper.demo | escape }}">Demo</a>{% endif %}
-      </div>
-    </li>
-  {% endfor %}
-</ol>
+<details class="research-more">
+  <summary>{% if include.lang == 'zh' %}相关论文（{{ topic_papers.size }} 篇）{% else %}Papers ({{ topic_papers.size }}){% endif %}</summary>
+  <ol class="research-papers">
+    {% for paper in topic_papers %}
+      <li class="research-paper">
+        <h3><a href="{{ paper.url | escape }}">{{ paper.title | escape }}</a></h3>
+        <p class="research-paper-meta">{{ paper.venue | escape }} · {{ paper.year }}{% if paper.award %} · {{ paper.award | escape }}{% endif %}</p>
+        <p>{{ paper.authors | escape | replace: 'Chaofan Tao', '<strong>Chaofan Tao</strong>' }}</p>
+        <p{% if include.lang == 'zh' %} lang="zh-Hans"{% endif %}>{% if include.lang == 'zh' %}{{ paper.abstract_zh | escape }}{% else %}{{ paper.abstract_en | escape }}{% endif %}</p>
+        <div class="research-links">
+          <a href="{{ paper.url | escape }}">Paper</a>
+          {% if paper.code %}<a href="{{ paper.code | escape }}">Code</a>{% endif %}
+          {% if paper.repository %}<a href="{{ paper.repository | escape }}">GitHub</a>{% endif %}
+          {% if paper.data %}<a href="{{ paper.data | escape }}">Data</a>{% endif %}
+          {% if paper.slides %}<a href="{{ paper.slides | escape }}">Slides</a>{% endif %}
+          {% if paper.demo %}<a href="{{ paper.demo | escape }}">Demo</a>{% endif %}
+        </div>
+      </li>
+    {% endfor %}
+  </ol>
+</details>

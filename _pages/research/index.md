@@ -1,10 +1,10 @@
 ---
 layout: default
 title: "Research"
-description: "Research overviews by Chaofan Tao (陶超凡): LLM coding agents and agentic RL, efficient LLM training and inference, and multimodal reasoning and agents."
+description: "Research overviews by Chaofan Tao (陶超凡): training open LLM coding agents, efficient LLM training and inference, and multimodal reasoning and agents."
 permalink: /research/
 research_lang: en
-last_modified_at: 2026-11-03
+last_modified_at: 2026-11-04
 og_image: /assets/img/og-image.png
 about:
   - Large language models
@@ -29,17 +29,17 @@ about:
   <div class="research-cards">
     <article class="research-card">
       <h2><a href="{{ '/research/coding-agents/' | relative_url }}">Coding agents and agentic RL</a></h2>
-      <p>Verified SWE tasks (LegoFlow), SFT recipes (SWE-Lego), terminal-agent trajectories (Terminal-Lego), and RL inside Claude Code, OpenHands and OpenCode (Lego-RL, up to 70.4% on SWE-bench Verified).</p>
+      <p>Verified task data from real software history, fine-tuning and RL recipes that fit real agent tools, and know-how on which trajectories are worth learning from.</p>
     </article>
     <article class="research-card">
       <h2><a href="{{ '/research/efficient-llm/' | relative_url }}">Efficient LLM training and inference</a></h2>
-      <p>Vocabulary scaling laws (NeurIPS 2024), quantization of generative models (ACL 2022 Outstanding Paper), KV cache compression, and fast test-time scaling.</p>
+      <p>Choosing vocabulary size, compressing generative models, cheaper long-context inference, and faster reasoning-time compute.</p>
     </article>
     <article class="research-card">
       <h2><a href="{{ '/research/multimodal-reasoning/' | relative_url }}">Multimodal reasoning and agents</a></h2>
-      <p>RL and long-CoT post-training for reasoning VLMs, physical reasoning (PhyX), multimodal browsing agents, and code generation for robots (RoboCodeX).</p>
+      <p>Post-training insights for reasoning VLMs, self-reflection, benchmarks that expose real gaps, and code generation for robots.</p>
     </article>
   </div>
 
-  <p>All {{ site.data.homepage.publications.size }} publications with English and Chinese summaries are on the <a href="{{ '/#all-publications' | relative_url }}">homepage</a>. Machine-readable summaries: <a href="{{ '/llms.txt' | relative_url }}">llms.txt</a> and <a href="{{ '/llms-full.txt' | relative_url }}">llms-full.txt</a>.</p>
+  <p>All {{ site.data.homepage.publications.size }} publications, with English and Chinese summaries, are on the <a href="{{ '/#all-publications' | relative_url }}">homepage</a>.</p>
 </div>

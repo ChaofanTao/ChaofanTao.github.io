@@ -108,8 +108,8 @@ redirect_from:
 
   .home-photo {
     grid-column: 2;
-    grid-row: 1 / span 2;
-    padding-top: 0.25rem;
+    grid-row: 2;
+    padding-top: 0.3rem;
   }
 
   .home-photo figure {
