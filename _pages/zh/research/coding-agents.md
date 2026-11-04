@@ -13,15 +13,6 @@ about:
   - 智能体数据
   - 奖励作弊
   - 代码审查智能体
-faq:
-  - q: "LegoX 是什么？"
-    a: "LegoX 是面向代码智能体的开源项目集合，覆盖数据流水线、训练框架、评测和模型，包括 LegoFlow、SWE-Lego、Terminal-Lego、Lego-RL 和 SWE-Review。代码在 GitHub，数据和模型在 Hugging Face。"
-  - q: "SWE-Lego 是什么？"
-    a: "SWE-Lego 是一套开源的软件问题修复监督微调方案：结合真实与合成任务，对智能体的错误步骤做损失掩码，按由易到难的课程训练，并用生成式验证器做测试时扩展。"
-  - q: "Lego-RL 是什么？"
-    a: "Lego-RL 是在 OpenHands、Claude Code、OpenCode 等未经修改的 harness 内对代码智能体做强化学习的框架。它在生成时记录 token 和混合专家路由，在带防作弊机制的沙箱中运行每次尝试，并通过实时轨迹看板让训练可观测。"
-  - q: "更强的代码智能体是更好的教师吗？"
-    a: "不一定。显式地观察环境、基于观察行动、再验证结果的轨迹最能教会学生，即使来自更弱的智能体。更强的智能体也更擅长“作弊”，例如找到上游修复，因此它们的轨迹需要仔细筛选。"
 ---
 
 {% include research/styles.liquid %}
@@ -101,8 +92,6 @@ faq:
   </ul>
 
   {% include research/paper-list.liquid topic="coding-agents" lang="zh" %}
-
-  {% include research/faq.liquid %}
 
   <p>相关页面：<a href="{{ '/zh/research/efficient-llm/' | relative_url }}">高效大模型训练与推理</a> · <a href="{{ '/zh/research/multimodal-reasoning/' | relative_url }}">多模态推理与智能体</a></p>
 </div>

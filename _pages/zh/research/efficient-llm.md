@@ -14,15 +14,6 @@ about:
   - KV 缓存压缩
   - 测试时扩展
   - 知识蒸馏
-faq:
-  - q: "大模型的词表应该多大？"
-    a: "比多数模型现在用的更大，但增长速度应慢于模型其余部分。Scaling Laws with Vocabulary（NeurIPS）用三种独立方法估计计算最优词表规模，结论一致：最优词表随计算预算增长。数据稀缺时更小的词表更好，训练数据远超计算最优时更大的词表更有利，同时要考虑词表变大带来的推理开销。"
-  - q: "陶超凡哪篇论文获得了 ACL 2022 杰出论文奖？"
-    a: "Compression of Generative Pre-trained Language Models via Quantization。论文指出，GPT 类模型量化失败的原因是低精度下词嵌入变得几乎相同、各模块权重分布差异大，并用 token 级对比蒸馏和模块级动态缩放解决了这一问题。"
-  - q: "长上下文推理如何减少显存占用？"
-    a: "只保留 KV 缓存中真正重要的部分。D2O 为每一层单独分配缓存预算，并允许召回或合并被丢弃的 token；UNComp 用矩阵熵找出低信息区域；Prefilling-dLLM 把扩散语言模型的前缀分块缓存一次，解码时只使用相关的块。"
-  - q: "这些方法有代码吗？"
-    a: "有。本页多数论文都提供公开代码，包括带交互式计算器的词表扩展定律、D2O、UNComp、ATTS、Prefilling-dLLM 和自适应 KL，链接见论文列表。"
 ---
 
 {% include research/styles.liquid %}
@@ -93,8 +84,6 @@ faq:
   <p>“先诊断再改进”的方法同样适用。<a href="https://arxiv.org/abs/2305.17455">CrossGET</a>（ICML）在推理时合并冗余 token，用一种模态的信息引导另一种模态的匹配，既适用于双编码器模型，也适用于多模态大模型。<a href="https://arxiv.org/abs/2301.13741">UPop</a>（ICML）在视觉和语言两部分上联合搜索更小的子网络，让各模态的剪枝比例由学习决定而非人为设定，并交替进行搜索与重训练以达到更高压缩率。</p>
 
   {% include research/paper-list.liquid topic="efficient-llm" lang="zh" %}
-
-  {% include research/faq.liquid %}
 
   <p>相关页面：<a href="{{ '/zh/research/coding-agents/' | relative_url }}">代码智能体与智能体强化学习</a> · <a href="{{ '/zh/research/multimodal-reasoning/' | relative_url }}">多模态推理与智能体</a></p>
 </div>

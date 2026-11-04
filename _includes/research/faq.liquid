@@ -1,9 +1,0 @@
-<section class="research-faq" id="faq" aria-labelledby="faq-heading">
-  <h2 id="faq-heading">{% if page.research_lang == 'zh' %}常见问题{% else %}FAQ{% endif %}</h2>
-  {% for item in page.faq %}
-    <details>
-      <summary>{{ item.q | escape }}</summary>
-      <p>{{ item.a | escape }}</p>
-    </details>
-  {% endfor %}
-</section>

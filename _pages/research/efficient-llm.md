@@ -14,15 +14,6 @@ about:
   - KV cache compression
   - Test-time scaling
   - Knowledge distillation
-faq:
-  - q: "How large should an LLM's vocabulary be?"
-    a: "Larger than most models use, but growing more slowly than the rest of the model. Scaling Laws with Vocabulary (NeurIPS) estimates the compute-optimal vocabulary size in three independent ways, and all three agree that it grows with the compute budget. With scarce data a smaller vocabulary is better, and with far more data than compute-optimal a larger one helps, while a bigger vocabulary also costs inference compute."
-  - q: "Which paper by Chaofan Tao received the ACL 2022 Outstanding Paper Award?"
-    a: "Compression of Generative Pre-trained Language Models via Quantization. It shows that quantization fails on GPT-style models because low-precision word embeddings become nearly identical and weight distributions vary across modules, and fixes this with token-level contrastive distillation and module-wise dynamic scaling."
-  - q: "How can long-context LLM inference use less memory?"
-    a: "By keeping only the parts of the KV cache that matter. D2O gives each layer its own cache budget and lets discarded tokens be recalled or merged, UNComp uses matrix entropy to find low-information regions, and Prefilling-dLLM caches the prefix of diffusion language models once in chunks and decodes over only the relevant ones."
-  - q: "Is there code for these methods?"
-    a: "Yes. Most papers on this page link to public code, including the vocabulary scaling law with an interactive calculator, D2O, UNComp, ATTS, Prefilling-dLLM and Adaptive KL. See the paper list for links."
 ---
 
 {% include research/styles.liquid %}
@@ -93,8 +84,6 @@ faq:
   <p>The same diagnose-then-fix approach applies. <a href="https://arxiv.org/abs/2305.17455">CrossGET</a> (ICML) merges redundant tokens at inference time, using information from one modality to guide matching in the other, and works for both separate-encoder models and multimodal LLMs. <a href="https://arxiv.org/abs/2301.13741">UPop</a> (ICML) searches for a smaller sub-network across vision and language jointly, so the pruning ratio of each modality is learned rather than fixed, and alternates search with retraining to reach higher compression.</p>
 
   {% include research/paper-list.liquid topic="efficient-llm" lang="en" %}
-
-  {% include research/faq.liquid %}
 
   <details class="research-more">
     <summary>How to cite</summary>

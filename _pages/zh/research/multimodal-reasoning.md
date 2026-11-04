@@ -14,15 +14,6 @@ about:
   - 物理推理
   - 多模态搜索智能体
   - 具身智能
-faq:
-  - q: "推理型视觉语言模型该用长思维链 SFT 还是 RL 训练？"
-    a: "两者擅长的地方不同。长思维链 SFT 对难题有帮助，但会让回答冗长并可能损害简单题；RL 提升更全面且回答更简洁。分阶段、交替、渐进式训练以及数据混合、模型合并，往往只是用一种收益换另一种，而不是叠加，论文称之为协同困境。"
-  - q: "PhyX 是什么？"
-    a: "PhyX 是考察视觉场景中物理推理能力的基准，覆盖六个物理领域。其错误分析表明，当前多模态模型依赖记忆的知识、过度依赖数学公式、匹配表层视觉模式，而不是真正理解物理情境。"
-  - q: "MMSearch-Plus 是什么？"
-    a: "MMSearch-Plus 是面向多模态浏览的基准和智能体框架，答案依赖图像中的细粒度视觉线索，需要通过图文检索层层传递。它提供 set-of-mark 模块，让智能体在检索前先标记、裁剪和放大图像。"
-  - q: "陶超凡做具身智能吗？"
-    a: "他的主要方向是代码智能体和高效大模型。与具身相关的工作包括 RoboCodeX（ICML），把指令和视觉输入转化为以代码表达的机器人行为；以及 PhyX，一个考察这类智能体所需物理推理能力的基准。"
 ---
 
 {% include research/styles.liquid %}
@@ -79,8 +70,6 @@ faq:
   <p>如何让视觉语言 Transformer 运行得更便宜，见<a href="{{ '/zh/research/efficient-llm/#vision-language' | relative_url }}">高效大模型页面</a>中的 token 合并与联合剪枝。</p>
 
   {% include research/paper-list.liquid topic="multimodal" lang="zh" %}
-
-  {% include research/faq.liquid %}
 
   <p>相关页面：<a href="{{ '/zh/research/coding-agents/' | relative_url }}">代码智能体与智能体强化学习</a> · <a href="{{ '/zh/research/efficient-llm/' | relative_url }}">高效大模型训练与推理</a></p>
 </div>

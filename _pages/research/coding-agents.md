@@ -13,15 +13,6 @@ about:
   - Agentic data
   - Reward hacking
   - Code review agents
-faq:
-  - q: "What is LegoX?"
-    a: "LegoX is an open-source collection of projects for coding agents that spans data pipelines, training frameworks, evaluation and models. Its projects include LegoFlow, SWE-Lego, Terminal-Lego, Lego-RL and SWE-Review, with code on GitHub and data and models on Hugging Face."
-  - q: "What is SWE-Lego?"
-    a: "SWE-Lego is an open supervised fine-tuning recipe for software issue resolution. It combines real and synthetic tasks, masks the loss on erroneous agent steps, trains with an easy-to-hard curriculum, and adds a generative verifier for test-time scaling."
-  - q: "What is Lego-RL?"
-    a: "Lego-RL is a framework for reinforcement learning of coding agents inside unmodified harnesses such as OpenHands, Claude Code and OpenCode. It records tokens and mixture-of-experts routing at generation time, runs each attempt in a sandbox with anti-cheating defenses, and makes training observable through live trajectory dashboards."
-  - q: "Do stronger coding agents make better teachers?"
-    a: "Not necessarily. Trajectories that visibly inspect the environment, act on what they saw and verify the result teach students best, even when they come from a weaker agent. Stronger agents also tend to be better at hacking the task, for example by finding the upstream fix, so their trajectories need careful filtering."
 ---
 
 {% include research/styles.liquid %}
@@ -101,8 +92,6 @@ faq:
   </ul>
 
   {% include research/paper-list.liquid topic="coding-agents" lang="en" %}
-
-  {% include research/faq.liquid %}
 
   <details class="research-more">
     <summary>How to cite</summary>

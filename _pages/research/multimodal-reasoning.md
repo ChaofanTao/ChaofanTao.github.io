@@ -14,15 +14,6 @@ about:
   - Physical reasoning
   - Multimodal search agents
   - Embodied AI
-faq:
-  - q: "Should reasoning VLMs be trained with long chain-of-thought SFT or with RL?"
-    a: "They help in different places. Long chain-of-thought SFT helps on hard problems but makes answers verbose and can hurt easy ones, while RL improves more broadly and keeps answers concise. Staged, interleaved and progressive training, data mixing and model merging all trade one benefit for another rather than adding them up, which the paper calls the synergy dilemma."
-  - q: "What is PhyX?"
-    a: "PhyX is a benchmark for physics-grounded reasoning in visual scenes across six physics domains. Its error analysis shows that current multimodal models rely on memorized knowledge, lean too heavily on mathematical formulas and match surface visual patterns instead of understanding the physical situation."
-  - q: "What is MMSearch-Plus?"
-    a: "MMSearch-Plus is a benchmark and agent framework for multimodal browsing in which answers depend on fine-grained visual cues that must be propagated through image and text search. It includes a set-of-mark module that lets agents mark, crop and zoom before searching."
-  - q: "Does Chaofan Tao work on embodied AI?"
-    a: "His main focus is coding agents and efficient LLMs. Embodied-related contributions include RoboCodeX (ICML), which turns instructions and visual input into robot behavior expressed as code, and PhyX, a benchmark for the physical reasoning such agents need."
 ---
 
 {% include research/styles.liquid %}
@@ -79,8 +70,6 @@ faq:
   <p>For making vision-language Transformers cheaper to run, see token merging and joint pruning on the <a href="{{ '/research/efficient-llm/#vision-language' | relative_url }}">efficient LLM page</a>.</p>
 
   {% include research/paper-list.liquid topic="multimodal" lang="en" %}
-
-  {% include research/faq.liquid %}
 
   <p>Related: <a href="{{ '/research/coding-agents/' | relative_url }}">Coding agents and agentic RL</a> · <a href="{{ '/research/efficient-llm/' | relative_url }}">Efficient LLM training and inference</a></p>
 </div>
