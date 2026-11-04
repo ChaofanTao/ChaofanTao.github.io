@@ -21,9 +21,9 @@ Key facts:
 
 ## Research overviews
 
-- [Coding agents, agentic data and agentic RL](https://chaofantao.top/research/coding-agents/): LegoFlow, SWE-Lego, Terminal-Lego and Lego-RL with verified key results (e.g. Lego-RL reaches 70.4% on SWE-bench Verified in OpenHands SDK; SWE-Lego-Qwen3-32B reaches 52.6% with SFT only). Chinese: https://chaofantao.top/zh/research/coding-agents/
-- [Efficient LLM training and inference](https://chaofantao.top/research/efficient-llm/): vocabulary scaling laws, quantization (ACL 2022 Outstanding Paper), KV cache compression, fast test-time scaling, distillation. Chinese: https://chaofantao.top/zh/research/efficient-llm/
-- [Multimodal reasoning and agents](https://chaofantao.top/research/multimodal-reasoning/): SFT vs. RL for reasoning VLMs, PhyX physical reasoning, MMSearch-Plus, RoboCodeX code generation for robots. Chinese: https://chaofantao.top/zh/research/multimodal-reasoning/
+- [Coding agents, agentic data and agentic RL](https://chaofantao.top/research/coding-agents/): end-to-end open recipes for coding agents — verified task data from real pull requests (LegoFlow, Terminal-Lego), SFT that teaches good debugging habits (SWE-Lego), RL inside unmodified agent harnesses (Lego-RL), and the finding that environment-grounded trajectories make better teachers than the strongest solvers. Chinese: https://chaofantao.top/zh/research/coding-agents/
+- [Efficient LLM training and inference](https://chaofantao.top/research/efficient-llm/): vocabulary size as a scaling dimension, quantization of generative models (ACL 2022 Outstanding Paper), KV cache compression for long context, asynchronous test-time scaling, distillation. Chinese: https://chaofantao.top/zh/research/efficient-llm/
+- [Multimodal reasoning and agents](https://chaofantao.top/research/multimodal-reasoning/): when long-CoT SFT vs. RL helps reasoning VLMs, self-reflection, benchmarks for physical reasoning and multimodal search, and code generation for robots. Chinese: https://chaofantao.top/zh/research/multimodal-reasoning/
 
 ## Projects (LegoX)
 

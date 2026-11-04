@@ -1,4 +1,4 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Research | Chaofan Tao (陶超凡) </title> <meta name="author" content="Chaofan Tao"> <meta name="description" content="Research overviews by Chaofan Tao (陶超凡): LLM coding agents and agentic RL, efficient LLM training and inference, and multimodal reasoning and agents."> <meta name="keywords" content="Chaofan Tao, 陶超凡, LegoX, large language models, LLM, coding agents, software engineering agents, SWE-bench, agentic reinforcement learning, multimodal LLM, efficient LLM training and inference, quantization, scaling laws"> <meta property="og:site_name" content="Chaofan Tao (陶超凡)"> <meta property="og:type" content="website"> <meta property="og:title" content="Chaofan Tao (陶超凡) | Research"> <meta property="og:url" content="https://chaofantao.top/research/"> <meta property="og:description" content="Research overviews by Chaofan Tao (陶超凡): LLM coding agents and agentic RL, efficient LLM training and inference, and multimodal reasoning and agents."> <meta property="og:image" content="https://chaofantao.top/assets/img/og-image.png"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Research"> <meta name="twitter:description" content="Research overviews by Chaofan Tao (陶超凡): LLM coding agents and agentic RL, efficient LLM training and inference, and multimodal reasoning and agents."> <meta name="twitter:image" content="https://chaofantao.top/assets/img/og-image.png"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Research | Chaofan Tao (陶超凡) </title> <meta name="author" content="Chaofan Tao"> <meta name="description" content="Research overviews by Chaofan Tao (陶超凡): training open LLM coding agents, efficient LLM training and inference, and multimodal reasoning and agents."> <meta name="keywords" content="Chaofan Tao, 陶超凡, LegoX, large language models, LLM, coding agents, software engineering agents, SWE-bench, agentic reinforcement learning, multimodal LLM, efficient LLM training and inference, quantization, scaling laws"> <meta property="og:site_name" content="Chaofan Tao (陶超凡)"> <meta property="og:type" content="website"> <meta property="og:title" content="Chaofan Tao (陶超凡) | Research"> <meta property="og:url" content="https://chaofantao.top/research/"> <meta property="og:description" content="Research overviews by Chaofan Tao (陶超凡): training open LLM coding agents, efficient LLM training and inference, and multimodal reasoning and agents."> <meta property="og:image" content="https://chaofantao.top/assets/img/og-image.png"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Research"> <meta name="twitter:description" content="Research overviews by Chaofan Tao (陶超凡): training open LLM coding agents, efficient LLM training and inference, and multimodal reasoning and agents."> <meta name="twitter:image" content="https://chaofantao.top/assets/img/og-image.png"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
   :root {
     --max-content-width: 930px;
   }
@@ -119,6 +119,45 @@
     font-size: 0.92rem;
   }
 
+  .research-highlights {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin: 1.25rem 0 0.5rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .research-highlights li {
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--global-divider-color);
+    border-left: 3px solid var(--global-theme-color);
+    border-radius: 0.4rem;
+    font-size: 0.93rem;
+    line-height: 1.55;
+  }
+
+  .research-highlights strong {
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  .research-more {
+    margin: 1rem 0;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.4rem;
+  }
+
+  .research-more > summary {
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .research-more[open] > summary {
+    margin-bottom: 0.75rem;
+  }
+
   .research-papers {
     padding-left: 1.2rem;
   }
@@ -174,7 +213,8 @@
   }
 
   @media (max-width: 640px) {
-    .research-cards {
+    .research-cards,
+    .research-highlights {
       grid-template-columns: minmax(0, 1fr);
     }
   }
@@ -187,10 +227,10 @@
       "@id": "https://chaofantao.top/research/#page",
       "url": "https://chaofantao.top/research/",
       "name": "Research",
-      "description": "Research overviews by Chaofan Tao (陶超凡): LLM coding agents and agentic RL, efficient LLM training and inference, and multimodal reasoning and agents.",
+      "description": "Research overviews by Chaofan Tao (陶超凡): training open LLM coding agents, efficient LLM training and inference, and multimodal reasoning and agents.",
       "inLanguage": "en",
       "datePublished": "2026-11-03",
-      "dateModified": "2026-11-03",
+      "dateModified": "2026-11-04",
       "isPartOf": { "@id": "https://chaofantao.top/#website" },
       "author": { "@id": "https://chaofantao.top/#person" },
       "about": [{ "@type": "Thing", "name": "Large language models" }, { "@type": "Thing", "name": "Coding agents" }, { "@type": "Thing", "name": "Efficient LLMs" }, { "@type": "Thing", "name": "Multimodal LLMs" }],
@@ -206,7 +246,7 @@
     }
   ]
 }
-</script> <div class="research-page"> <nav class="research-breadcrumb" aria-label="Breadcrumb"> <a href="/">Chaofan Tao</a><span aria-hidden="true">/</span> <span>Research</span> <span aria-hidden="true">·</span><a href="/zh/research/" lang="zh-Hans">中文版</a> </nav> <h1>Research</h1> <p class="research-lead"><strong>Chaofan Tao (陶超凡) is an AI researcher at <a href="https://www.legox.net/" rel="external nofollow noopener" target="_blank">LegoX</a> and Huawei Foundation Model Lab.</strong> His research spans three connected areas: training open LLM coding agents end to end, making LLMs cheaper to train and serve, and improving how multimodal models reason and act. He received his PhD from The University of Hong Kong, and his work on generative model quantization received an ACL 2022 Outstanding Paper Award.</p> <div class="research-cards"> <article class="research-card"> <h2><a href="/research/coding-agents/">Coding agents and agentic RL</a></h2> <p>Verified SWE tasks (LegoFlow), SFT recipes (SWE-Lego), terminal-agent trajectories (Terminal-Lego), and RL inside Claude Code, OpenHands and OpenCode (Lego-RL, up to 70.4% on SWE-bench Verified).</p> </article> <article class="research-card"> <h2><a href="/research/efficient-llm/">Efficient LLM training and inference</a></h2> <p>Vocabulary scaling laws (NeurIPS 2024), quantization of generative models (ACL 2022 Outstanding Paper), KV cache compression, and fast test-time scaling.</p> </article> <article class="research-card"> <h2><a href="/research/multimodal-reasoning/">Multimodal reasoning and agents</a></h2> <p>RL and long-CoT post-training for reasoning VLMs, physical reasoning (PhyX), multimodal browsing agents, and code generation for robots (RoboCodeX).</p> </article> </div> <p>All 25 publications with English and Chinese summaries are on the <a href="/#all-publications">homepage</a>. Machine-readable summaries: <a href="/llms.txt">llms.txt</a> and <a href="/llms-full.txt">llms-full.txt</a>.</p> </div> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> © Copyright 2026 Chaofan Tao. Built with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> and hosted on GitHub Pages. </div> </footer> <script>
+</script> <div class="research-page"> <nav class="research-breadcrumb" aria-label="Breadcrumb"> <a href="/">Chaofan Tao</a><span aria-hidden="true">/</span> <span>Research</span> <span aria-hidden="true">·</span><a href="/zh/research/" lang="zh-Hans">中文版</a> </nav> <h1>Research</h1> <p class="research-lead"><strong>Chaofan Tao (陶超凡) is an AI researcher at <a href="https://www.legox.net/" rel="external nofollow noopener" target="_blank">LegoX</a> and Huawei Foundation Model Lab.</strong> His research spans three connected areas: training open LLM coding agents end to end, making LLMs cheaper to train and serve, and improving how multimodal models reason and act. He received his PhD from The University of Hong Kong, and his work on generative model quantization received an ACL 2022 Outstanding Paper Award.</p> <div class="research-cards"> <article class="research-card"> <h2><a href="/research/coding-agents/">Coding agents and agentic RL</a></h2> <p>Verified task data from real software history, fine-tuning and RL recipes that fit real agent tools, and know-how on which trajectories are worth learning from.</p> </article> <article class="research-card"> <h2><a href="/research/efficient-llm/">Efficient LLM training and inference</a></h2> <p>Choosing vocabulary size, compressing generative models, cheaper long-context inference, and faster reasoning-time compute.</p> </article> <article class="research-card"> <h2><a href="/research/multimodal-reasoning/">Multimodal reasoning and agents</a></h2> <p>Post-training insights for reasoning VLMs, self-reflection, benchmarks that expose real gaps, and code generation for robots.</p> </article> </div> <p>All 25 publications, with English and Chinese summaries, are on the <a href="/#all-publications">homepage</a>.</p> </div> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> © Copyright 2026 Chaofan Tao. Built with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> and hosted on GitHub Pages. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
