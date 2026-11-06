@@ -3,7 +3,7 @@
 > AI researcher at LegoX and Huawei Foundation Model Lab working on LLM coding agents, agentic RL, agentic data and environments, and efficient LLM training and inference. PhD, The University of Hong Kong. ACL 2022 Outstanding Paper Award. Homepage: https://chaofantao.top/ · Summary: https://chaofantao.top/llms.txt
 
 
-## Agentic Coding, Reasoning and Evaluation
+## Agentic Intelligence
 
 ### REAgent: Requirement-Driven LLM Agents for Software Issue Resolution
 
