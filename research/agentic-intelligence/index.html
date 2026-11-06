@@ -1,0 +1,303 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Agentic Coding, Reasoning and Evaluation | Chaofan Tao (陶超凡) </title> <meta name="author" content="Chaofan Tao"> <meta name="description" content="How agents learn from a loop of environment, experience, signal and evaluation, and what building each part in the open taught Chaofan Tao and collaborators about coding agents, multimodal reasoning and benchmarks."> <meta name="keywords" content="Chaofan Tao, 陶超凡, LegoX, large language models, LLM, coding agents, software engineering agents, SWE-bench, agentic reinforcement learning, multimodal LLM, efficient LLM training and inference, quantization, scaling laws"> <meta property="og:site_name" content="Chaofan Tao (陶超凡)"> <meta property="og:type" content="website"> <meta property="og:title" content="Chaofan Tao (陶超凡) | Agentic Coding, Reasoning and Evaluation"> <meta property="og:url" content="https://chaofantao.top/research/agentic-intelligence/"> <meta property="og:description" content="How agents learn from a loop of environment, experience, signal and evaluation, and what building each part in the open taught Chaofan Tao and collaborators about coding agents, multimodal reasoning and benchmarks."> <meta property="og:image" content="https://chaofantao.top/assets/img/og-image.png"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Agentic Coding, Reasoning and Evaluation"> <meta name="twitter:description" content="How agents learn from a loop of environment, experience, signal and evaluation, and what building each part in the open taught Chaofan Tao and collaborators about coding agents, multimodal reasoning and benchmarks."> <meta name="twitter:image" content="https://chaofantao.top/assets/img/og-image.png"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/favicon.png?v=3188b4ee0feda062be9fabb3a75f1eaf"> <link rel="apple-touch-icon" href="/assets/img/favicon.png?v=3188b4ee0feda062be9fabb3a75f1eaf"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://chaofantao.top/research/agentic-intelligence/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav sticky-bottom-footer"> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Chaofan Tao (陶超凡) </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About </a> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <style>
+  .research-page {
+    --research-muted: #59616b;
+    max-width: 52rem;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    line-height: 1.7;
+  }
+
+  html[data-theme="dark"] .research-page {
+    --research-muted: #b5bdc8;
+  }
+
+  .research-page :is(section, h2, [id]) {
+    scroll-margin-top: 5.5rem;
+  }
+
+  .research-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+    color: var(--research-muted);
+    font-size: 0.85rem;
+  }
+
+  .research-breadcrumb a {
+    color: inherit;
+  }
+
+  .research-page h1 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.6rem, 6vw, 2.3rem);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+  }
+
+  .research-meta {
+    margin: 0 0 1.5rem;
+    color: var(--research-muted);
+    font-size: 0.88rem;
+  }
+
+  .research-lead {
+    font-size: 1.08rem;
+  }
+
+  .research-page h2 {
+    margin: 2.5rem 0 0.75rem;
+    font-size: 1.45rem;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .research-page h3 {
+    margin: 1.25rem 0 0.4rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  .research-table-wrap {
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+
+  .research-page table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  .research-page th,
+  .research-page td {
+    padding: 0.55rem 0.6rem;
+    border-bottom: 1px solid var(--global-divider-color);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .research-page th {
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .research-page blockquote {
+    margin: 1.25rem 0;
+    padding: 0.6rem 1rem;
+    border-left: 3px solid var(--global-theme-color);
+    color: var(--research-muted);
+  }
+
+  .research-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .research-card {
+    padding: 1.1rem 1.2rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.5rem;
+  }
+
+  .research-card h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+  }
+
+  .research-card p {
+    margin: 0;
+    font-size: 0.92rem;
+  }
+
+  .research-toc {
+    margin: 1rem 0 0.5rem;
+    color: var(--research-muted);
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+
+  .research-toc a {
+    white-space: nowrap;
+  }
+
+  .research-knowhow {
+    margin: 0.6rem 0 0.4rem;
+    padding: 0.7rem 1rem 0.7rem 2rem;
+    border-left: 3px solid var(--global-theme-color);
+    background: var(--global-code-bg-color);
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.95rem;
+  }
+
+  .research-knowhow li {
+    margin: 0.25rem 0;
+  }
+
+  .research-knowhow-label {
+    margin: 0.9rem 0 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--research-muted);
+  }
+
+  .research-readmore {
+    margin-top: 0.5rem;
+    font-size: 0.88rem;
+  }
+
+  .research-dek {
+    margin: -0.25rem 0 0.75rem;
+    color: var(--research-muted);
+    font-size: 1.1rem;
+    line-height: 1.55;
+  }
+
+  .research-figure {
+    margin: 1.75rem 0;
+  }
+
+  .research-figure-scroll {
+    overflow-x: auto;
+  }
+
+  .research-figure img {
+    display: block;
+    width: 100%;
+    min-width: 620px;
+    height: auto;
+  }
+
+  .research-figure figcaption {
+    margin-top: 0.5rem;
+    color: var(--research-muted);
+    font-size: 0.86rem;
+  }
+
+  .research-claim {
+    margin: 0.25rem 0 0.75rem;
+    padding-left: 0.8rem;
+    border-left: 3px solid var(--global-theme-color);
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  .research-insights {
+    padding-left: 1.2rem;
+  }
+
+  .research-insights li {
+    margin-bottom: 0.9rem;
+  }
+
+  .research-more {
+    margin: 1rem 0;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.4rem;
+  }
+
+  .research-more > summary {
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .research-more[open] > summary {
+    margin-bottom: 0.75rem;
+  }
+
+  .research-papers {
+    padding-left: 1.2rem;
+  }
+
+  .research-paper {
+    margin-bottom: 1.1rem;
+  }
+
+  .research-paper h3 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .research-paper p {
+    margin: 0.15rem 0;
+    font-size: 0.9rem;
+  }
+
+  .research-paper-meta {
+    color: var(--research-muted);
+  }
+
+  .research-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .research-page pre {
+    overflow-x: auto;
+    padding: 0.8rem 1rem;
+    border-radius: 0.4rem;
+    background: var(--global-code-bg-color);
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 640px) {
+    .research-cards {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style> <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://chaofantao.top/research/agentic-intelligence/#page",
+      "url": "https://chaofantao.top/research/agentic-intelligence/",
+      "mainEntityOfPage": "https://chaofantao.top/research/agentic-intelligence/",
+      "headline": "Agentic Coding, Reasoning and Evaluation",
+      "name": "Agentic Coding, Reasoning and Evaluation",
+      "description": "How agents learn from a loop of environment, experience, signal and evaluation, and what building each part in the open taught Chaofan Tao and collaborators about coding agents, multimodal reasoning and benchmarks.",
+      "inLanguage": "en",
+      "datePublished": "2026-11-03",
+      "dateModified": "2026-11-06",
+      "image": "https://chaofantao.top/assets/img/research/agentic-loop.svg",
+      "isPartOf": { "@id": "https://chaofantao.top/#website" },
+      "author": { "@id": "https://chaofantao.top/#person" },
+      "about": [{ "@type": "Thing", "name": "Agentic intelligence" }, { "@type": "Thing", "name": "Coding agents" }, { "@type": "Thing", "name": "Agentic reinforcement learning" }, { "@type": "Thing", "name": "Agentic data" }, { "@type": "Thing", "name": "Multimodal reasoning" }, { "@type": "Thing", "name": "Agent evaluation" }, { "@type": "Thing", "name": "Reward hacking" }],
+      "breadcrumb": { "@id": "https://chaofantao.top/research/agentic-intelligence/#breadcrumb" },
+      
+      "citation": [{ "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2604.06861", "headline": "REAgent: Requirement-Driven LLM Agents for Software Issue Resolution", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2601.01426", "headline": "SWE-Lego: Pushing the Limits of Supervised Fine-tuning for Software Issue Resolving", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2608.17393", "headline": "LEGO-RL: Harness-Native Reinforcement Learning for Coding Agents", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2607.06065", "headline": "SWE-Review: Closing the Loop on Issue Resolution with Agentic Code Review", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2606.03461", "headline": "What Makes Interaction Trajectories Effective for Training Terminal Agents?", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2505.23932", "headline": "SwingArena: Competitive Programming Arena for Long-context GitHub Issue Solving", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2508.21475", "headline": "MMSearch-Plus: Benchmarking Provenance-Aware Search for Multimodal Browsing Agents", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2601.21968", "headline": "OVD: On-policy Verbal Distillation", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2601.18533", "headline": "From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for Reinforcement Learning of Open-ended Generation", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2505.15929", "headline": "PhyX: Does Your Model Have the \"Wits\" for Physical Reasoning?", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2402.16117", "headline": "RoboCodeX: Multimodal Code Generation for Robotic Behavior Synthesis", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2411.05902", "headline": "Autoregressive Models in Vision: A Survey", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2506.01713", "headline": "SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2507.07562", "headline": "The Synergy Dilemma of Long-CoT SFT and RL: Investigating Post-training Techniques for Reasoning VLMs", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2408.09511", "headline": "NAVERO: Unlocking Fine-Grained Semantics for Video-Language Compositionality", "author": { "@id": "https://chaofantao.top/#person" } }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://chaofantao.top/research/agentic-intelligence/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Chaofan Tao", "item": "https://chaofantao.top/" },
+        { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://chaofantao.top/research/" },
+        { "@type": "ListItem", "position": 3, "name": "Agentic Coding, Reasoning and Evaluation", "item": "https://chaofantao.top/research/agentic-intelligence/" }
+      ]
+    }
+  ]
+}
+</script> <div class="research-page"> <nav class="research-breadcrumb" aria-label="Breadcrumb"> <a href="/">Chaofan Tao</a><span aria-hidden="true">/</span> <a href="/research/">Research</a><span aria-hidden="true">/</span> <span>Agentic coding, reasoning and evaluation</span> <span aria-hidden="true">·</span><a href="/zh/research/agentic-intelligence/" lang="zh-Hans">中文版</a> </nav> <h1>Agentic Coding, Reasoning and Evaluation</h1> <p class="research-dek">Agents learn from a loop, not a dataset. This essay follows that loop, from the environment an agent acts in to the evaluation that tells us whether it improved, and collects what building each part in the open has taught us.</p> <p class="research-meta">By <a href="/">Chaofan Tao (陶超凡)</a> and collaborators at LegoX · Last updated <time datetime="2026-11-06">November 6, 2026</time></p> <p>Language models became useful by learning from text. Agents become useful by learning from what happens when they act: a command fails, a test passes, a web page turns out to be the wrong one, a reviewer sends a patch back. That shift moves the hard problems. The model still matters, but so do four things around it: the <strong>environment</strong> it acts in, the <strong>experience</strong> it collects there, the <strong>signal</strong> that turns experience into learning, and the <strong>evaluation</strong> that tells us whether any of it worked.</p> <p>Our work on coding agents, multimodal reasoning and benchmarks can be read as a study of that loop. Some projects build one part of it in the open: <a href="https://www.legox.net/blog/legoflow/" rel="external nofollow noopener" target="_blank">LegoFlow</a> and <a href="https://www.legox.net/blog/swe-lego/" rel="external nofollow noopener" target="_blank">SWE-Lego</a> for experience, <a href="https://www.legox.net/blog/lego-rl/" rel="external nofollow noopener" target="_blank">Lego-RL</a> for learning inside real environments, <a href="https://www.legox.net/blog/swe-review/" rel="external nofollow noopener" target="_blank">SWE-Review</a> and <a href="https://arxiv.org/abs/2505.23932" rel="external nofollow noopener" target="_blank">SwingArena</a> for review and evaluation. Others ask what breaks when the loop meets images, the web or the physical world. Read together, they point to conclusions no single paper states on its own: the strongest model is rarely the best teacher, verification is the scarce resource, and as agents grow more capable, the integrity of the loop has to be engineered rather than assumed.</p> <figure class="research-figure"> <div class="research-figure-scroll"><img src="/assets/img/research/agentic-loop.svg" alt="Diagram of the agent learning loop: the agent, a model plus its harness, sits at the center of four stages connected clockwise: environment, experience, signal and evaluation, each labeled with the projects that study it." width="760" height="480" loading="eager"></div> <figcaption>The agent learning loop. Each stage is a place where the loop can quietly fail, and each project on this page studies one of them.</figcaption> </figure> <p class="research-toc">On this page: <a href="#environment">Environment</a> · <a href="#experience">Experience</a> · <a href="#signal">Signal</a> · <a href="#evaluation">Evaluation</a> · <a href="#physical">Beyond the terminal</a> · <a href="#insights">What ties it together</a> · <a href="#open-questions">Open questions</a></p> <h2 id="environment">1. The environment is part of the agent</h2> <p class="research-claim">Change the harness and you change the agent.</p> <p>A coding agent never sees a repository directly. It sees what its harness shows it: which files and tool outputs enter the context, when the conversation is compacted, how errors are reported and how the loop continues after a failed command. When we trained with Lego-RL inside three widely used harnesses (OpenHands, Claude Code and OpenCode), the same starting model already behaved noticeably differently in each, before any training. That observation shaped the design. Lego-RL trains inside the unmodified harness instead of a simplified copy, and treats the harness as part of the environment rather than part of the policy.</p> <p>A natural next question is whether one model can serve many harnesses. Training on rollouts from several harnesses at once came close to the average of separately trained models while narrowing some of the gaps between them. That is encouraging, but every harness in those runs was seen during training; how an agent copes with one it has never seen is still open.</p> <p>The same idea holds outside code. In multimodal search, the tools are the harness: <a href="https://arxiv.org/abs/2508.21475" rel="external nofollow noopener" target="_blank">MMSearch-Plus</a> gives a browsing agent a set-of-mark module to mark, crop and zoom into an image before it searches, and that choice changes which evidence the agent can use at all. In robotics, <a href="https://arxiv.org/abs/2402.16117" rel="external nofollow noopener" target="_blank">RoboCodeX</a> makes code the interface between perception and action, which makes behavior inspectable and portable across robot platforms.</p> <h2 id="experience">2. Experience: what is worth learning from</h2> <p class="research-claim">Teachability is a property of the trajectory, not of the teacher.</p> <p>Experience starts with tasks the environment can check. LegoFlow mines merged pull requests, rewrites each into a task that does not leak its answer, builds an isolated environment, and keeps it only if the original code fails the tests and the reference fix passes. Passing that check makes a task usable, not valuable, so a static rubric also scores difficulty from the scope of the patch, the logic it adds, the breadth of context it touches, the tests and the detail of the instructions. SWE-Lego mixes real tasks, which bring depth, with synthetic ones made by injecting bugs, which bring breadth; Terminal-Lego turns community Q&amp;A into command-line tasks.</p> <p>The more surprising lessons concern trajectories, the recorded attempts a teacher agent makes on those tasks. <a href="https://arxiv.org/abs/2606.03461" rel="external nofollow noopener" target="_blank">Terminal-Lego</a> found that traces which visibly inspect the environment, act on what they saw and then verify the result teach students far better than traces from stronger agents that jump straight to the answer; in the paper's words, “the best solver is the worst teacher.” LegoFlow found a related pattern inside the reasoning itself: teachers that think briefly on every turn teach less than teachers that reason in depth when a problem calls for it, and most of the benefit comes from discarding the shallowest traces rather than keeping only the longest.</p> <p>Experience also has an integrity problem. Stronger teachers are better at finding shortcuts: locating the upstream pull request, copying the patch, or reading the fix from Git history. A successful trajectory is not necessarily an honest one. The defenses that worked were layered: an explicit instruction not to look up solutions, enforced by the environment, which rewrites history and restricts network access while the agent runs and restores both only for grading.</p> <p class="research-knowhow-label">What we learned</p> <ul class="research-knowhow"> <li>Filter trajectories for grounding and depth, not just for success.</li> <li>Treat leakage as a property of the environment to be removed, not a behavior to be discouraged.</li> </ul> <p class="research-readmore">Read more: <a href="https://www.legox.net/blog/legoflow-experiments/" rel="external nofollow noopener" target="_blank">Lessons learned from LegoFlow-SWE</a> · <a href="https://www.legox.net/blog/terminal-lego/" rel="external nofollow noopener" target="_blank">Terminal-Lego</a> · <a href="https://www.legox.net/blog/swe-lego/" rel="external nofollow noopener" target="_blank">SWE-Lego</a></p> <h2 id="signal">3. Signal: from imitation to verification</h2> <p class="research-claim">Each training signal teaches something different, and a well-aimed signal beats a larger one.</p> <p><strong>Imitation, done carefully.</strong> SWE-Lego shows how far supervised fine-tuning goes when the loss is shaped as carefully as the data. Error masking keeps a whole trajectory in context but takes no gradient on the agent's wrong steps, so the model sees its mistakes without learning to repeat them. A curriculum uses trajectory length as a proxy for difficulty and moves from easy to hard while replaying earlier data. At inference time, a generative verifier that answers “yes” or “no” in text ranks attempts better than a scoring head, because it reuses what the model learned in pre-training.</p> <p><strong>Reinforcement in the real environment.</strong> Outcome rewards from executed tests are honest only if what the trainer optimizes matches what the model actually did. Harnesses rewrite their own history, so a saved transcript is not the token sequence that was sampled; Lego-RL records tokens, probabilities and mixture-of-experts routing at generation time and replays the routing during training. Misalignments here are silent: training runs, curves move, and nothing errors. Difficulty is relative to the current policy, because tasks that always pass or always fail produce no learning signal, and that band shifts as the agent improves. After training, agents read more before editing, reread their edits and run tests more often, at the price of longer interactions. Single-rollout optimization pushes efficiency further by learning from one attempt per task with a learned critic, which has to be warmed up before it can guide the policy.</p> <p><strong>Beyond pass or fail.</strong> Many tasks have no single checkable answer. <a href="https://arxiv.org/abs/2601.18533" rel="external nofollow noopener" target="_blank">RLVRR</a> replaces one verifiable “dot” with a chain of reference-based checks on content and style, bringing the efficiency of supervised data into reinforcement learning for open-ended generation. <a href="https://arxiv.org/abs/2601.21968" rel="external nofollow noopener" target="_blank">On-policy Verbal Distillation</a> learns from black-box teachers that only return text: their scores rank the student's own partial attempts, good prefixes are kept and weak continuations replaced, which preserves the student's exploration.</p> <p><strong>The same tension in vision.</strong> For reasoning vision-language models, long chain-of-thought SFT and RL turn out to help in different places: SFT on hard, multi-step questions at the cost of verbosity, RL across difficulty levels with concise answers. Every way of combining them that we tried traded one benefit for another instead of adding them, the <a href="https://arxiv.org/abs/2507.07562" rel="external nofollow noopener" target="_blank">synergy dilemma</a>. <a href="https://arxiv.org/abs/2506.01713" rel="external nofollow noopener" target="_blank">SRPO</a> takes a narrower path: first teach the form of good reflection with data, then reward reflections that are short and actually change the reasoning.</p> <p class="research-readmore">Read more: <a href="https://www.legox.net/blog/lego-rl/" rel="external nofollow noopener" target="_blank">Lego-RL</a> · <a href="https://www.legox.net/blog/lego-rl-cross-harness/" rel="external nofollow noopener" target="_blank">RL across harnesses</a> · <a href="https://www.legox.net/blog/lego-rl-sao/" rel="external nofollow noopener" target="_blank">Single-rollout optimization</a></p> <h2 id="evaluation">4. Evaluation and review: a mirror that cannot be gamed</h2> <p class="research-claim">As agents improve, evaluation has to be designed like a security boundary.</p> <p>The same capability that lets a teacher find shortcuts during data collection lets an agent find them during evaluation. Benchmarks therefore need the same discipline as training environments, and ideally more realism. <a href="https://arxiv.org/abs/2505.23932" rel="external nofollow noopener" target="_blank">SwingArena</a> (ICLR Oral) moves evaluation into continuous integration: models take turns as patch submitters and as reviewers who write the tests, across several programming languages, with retrieval to cope with long repositories. <a href="https://arxiv.org/abs/2604.06861" rel="external nofollow noopener" target="_blank">REAgent</a> (ICSE) treats the issue text itself as a requirement that can be incomplete, and checks and refines it before patching.</p> <p>Review is where evaluation becomes part of the loop. <a href="https://arxiv.org/abs/2607.06065" rel="external nofollow noopener" target="_blank">SWE-Review</a> trains a reviewer agent that explores the repository on its own, traces the root cause, compares its diagnosis with a submitted patch and returns structured feedback, turning one-shot generation into generate, review and revise. Two consequences matter beyond the paper: review trajectories transfer back to issue resolution, and because choosing among attempts is cheaper than generating more of them, a good reviewer makes test-time scaling cheaper.</p> <p>Multimodal benchmarks face their own shortcut: questions that can be answered without looking. <a href="https://arxiv.org/abs/2508.21475" rel="external nofollow noopener" target="_blank">MMSearch-Plus</a> builds questions whose answers depend on fine-grained visual cues carried through repeated searches; most failures come from finding the right page and telling similar events apart, not from the final reasoning step. <a href="https://arxiv.org/abs/2505.15929" rel="external nofollow noopener" target="_blank">PhyX</a> shows models leaning on memorized formulas and surface patterns instead of physical understanding, and <a href="https://arxiv.org/abs/2408.09511" rel="external nofollow noopener" target="_blank">NAVERO</a> probes how video-language models handle relations that change over time.</p> <h2 id="physical">5. Beyond the terminal</h2> <p class="research-claim">The loop does not change when the environment becomes physical; the interface does.</p> <p>RoboCodeX decomposes a high-level instruction, in a tree, into object-centric manipulation steps annotated with affordances and safety constraints, and writes them as code. Code plays the role a harness plays for software agents: it is the layer where behavior becomes explicit, checkable and reusable across robots. PhyX measures the physical reasoning such agents need, and our <a href="https://arxiv.org/abs/2411.05902" rel="external nofollow noopener" target="_blank">survey of autoregressive models in vision</a> maps how visual generation, from pixels to tokens to scales, is reaching into embodied settings.</p> <h2 id="insights">What ties it together</h2> <ol class="research-insights"> <li> <strong>The strongest model is rarely the best teacher.</strong> Grounded traces beat stronger solvers in Terminal-Lego, stronger teachers hack more in LegoFlow, and the same mismatch between teacher strength and student learnability motivates <a href="/research/efficient-ml-ai-infrastructure/#transfer">routing prompts to the right teacher</a>. What transfers is behavior the student can see and imitate.</li> <li> <strong>Verification is the scarce resource.</strong> Verified tasks, verifiers that rank attempts, reviewers that diagnose patches and CI-based arenas are all ways of producing trustworthy judgments. Generation is cheap; trustworthy selection is what scales.</li> <li> <strong>Fidelity is a correctness problem.</strong> If the tokens, probabilities or routing the trainer sees differ from what the agent did, learning silently optimizes the wrong thing. Systems engineering and learning are not separable in agentic RL.</li> <li> <strong>Capability amplifies shortcuts.</strong> Git history, upstream patches and text-only answers to visual questions are all shortcuts that stronger models find more often. Integrity has to live in the environment and the benchmark, not in the prompt.</li> <li> <strong>Depth beats coverage.</strong> Deep reasoning on the turns that need it beats shallow reasoning everywhere; useful reflection beats long reflection; and verbose chains of thought are a cost, not a free lunch.</li> </ol> <h2 id="open-questions">Open questions</h2> <ul> <li>Can an agent trained across several harnesses work well in one it has never seen?</li> <li>How should credit be assigned across long trajectories, where a single pass or fail arrives after dozens of actions?</li> <li>What changes when agents must ask users questions and iterate, rather than close a ticket alone?</li> <li>Can supervised and reinforcement signals be combined adaptively, so their benefits add instead of trade off?</li> <li>How do these lessons extend to long-horizon tasks, such as building a repository from a natural-language specification?</li> </ul> <h2 id="resources">Open resources</h2> <ul> <li>LegoFlow: <a href="https://github.com/LegoX/LegoFlow" rel="external nofollow noopener" target="_blank">code</a> · <a href="https://huggingface.co/collections/Lego-X/legoflow" rel="external nofollow noopener" target="_blank">data</a> </li> <li>SWE-Lego: <a href="https://github.com/LegoX/SWE-Lego" rel="external nofollow noopener" target="_blank">code</a> · <a href="https://huggingface.co/collections/Lego-X/swe-lego" rel="external nofollow noopener" target="_blank">data and models</a> </li> <li>Terminal-Lego: <a href="https://github.com/LegoX/Terminal-Lego" rel="external nofollow noopener" target="_blank">code</a> · <a href="https://huggingface.co/datasets/SWE-Lego/Terminal-Lego-15k" rel="external nofollow noopener" target="_blank">data</a> </li> <li>Lego-RL: <a href="https://github.com/LegoX/Lego-RL" rel="external nofollow noopener" target="_blank">code</a> · <a href="https://huggingface.co/collections/Lego-X/lego-rl" rel="external nofollow noopener" target="_blank">models and data</a> </li> <li>SWE-Review: <a href="https://github.com/LegoX/SWE-Review" rel="external nofollow noopener" target="_blank">code</a> · <a href="https://huggingface.co/collections/Lego-X/swe-review" rel="external nofollow noopener" target="_blank">models and data</a> </li> </ul> <details class="research-more"> <summary>Papers (15)</summary> <ol class="research-papers"> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2604.06861" rel="external nofollow noopener" target="_blank">REAgent: Requirement-Driven LLM Agents for Software Issue Resolution</a></h3> <p class="research-paper-meta">ICSE · 2027</p> <p>Shiqi Kuang, Zhao Tian, Kaiwei Lin, <strong>Chaofan Tao</strong>, Shaowei Wang, Haoli Bai, Lifeng Shang, Junjie Chen</p> <p>REAgent turns issue descriptions into structured, information-rich requirements, detects and iteratively refines low-quality requirements, and uses the refined specifications to guide more accurate software patches.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2604.06861" rel="external nofollow noopener" target="_blank">Paper</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2601.01426" rel="external nofollow noopener" target="_blank">SWE-Lego: Pushing the Limits of Supervised Fine-tuning for Software Issue Resolving</a></h3> <p class="research-paper-meta">arXiv · 2026</p> <p><strong>Chaofan Tao</strong>, Jierun Chen, Yuxin Jiang, Kaiqi Kou, Shaowei Wang, Ruoyu Wang, Xiaohui Li, Sidi Yang, Yiming Du, Jianbo Dai, Zhiming Mao, Xinyu Wang, Lifeng Shang, Haoli Bai</p> <p>SWE-Lego presents a strong SFT-only recipe (new dataset + curriculum/error masking) and studies verifier-based test-time scaling, pushing open 8B/32B models to SOTA on SWE-bench Verified.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2601.01426" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/LegoX/SWE-Lego" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2608.17393" rel="external nofollow noopener" target="_blank">LEGO-RL: Harness-Native Reinforcement Learning for Coding Agents</a></h3> <p class="research-paper-meta">arXiv · 2026</p> <p>Yiming Du, Yuxin Jiang, Tao Yuan, Jianbo Dai, Shaowei Wang, Jierun Chen, <strong>Chaofan Tao</strong>, Xianzhi Yu, Lifeng Shang, Kam-Fai Wong, Xiaohui Li, Haoli Bai</p> <p>LEGO-RL trains coding agents with reinforcement learning inside unmodified native harnesses, combining token-faithful proxying with MoE routing replay, sandboxed execution with stage-wise anti-hacking defenses, and observable training with live trajectory diagnostics.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2608.17393" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/LegoX/Lego-RL" rel="external nofollow noopener" target="_blank">Code</a> <a href="https://huggingface.co/collections/Lego-X/lego-rl" rel="external nofollow noopener" target="_blank">Data</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2607.06065" rel="external nofollow noopener" target="_blank">SWE-Review: Closing the Loop on Issue Resolution with Agentic Code Review</a></h3> <p class="research-paper-meta">arXiv · 2026</p> <p>Ruoyu Wang, Jierun Chen, Shaowei Wang, <strong>Chaofan Tao</strong>, Sidi Yang, Yuxin Jiang, Kim-Hui Yap, Lifeng Shang, Xiaohui Li, Haoli Bai</p> <p>SWE-Review turns one-shot patch generation into a generate-review-revise loop: a reviewer agent explores the repository, traces the root cause on its own, decides whether to accept the PR, and returns structured feedback; review trajectories also transfer to issue resolution and make test-time scaling cheaper.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2607.06065" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/LegoX/SWE-Review" rel="external nofollow noopener" target="_blank">Code</a> <a href="https://huggingface.co/collections/Lego-X/swe-review" rel="external nofollow noopener" target="_blank">Data</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2606.03461" rel="external nofollow noopener" target="_blank">What Makes Interaction Trajectories Effective for Training Terminal Agents?</a></h3> <p class="research-paper-meta">arXiv · 2026</p> <p>Sidi Yang, <strong>Chaofan Tao</strong>, Jierun Chen, Tiezheng Yu, Ruoyu Wang, Yuxin Jiang, Yiming Du, Wendong Xu, Jing Xiong, Taiqiang Wu, Lifeng Shang, Xiaohui Li, Ngai Wong, Haoli Bai</p> <p>Using Terminal-Lego, a pipeline that turns real-world issues into environment-verified terminal tasks, the paper finds a pedagogical paradox: stronger agents are not better teachers. Environment-grounded inspect-act-verify trajectories transfer best, letting Qwen3-32B reach 24.3% on Terminal-Bench 2.0 with only 15.3k trajectories, about 30× less data than prior results.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2606.03461" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/SWE-Lego/terminal-lego" rel="external nofollow noopener" target="_blank">Code</a> <a href="https://huggingface.co/datasets/SWE-Lego/Terminal-Lego-15k" rel="external nofollow noopener" target="_blank">Data</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2505.23932" rel="external nofollow noopener" target="_blank">SwingArena: Competitive Programming Arena for Long-context GitHub Issue Solving</a></h3> <p class="research-paper-meta">ICLR · Oral · 2026</p> <p>Wendong Xu, Jing Xiong, Chenyang Zhao, Qiujiang Chen, Haoran Wang, Hui Shen, Zhongwei Wan, Jianbo Dai, Taiqiang Wu, He Xiao, <strong>Chaofan Tao</strong>, Z Morley Mao, Ying Sheng, Zhijiang Guo, Hongxia Yang, Bei Yu, Lingpeng Kong, Quanquan Gu, Ngai Wong</p> <p>SwingArena is a CI-driven competitive benchmark where LLMs take turns as submitters and reviewers, paired with retrieval-augmented code generation to handle long-context, multi-language GitHub issue solving.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2505.23932" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/menik1126/Swing-Bench" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2508.21475" rel="external nofollow noopener" target="_blank">MMSearch-Plus: Benchmarking Provenance-Aware Search for Multimodal Browsing Agents</a></h3> <p class="research-paper-meta">ICLR · 2026</p> <p>Xijia Tao, Yihua Teng, Xinxing Su, Xinyu Fu, Jihao Wu, <strong>Chaofan Tao</strong>, Ziru Liu, Haoli Bai, Rui Liu, Lingpeng Kong</p> <p>MMSearch-Plus is a 311-task benchmark and agent framework with set-of-mark tools that require provenance-aware, vision-in-the-loop search and cross-validation under retrieval noise.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2508.21475" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/mmsearch-plus/MMSearch-Plus" rel="external nofollow noopener" target="_blank">GitHub</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2601.21968" rel="external nofollow noopener" target="_blank">OVD: On-policy Verbal Distillation</a></h3> <p class="research-paper-meta">arXiv · 2026</p> <p>Jing Xiong, Hui Shen, Shansan Gong, Yuxin Cheng, Jianghan Shen, <strong>Chaofan Tao</strong>, Haochen Tan, Haoli Bai, Lifeng Shang, Ngai Wong</p> <p>On-policy Verbal Distillation replaces token-level matching with trajectory-level distillation using discrete teacher scores, reducing memory and improving student performance on web QA and math reasoning.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2601.21968" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/menik1126/OVD-code" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2601.18533" rel="external nofollow noopener" target="_blank">From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for Reinforcement Learning of Open-ended Generation</a></h3> <p class="research-paper-meta">ICLR · 2026</p> <p>Yuxin Jiang, Yufei Wang, Qiyuan Zhang, Xingshan Zeng, Liangyou Li, Jierun Chen, <strong>Chaofan Tao</strong>, Haoli Bai, Lifeng Shang</p> <p>RLVRR turns single verifiable end rewards into ordered reference-derived reward chains (content + style) to make RL for open-ended generation more efficient and less prone to reward hacking.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2601.18533" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/YJiangcm/RLVRR" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2505.15929" rel="external nofollow noopener" target="_blank">PhyX: Does Your Model Have the "Wits" for Physical Reasoning?</a></h3> <p class="research-paper-meta">TMLR · 2026</p> <p>Hui Shen, Taiqiang Wu, Qi Han, Yunta Hsieh, Jizhou Wang, Yuyue Zhang, Yuxin Cheng, Zijian Hao, Yuansheng Ni, Xin Wang, Zhongwei Wan, Kai Zhang, Wendong Xu, Jing Xiong, Ping Luo, Wenhu Chen, <strong>Chaofan Tao</strong>, Zhuoqing Mao, Ngai Wong</p> <p>PhyX introduces a 3K-question multimodal benchmark spanning six physics domains to test physics-grounded reasoning, revealing large gaps between top models and human experts.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2505.15929" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/killthefullmoon/PhyX" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2402.16117" rel="external nofollow noopener" target="_blank">RoboCodeX: Multimodal Code Generation for Robotic Behavior Synthesis</a></h3> <p class="research-paper-meta">ICML · 2024</p> <p>Yao Mu, Junting Chen, Qinglong Zhang, Shoufa Chen, Qiaojun Yu, Chongjian Ge, Runjian Chen, Zhixuan Liang, Mengkang Hu, <strong>Chaofan Tao</strong>, Peize Sun, Haibao Yu, Chao Yang, Wenqi Shao, Wenhai Wang, Jifeng Dai, Yu Qiao, Mingyu Ding, Ping Luo</p> <p>RoboCodeX is a tree-structured multimodal code generation framework that decomposes high-level instructions into object-centric manipulation units with affordance and safety constraints, generalizing across robot platforms and reaching state-of-the-art results on manipulation and navigation tasks in simulation and on real robots.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2402.16117" rel="external nofollow noopener" target="_blank">Paper</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2411.05902" rel="external nofollow noopener" target="_blank">Autoregressive Models in Vision: A Survey</a></h3> <p class="research-paper-meta">TMLR · 2025</p> <p>Jing Xiong, Gongye Liu, Lun Huang, Chengyue Wu, Taiqiang Wu, Yao Mu, Yuan Yao, Hui Shen, Zhongwei Wan, Jinfa Huang, <strong>Chaofan Tao</strong>, Shen Yan, Huaxiu Yao, Lingpeng Kong, Hongxia Yang, Mi Zhang, Guillermo Sapiro, Jiebo Luo, Ping Luo, Ngai Wong</p> <p>A comprehensive survey of visual autoregressive modeling, covering representation strategies and applications across image, video, 3D, and multimodal generation, plus open challenges.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2411.05902" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/ChaofanTao/Autoregressive-Models-in-Vision-Survey" rel="external nofollow noopener" target="_blank">GitHub</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2506.01713" rel="external nofollow noopener" target="_blank">SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning</a></h3> <p class="research-paper-meta">NeurIPS · 2025</p> <p>Zhongwei Wan, Zhihao Dou, Che Liu, Yu Zhang, Dongfei Cui, Qinjian Zhao, Hui Shen, Jing Xiong, Yi Xin, Yifan Jiang, <strong>Chaofan Tao</strong>, Yangfan He, Mi Zhang, Shen Yan</p> <p>SRPO is a reflection-aware RL framework that teaches MLLMs self-reflection and then optimizes concise, meaningful reflections with GRPO-style rewards to improve multimodal reasoning.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2506.01713" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/SUSTechBruce/SRPO_MLLMs" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2507.07562" rel="external nofollow noopener" target="_blank">The Synergy Dilemma of Long-CoT SFT and RL: Investigating Post-training Techniques for Reasoning VLMs</a></h3> <p class="research-paper-meta">TMLR · 2025</p> <p>Jierun Chen, Tiezheng Yu, Haoli Bai, Lewei Yao, Jiannan Wu, Kaican Li, Fei Mi, <strong>Chaofan Tao</strong>, Lei Zhu, Manyi Zhang, Xiaohui Li, Lu Hou, Lifeng Shang, Qun Liu</p> <p>The study compares long-CoT SFT vs. RL for reasoning VLMs and finds their combination often fails to yield additive gains, instead trading off accuracy, verbosity, and style.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2507.07562" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/JierunChen/SFT-RL-SynergyDilemma" rel="external nofollow noopener" target="_blank">GitHub</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2408.09511" rel="external nofollow noopener" target="_blank">NAVERO: Unlocking Fine-Grained Semantics for Video-Language Compositionality</a></h3> <p class="research-paper-meta">arXiv · 2024</p> <p><strong>Chaofan Tao</strong>, Gukyeong Kwon, Varad Gunjal, Hao Yang, Zhaowei Cai, Yonatan Dukler, Ashwin Swaminathan, R Manmatha, Colin Jon Taylor, Stefano Soatto</p> <p>NAVERO introduces the AARO benchmark and negative-text augmentation with a negative-augmented matching loss to improve video-language compositional understanding and retrieval.</p> <div class="research-links"> <a href="https://arxiv.org/abs/2408.09511" rel="external nofollow noopener" target="_blank">Paper</a> </div> </li> </ol> </details> <p>Related: <a href="/research/efficient-ml-ai-infrastructure/">Efficient ML and AI infrastructure</a></p> </div> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> © Copyright 2026 Chaofan Tao. Built with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> and hosted on GitHub Pages. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4e0a848cc64244c09657837c3d50a6c8"}'></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> </body> </html>

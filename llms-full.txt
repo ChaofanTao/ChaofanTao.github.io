@@ -117,17 +117,6 @@ PhyX introduces a 3K-question multimodal benchmark spanning six physics domains 
 
 中文摘要：PhyX引入一个包含3000个问题的多模态基准，覆盖六个物理领域，用于测试基于物理的推理，观察到顶级模型与人类专家之间的较大差距。
 
-### Scaling Laws with Vocabulary: Larger Models Deserve Larger Vocabularies
-
-- Venue: NeurIPS 2024
-- Authors: Chaofan Tao, Qian Liu, Longxu Dou, Niklas Muennighoff, Zhongwei Wan, Ping Luo, Min Lin, Ngai Wong
-- Paper: https://arxiv.org/abs/2407.13623
-- Code: https://github.com/sail-sg/scaling-with-vocab
-
-The paper derives compute-optimal vocabulary scaling laws and shows larger models benefit from larger vocabularies, improving downstream accuracy at fixed FLOPs.
-
-中文摘要：推导了计算最优的词表规模扩展规律，证明更大模型需要更大词表，在相同计算量下提升下游任务准确率。
-
 ### RoboCodeX: Multimodal Code Generation for Robotic Behavior Synthesis
 
 - Venue: ICML 2024
@@ -238,6 +227,17 @@ PerSyn "routes then generates" by assigning each prompt to its best teacher via 
 AnchorTP provides state-preserving elastic tensor parallelism with a GPU-resident daemon and bandwidth-aware migration planning, enabling fast recovery from single-GPU failures.
 
 中文摘要：AnchorTP提供状态保持的弹性张量并行，通过GPU常驻守护进程和带宽感知的迁移规划，实现单GPU故障场景的快速恢复。
+
+### Scaling Laws with Vocabulary: Larger Models Deserve Larger Vocabularies
+
+- Venue: NeurIPS 2024
+- Authors: Chaofan Tao, Qian Liu, Longxu Dou, Niklas Muennighoff, Zhongwei Wan, Ping Luo, Min Lin, Ngai Wong
+- Paper: https://arxiv.org/abs/2407.13623
+- Code: https://github.com/sail-sg/scaling-with-vocab
+
+The paper derives compute-optimal vocabulary scaling laws and shows larger models benefit from larger vocabularies, improving downstream accuracy at fixed FLOPs.
+
+中文摘要：推导了计算最优的词表规模扩展规律，证明更大模型需要更大词表，在相同计算量下提升下游任务准确率。
 
 ### Dynamic Discriminative Operations for Efficient Long-Context Inference of Large Language Models
 

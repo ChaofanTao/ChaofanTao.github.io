@@ -1,4 +1,4 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> 研究方向 | Chaofan Tao (陶超凡) </title> <meta name="author" content="Chaofan Tao"> <meta name="description" content="陶超凡（Chaofan Tao）的研究概览：端到端训练开源大模型代码智能体、高效大模型训练与推理、多模态推理与智能体。"> <meta name="keywords" content="Chaofan Tao, 陶超凡, LegoX, large language models, LLM, coding agents, software engineering agents, SWE-bench, agentic reinforcement learning, multimodal LLM, efficient LLM training and inference, quantization, scaling laws"> <meta property="og:site_name" content="Chaofan Tao (陶超凡)"> <meta property="og:type" content="website"> <meta property="og:title" content="Chaofan Tao (陶超凡) | 研究方向"> <meta property="og:url" content="https://chaofantao.top/zh/research/"> <meta property="og:description" content="陶超凡（Chaofan Tao）的研究概览：端到端训练开源大模型代码智能体、高效大模型训练与推理、多模态推理与智能体。"> <meta property="og:image" content="https://chaofantao.top/assets/img/og-image.png"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="研究方向"> <meta name="twitter:description" content="陶超凡（Chaofan Tao）的研究概览：端到端训练开源大模型代码智能体、高效大模型训练与推理、多模态推理与智能体。"> <meta name="twitter:image" content="https://chaofantao.top/assets/img/og-image.png"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> 研究方向 | Chaofan Tao (陶超凡) </title> <meta name="author" content="Chaofan Tao"> <meta name="description" content="陶超凡（Chaofan Tao）的两个研究主题：智能体编程、推理与评测；高效机器学习与 AI 基础设施。"> <meta name="keywords" content="Chaofan Tao, 陶超凡, LegoX, large language models, LLM, coding agents, software engineering agents, SWE-bench, agentic reinforcement learning, multimodal LLM, efficient LLM training and inference, quantization, scaling laws"> <meta property="og:site_name" content="Chaofan Tao (陶超凡)"> <meta property="og:type" content="website"> <meta property="og:title" content="Chaofan Tao (陶超凡) | 研究方向"> <meta property="og:url" content="https://chaofantao.top/zh/research/"> <meta property="og:description" content="陶超凡（Chaofan Tao）的两个研究主题：智能体编程、推理与评测；高效机器学习与 AI 基础设施。"> <meta property="og:image" content="https://chaofantao.top/assets/img/og-image.png"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="研究方向"> <meta name="twitter:description" content="陶超凡（Chaofan Tao）的两个研究主题：智能体编程、推理与评测；高效机器学习与 AI 基础设施。"> <meta name="twitter:image" content="https://chaofantao.top/assets/img/og-image.png"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
   :root {
     --max-content-width: 930px;
   }
@@ -98,7 +98,7 @@
 
   .research-cards {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
     margin: 1.5rem 0;
   }
@@ -155,6 +155,50 @@
   .research-readmore {
     margin-top: 0.5rem;
     font-size: 0.88rem;
+  }
+
+  .research-dek {
+    margin: -0.25rem 0 0.75rem;
+    color: var(--research-muted);
+    font-size: 1.1rem;
+    line-height: 1.55;
+  }
+
+  .research-figure {
+    margin: 1.75rem 0;
+  }
+
+  .research-figure-scroll {
+    overflow-x: auto;
+  }
+
+  .research-figure img {
+    display: block;
+    width: 100%;
+    min-width: 620px;
+    height: auto;
+  }
+
+  .research-figure figcaption {
+    margin-top: 0.5rem;
+    color: var(--research-muted);
+    font-size: 0.86rem;
+  }
+
+  .research-claim {
+    margin: 0.25rem 0 0.75rem;
+    padding-left: 0.8rem;
+    border-left: 3px solid var(--global-theme-color);
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  .research-insights {
+    padding-left: 1.2rem;
+  }
+
+  .research-insights li {
+    margin-bottom: 0.9rem;
   }
 
   .research-more {
@@ -224,14 +268,17 @@
       "@type": "CollectionPage",
       "@id": "https://chaofantao.top/zh/research/#page",
       "url": "https://chaofantao.top/zh/research/",
+      "mainEntityOfPage": "https://chaofantao.top/zh/research/",
+      
       "name": "研究方向",
-      "description": "陶超凡（Chaofan Tao）的研究概览：端到端训练开源大模型代码智能体、高效大模型训练与推理、多模态推理与智能体。",
+      "description": "陶超凡（Chaofan Tao）的两个研究主题：智能体编程、推理与评测；高效机器学习与 AI 基础设施。",
       "inLanguage": "zh-Hans",
       "datePublished": "2026-11-03",
-      "dateModified": "2026-11-04",
+      "dateModified": "2026-11-06",
+      
       "isPartOf": { "@id": "https://chaofantao.top/#website" },
       "author": { "@id": "https://chaofantao.top/#person" },
-      "about": [{ "@type": "Thing", "name": "大语言模型" }, { "@type": "Thing", "name": "代码智能体" }, { "@type": "Thing", "name": "高效大模型" }, { "@type": "Thing", "name": "多模态大模型" }],
+      "about": [{ "@type": "Thing", "name": "智能体" }, { "@type": "Thing", "name": "代码智能体" }, { "@type": "Thing", "name": "高效机器学习" }, { "@type": "Thing", "name": "AI 基础设施" }],
       "breadcrumb": { "@id": "https://chaofantao.top/zh/research/#breadcrumb" }
     },
     {
@@ -244,7 +291,7 @@
     }
   ]
 }
-</script> <div class="research-page" lang="zh-Hans"> <nav class="research-breadcrumb" aria-label="面包屑导航"> <a href="/">陶超凡</a><span aria-hidden="true">/</span> <span>研究方向</span> <span aria-hidden="true">·</span><a href="/research/" lang="en">English</a> </nav> <h1>研究方向</h1> <p class="research-lead"><strong>陶超凡（Chaofan Tao）是 <a href="https://www.legox.net/" rel="external nofollow noopener" target="_blank">LegoX</a> 与华为基础模型实验室（Huawei Foundation Model Lab）的 AI 研究员。</strong>研究覆盖三个相互关联的方向：端到端训练开源大模型代码智能体、降低大模型训练与推理成本、提升多模态模型的推理与行动能力。他博士毕业于香港大学，关于生成式模型量化的工作获得 ACL 2022 杰出论文奖。</p> <div class="research-cards"> <article class="research-card"> <h2><a href="/zh/research/coding-agents/">代码智能体与智能体强化学习</a></h2> <p>来自真实软件历史的可验证任务、可信的轨迹与奖励、在真实智能体 harness 内的微调与强化学习，以及智能体代码审查。</p> </article> <article class="research-card"> <h2><a href="/zh/research/efficient-llm/">高效大模型训练与推理</a></h2> <p>词表规模选择、生成式模型压缩、低成本长上下文推理，以及更快的推理阶段计算。</p> </article> <article class="research-card"> <h2><a href="/zh/research/multimodal-reasoning/">多模态推理与智能体</a></h2> <p>推理型视觉语言模型的后训练经验、自我反思、揭示真实差距的基准，以及面向机器人的代码生成。</p> </article> </div> <p>全部 27 篇论文及中英文摘要见<a href="/#all-publications">主页</a>。</p> </div> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> © Copyright 2026 Chaofan Tao. Built with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> and hosted on GitHub Pages. </div> </footer> <script>
+</script> <div class="research-page" lang="zh-Hans"> <nav class="research-breadcrumb" aria-label="面包屑导航"> <a href="/">陶超凡</a><span aria-hidden="true">/</span> <span>研究方向</span> <span aria-hidden="true">·</span><a href="/research/" lang="en">English</a> </nav> <h1>研究方向</h1> <p class="research-lead"><strong>陶超凡（Chaofan Tao）是 <a href="https://www.legox.net/" rel="external nofollow noopener" target="_blank">LegoX</a> 与华为基础模型实验室（Huawei Foundation Model Lab）的 AI 研究员。</strong>他的研究围绕两个相互关联的主题：智能体如何在真实环境中通过行动来学习、又该如何评测它们；以及如何让模型的构建、训练和部署更便宜。他博士毕业于香港大学，关于生成式模型量化的工作获得 ACL 2022 杰出论文奖。</p> <div class="research-cards"> <article class="research-card"> <h2><a href="/zh/research/agentic-intelligence/">智能体编程、推理与评测</a></h2> <p>智能体从“环境、经验、信号、评测”构成的闭环中学习。开源构建的代码智能体、多模态推理，以及骗不过的评测基准。</p> </article> <article class="research-card"> <h2><a href="/zh/research/efficient-ml-ai-infrastructure/">高效机器学习与 AI 基础设施</a></h2> <p>大多数效率问题始于一个失效的假设。词表设计、模型压缩、长上下文记忆、测试时计算、容错服务与知识蒸馏。</p> </article> </div> <p>全部 27 篇论文及中英文摘要见<a href="/#all-publications">主页</a>。</p> </div> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> © Copyright 2026 Chaofan Tao. Built with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> and hosted on GitHub Pages. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };

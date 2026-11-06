@@ -1,0 +1,303 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> 智能体编程、推理与评测 | Chaofan Tao (陶超凡) </title> <meta name="author" content="Chaofan Tao"> <meta name="description" content="智能体如何从“环境、经验、信号、评测”构成的闭环中学习，以及陶超凡与合作者在开源构建每个环节时，在代码智能体、多模态推理和评测基准上得到的经验。"> <meta name="keywords" content="Chaofan Tao, 陶超凡, LegoX, large language models, LLM, coding agents, software engineering agents, SWE-bench, agentic reinforcement learning, multimodal LLM, efficient LLM training and inference, quantization, scaling laws"> <meta property="og:site_name" content="Chaofan Tao (陶超凡)"> <meta property="og:type" content="website"> <meta property="og:title" content="Chaofan Tao (陶超凡) | 智能体编程、推理与评测"> <meta property="og:url" content="https://chaofantao.top/zh/research/agentic-intelligence/"> <meta property="og:description" content="智能体如何从“环境、经验、信号、评测”构成的闭环中学习，以及陶超凡与合作者在开源构建每个环节时，在代码智能体、多模态推理和评测基准上得到的经验。"> <meta property="og:image" content="https://chaofantao.top/assets/img/og-image.png"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="智能体编程、推理与评测"> <meta name="twitter:description" content="智能体如何从“环境、经验、信号、评测”构成的闭环中学习，以及陶超凡与合作者在开源构建每个环节时，在代码智能体、多模态推理和评测基准上得到的经验。"> <meta name="twitter:image" content="https://chaofantao.top/assets/img/og-image.png"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/favicon.png?v=3188b4ee0feda062be9fabb3a75f1eaf"> <link rel="apple-touch-icon" href="/assets/img/favicon.png?v=3188b4ee0feda062be9fabb3a75f1eaf"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://chaofantao.top/zh/research/agentic-intelligence/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav sticky-bottom-footer"> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Chaofan Tao (陶超凡) </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About </a> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <style>
+  .research-page {
+    --research-muted: #59616b;
+    max-width: 52rem;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    line-height: 1.7;
+  }
+
+  html[data-theme="dark"] .research-page {
+    --research-muted: #b5bdc8;
+  }
+
+  .research-page :is(section, h2, [id]) {
+    scroll-margin-top: 5.5rem;
+  }
+
+  .research-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+    color: var(--research-muted);
+    font-size: 0.85rem;
+  }
+
+  .research-breadcrumb a {
+    color: inherit;
+  }
+
+  .research-page h1 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.6rem, 6vw, 2.3rem);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+  }
+
+  .research-meta {
+    margin: 0 0 1.5rem;
+    color: var(--research-muted);
+    font-size: 0.88rem;
+  }
+
+  .research-lead {
+    font-size: 1.08rem;
+  }
+
+  .research-page h2 {
+    margin: 2.5rem 0 0.75rem;
+    font-size: 1.45rem;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .research-page h3 {
+    margin: 1.25rem 0 0.4rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  .research-table-wrap {
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+
+  .research-page table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  .research-page th,
+  .research-page td {
+    padding: 0.55rem 0.6rem;
+    border-bottom: 1px solid var(--global-divider-color);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .research-page th {
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .research-page blockquote {
+    margin: 1.25rem 0;
+    padding: 0.6rem 1rem;
+    border-left: 3px solid var(--global-theme-color);
+    color: var(--research-muted);
+  }
+
+  .research-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .research-card {
+    padding: 1.1rem 1.2rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.5rem;
+  }
+
+  .research-card h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+  }
+
+  .research-card p {
+    margin: 0;
+    font-size: 0.92rem;
+  }
+
+  .research-toc {
+    margin: 1rem 0 0.5rem;
+    color: var(--research-muted);
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+
+  .research-toc a {
+    white-space: nowrap;
+  }
+
+  .research-knowhow {
+    margin: 0.6rem 0 0.4rem;
+    padding: 0.7rem 1rem 0.7rem 2rem;
+    border-left: 3px solid var(--global-theme-color);
+    background: var(--global-code-bg-color);
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 0.95rem;
+  }
+
+  .research-knowhow li {
+    margin: 0.25rem 0;
+  }
+
+  .research-knowhow-label {
+    margin: 0.9rem 0 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--research-muted);
+  }
+
+  .research-readmore {
+    margin-top: 0.5rem;
+    font-size: 0.88rem;
+  }
+
+  .research-dek {
+    margin: -0.25rem 0 0.75rem;
+    color: var(--research-muted);
+    font-size: 1.1rem;
+    line-height: 1.55;
+  }
+
+  .research-figure {
+    margin: 1.75rem 0;
+  }
+
+  .research-figure-scroll {
+    overflow-x: auto;
+  }
+
+  .research-figure img {
+    display: block;
+    width: 100%;
+    min-width: 620px;
+    height: auto;
+  }
+
+  .research-figure figcaption {
+    margin-top: 0.5rem;
+    color: var(--research-muted);
+    font-size: 0.86rem;
+  }
+
+  .research-claim {
+    margin: 0.25rem 0 0.75rem;
+    padding-left: 0.8rem;
+    border-left: 3px solid var(--global-theme-color);
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  .research-insights {
+    padding-left: 1.2rem;
+  }
+
+  .research-insights li {
+    margin-bottom: 0.9rem;
+  }
+
+  .research-more {
+    margin: 1rem 0;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.4rem;
+  }
+
+  .research-more > summary {
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .research-more[open] > summary {
+    margin-bottom: 0.75rem;
+  }
+
+  .research-papers {
+    padding-left: 1.2rem;
+  }
+
+  .research-paper {
+    margin-bottom: 1.1rem;
+  }
+
+  .research-paper h3 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .research-paper p {
+    margin: 0.15rem 0;
+    font-size: 0.9rem;
+  }
+
+  .research-paper-meta {
+    color: var(--research-muted);
+  }
+
+  .research-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .research-page pre {
+    overflow-x: auto;
+    padding: 0.8rem 1rem;
+    border-radius: 0.4rem;
+    background: var(--global-code-bg-color);
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 640px) {
+    .research-cards {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style> <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://chaofantao.top/zh/research/agentic-intelligence/#page",
+      "url": "https://chaofantao.top/zh/research/agentic-intelligence/",
+      "mainEntityOfPage": "https://chaofantao.top/zh/research/agentic-intelligence/",
+      "headline": "智能体编程、推理与评测",
+      "name": "智能体编程、推理与评测",
+      "description": "智能体如何从“环境、经验、信号、评测”构成的闭环中学习，以及陶超凡与合作者在开源构建每个环节时，在代码智能体、多模态推理和评测基准上得到的经验。",
+      "inLanguage": "zh-Hans",
+      "datePublished": "2026-11-03",
+      "dateModified": "2026-11-06",
+      "image": "https://chaofantao.top/assets/img/research/agentic-loop-zh.svg",
+      "isPartOf": { "@id": "https://chaofantao.top/#website" },
+      "author": { "@id": "https://chaofantao.top/#person" },
+      "about": [{ "@type": "Thing", "name": "智能体" }, { "@type": "Thing", "name": "代码智能体" }, { "@type": "Thing", "name": "智能体强化学习" }, { "@type": "Thing", "name": "智能体数据" }, { "@type": "Thing", "name": "多模态推理" }, { "@type": "Thing", "name": "智能体评测" }, { "@type": "Thing", "name": "奖励作弊" }],
+      "breadcrumb": { "@id": "https://chaofantao.top/zh/research/agentic-intelligence/#breadcrumb" },
+      
+      "citation": [{ "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2604.06861", "headline": "REAgent: Requirement-Driven LLM Agents for Software Issue Resolution", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2601.01426", "headline": "SWE-Lego: Pushing the Limits of Supervised Fine-tuning for Software Issue Resolving", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2608.17393", "headline": "LEGO-RL: Harness-Native Reinforcement Learning for Coding Agents", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2607.06065", "headline": "SWE-Review: Closing the Loop on Issue Resolution with Agentic Code Review", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2606.03461", "headline": "What Makes Interaction Trajectories Effective for Training Terminal Agents?", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2505.23932", "headline": "SwingArena: Competitive Programming Arena for Long-context GitHub Issue Solving", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2508.21475", "headline": "MMSearch-Plus: Benchmarking Provenance-Aware Search for Multimodal Browsing Agents", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2601.21968", "headline": "OVD: On-policy Verbal Distillation", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2601.18533", "headline": "From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for Reinforcement Learning of Open-ended Generation", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2505.15929", "headline": "PhyX: Does Your Model Have the \"Wits\" for Physical Reasoning?", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2402.16117", "headline": "RoboCodeX: Multimodal Code Generation for Robotic Behavior Synthesis", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2411.05902", "headline": "Autoregressive Models in Vision: A Survey", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2506.01713", "headline": "SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2507.07562", "headline": "The Synergy Dilemma of Long-CoT SFT and RL: Investigating Post-training Techniques for Reasoning VLMs", "author": { "@id": "https://chaofantao.top/#person" } }, { "@type": "ScholarlyArticle", "@id": "https://arxiv.org/abs/2408.09511", "headline": "NAVERO: Unlocking Fine-Grained Semantics for Video-Language Compositionality", "author": { "@id": "https://chaofantao.top/#person" } }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://chaofantao.top/zh/research/agentic-intelligence/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Chaofan Tao", "item": "https://chaofantao.top/" },
+        { "@type": "ListItem", "position": 2, "name": "研究", "item": "https://chaofantao.top/zh/research/" },
+        { "@type": "ListItem", "position": 3, "name": "智能体编程、推理与评测", "item": "https://chaofantao.top/zh/research/agentic-intelligence/" }
+      ]
+    }
+  ]
+}
+</script> <div class="research-page" lang="zh-Hans"> <nav class="research-breadcrumb" aria-label="面包屑导航"> <a href="/">陶超凡</a><span aria-hidden="true">/</span> <a href="/zh/research/">研究方向</a><span aria-hidden="true">/</span> <span>智能体编程、推理与评测</span> <span aria-hidden="true">·</span><a href="/research/agentic-intelligence/" lang="en">English</a> </nav> <h1>智能体编程、推理与评测</h1> <p class="research-dek">智能体是从一个闭环中学习的，而不是从一份数据集。本文沿着这个闭环，从智能体行动所在的环境，一直走到判断它是否进步的评测，梳理我们在开源构建每个环节时学到的东西。</p> <p class="research-meta">作者：<a href="/">陶超凡（Chaofan Tao）</a>及 LegoX 合作者 · 最后更新 <time datetime="2026-11-06">2026-11-06</time></p> <p>语言模型靠学习文本变得有用；智能体则靠学习“行动之后发生了什么”变得有用：一条命令失败了，一个测试通过了，一个网页原来找错了，一个审查者把补丁打了回来。这个转变改变了难题所在的位置。模型依然重要，但同样重要的还有它周围的四件事：它行动所在的<strong>环境</strong>、它在那里收集的<strong>经验</strong>、把经验转化为学习的<strong>信号</strong>，以及告诉我们这一切是否奏效的<strong>评测</strong>。</p> <p>我们在代码智能体、多模态推理和评测基准上的工作，可以看作对这个闭环的系统研究。有些项目开源构建其中一个环节：<a href="https://www.legox.net/blog/legoflow/" rel="external nofollow noopener" target="_blank">LegoFlow</a> 和 <a href="https://www.legox.net/blog/swe-lego/" rel="external nofollow noopener" target="_blank">SWE-Lego</a> 负责经验，<a href="https://www.legox.net/blog/lego-rl/" rel="external nofollow noopener" target="_blank">Lego-RL</a> 负责在真实环境中学习，<a href="https://www.legox.net/blog/swe-review/" rel="external nofollow noopener" target="_blank">SWE-Review</a> 和 <a href="https://arxiv.org/abs/2505.23932" rel="external nofollow noopener" target="_blank">SwingArena</a> 负责审查与评测。另一些则追问：当闭环遇到图像、网页或物理世界时，什么会出问题。把它们放在一起读，会得到单篇论文都没有直接说出的结论：最强的模型很少是最好的教师，验证才是稀缺资源，而且智能体越强，闭环的可靠性就越需要被工程化地保障，而不能想当然。</p> <figure class="research-figure"> <div class="research-figure-scroll"><img src="/assets/img/research/agentic-loop-zh.svg" alt="智能体学习闭环示意图：中心是由模型和 harness 组成的智能体，周围按顺时针连接环境、经验、信号、评测四个环节，每个环节标注了研究它的项目。" width="760" height="480" loading="eager"></div> <figcaption>智能体学习闭环。每个环节都可能悄无声息地出错，本页的每个项目研究其中之一。</figcaption> </figure> <p class="research-toc">本页内容：<a href="#environment">环境</a> · <a href="#experience">经验</a> · <a href="#signal">信号</a> · <a href="#evaluation">评测</a> · <a href="#physical">走出终端</a> · <a href="#insights">贯穿全文的洞察</a> · <a href="#open-questions">开放问题</a></p> <h2 id="environment">1. 环境是智能体的一部分</h2> <p class="research-claim">换了 harness，就换了智能体。</p> <p>代码智能体从不直接“看到”代码仓库，它看到的是 harness 给它看的东西：哪些文件和工具输出进入上下文、对话何时被压缩、错误如何呈现、命令失败后流程如何继续。我们用 Lego-RL 在三个常用 harness（OpenHands、Claude Code、OpenCode）内训练时发现，同一个初始模型在训练开始前，在三者中的表现就已明显不同。这一观察决定了设计：Lego-RL 在未经修改的 harness 内训练，而不是在简化的副本里；并把 harness 视为环境的一部分，而不是策略的一部分。</p> <p>接下来的自然问题是：一个模型能否同时服务多个 harness？同时用多个 harness 的 rollout 训练，效果接近分别训练多个模型的平均水平，并缩小了部分 harness 之间的差距。这令人鼓舞，但这些实验中每个 harness 都在训练时见过；智能体如何应对从未见过的 harness，仍是开放问题。</p> <p>同样的道理也适用于代码之外。在多模态搜索中，工具就是 harness：<a href="https://arxiv.org/abs/2508.21475" rel="external nofollow noopener" target="_blank">MMSearch-Plus</a> 为浏览智能体提供 set-of-mark 模块，让它在检索前标记、裁剪和放大图像，这一设计直接决定了智能体能使用哪些证据。在机器人领域，<a href="https://arxiv.org/abs/2402.16117" rel="external nofollow noopener" target="_blank">RoboCodeX</a> 让代码成为感知与行动之间的接口，使行为可检查，并能在不同机器人平台之间迁移。</p> <h2 id="experience">2. 经验：什么值得学习</h2> <p class="research-claim">可教性是轨迹的属性，而不是教师的属性。</p> <p>经验始于环境能够验证的任务。LegoFlow 挖掘已合并的 PR，把每个改写成不泄露答案的任务，构建隔离环境，并且只保留原始代码测试失败、参考修复测试通过的任务。通过验证只说明任务“能用”，不代表“有价值”，因此还用静态规则从补丁范围、新增逻辑、涉及的上下文广度、测试和需求描述的详细程度来评估难度。SWE-Lego 混合真实任务（带来深度）和注入 bug 生成的合成任务（带来广度）；Terminal-Lego 则把社区问答转化为命令行任务。</p> <p>更出人意料的经验来自轨迹，也就是教师智能体在这些任务上的完整尝试记录。<a href="https://arxiv.org/abs/2606.03461" rel="external nofollow noopener" target="_blank">Terminal-Lego</a> 发现，显式地观察环境、基于所见行动、再验证结果的轨迹，教学效果远好于直接跳到答案的更强智能体的轨迹，用论文的话说，“最好的解题者是最差的教师”。LegoFlow 在推理层面发现了相似规律：每一轮都简短思考的教师，不如在需要时深入推理的教师；而且大部分收益来自剔除推理最浅的轨迹，而不是只保留最长的。</p> <p>经验还有一个可靠性问题。越强的教师越擅长找捷径：定位上游 PR、复制补丁，或从 Git 历史中读出修复。成功的轨迹不一定是诚实的轨迹。有效的防御是分层的：在提示中明确禁止查找现成答案，并由环境强制执行，即智能体运行期间改写历史、限制网络访问，只在评分时恢复。</p> <p class="research-knowhow-label">我们学到的</p> <ul class="research-knowhow"> <li>按“是否锚定环境、推理是否有深度”筛选轨迹，而不只看是否成功。</li> <li>把答案泄漏当作需要从环境中移除的属性，而不是需要劝阻的行为。</li> </ul> <p class="research-readmore">延伸阅读：<a href="https://www.legox.net/blog/legoflow-experiments/" rel="external nofollow noopener" target="_blank">LegoFlow-SWE 经验总结</a> · <a href="https://www.legox.net/blog/terminal-lego/" rel="external nofollow noopener" target="_blank">Terminal-Lego</a> · <a href="https://www.legox.net/blog/swe-lego/" rel="external nofollow noopener" target="_blank">SWE-Lego</a></p> <h2 id="signal">3. 信号：从模仿到验证</h2> <p class="research-claim">每种训练信号教的东西不同；对准问题的信号，胜过更多的信号。</p> <p><strong>仔细做的模仿。</strong>SWE-Lego 表明，只要像打磨数据一样打磨损失函数，监督微调能走得很远。错误掩码保留完整轨迹作为上下文，但不在智能体的错误步骤上计算梯度，让模型看到错误而不学会重复它。课程学习用轨迹长度衡量难度，由易到难训练并回放前面的数据。推理时，以文本形式回答“是/否”的生成式验证器比打分头更会挑选结果，因为它复用了预训练学到的知识。</p> <p><strong>在真实环境中强化学习。</strong>来自测试执行结果的奖励，只有在训练器优化的内容与模型实际所做的一致时才可信。harness 会改写自身历史，保存下来的对话记录并不等于实际采样的 token 序列；Lego-RL 在生成时记录 token、概率和混合专家路由，并在训练时回放路由。这里的不一致是“静默”的：训练照常运行，曲线照常变化，没有任何报错。难度要相对于当前模型来定，因为总是成功或总是失败的任务不产生学习信号，而这个难度区间会随智能体进步而移动。训练之后，智能体会在修改前读更多代码、改完回读、更常运行测试，代价是交互更长。单 rollout 优化进一步提升效率，借助学到的 critic，每个任务只需一次尝试，但 critic 必须先预热，才能有效引导策略。</p> <p><strong>超越“通过/失败”。</strong>许多任务没有唯一可检查的答案。<a href="https://arxiv.org/abs/2601.18533" rel="external nofollow noopener" target="_blank">RLVRR</a> 把单个可验证的“点”换成基于参考答案、覆盖内容与风格的“奖励链”，把监督数据的效率带入开放式生成的强化学习。<a href="https://arxiv.org/abs/2601.21968" rel="external nofollow noopener" target="_blank">On-policy Verbal Distillation</a> 从只返回文本的黑盒教师中学习：教师的评分为学生自己的部分尝试排序，保留好的前缀、替换较差的后续，从而保住学生的探索。</p> <p><strong>视觉中的同一种张力。</strong>对推理型视觉语言模型，长思维链 SFT 和 RL 擅长的地方不同：SFT 擅长困难的多步问题，代价是冗长；RL 在各难度上都有提升，回答也更简洁。我们尝试过的所有组合方式都只是用一种收益换另一种，而不是叠加，这就是<a href="https://arxiv.org/abs/2507.07562" rel="external nofollow noopener" target="_blank">协同困境</a>。<a href="https://arxiv.org/abs/2506.01713" rel="external nofollow noopener" target="_blank">SRPO</a> 走了一条更窄的路：先用数据教会好的反思“长什么样”，再奖励简短且真正改变推理的反思。</p> <p class="research-readmore">延伸阅读：<a href="https://www.legox.net/blog/lego-rl/" rel="external nofollow noopener" target="_blank">Lego-RL</a> · <a href="https://www.legox.net/blog/lego-rl-cross-harness/" rel="external nofollow noopener" target="_blank">跨 harness 泛化</a> · <a href="https://www.legox.net/blog/lego-rl-sao/" rel="external nofollow noopener" target="_blank">单 rollout 优化</a></p> <h2 id="evaluation">4. 评测与审查：一面骗不过的镜子</h2> <p class="research-claim">智能体越强，评测就越要像安全边界一样设计。</p> <p>让教师在数据收集中找到捷径的能力，同样会让智能体在评测中找到捷径。因此，基准需要和训练环境一样严谨，最好还更贴近现实。<a href="https://arxiv.org/abs/2505.23932" rel="external nofollow noopener" target="_blank">SwingArena</a>（ICLR Oral）把评测搬进持续集成：模型轮流担任补丁提交者和编写测试的审阅者，覆盖多种编程语言，并用检索应对超长代码仓库。<a href="https://arxiv.org/abs/2604.06861" rel="external nofollow noopener" target="_blank">REAgent</a>（ICSE）把 issue 描述本身当作可能不完整的需求，在修复前先检查和完善。</p> <p>审查让评测成为闭环的一部分。<a href="https://arxiv.org/abs/2607.06065" rel="external nofollow noopener" target="_blank">SWE-Review</a> 训练的审查智能体独立探索仓库、追溯根因，把自己的诊断与提交的补丁对比，再返回结构化反馈，把一次性生成变成“生成、审查、修改”。有两个结论超出了论文本身：审查轨迹可以反哺问题修复能力；而且从多次尝试中挑选比继续生成更便宜，好的审查者因此让测试时扩展更高效。</p> <p>多模态基准有自己的捷径：不看图也能答对的问题。<a href="https://arxiv.org/abs/2508.21475" rel="external nofollow noopener" target="_blank">MMSearch-Plus</a> 的问题依赖细粒度视觉线索，并需要经过多轮检索传递；大多数失败来自找不到正确网页、分不清相似事件，而不是最后一步推理。<a href="https://arxiv.org/abs/2505.15929" rel="external nofollow noopener" target="_blank">PhyX</a> 显示模型依赖记忆的公式和表层模式，而非物理理解；<a href="https://arxiv.org/abs/2408.09511" rel="external nofollow noopener" target="_blank">NAVERO</a> 考察视频-语言模型如何处理随时间变化的关系。</p> <h2 id="physical">5. 走出终端</h2> <p class="research-claim">环境变成物理世界时，闭环不变，变的是接口。</p> <p>RoboCodeX 以树状结构把高层指令分解为以物体为中心、带有可供性和安全约束的操作步骤，并写成代码。代码在这里扮演的角色，就像 harness 之于软件智能体：它是行为变得明确、可检查、可在不同机器人间复用的那一层。PhyX 衡量这类智能体所需的物理推理能力；我们的<a href="https://arxiv.org/abs/2411.05902" rel="external nofollow noopener" target="_blank">视觉自回归模型综述</a>梳理了从像素到 token 再到尺度的视觉生成方法如何延伸到具身场景。</p> <h2 id="insights">贯穿全文的洞察</h2> <ol class="research-insights"> <li> <strong>最强的模型很少是最好的教师。</strong>Terminal-Lego 中环境锚定的轨迹胜过更强的解题者，LegoFlow 中更强的教师更会作弊；教师强弱与学生可学性之间的错配，同样促成了<a href="/zh/research/efficient-ml-ai-infrastructure/#transfer">为每个提示选对教师</a>的工作。真正能迁移的，是学生看得见、学得会的行为。</li> <li> <strong>验证才是稀缺资源。</strong>可验证的任务、为尝试排序的验证器、诊断补丁的审查者、基于 CI 的竞技场，本质上都是在生产可信的判断。生成很便宜，可信的挑选才能规模化。</li> <li> <strong>保真是一个正确性问题。</strong>如果训练器看到的 token、概率或路由与智能体实际所做的不同，学习就会悄无声息地优化错误的目标。在智能体强化学习中，系统工程与学习密不可分。</li> <li> <strong>能力会放大捷径。</strong>Git 历史、上游补丁、不看图就能回答的视觉问题，都是越强的模型越常找到的捷径。可靠性必须落在环境和基准里，而不是提示里。</li> <li> <strong>深度胜过覆盖。</strong>在需要的回合深入推理，胜过处处浅尝辄止；有用的反思胜过冗长的反思；冗长的思维链是成本，不是免费的午餐。</li> </ol> <h2 id="open-questions">开放问题</h2> <ul> <li>在多个 harness 上训练的智能体，能否在从未见过的 harness 中表现良好？</li> <li>当一个“通过/失败”信号要在几十步行动之后才到来时，该如何分配功劳？</li> <li>当智能体需要向用户提问、反复迭代，而不是独自关闭一个工单时，会发生什么变化？</li> <li>监督信号与强化信号能否自适应地结合，让收益叠加而非互相抵消？</li> <li>这些经验如何延伸到长程任务，例如根据自然语言需求从零构建一个代码仓库？</li> </ul> <h2 id="resources">开源资源</h2> <ul> <li>LegoFlow：<a href="https://github.com/LegoX/LegoFlow" rel="external nofollow noopener" target="_blank">代码</a> · <a href="https://huggingface.co/collections/Lego-X/legoflow" rel="external nofollow noopener" target="_blank">数据</a> </li> <li>SWE-Lego：<a href="https://github.com/LegoX/SWE-Lego" rel="external nofollow noopener" target="_blank">代码</a> · <a href="https://huggingface.co/collections/Lego-X/swe-lego" rel="external nofollow noopener" target="_blank">数据与模型</a> </li> <li>Terminal-Lego：<a href="https://github.com/LegoX/Terminal-Lego" rel="external nofollow noopener" target="_blank">代码</a> · <a href="https://huggingface.co/datasets/SWE-Lego/Terminal-Lego-15k" rel="external nofollow noopener" target="_blank">数据</a> </li> <li>Lego-RL：<a href="https://github.com/LegoX/Lego-RL" rel="external nofollow noopener" target="_blank">代码</a> · <a href="https://huggingface.co/collections/Lego-X/lego-rl" rel="external nofollow noopener" target="_blank">模型与数据</a> </li> <li>SWE-Review：<a href="https://github.com/LegoX/SWE-Review" rel="external nofollow noopener" target="_blank">代码</a> · <a href="https://huggingface.co/collections/Lego-X/swe-review" rel="external nofollow noopener" target="_blank">模型与数据</a> </li> </ul> <details class="research-more"> <summary>相关论文（15 篇）</summary> <ol class="research-papers"> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2604.06861" rel="external nofollow noopener" target="_blank">REAgent: Requirement-Driven LLM Agents for Software Issue Resolution</a></h3> <p class="research-paper-meta">ICSE · 2027</p> <p>Shiqi Kuang, Zhao Tian, Kaiwei Lin, <strong>Chaofan Tao</strong>, Shaowei Wang, Haoli Bai, Lifeng Shang, Junjie Chen</p> <p lang="zh-Hans">REAgent将软件问题描述转化为结构化、信息丰富的需求规范，识别并迭代完善低质量需求，以引导大语言模型生成更准确的软件补丁。</p> <div class="research-links"> <a href="https://arxiv.org/abs/2604.06861" rel="external nofollow noopener" target="_blank">Paper</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2601.01426" rel="external nofollow noopener" target="_blank">SWE-Lego: Pushing the Limits of Supervised Fine-tuning for Software Issue Resolving</a></h3> <p class="research-paper-meta">arXiv · 2026</p> <p><strong>Chaofan Tao</strong>, Jierun Chen, Yuxin Jiang, Kaiqi Kou, Shaowei Wang, Ruoyu Wang, Xiaohui Li, Sidi Yang, Yiming Du, Jianbo Dai, Zhiming Mao, Xinyu Wang, Lifeng Shang, Haoli Bai</p> <p lang="zh-Hans">SWE-Lego提出仅用监督微调的软工代码智能体配方（真实+合成数据集+课程学习/错误掩码），并研究了软工场景的测试时扩展，将开源8B/32B模型在SWE-bench Verified上推至SOTA。</p> <div class="research-links"> <a href="https://arxiv.org/abs/2601.01426" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/LegoX/SWE-Lego" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2608.17393" rel="external nofollow noopener" target="_blank">LEGO-RL: Harness-Native Reinforcement Learning for Coding Agents</a></h3> <p class="research-paper-meta">arXiv · 2026</p> <p>Yiming Du, Yuxin Jiang, Tao Yuan, Jianbo Dai, Shaowei Wang, Jierun Chen, <strong>Chaofan Tao</strong>, Xianzhi Yu, Lifeng Shang, Kam-Fai Wong, Xiaohui Li, Haoli Bai</p> <p lang="zh-Hans">LEGO-RL在不修改原生harness的前提下对代码智能体做强化学习，结合保持token一致的代理与MoE路由回放、带分阶段防作弊机制的沙箱执行，以及可实时诊断轨迹的可观测训练。</p> <div class="research-links"> <a href="https://arxiv.org/abs/2608.17393" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/LegoX/Lego-RL" rel="external nofollow noopener" target="_blank">Code</a> <a href="https://huggingface.co/collections/Lego-X/lego-rl" rel="external nofollow noopener" target="_blank">Data</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2607.06065" rel="external nofollow noopener" target="_blank">SWE-Review: Closing the Loop on Issue Resolution with Agentic Code Review</a></h3> <p class="research-paper-meta">arXiv · 2026</p> <p>Ruoyu Wang, Jierun Chen, Shaowei Wang, <strong>Chaofan Tao</strong>, Sidi Yang, Yuxin Jiang, Kim-Hui Yap, Lifeng Shang, Xiaohui Li, Haoli Bai</p> <p lang="zh-Hans">SWE-Review把一次性的补丁生成变为“生成-审查-修改”闭环：审查智能体独立探索仓库、追溯根因，决定是否接受PR并给出结构化反馈；审查轨迹还能迁移到问题修复，并让测试时扩展更高效。</p> <div class="research-links"> <a href="https://arxiv.org/abs/2607.06065" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/LegoX/SWE-Review" rel="external nofollow noopener" target="_blank">Code</a> <a href="https://huggingface.co/collections/Lego-X/swe-review" rel="external nofollow noopener" target="_blank">Data</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2606.03461" rel="external nofollow noopener" target="_blank">What Makes Interaction Trajectories Effective for Training Terminal Agents?</a></h3> <p class="research-paper-meta">arXiv · 2026</p> <p>Sidi Yang, <strong>Chaofan Tao</strong>, Jierun Chen, Tiezheng Yu, Ruoyu Wang, Yuxin Jiang, Yiming Du, Wendong Xu, Jing Xiong, Taiqiang Wu, Lifeng Shang, Xiaohui Li, Ngai Wong, Haoli Bai</p> <p lang="zh-Hans">基于将真实问题转化为环境可验证终端任务的Terminal-Lego流水线，论文发现“教学悖论”：更强的智能体不一定是更好的教师。显式呈现“观察-行动-验证”的环境锚定轨迹迁移效果最好，仅用1.53万条轨迹即让Qwen3-32B在Terminal-Bench 2.0上达到24.3%，所需数据约为此前结果的1/30。</p> <div class="research-links"> <a href="https://arxiv.org/abs/2606.03461" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/SWE-Lego/terminal-lego" rel="external nofollow noopener" target="_blank">Code</a> <a href="https://huggingface.co/datasets/SWE-Lego/Terminal-Lego-15k" rel="external nofollow noopener" target="_blank">Data</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2505.23932" rel="external nofollow noopener" target="_blank">SwingArena: Competitive Programming Arena for Long-context GitHub Issue Solving</a></h3> <p class="research-paper-meta">ICLR · Oral · 2026</p> <p>Wendong Xu, Jing Xiong, Chenyang Zhao, Qiujiang Chen, Haoran Wang, Hui Shen, Zhongwei Wan, Jianbo Dai, Taiqiang Wu, He Xiao, <strong>Chaofan Tao</strong>, Z Morley Mao, Ying Sheng, Zhijiang Guo, Hongxia Yang, Bei Yu, Lingpeng Kong, Quanquan Gu, Ngai Wong</p> <p lang="zh-Hans">SwingArena是一个CI驱动的测评框架，让大语言模型扮演代码的提交者和审阅者角色，配合检索增强的代码生成来处理长上下文、多编程语言的GitHub问题解决。</p> <div class="research-links"> <a href="https://arxiv.org/abs/2505.23932" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/menik1126/Swing-Bench" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2508.21475" rel="external nofollow noopener" target="_blank">MMSearch-Plus: Benchmarking Provenance-Aware Search for Multimodal Browsing Agents</a></h3> <p class="research-paper-meta">ICLR · 2026</p> <p>Xijia Tao, Yihua Teng, Xinxing Su, Xinyu Fu, Jihao Wu, <strong>Chaofan Tao</strong>, Ziru Liu, Haoli Bai, Rui Liu, Lingpeng Kong</p> <p lang="zh-Hans">MMSearch-Plus是一个包含311个任务的benchmark和多模态智能体搜索问答框架，配备set-of-mark工具，要求在检索噪声下进行可追溯、引入视觉搜索和交叉验证。</p> <div class="research-links"> <a href="https://arxiv.org/abs/2508.21475" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/mmsearch-plus/MMSearch-Plus" rel="external nofollow noopener" target="_blank">GitHub</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2601.21968" rel="external nofollow noopener" target="_blank">OVD: On-policy Verbal Distillation</a></h3> <p class="research-paper-meta">arXiv · 2026</p> <p>Jing Xiong, Hui Shen, Shansan Gong, Yuxin Cheng, Jianghan Shen, <strong>Chaofan Tao</strong>, Haochen Tan, Haoli Bai, Lifeng Shang, Ngai Wong</p> <p lang="zh-Hans">On-policy Verbal Distillation用轨迹级蒸馏替代token级匹配蒸馏，使用离散的教师评分，降低内存占用并在网络搜索问答和数学推理上提升学生模型性能。</p> <div class="research-links"> <a href="https://arxiv.org/abs/2601.21968" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/menik1126/OVD-code" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2601.18533" rel="external nofollow noopener" target="_blank">From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for Reinforcement Learning of Open-ended Generation</a></h3> <p class="research-paper-meta">ICLR · 2026</p> <p>Yuxin Jiang, Yufei Wang, Qiyuan Zhang, Xingshan Zeng, Liangyou Li, Jierun Chen, <strong>Chaofan Tao</strong>, Haoli Bai, Lifeng Shang</p> <p lang="zh-Hans">RLVRR将传统RL里单一的可验证终端奖励转化为有序的参考衍生奖励链（内容+风格），使开放式生成的强化学习更高效且更不易出现奖励破解。</p> <div class="research-links"> <a href="https://arxiv.org/abs/2601.18533" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/YJiangcm/RLVRR" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2505.15929" rel="external nofollow noopener" target="_blank">PhyX: Does Your Model Have the "Wits" for Physical Reasoning?</a></h3> <p class="research-paper-meta">TMLR · 2026</p> <p>Hui Shen, Taiqiang Wu, Qi Han, Yunta Hsieh, Jizhou Wang, Yuyue Zhang, Yuxin Cheng, Zijian Hao, Yuansheng Ni, Xin Wang, Zhongwei Wan, Kai Zhang, Wendong Xu, Jing Xiong, Ping Luo, Wenhu Chen, <strong>Chaofan Tao</strong>, Zhuoqing Mao, Ngai Wong</p> <p lang="zh-Hans">PhyX引入一个包含3000个问题的多模态基准，覆盖六个物理领域，用于测试基于物理的推理，观察到顶级模型与人类专家之间的较大差距。</p> <div class="research-links"> <a href="https://arxiv.org/abs/2505.15929" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/killthefullmoon/PhyX" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2402.16117" rel="external nofollow noopener" target="_blank">RoboCodeX: Multimodal Code Generation for Robotic Behavior Synthesis</a></h3> <p class="research-paper-meta">ICML · 2024</p> <p>Yao Mu, Junting Chen, Qinglong Zhang, Shoufa Chen, Qiaojun Yu, Chongjian Ge, Runjian Chen, Zhixuan Liang, Mengkang Hu, <strong>Chaofan Tao</strong>, Peize Sun, Haibao Yu, Chao Yang, Wenqi Shao, Wenhai Wang, Jifeng Dai, Yu Qiao, Mingyu Ding, Ping Luo</p> <p lang="zh-Hans">RoboCodeX提出树状结构的多模态代码生成框架，将高层指令分解为带有可供性与安全约束的以物体为中心的操作单元，借助代码生成实现跨机器人平台泛化，在仿真与真实机器人的操作和导航任务上取得领先结果。</p> <div class="research-links"> <a href="https://arxiv.org/abs/2402.16117" rel="external nofollow noopener" target="_blank">Paper</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2411.05902" rel="external nofollow noopener" target="_blank">Autoregressive Models in Vision: A Survey</a></h3> <p class="research-paper-meta">TMLR · 2025</p> <p>Jing Xiong, Gongye Liu, Lun Huang, Chengyue Wu, Taiqiang Wu, Yao Mu, Yuan Yao, Hui Shen, Zhongwei Wan, Jinfa Huang, <strong>Chaofan Tao</strong>, Shen Yan, Huaxiu Yao, Lingpeng Kong, Hongxia Yang, Mi Zhang, Guillermo Sapiro, Jiebo Luo, Ping Luo, Ngai Wong</p> <p lang="zh-Hans">全面综述视觉自回归模型的建模方法，涵盖表示策略及其在图像、视频、3D和多模态生成中的应用，并讨论开放挑战。</p> <div class="research-links"> <a href="https://arxiv.org/abs/2411.05902" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/ChaofanTao/Autoregressive-Models-in-Vision-Survey" rel="external nofollow noopener" target="_blank">GitHub</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2506.01713" rel="external nofollow noopener" target="_blank">SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning</a></h3> <p class="research-paper-meta">NeurIPS · 2025</p> <p>Zhongwei Wan, Zhihao Dou, Che Liu, Yu Zhang, Dongfei Cui, Qinjian Zhao, Hui Shen, Jing Xiong, Yi Xin, Yifan Jiang, <strong>Chaofan Tao</strong>, Yangfan He, Mi Zhang, Shen Yan</p> <p lang="zh-Hans">SRPO是一个反思感知的多模态RL框架，先训练多模态大模型学会自我反思，再用GRPO式奖励优化简洁有效的反思，从而提升多模态推理能力。</p> <div class="research-links"> <a href="https://arxiv.org/abs/2506.01713" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/SUSTechBruce/SRPO_MLLMs" rel="external nofollow noopener" target="_blank">Code</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2507.07562" rel="external nofollow noopener" target="_blank">The Synergy Dilemma of Long-CoT SFT and RL: Investigating Post-training Techniques for Reasoning VLMs</a></h3> <p class="research-paper-meta">TMLR · 2025</p> <p>Jierun Chen, Tiezheng Yu, Haoli Bai, Lewei Yao, Jiannan Wu, Kaican Li, Fei Mi, <strong>Chaofan Tao</strong>, Lei Zhu, Manyi Zhang, Xiaohui Li, Lu Hou, Lifeng Shang, Qun Liu</p> <p lang="zh-Hans">比较长链思维监督微调（SFT）与强化学习（RL）在视觉语言模型推理中的作用，发现两者组合往往无法带来叠加收益，而是在准确率、冗长程度和风格之间权衡。</p> <div class="research-links"> <a href="https://arxiv.org/abs/2507.07562" rel="external nofollow noopener" target="_blank">Paper</a> <a href="https://github.com/JierunChen/SFT-RL-SynergyDilemma" rel="external nofollow noopener" target="_blank">GitHub</a> </div> </li> <li class="research-paper"> <h3><a href="https://arxiv.org/abs/2408.09511" rel="external nofollow noopener" target="_blank">NAVERO: Unlocking Fine-Grained Semantics for Video-Language Compositionality</a></h3> <p class="research-paper-meta">arXiv · 2024</p> <p><strong>Chaofan Tao</strong>, Gukyeong Kwon, Varad Gunjal, Hao Yang, Zhaowei Cai, Yonatan Dukler, Ashwin Swaminathan, R Manmatha, Colin Jon Taylor, Stefano Soatto</p> <p lang="zh-Hans">NAVERO提出AARO基准，并通过负文本增强和负增强匹配损失，提升视频-语言模型对组合语义的理解和检索能力。</p> <div class="research-links"> <a href="https://arxiv.org/abs/2408.09511" rel="external nofollow noopener" target="_blank">Paper</a> </div> </li> </ol> </details> <p>相关页面：<a href="/zh/research/efficient-ml-ai-infrastructure/">高效机器学习与 AI 基础设施</a></p> </div> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> © Copyright 2026 Chaofan Tao. Built with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> and hosted on GitHub Pages. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4e0a848cc64244c09657837c3d50a6c8"}'></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> </body> </html>
