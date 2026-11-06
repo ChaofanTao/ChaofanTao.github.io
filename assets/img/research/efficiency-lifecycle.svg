@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" role="img" aria-labelledby="t d">
   <title id="t">Efficiency across the model lifecycle</title>
-  <desc id="d">Five stages of a model's lifecycle, design, compress, remember, compute and serve, and transfer, each paired with the assumption that our work shows to be false.</desc>
+  <desc id="d">Five connected areas of efficiency research: design, compression, memory, computation and serving, and transfer. Each asks how resources should be allocated.</desc>
   <defs>
     <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0 0L10 5L0 10z" fill="#b509ac"/>
@@ -20,45 +20,45 @@
   <g transform="translate(20 40)">
     <rect class="box" width="166" height="220" rx="10"/>
     <text x="83" y="32" text-anchor="middle" class="h">1 · Design</text>
-    <text x="83" y="64" text-anchor="middle" class="l">ASSUMPTION</text>
-    <text x="83" y="86" text-anchor="middle" class="q">“The tokenizer is</text>
-    <text x="83" y="103" text-anchor="middle" class="q">a fixed choice.”</text>
+    <text x="83" y="64" text-anchor="middle" class="l">QUESTION</text>
+    <text x="83" y="86" text-anchor="middle" class="q">How large should</text>
+    <text x="83" y="103" text-anchor="middle" class="q">the vocabulary be?</text>
     <text x="83" y="176" text-anchor="middle" class="w">Vocabulary</text>
     <text x="83" y="192" text-anchor="middle" class="w">scaling laws</text>
   </g>
   <g transform="translate(206 40)">
     <rect class="box" width="166" height="220" rx="10"/>
     <text x="83" y="32" text-anchor="middle" class="h">2 · Compress</text>
-    <text x="83" y="64" text-anchor="middle" class="l">ASSUMPTION</text>
-    <text x="83" y="86" text-anchor="middle" class="q">“Every part of the</text>
-    <text x="83" y="103" text-anchor="middle" class="q">model is alike.”</text>
+    <text x="83" y="64" text-anchor="middle" class="l">QUESTION</text>
+    <text x="83" y="86" text-anchor="middle" class="q">What distinctions</text>
+    <text x="83" y="103" text-anchor="middle" class="q">must survive?</text>
     <text x="83" y="176" text-anchor="middle" class="w">Quantization · Pruning</text>
     <text x="83" y="192" text-anchor="middle" class="w">UPop · CrossGET</text>
   </g>
   <g transform="translate(392 40)">
     <rect class="box" width="166" height="220" rx="10"/>
     <text x="83" y="32" text-anchor="middle" class="h">3 · Remember</text>
-    <text x="83" y="64" text-anchor="middle" class="l">ASSUMPTION</text>
-    <text x="83" y="86" text-anchor="middle" class="q">“Every cached token</text>
-    <text x="83" y="103" text-anchor="middle" class="q">matters equally.”</text>
+    <text x="83" y="64" text-anchor="middle" class="l">QUESTION</text>
+    <text x="83" y="86" text-anchor="middle" class="q">What evidence</text>
+    <text x="83" y="103" text-anchor="middle" class="q">will be needed later?</text>
     <text x="83" y="176" text-anchor="middle" class="w">D2O · UNComp</text>
     <text x="83" y="192" text-anchor="middle" class="w">Prefilling-dLLM</text>
   </g>
   <g transform="translate(578 40)">
     <rect class="box" width="166" height="220" rx="10"/>
     <text x="83" y="32" text-anchor="middle" class="h">4 · Compute &amp; serve</text>
-    <text x="83" y="64" text-anchor="middle" class="l">ASSUMPTION</text>
-    <text x="83" y="86" text-anchor="middle" class="q">“Coordination is free</text>
-    <text x="83" y="103" text-anchor="middle" class="q">and GPUs don’t fail.”</text>
+    <text x="83" y="64" text-anchor="middle" class="l">QUESTION</text>
+    <text x="83" y="86" text-anchor="middle" class="q">Where do we wait</text>
+    <text x="83" y="103" text-anchor="middle" class="q">or lose work?</text>
     <text x="83" y="176" text-anchor="middle" class="w">ATTS · AnchorTP</text>
     <text x="83" y="192" text-anchor="middle" class="w">agent RL infrastructure</text>
   </g>
   <g transform="translate(764 40)">
     <rect class="box" width="166" height="220" rx="10"/>
     <text x="83" y="32" text-anchor="middle" class="h">5 · Transfer</text>
-    <text x="83" y="64" text-anchor="middle" class="l">ASSUMPTION</text>
-    <text x="83" y="86" text-anchor="middle" class="q">“The strongest teacher</text>
-    <text x="83" y="103" text-anchor="middle" class="q">teaches best.”</text>
+    <text x="83" y="64" text-anchor="middle" class="l">QUESTION</text>
+    <text x="83" y="86" text-anchor="middle" class="q">What can this</text>
+    <text x="83" y="103" text-anchor="middle" class="q">student learn?</text>
     <text x="83" y="176" text-anchor="middle" class="w">Adaptive KL</text>
     <text x="83" y="192" text-anchor="middle" class="w">PerSyn</text>
   </g>

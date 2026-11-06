@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "研究方向"
-description: "陶超凡（Chaofan Tao）的两个研究主题：智能体编程、推理与评测；高效机器学习与 AI 基础设施。"
+description: "陶超凡的研究笔记：面向长期任务、用户协作和完整项目构建，讨论智能体的学习、评测，以及计算和返工成本。"
 permalink: /zh/research/
 research_lang: zh
 last_modified_at: 2026-11-06
@@ -24,16 +24,17 @@ about:
   </nav>
 
   <h1>研究方向</h1>
-  <p class="research-lead"><strong>陶超凡（Chaofan Tao）是 <a href="https://www.legox.net/">LegoX</a> 与华为基础模型实验室（Huawei Foundation Model Lab）的 AI 研究员。</strong>他的研究围绕两个相互关联的主题：智能体如何在真实环境中通过行动来学习、又该如何评测它们；以及如何让模型的构建、训练和部署更便宜。他博士毕业于香港大学，关于生成式模型量化的工作获得 ACL 2022 杰出论文奖。</p>
+  <p class="research-lead">我希望智能体能从完成一次修复，走向和用户一起完成一个长期项目：理解需求、持续实现、检查结果，并在需求变化时接着做下去。这需要更可靠的学习与评测，也需要负担得起的训练和运行成本。</p>
+  <p>下面两篇文章围绕我和合作者的研究展开，也结合了我们在 <a href="https://www.legox.net/">LegoX</a> 开源项目中的实践。我想写清楚每项工作的出发点、实验带来的认识，以及仍然没有答案的部分。具体论文、代码和数据链接都放在相关讨论旁，方便继续查阅。</p>
 
   <div class="research-cards">
     <article class="research-card">
       <h2><a href="{{ '/zh/research/agentic-intelligence/' | relative_url }}">智能体编程、推理与评测</a></h2>
-      <p>智能体从“环境、经验、信号、评测”构成的闭环中学习。开源构建的代码智能体、多模态推理，以及骗不过的评测基准。</p>
+      <p>从数据、训练和评测出发，讨论智能体怎样理解变化中的需求、与用户协作，并把一个项目持续做完整。</p>
     </article>
     <article class="research-card">
       <h2><a href="{{ '/zh/research/efficient-ml-ai-infrastructure/' | relative_url }}">高效机器学习与 AI 基础设施</a></h2>
-      <p>大多数效率问题始于一个失效的假设。词表设计、模型压缩、长上下文记忆、测试时计算、容错服务与知识蒸馏。</p>
+      <p>从词表、压缩、缓存到训练与服务，讨论长期项目的计算开销、用户时间和返工成本，以及它们之间的取舍。</p>
     </article>
   </div>
 

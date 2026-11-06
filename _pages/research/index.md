@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Research"
-description: "Research by Chaofan Tao (陶超凡) in two themes: agentic coding, reasoning and evaluation; and efficient ML and AI infrastructure."
+description: "Research notes by Chaofan Tao on agents that work with users over long projects, and the learning, evaluation and infrastructure needed to make that practical."
 permalink: /research/
 research_lang: en
 last_modified_at: 2026-11-06
@@ -24,16 +24,17 @@ about:
   </nav>
 
   <h1>Research</h1>
-  <p class="research-lead"><strong>Chaofan Tao (陶超凡) is an AI researcher at <a href="https://www.legox.net/">LegoX</a> and Huawei Foundation Model Lab.</strong> His research follows two connected themes: how agents learn from acting in real environments and how to evaluate them, and how to make models cheaper to build, train and serve. He received his PhD from The University of Hong Kong, and his work on generative model quantization received an ACL 2022 Outstanding Paper Award.</p>
+  <p class="research-lead">I want agents to grow from fixing one issue to working with a user on a whole project: understanding requirements, building and checking the result, and continuing when those requirements change. That calls for reliable learning and evaluation, together with affordable training and execution.</p>
+  <p>These two essays connect research by my collaborators and me with our open-source work at <a href="https://www.legox.net/">LegoX</a>. I explain the questions behind the projects, what the experiments taught us, and what remains unresolved. Links to papers, code and data sit alongside the discussion so the evidence is easy to follow.</p>
 
   <div class="research-cards">
     <article class="research-card">
       <h2><a href="{{ '/research/agentic-intelligence/' | relative_url }}">Agentic Coding, Reasoning and Evaluation</a></h2>
-      <p>Agents learn from a loop of environment, experience, signal and evaluation. Coding agents built in the open, multimodal reasoning, and benchmarks that cannot be gamed.</p>
+      <p>From data, training and evaluation to agents that understand changing requirements, collaborate with users and sustain work on complete projects.</p>
     </article>
     <article class="research-card">
       <h2><a href="{{ '/research/efficient-ml-ai-infrastructure/' | relative_url }}">Efficient ML &amp; AI Infrastructure</a></h2>
-      <p>Most efficiency problems start with a broken assumption. Vocabulary design, compression, long-context memory, test-time compute, resilient serving and distillation.</p>
+      <p>From vocabulary, compression and caches to training and serving: the trade-offs between compute, user time and rework over long projects.</p>
     </article>
   </div>
 
