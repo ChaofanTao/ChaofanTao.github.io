@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 480" width="760" height="480" role="img" aria-labelledby="t d">
-  <title id="t">智能体学习闭环</title>
-  <desc id="d">智能体由模型和 harness 组成，它从一个四环节的闭环中学习：行动所在的环境、收集到的经验、把经验转化为学习的信号，以及检验结果的评测。</desc>
+  <title id="t">智能体的学习循环</title>
+  <desc id="d">智能体由模型和 harness 组成，它在一个由四个环节组成的循环里学习：行动所在的环境、收集到的经验、把经验转化为学习的信号，以及检验结果的评测。</desc>
   <defs>
     <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0 0L10 5L0 10z" fill="#b509ac"/>
