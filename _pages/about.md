@@ -717,7 +717,7 @@ redirect_from:
 
   <section class="home-section" id="all-publications" aria-labelledby="all-publications-heading">
     <div class="home-section-heading"><h2 id="all-publications-heading">All publications <span class="home-count">since 2022</span></h2></div>
-    <p class="home-section-description">Browse by topic. Each paper includes its full author list and a Chinese summary under “Authors &amp; 中文摘要”. Research overviews with key results: <a href="{{ '/research/coding-agents/' | relative_url }}">coding agents</a>, <a href="{{ '/research/efficient-llm/' | relative_url }}">efficient LLMs</a>, and <a href="{{ '/research/multimodal-reasoning/' | relative_url }}">multimodal reasoning</a> (<a href="{{ '/zh/research/' | relative_url }}" lang="zh">中文</a>).</p>
+    <p class="home-section-description">Browse by topic. Each paper includes its full author list and a Chinese summary under “Authors &amp; 中文摘要”. Research essays on each theme: <a href="{{ '/research/agentic-intelligence/' | relative_url }}">agentic coding, reasoning and evaluation</a> and <a href="{{ '/research/efficient-ml-ai-infrastructure/' | relative_url }}">efficient ML and AI infrastructure</a> (<a href="{{ '/zh/research/' | relative_url }}" lang="zh">中文</a>).</p>
     {% for group in site.data.homepage.groups %}
       {% assign papers = site.data.homepage.publications | where: "group", group.id %}
       <details class="home-publication-group">

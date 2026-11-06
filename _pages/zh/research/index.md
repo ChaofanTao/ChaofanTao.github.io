@@ -1,16 +1,16 @@
 ---
 layout: default
 title: "研究方向"
-description: "陶超凡（Chaofan Tao）的研究概览：端到端训练开源大模型代码智能体、高效大模型训练与推理、多模态推理与智能体。"
+description: "陶超凡（Chaofan Tao）的两个研究主题：智能体编程、推理与评测；高效机器学习与 AI 基础设施。"
 permalink: /zh/research/
 research_lang: zh
-last_modified_at: 2026-11-04
+last_modified_at: 2026-11-06
 og_image: /assets/img/og-image.png
 about:
-  - 大语言模型
+  - 智能体
   - 代码智能体
-  - 高效大模型
-  - 多模态大模型
+  - 高效机器学习
+  - AI 基础设施
 ---
 
 {% include research/styles.liquid %}
@@ -24,20 +24,16 @@ about:
   </nav>
 
   <h1>研究方向</h1>
-  <p class="research-lead"><strong>陶超凡（Chaofan Tao）是 <a href="https://www.legox.net/">LegoX</a> 与华为基础模型实验室（Huawei Foundation Model Lab）的 AI 研究员。</strong>研究覆盖三个相互关联的方向：端到端训练开源大模型代码智能体、降低大模型训练与推理成本、提升多模态模型的推理与行动能力。他博士毕业于香港大学，关于生成式模型量化的工作获得 ACL 2022 杰出论文奖。</p>
+  <p class="research-lead"><strong>陶超凡（Chaofan Tao）是 <a href="https://www.legox.net/">LegoX</a> 与华为基础模型实验室（Huawei Foundation Model Lab）的 AI 研究员。</strong>他的研究围绕两个相互关联的主题：智能体如何在真实环境中通过行动来学习、又该如何评测它们；以及如何让模型的构建、训练和部署更便宜。他博士毕业于香港大学，关于生成式模型量化的工作获得 ACL 2022 杰出论文奖。</p>
 
   <div class="research-cards">
     <article class="research-card">
-      <h2><a href="{{ '/zh/research/coding-agents/' | relative_url }}">代码智能体与智能体强化学习</a></h2>
-      <p>来自真实软件历史的可验证任务、可信的轨迹与奖励、在真实智能体 harness 内的微调与强化学习，以及智能体代码审查。</p>
+      <h2><a href="{{ '/zh/research/agentic-intelligence/' | relative_url }}">智能体编程、推理与评测</a></h2>
+      <p>智能体从“环境、经验、信号、评测”构成的闭环中学习。开源构建的代码智能体、多模态推理，以及骗不过的评测基准。</p>
     </article>
     <article class="research-card">
-      <h2><a href="{{ '/zh/research/efficient-llm/' | relative_url }}">高效大模型训练与推理</a></h2>
-      <p>词表规模选择、生成式模型压缩、低成本长上下文推理，以及更快的推理阶段计算。</p>
-    </article>
-    <article class="research-card">
-      <h2><a href="{{ '/zh/research/multimodal-reasoning/' | relative_url }}">多模态推理与智能体</a></h2>
-      <p>推理型视觉语言模型的后训练经验、自我反思、揭示真实差距的基准，以及面向机器人的代码生成。</p>
+      <h2><a href="{{ '/zh/research/efficient-ml-ai-infrastructure/' | relative_url }}">高效机器学习与 AI 基础设施</a></h2>
+      <p>大多数效率问题始于一个失效的假设。词表设计、模型压缩、长上下文记忆、测试时计算、容错服务与知识蒸馏。</p>
     </article>
   </div>
 

@@ -9,10 +9,7 @@
       "url": "https://arxiv.org/abs/2604.06861",
       "group": "agentic",
       "abstract_en": "REAgent turns issue descriptions into structured, information-rich requirements, detects and iteratively refines low-quality requirements, and uses the refined specifications to guide more accurate software patches.",
-      "abstract_zh": "REAgent将软件问题描述转化为结构化、信息丰富的需求规范，识别并迭代完善低质量需求，以引导大语言模型生成更准确的软件补丁。",
-      "topics": [
-        "coding-agents"
-      ]
+      "abstract_zh": "REAgent将软件问题描述转化为结构化、信息丰富的需求规范，识别并迭代完善低质量需求，以引导大语言模型生成更准确的软件补丁。"
     },
     {
       "title": "SWE-Lego: Pushing the Limits of Supervised Fine-tuning for Software Issue Resolving",
@@ -26,10 +23,7 @@
       "abstract_zh": "SWE-Lego提出仅用监督微调的软工代码智能体配方（真实+合成数据集+课程学习/错误掩码），并研究了软工场景的测试时扩展，将开源8B/32B模型在SWE-bench Verified上推至SOTA。",
       "selected_order": 1,
       "takeaway": "A supervised fine-tuning recipe for software issue resolution, combining verified data, error masking, and curriculum learning.",
-      "code": "https://github.com/LegoX/SWE-Lego",
-      "topics": [
-        "coding-agents"
-      ]
+      "code": "https://github.com/LegoX/SWE-Lego"
     },
     {
       "title": "LEGO-RL: Harness-Native Reinforcement Learning for Coding Agents",
@@ -42,10 +36,7 @@
       "abstract_en": "LEGO-RL trains coding agents with reinforcement learning inside unmodified native harnesses, combining token-faithful proxying with MoE routing replay, sandboxed execution with stage-wise anti-hacking defenses, and observable training with live trajectory diagnostics.",
       "abstract_zh": "LEGO-RL在不修改原生harness的前提下对代码智能体做强化学习，结合保持token一致的代理与MoE路由回放、带分阶段防作弊机制的沙箱执行，以及可实时诊断轨迹的可观测训练。",
       "code": "https://github.com/LegoX/Lego-RL",
-      "data": "https://huggingface.co/collections/Lego-X/lego-rl",
-      "topics": [
-        "coding-agents"
-      ]
+      "data": "https://huggingface.co/collections/Lego-X/lego-rl"
     },
     {
       "title": "SWE-Review: Closing the Loop on Issue Resolution with Agentic Code Review",
@@ -58,10 +49,7 @@
       "abstract_en": "SWE-Review turns one-shot patch generation into a generate-review-revise loop: a reviewer agent explores the repository, traces the root cause on its own, decides whether to accept the PR, and returns structured feedback; review trajectories also transfer to issue resolution and make test-time scaling cheaper.",
       "abstract_zh": "SWE-Review把一次性的补丁生成变为“生成-审查-修改”闭环：审查智能体独立探索仓库、追溯根因，决定是否接受PR并给出结构化反馈；审查轨迹还能迁移到问题修复，并让测试时扩展更高效。",
       "code": "https://github.com/LegoX/SWE-Review",
-      "data": "https://huggingface.co/collections/Lego-X/swe-review",
-      "topics": [
-        "coding-agents"
-      ]
+      "data": "https://huggingface.co/collections/Lego-X/swe-review"
     },
     {
       "title": "What Makes Interaction Trajectories Effective for Training Terminal Agents?",
@@ -74,10 +62,7 @@
       "abstract_en": "Using Terminal-Lego, a pipeline that turns real-world issues into environment-verified terminal tasks, the paper finds a pedagogical paradox: stronger agents are not better teachers. Environment-grounded inspect-act-verify trajectories transfer best, letting Qwen3-32B reach 24.3% on Terminal-Bench 2.0 with only 15.3k trajectories, about 30× less data than prior results.",
       "abstract_zh": "基于将真实问题转化为环境可验证终端任务的Terminal-Lego流水线，论文发现“教学悖论”：更强的智能体不一定是更好的教师。显式呈现“观察-行动-验证”的环境锚定轨迹迁移效果最好，仅用1.53万条轨迹即让Qwen3-32B在Terminal-Bench 2.0上达到24.3%，所需数据约为此前结果的1/30。",
       "code": "https://github.com/SWE-Lego/terminal-lego",
-      "data": "https://huggingface.co/datasets/SWE-Lego/Terminal-Lego-15k",
-      "topics": [
-        "coding-agents"
-      ]
+      "data": "https://huggingface.co/datasets/SWE-Lego/Terminal-Lego-15k"
     },
     {
       "title": "SwingArena: Competitive Programming Arena for Long-context GitHub Issue Solving",
@@ -89,10 +74,7 @@
       "group": "agentic",
       "abstract_en": "SwingArena is a CI-driven competitive benchmark where LLMs take turns as submitters and reviewers, paired with retrieval-augmented code generation to handle long-context, multi-language GitHub issue solving.",
       "abstract_zh": "SwingArena是一个CI驱动的测评框架，让大语言模型扮演代码的提交者和审阅者角色，配合检索增强的代码生成来处理长上下文、多编程语言的GitHub问题解决。",
-      "code": "https://github.com/menik1126/Swing-Bench",
-      "topics": [
-        "coding-agents"
-      ]
+      "code": "https://github.com/menik1126/Swing-Bench"
     },
     {
       "title": "MMSearch-Plus: Benchmarking Provenance-Aware Search for Multimodal Browsing Agents",
@@ -104,10 +86,7 @@
       "group": "agentic",
       "abstract_en": "MMSearch-Plus is a 311-task benchmark and agent framework with set-of-mark tools that require provenance-aware, vision-in-the-loop search and cross-validation under retrieval noise.",
       "abstract_zh": "MMSearch-Plus是一个包含311个任务的benchmark和多模态智能体搜索问答框架，配备set-of-mark工具，要求在检索噪声下进行可追溯、引入视觉搜索和交叉验证。",
-      "repository": "https://github.com/mmsearch-plus/MMSearch-Plus",
-      "topics": [
-        "multimodal"
-      ]
+      "repository": "https://github.com/mmsearch-plus/MMSearch-Plus"
     },
     {
       "title": "OVD: On-policy Verbal Distillation",
@@ -119,10 +98,7 @@
       "group": "agentic",
       "abstract_en": "On-policy Verbal Distillation replaces token-level matching with trajectory-level distillation using discrete teacher scores, reducing memory and improving student performance on web QA and math reasoning.",
       "abstract_zh": "On-policy Verbal Distillation用轨迹级蒸馏替代token级匹配蒸馏，使用离散的教师评分，降低内存占用并在网络搜索问答和数学推理上提升学生模型性能。",
-      "code": "https://github.com/menik1126/OVD-code",
-      "topics": [
-        "efficient-llm"
-      ]
+      "code": "https://github.com/menik1126/OVD-code"
     },
     {
       "title": "From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for Reinforcement Learning of Open-ended Generation",
@@ -134,10 +110,7 @@
       "group": "agentic",
       "abstract_en": "RLVRR turns single verifiable end rewards into ordered reference-derived reward chains (content + style) to make RL for open-ended generation more efficient and less prone to reward hacking.",
       "abstract_zh": "RLVRR将传统RL里单一的可验证终端奖励转化为有序的参考衍生奖励链（内容+风格），使开放式生成的强化学习更高效且更不易出现奖励破解。",
-      "code": "https://github.com/YJiangcm/RLVRR",
-      "topics": [
-        "coding-agents"
-      ]
+      "code": "https://github.com/YJiangcm/RLVRR"
     },
     {
       "title": "PhyX: Does Your Model Have the \"Wits\" for Physical Reasoning?",
@@ -149,29 +122,7 @@
       "group": "agentic",
       "abstract_en": "PhyX introduces a 3K-question multimodal benchmark spanning six physics domains to test physics-grounded reasoning, revealing large gaps between top models and human experts.",
       "abstract_zh": "PhyX引入一个包含3000个问题的多模态基准，覆盖六个物理领域，用于测试基于物理的推理，观察到顶级模型与人类专家之间的较大差距。",
-      "code": "https://github.com/killthefullmoon/PhyX",
-      "topics": [
-        "multimodal"
-      ]
-    },
-    {
-      "title": "Scaling Laws with Vocabulary: Larger Models Deserve Larger Vocabularies",
-      "authors": "Chaofan Tao, Qian Liu, Longxu Dou, Niklas Muennighoff, Zhongwei Wan, Ping Luo, Min Lin, Ngai Wong",
-      "short_authors": "Chaofan Tao, Qian Liu, Longxu Dou, et al.",
-      "year": 2024,
-      "venue": "NeurIPS",
-      "url": "https://arxiv.org/abs/2407.13623",
-      "group": "agentic",
-      "abstract_en": "The paper derives compute-optimal vocabulary scaling laws and shows larger models benefit from larger vocabularies, improving downstream accuracy at fixed FLOPs.",
-      "abstract_zh": "推导了计算最优的词表规模扩展规律，证明更大模型需要更大词表，在相同计算量下提升下游任务准确率。",
-      "selected_order": 2,
-      "takeaway": "Compute-optimal vocabulary scaling connects tokenizer design with model size and training budgets.",
-      "code": "https://github.com/sail-sg/scaling-with-vocab",
-      "demo": "https://huggingface.co/spaces/sail/scaling-with-vocab-demo",
-      "slides": "https://nips.cc/media/neurips-2024/Slides/93395.pdf",
-      "topics": [
-        "efficient-llm"
-      ]
+      "code": "https://github.com/killthefullmoon/PhyX"
     },
     {
       "title": "RoboCodeX: Multimodal Code Generation for Robotic Behavior Synthesis",
@@ -182,11 +133,7 @@
       "url": "https://arxiv.org/abs/2402.16117",
       "group": "agentic",
       "abstract_en": "RoboCodeX is a tree-structured multimodal code generation framework that decomposes high-level instructions into object-centric manipulation units with affordance and safety constraints, generalizing across robot platforms and reaching state-of-the-art results on manipulation and navigation tasks in simulation and on real robots.",
-      "abstract_zh": "RoboCodeX提出树状结构的多模态代码生成框架，将高层指令分解为带有可供性与安全约束的以物体为中心的操作单元，借助代码生成实现跨机器人平台泛化，在仿真与真实机器人的操作和导航任务上取得领先结果。",
-      "topics": [
-        "coding-agents",
-        "multimodal"
-      ]
+      "abstract_zh": "RoboCodeX提出树状结构的多模态代码生成框架，将高层指令分解为带有可供性与安全约束的以物体为中心的操作单元，借助代码生成实现跨机器人平台泛化，在仿真与真实机器人的操作和导航任务上取得领先结果。"
     },
     {
       "title": "Autoregressive Models in Vision: A Survey",
@@ -198,10 +145,7 @@
       "group": "agentic",
       "abstract_en": "A comprehensive survey of visual autoregressive modeling, covering representation strategies and applications across image, video, 3D, and multimodal generation, plus open challenges.",
       "abstract_zh": "全面综述视觉自回归模型的建模方法，涵盖表示策略及其在图像、视频、3D和多模态生成中的应用，并讨论开放挑战。",
-      "repository": "https://github.com/ChaofanTao/Autoregressive-Models-in-Vision-Survey",
-      "topics": [
-        "multimodal"
-      ]
+      "repository": "https://github.com/ChaofanTao/Autoregressive-Models-in-Vision-Survey"
     },
     {
       "title": "SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning",
@@ -213,10 +157,7 @@
       "group": "agentic",
       "abstract_en": "SRPO is a reflection-aware RL framework that teaches MLLMs self-reflection and then optimizes concise, meaningful reflections with GRPO-style rewards to improve multimodal reasoning.",
       "abstract_zh": "SRPO是一个反思感知的多模态RL框架，先训练多模态大模型学会自我反思，再用GRPO式奖励优化简洁有效的反思，从而提升多模态推理能力。",
-      "code": "https://github.com/SUSTechBruce/SRPO_MLLMs",
-      "topics": [
-        "multimodal"
-      ]
+      "code": "https://github.com/SUSTechBruce/SRPO_MLLMs"
     },
     {
       "title": "The Synergy Dilemma of Long-CoT SFT and RL: Investigating Post-training Techniques for Reasoning VLMs",
@@ -228,10 +169,7 @@
       "group": "agentic",
       "abstract_en": "The study compares long-CoT SFT vs. RL for reasoning VLMs and finds their combination often fails to yield additive gains, instead trading off accuracy, verbosity, and style.",
       "abstract_zh": "比较长链思维监督微调（SFT）与强化学习（RL）在视觉语言模型推理中的作用，发现两者组合往往无法带来叠加收益，而是在准确率、冗长程度和风格之间权衡。",
-      "repository": "https://github.com/JierunChen/SFT-RL-SynergyDilemma",
-      "topics": [
-        "multimodal"
-      ]
+      "repository": "https://github.com/JierunChen/SFT-RL-SynergyDilemma"
     },
     {
       "title": "NAVERO: Unlocking Fine-Grained Semantics for Video-Language Compositionality",
@@ -242,10 +180,7 @@
       "url": "https://arxiv.org/abs/2408.09511",
       "group": "agentic",
       "abstract_en": "NAVERO introduces the AARO benchmark and negative-text augmentation with a negative-augmented matching loss to improve video-language compositional understanding and retrieval.",
-      "abstract_zh": "NAVERO提出AARO基准，并通过负文本增强和负增强匹配损失，提升视频-语言模型对组合语义的理解和检索能力。",
-      "topics": [
-        "multimodal"
-      ]
+      "abstract_zh": "NAVERO提出AARO基准，并通过负文本增强和负增强匹配损失，提升视频-语言模型对组合语义的理解和检索能力。"
     },
     {
       "title": "Prefilling-dLLM: Predictive Prefilling for Long-Context Inference in Diffusion Language Models",
@@ -257,10 +192,7 @@
       "group": "efficient",
       "abstract_en": "Prefilling-dLLM separates prefilling from decoding without training: it caches prefix KV representations by chunk, selects query-relevant chunks and tokens, and reuses the sparse cache to accelerate long-context diffusion language model inference.",
       "abstract_zh": "Prefilling-dLLM无需额外训练，通过分块预填充缓存前缀KV表示，再选择与查询相关的文本块及块内关键token，并在去噪解码中复用稀疏缓存，从而降低扩散语言模型长上下文推理中的重复计算。",
-      "code": "https://github.com/menik1126/Prefilling-dLLM",
-      "topics": [
-        "efficient-llm"
-      ]
+      "code": "https://github.com/menik1126/Prefilling-dLLM"
     },
     {
       "title": "ATTS: Asynchronous Test-Time Scaling via Conformal Prediction",
@@ -272,10 +204,7 @@
       "group": "efficient",
       "abstract_en": "ATTS is an asynchronous, conformal-prediction-based test-time scaling method that cuts synchronization overhead and accelerates scaling with statistical guarantees and no accuracy loss.",
       "abstract_zh": "ATTS是一种基于一致性预测的异步测试时扩展方法，减少同步开销，在尽可能最小化准确率损失的情况下加速扩展。",
-      "code": "https://github.com/menik1126/Asynchronous-Test-Time-Scaling",
-      "topics": [
-        "efficient-llm"
-      ]
+      "code": "https://github.com/menik1126/Asynchronous-Test-Time-Scaling"
     },
     {
       "title": "UNCOMP: Can Matrix Entropy Uncover Sparsity? - A Compressor Design from an Uncertainty-Aware Perspective",
@@ -287,10 +216,7 @@
       "group": "efficient",
       "abstract_en": "UNComp uses uncertainty (via truncated matrix entropy) to uncover KV-cache sparsity and perform adaptive compression for long-context inference, greatly shrinking cache while boosting throughput.",
       "abstract_zh": "UNComp使用不确定性（通过截断矩阵熵）来发现KV缓存的稀疏性，并对长上下文推理进行自适应压缩，大幅缩小缓存同时提升吞吐量。",
-      "code": "https://github.com/menik1126/UNComp",
-      "topics": [
-        "efficient-llm"
-      ]
+      "code": "https://github.com/menik1126/UNComp"
     },
     {
       "title": "Find Your Optimal Teacher: Personalized Data Synthesis via Router-Guided Multi-Teacher Distillation",
@@ -302,10 +228,7 @@
       "group": "efficient",
       "abstract_en": "PerSyn \"routes then generates\" by assigning each prompt to its best teacher via a router that considers student learnability and teacher quality, improving synthetic-data distillation efficiency.",
       "abstract_zh": "PerSyn采用\"先路由后生成\"策略，通过考虑学生学习能力和教师质量的路由器为每个提示分配最佳教师，提高合成数据蒸馏效率。",
-      "code": "https://github.com/rattlesnakey/PerSyn",
-      "topics": [
-        "efficient-llm"
-      ]
+      "code": "https://github.com/rattlesnakey/PerSyn"
     },
     {
       "title": "AnchorTP: Resilient LLM Inference with State-Preserving Elastic Tensor Parallelism",
@@ -316,10 +239,23 @@
       "url": "https://arxiv.org/abs/2511.11617",
       "group": "efficient",
       "abstract_en": "AnchorTP provides state-preserving elastic tensor parallelism with a GPU-resident daemon and bandwidth-aware migration planning, enabling fast recovery from single-GPU failures.",
-      "abstract_zh": "AnchorTP提供状态保持的弹性张量并行，通过GPU常驻守护进程和带宽感知的迁移规划，实现单GPU故障场景的快速恢复。",
-      "topics": [
-        "efficient-llm"
-      ]
+      "abstract_zh": "AnchorTP提供状态保持的弹性张量并行，通过GPU常驻守护进程和带宽感知的迁移规划，实现单GPU故障场景的快速恢复。"
+    },
+    {
+      "title": "Scaling Laws with Vocabulary: Larger Models Deserve Larger Vocabularies",
+      "authors": "Chaofan Tao, Qian Liu, Longxu Dou, Niklas Muennighoff, Zhongwei Wan, Ping Luo, Min Lin, Ngai Wong",
+      "short_authors": "Chaofan Tao, Qian Liu, Longxu Dou, et al.",
+      "year": 2024,
+      "venue": "NeurIPS",
+      "url": "https://arxiv.org/abs/2407.13623",
+      "group": "efficient",
+      "abstract_en": "The paper derives compute-optimal vocabulary scaling laws and shows larger models benefit from larger vocabularies, improving downstream accuracy at fixed FLOPs.",
+      "abstract_zh": "推导了计算最优的词表规模扩展规律，证明更大模型需要更大词表，在相同计算量下提升下游任务准确率。",
+      "selected_order": 2,
+      "takeaway": "Compute-optimal vocabulary scaling connects tokenizer design with model size and training budgets.",
+      "code": "https://github.com/sail-sg/scaling-with-vocab",
+      "demo": "https://huggingface.co/spaces/sail/scaling-with-vocab-demo",
+      "slides": "https://nips.cc/media/neurips-2024/Slides/93395.pdf"
     },
     {
       "title": "Dynamic Discriminative Operations for Efficient Long-Context Inference of Large Language Models",
@@ -331,10 +267,7 @@
       "group": "efficient",
       "abstract_en": "D2O dynamically compresses KV cache at layer and token levels with allocation and recall/merge compensation, saving memory and improving long-context throughput without fine-tuning.",
       "abstract_zh": "D2O在层和token级别动态压缩KV缓存，通过分配和召回/合并补偿，无需微调即可节省内存并提升长上下文吞吐量。",
-      "code": "https://github.com/AIoT-MLSys-Lab/D2O",
-      "topics": [
-        "efficient-llm"
-      ]
+      "code": "https://github.com/AIoT-MLSys-Lab/D2O"
     },
     {
       "title": "CrossGET: Cross-Guided Ensemble of Tokens for Accelerating Vision-Language Transformers",
@@ -346,11 +279,7 @@
       "group": "efficient",
       "abstract_en": "CrossGET accelerates vision-language Transformers by cross-modally matching and ensembling tokens with efficient soft matching, reducing compute with minimal accuracy loss.",
       "abstract_zh": "CrossGET通过跨模态匹配和集成token，使用相似token匹配和合并加速视觉-语言Transformer，在最小准确率损失下减少计算量。",
-      "code": "https://github.com/sdc17/CrossGET",
-      "topics": [
-        "efficient-llm",
-        "multimodal"
-      ]
+      "code": "https://github.com/sdc17/CrossGET"
     },
     {
       "title": "Rethinking Kullback-Leibler Divergence in Knowledge Distillation for Large Language Models",
@@ -362,10 +291,7 @@
       "group": "efficient",
       "abstract_en": "It shows forward and reverse KL behave similarly in LLM distillation with enough training but emphasize head vs. tail early; Adaptive KL combines them to improve generation quality and diversity.",
       "abstract_zh": "研究表明在充分训练下，前向和反向KL在大语言模型蒸馏中表现相似，但早期分别关注分布头部和尾部；自适应KL结合两种蒸馏方式的优势，以提升模型的生成质量和多样性。",
-      "code": "https://github.com/wutaiqiang/LLM_KD_AKL",
-      "topics": [
-        "efficient-llm"
-      ]
+      "code": "https://github.com/wutaiqiang/LLM_KD_AKL"
     },
     {
       "title": "Structured Pruning for Efficient Generative Pre-trained Language Models",
@@ -376,10 +302,7 @@
       "url": "https://doi.org/10.18653/v1/2023.findings-acl.692",
       "group": "efficient",
       "abstract_en": "It proposes structured pruning across multiple generative-PLM components using learnable masks and sparse training to extract size-flexible subnets with significant speedups.",
-      "abstract_zh": "提出对生成式预训练语言模型多个组件的结构化剪枝，使用可学习掩码和稀疏训练提取尺寸灵活的子网络，实现显著加速。",
-      "topics": [
-        "efficient-llm"
-      ]
+      "abstract_zh": "提出对生成式预训练语言模型多个组件的结构化剪枝，使用可学习掩码和稀疏训练提取尺寸灵活的子网络，实现显著加速。"
     },
     {
       "title": "Compression of Generative Pre-trained Language Models via Quantization",
@@ -394,10 +317,7 @@
       "selected_order": 3,
       "takeaway": "Quantization methods that compress generative language models while preserving generation quality.",
       "award": "ACL 2022 Outstanding Paper Award",
-      "award_url": "https://aclanthology.org/2022.acl-long.331/",
-      "topics": [
-        "efficient-llm"
-      ]
+      "award_url": "https://aclanthology.org/2022.acl-long.331/"
     },
     {
       "title": "UPop: Unified and Progressive Pruning for Compressing Vision-Language Transformers",
@@ -409,11 +329,7 @@
       "group": "efficient",
       "abstract_en": "UPop is a unified progressive pruning framework that searches multimodal subnets in a continuous space and progressively retrains to achieve high compression for vision-language Transformers.",
       "abstract_zh": "UPop是一个统一的渐进式剪枝框架，在连续空间中搜索多模态子网络并逐步重训练，实现视觉-语言Transformer的高压缩率。",
-      "code": "https://github.com/sdc17/UPop",
-      "topics": [
-        "efficient-llm",
-        "multimodal"
-      ]
+      "code": "https://github.com/sdc17/UPop"
     }
   ],
   "groups": [

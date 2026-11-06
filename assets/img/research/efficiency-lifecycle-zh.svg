@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" role="img" aria-labelledby="t d">
+  <title id="t">贯穿模型生命周期的效率</title>
+  <desc id="d">模型生命周期的五个阶段：设计、压缩、记忆、计算与服务、迁移，每个阶段对应一个被我们的工作证明并不成立的默认假设。</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#b509ac"/>
+    </marker>
+  </defs>
+  <style>
+    text{font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC","WenQuanYi Zen Hei",Inter,-apple-system,Roboto,sans-serif;fill:#1f2328}
+    .h{font-size:17px;font-weight:600}
+    .l{font-size:11px;font-weight:600;letter-spacing:.1em;fill:#8a8f98}
+    .q{font-size:13px;fill:#4a525c}
+    .w{font-size:11.5px;fill:#8a1f84}
+    .box{fill:#fff;stroke:#b509ac;stroke-width:1.5}
+    .arr{stroke:#b509ac;stroke-width:2}
+  </style>
+  <rect width="960" height="300" rx="14" fill="#f7f7fa"/>
+
+  <g transform="translate(20 40)">
+    <rect class="box" width="166" height="220" rx="10"/>
+    <text x="83" y="33" text-anchor="middle" class="h">1 · 设计</text>
+    <text x="83" y="64" text-anchor="middle" class="l">默认假设</text>
+    <text x="83" y="87" text-anchor="middle" class="q">“分词器是</text>
+    <text x="83" y="105" text-anchor="middle" class="q">固定的选择”</text>
+    <text x="83" y="176" text-anchor="middle" class="w">词表扩展定律</text>
+  </g>
+  <g transform="translate(206 40)">
+    <rect class="box" width="166" height="220" rx="10"/>
+    <text x="83" y="33" text-anchor="middle" class="h">2 · 压缩</text>
+    <text x="83" y="64" text-anchor="middle" class="l">默认假设</text>
+    <text x="83" y="87" text-anchor="middle" class="q">“模型各部分</text>
+    <text x="83" y="105" text-anchor="middle" class="q">都一样”</text>
+    <text x="83" y="176" text-anchor="middle" class="w">量化 · 剪枝</text>
+    <text x="83" y="192" text-anchor="middle" class="w">UPop · CrossGET</text>
+  </g>
+  <g transform="translate(392 40)">
+    <rect class="box" width="166" height="220" rx="10"/>
+    <text x="83" y="33" text-anchor="middle" class="h">3 · 记忆</text>
+    <text x="83" y="64" text-anchor="middle" class="l">默认假设</text>
+    <text x="83" y="87" text-anchor="middle" class="q">“缓存里每个 token</text>
+    <text x="83" y="105" text-anchor="middle" class="q">同样重要”</text>
+    <text x="83" y="176" text-anchor="middle" class="w">D2O · UNComp</text>
+    <text x="83" y="192" text-anchor="middle" class="w">Prefilling-dLLM</text>
+  </g>
+  <g transform="translate(578 40)">
+    <rect class="box" width="166" height="220" rx="10"/>
+    <text x="83" y="33" text-anchor="middle" class="h">4 · 计算与服务</text>
+    <text x="83" y="64" text-anchor="middle" class="l">默认假设</text>
+    <text x="83" y="87" text-anchor="middle" class="q">“协调没有成本，</text>
+    <text x="83" y="105" text-anchor="middle" class="q">GPU 不会故障”</text>
+    <text x="83" y="176" text-anchor="middle" class="w">ATTS · AnchorTP</text>
+    <text x="83" y="192" text-anchor="middle" class="w">智能体 RL 基础设施</text>
+  </g>
+  <g transform="translate(764 40)">
+    <rect class="box" width="166" height="220" rx="10"/>
+    <text x="83" y="33" text-anchor="middle" class="h">5 · 迁移</text>
+    <text x="83" y="64" text-anchor="middle" class="l">默认假设</text>
+    <text x="83" y="87" text-anchor="middle" class="q">“最强的教师</text>
+    <text x="83" y="105" text-anchor="middle" class="q">教得最好”</text>
+    <text x="83" y="176" text-anchor="middle" class="w">自适应 KL</text>
+    <text x="83" y="192" text-anchor="middle" class="w">PerSyn</text>
+  </g>
+
+  <line class="arr" x1="188" y1="150" x2="203" y2="150" marker-end="url(#a)"/>
+  <line class="arr" x1="374" y1="150" x2="389" y2="150" marker-end="url(#a)"/>
+  <line class="arr" x1="560" y1="150" x2="575" y2="150" marker-end="url(#a)"/>
+  <line class="arr" x1="746" y1="150" x2="761" y2="150" marker-end="url(#a)"/>
+</svg>

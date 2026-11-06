@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 480" width="760" height="480" role="img" aria-labelledby="t d">
+  <title id="t">The agent learning loop</title>
+  <desc id="d">An agent, made of a model and its harness, learns from a loop of four parts: the environment it acts in, the experience it collects, the signal that turns experience into learning, and the evaluation that checks the result.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#b509ac"/>
+    </marker>
+  </defs>
+  <style>
+    text{font-family:Inter,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;fill:#1f2328}
+    .h{font-size:16px;font-weight:600}
+    .s{font-size:12.5px;fill:#4a525c}
+    .w{font-size:11.5px;fill:#8a1f84}
+    .box{fill:#fff;stroke:#b509ac;stroke-width:1.5}
+    .arc{fill:none;stroke:#b509ac;stroke-width:2}
+  </style>
+  <rect width="760" height="480" rx="14" fill="#f7f7fa"/>
+  <circle cx="380" cy="240" r="80" fill="#fff" stroke="#d6d8de" stroke-width="1.5"/>
+  <text x="380" y="234" text-anchor="middle" class="h">The agent</text>
+  <text x="380" y="256" text-anchor="middle" class="s">model + harness</text>
+
+  <rect class="box" x="265" y="28" width="230" height="96" rx="10"/>
+  <text x="380" y="55" text-anchor="middle" class="h">1 · Environment</text>
+  <text x="380" y="78" text-anchor="middle" class="s">harness, sandbox, web, robot</text>
+  <text x="380" y="104" text-anchor="middle" class="w">Lego-RL · MMSearch-Plus · RoboCodeX</text>
+
+  <rect class="box" x="505" y="192" width="230" height="96" rx="10"/>
+  <text x="620" y="219" text-anchor="middle" class="h">2 · Experience</text>
+  <text x="620" y="242" text-anchor="middle" class="s">verified tasks and trajectories</text>
+  <text x="620" y="268" text-anchor="middle" class="w">LegoFlow · SWE-Lego · Terminal-Lego</text>
+
+  <rect class="box" x="265" y="356" width="230" height="96" rx="10"/>
+  <text x="380" y="383" text-anchor="middle" class="h">3 · Signal</text>
+  <text x="380" y="406" text-anchor="middle" class="s">imitation, rewards, feedback</text>
+  <text x="380" y="432" text-anchor="middle" class="w" style="font-size:10.5px">SWE-Lego · Lego-RL · RLVRR · OVD · SRPO</text>
+
+  <rect class="box" x="25" y="192" width="230" height="96" rx="10"/>
+  <text x="140" y="219" text-anchor="middle" class="h">4 · Evaluation</text>
+  <text x="140" y="242" text-anchor="middle" class="s">benchmarks and review</text>
+  <text x="140" y="268" text-anchor="middle" class="w">SwingArena · SWE-Review · PhyX</text>
+
+  <path class="arc" d="M497 76 Q620 76 620 186" marker-end="url(#a)"/>
+  <path class="arc" d="M620 292 Q620 404 501 404" marker-end="url(#a)"/>
+  <path class="arc" d="M263 404 Q140 404 140 294" marker-end="url(#a)"/>
+  <path class="arc" d="M140 188 Q140 76 259 76" marker-end="url(#a)"/>
+</svg>

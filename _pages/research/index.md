@@ -1,16 +1,16 @@
 ---
 layout: default
 title: "Research"
-description: "Research overviews by Chaofan Tao (陶超凡): training open LLM coding agents, efficient LLM training and inference, and multimodal reasoning and agents."
+description: "Research by Chaofan Tao (陶超凡) in two themes: agentic coding, reasoning and evaluation; and efficient ML and AI infrastructure."
 permalink: /research/
 research_lang: en
-last_modified_at: 2026-11-04
+last_modified_at: 2026-11-06
 og_image: /assets/img/og-image.png
 about:
-  - Large language models
+  - Agentic intelligence
   - Coding agents
-  - Efficient LLMs
-  - Multimodal LLMs
+  - Efficient machine learning
+  - AI infrastructure
 ---
 
 {% include research/styles.liquid %}
@@ -24,20 +24,16 @@ about:
   </nav>
 
   <h1>Research</h1>
-  <p class="research-lead"><strong>Chaofan Tao (陶超凡) is an AI researcher at <a href="https://www.legox.net/">LegoX</a> and Huawei Foundation Model Lab.</strong> His research spans three connected areas: training open LLM coding agents end to end, making LLMs cheaper to train and serve, and improving how multimodal models reason and act. He received his PhD from The University of Hong Kong, and his work on generative model quantization received an ACL 2022 Outstanding Paper Award.</p>
+  <p class="research-lead"><strong>Chaofan Tao (陶超凡) is an AI researcher at <a href="https://www.legox.net/">LegoX</a> and Huawei Foundation Model Lab.</strong> His research follows two connected themes: how agents learn from acting in real environments and how to evaluate them, and how to make models cheaper to build, train and serve. He received his PhD from The University of Hong Kong, and his work on generative model quantization received an ACL 2022 Outstanding Paper Award.</p>
 
   <div class="research-cards">
     <article class="research-card">
-      <h2><a href="{{ '/research/coding-agents/' | relative_url }}">Coding agents and agentic RL</a></h2>
-      <p>Verified tasks from real software history, trustworthy trajectories and rewards, fine-tuning and RL inside real agent harnesses, and agentic code review.</p>
+      <h2><a href="{{ '/research/agentic-intelligence/' | relative_url }}">Agentic Coding, Reasoning and Evaluation</a></h2>
+      <p>Agents learn from a loop of environment, experience, signal and evaluation. Coding agents built in the open, multimodal reasoning, and benchmarks that cannot be gamed.</p>
     </article>
     <article class="research-card">
-      <h2><a href="{{ '/research/efficient-llm/' | relative_url }}">Efficient LLM training and inference</a></h2>
-      <p>Choosing vocabulary size, compressing generative models, cheaper long-context inference, and faster reasoning-time compute.</p>
-    </article>
-    <article class="research-card">
-      <h2><a href="{{ '/research/multimodal-reasoning/' | relative_url }}">Multimodal reasoning and agents</a></h2>
-      <p>Post-training insights for reasoning VLMs, self-reflection, benchmarks that expose real gaps, and code generation for robots.</p>
+      <h2><a href="{{ '/research/efficient-ml-ai-infrastructure/' | relative_url }}">Efficient ML &amp; AI Infrastructure</a></h2>
+      <p>Most efficiency problems start with a broken assumption. Vocabulary design, compression, long-context memory, test-time compute, resilient serving and distillation.</p>
     </article>
   </div>
 

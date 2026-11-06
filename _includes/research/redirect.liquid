@@ -1,0 +1,14 @@
+{% assign target = page.redirect_to | prepend: site.url %}<!doctype html>
+<html lang="{% if page.redirect_to contains '/zh/' %}zh-Hans{% else %}en{% endif %}">
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting…</title>
+    <link rel="canonical" href="{{ target }}">
+    <meta name="robots" content="noindex">
+    <meta http-equiv="refresh" content="0; url={{ target }}">
+  </head>
+  <body>
+    <p>This page has moved to <a href="{{ target }}">{{ target }}</a>.</p>
+    <script>location.replace({{ target | jsonify }} + location.hash);</script>
+  </body>
+</html>
