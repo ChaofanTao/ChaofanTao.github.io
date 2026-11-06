@@ -30,7 +30,7 @@ about:
 
   <h1>Efficient ML &amp; AI Infrastructure</h1>
   <p class="research-dek">In my experience, most efficiency problems start with an assumption that quietly stopped being true. This page follows a model from design to serving and looks at the assumption each piece of our work takes apart.</p>
-  <p class="research-meta">By <a href="{{ '/' | relative_url }}">Chaofan Tao (陶超凡)</a>, with collaborators · Last updated <time datetime="{{ page.last_modified_at | date: '%Y-%m-%d' }}">{{ page.last_modified_at | date: "%B %-d, %Y" }}</time></p>
+  <p class="research-meta">By <a href="{{ '/' | relative_url }}">Chaofan Tao (陶超凡)</a> · Last updated <time datetime="{{ page.last_modified_at | date: '%Y-%m-%d' }}">{{ page.last_modified_at | date: "%B %-d, %Y" }}</time></p>
 
   <p>Efficiency is usually framed as a trade: give up a little quality to save compute or memory. The bigger wins I've seen come from somewhere else. A method fails, or wastes resources, because it rests on an assumption that made sense when it was designed and no longer holds. The tokenizer can be fixed before you scale. Every part of a network handles compression the same way. Every cached token is equally important. Waiting for synchronization is free. GPUs don't fail. The strongest teacher teaches best.</p>
   <p>Spotting the broken assumption is usually the hard part. Once the diagnosis is right, the fix often turns out to be simple. I've organized this page by where in a model's life each assumption lives. The quantization work in the second section received an ACL 2022 Outstanding Paper Award.</p>
