@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" role="img" aria-labelledby="t d">
   <title id="t">贯穿模型生命周期的效率</title>
-  <desc id="d">模型生命周期的五个阶段：设计、压缩、记忆、计算与服务、迁移，每个阶段对应一个被我们的工作证明并不成立的默认假设。</desc>
+  <desc id="d">五类相互联系的效率问题：设计、压缩、记忆、计算与服务、迁移，每一类都需要考虑资源应该怎样分配。</desc>
   <defs>
     <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0 0L10 5L0 10z" fill="#b509ac"/>
@@ -20,44 +20,44 @@
   <g transform="translate(20 40)">
     <rect class="box" width="166" height="220" rx="10"/>
     <text x="83" y="33" text-anchor="middle" class="h">1 · 设计</text>
-    <text x="83" y="64" text-anchor="middle" class="l">默认假设</text>
-    <text x="83" y="87" text-anchor="middle" class="q">“分词器是</text>
-    <text x="83" y="105" text-anchor="middle" class="q">固定的选择”</text>
+    <text x="83" y="64" text-anchor="middle" class="l">需要回答</text>
+    <text x="83" y="87" text-anchor="middle" class="q">词表该有多大，</text>
+    <text x="83" y="105" text-anchor="middle" class="q">才适合当前预算？</text>
     <text x="83" y="176" text-anchor="middle" class="w">词表扩展定律</text>
   </g>
   <g transform="translate(206 40)">
     <rect class="box" width="166" height="220" rx="10"/>
     <text x="83" y="33" text-anchor="middle" class="h">2 · 压缩</text>
-    <text x="83" y="64" text-anchor="middle" class="l">默认假设</text>
-    <text x="83" y="87" text-anchor="middle" class="q">“模型各部分</text>
-    <text x="83" y="105" text-anchor="middle" class="q">都一样”</text>
+    <text x="83" y="64" text-anchor="middle" class="l">需要回答</text>
+    <text x="83" y="87" text-anchor="middle" class="q">压缩以后，</text>
+    <text x="83" y="105" text-anchor="middle" class="q">哪些区别不能丢？</text>
     <text x="83" y="176" text-anchor="middle" class="w">量化 · 剪枝</text>
     <text x="83" y="192" text-anchor="middle" class="w">UPop · CrossGET</text>
   </g>
   <g transform="translate(392 40)">
     <rect class="box" width="166" height="220" rx="10"/>
     <text x="83" y="33" text-anchor="middle" class="h">3 · 记忆</text>
-    <text x="83" y="64" text-anchor="middle" class="l">默认假设</text>
-    <text x="83" y="87" text-anchor="middle" class="q">“缓存里每个 token</text>
-    <text x="83" y="105" text-anchor="middle" class="q">同样重要”</text>
+    <text x="83" y="64" text-anchor="middle" class="l">需要回答</text>
+    <text x="83" y="87" text-anchor="middle" class="q">哪些信息</text>
+    <text x="83" y="105" text-anchor="middle" class="q">以后还会用到？</text>
     <text x="83" y="176" text-anchor="middle" class="w">D2O · UNComp</text>
     <text x="83" y="192" text-anchor="middle" class="w">Prefilling-dLLM</text>
   </g>
   <g transform="translate(578 40)">
     <rect class="box" width="166" height="220" rx="10"/>
     <text x="83" y="33" text-anchor="middle" class="h">4 · 计算与服务</text>
-    <text x="83" y="64" text-anchor="middle" class="l">默认假设</text>
-    <text x="83" y="87" text-anchor="middle" class="q">“协调没有成本，</text>
-    <text x="83" y="105" text-anchor="middle" class="q">GPU 不会故障”</text>
+    <text x="83" y="64" text-anchor="middle" class="l">需要回答</text>
+    <text x="83" y="87" text-anchor="middle" class="q">时间花在了哪里，</text>
+    <text x="83" y="105" text-anchor="middle" class="q">故障后怎样继续？</text>
     <text x="83" y="176" text-anchor="middle" class="w">ATTS · AnchorTP</text>
     <text x="83" y="192" text-anchor="middle" class="w">智能体 RL 基础设施</text>
   </g>
   <g transform="translate(764 40)">
     <rect class="box" width="166" height="220" rx="10"/>
     <text x="83" y="33" text-anchor="middle" class="h">5 · 迁移</text>
-    <text x="83" y="64" text-anchor="middle" class="l">默认假设</text>
-    <text x="83" y="87" text-anchor="middle" class="q">“最强的教师</text>
-    <text x="83" y="105" text-anchor="middle" class="q">教得最好”</text>
+    <text x="83" y="64" text-anchor="middle" class="l">需要回答</text>
+    <text x="83" y="87" text-anchor="middle" class="q">这些示范，</text>
+    <text x="83" y="105" text-anchor="middle" class="q">学生能学会什么？</text>
     <text x="83" y="176" text-anchor="middle" class="w">自适应 KL</text>
     <text x="83" y="192" text-anchor="middle" class="w">PerSyn</text>
   </g>
