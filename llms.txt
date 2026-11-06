@@ -26,8 +26,8 @@ Key facts:
 
 ## Research overviews
 
-- [Agentic Coding, Reasoning and Evaluation]({{ site.url }}/research/agentic-intelligence/): research on agent environments, useful demonstrations, training consistency, and trustworthy evaluation, with a forward-looking discussion of long tasks, user collaboration and complete repository generation. Covers LegoFlow, SWE-Lego, Terminal-Lego, Lego-RL, SWE-Review, multimodal reasoning and robotics. Distinguishes reported experiments from proposed research directions. Chinese: {{ site.url }}/zh/research/agentic-intelligence/
-- [Efficient ML & AI Infrastructure]({{ site.url }}/research/efficient-ml-ai-infrastructure/): vocabulary design, quantization and pruning (including the ACL 2022 Outstanding Paper), KV cache compression, asynchronous training and inference, recovery and distillation. Discusses compute, user time and rework as separate costs in long projects, with attention to matched-quality comparisons and runtime state. Chinese: {{ site.url }}/zh/research/efficient-ml-ai-infrastructure/
+- [Agentic Intelligence]({{ site.url }}/research/agentic-intelligence/): connects work from different stages and collaborations in multimodal reasoning, robotics, agent data, training and evaluation. Recent LegoX projects form part of this history. Discusses multi-agent coordination, AI for AI and recursive self-improvement as open research questions, with explicit attribution to other teams' frontier work. Chinese: {{ site.url }}/zh/research/agentic-intelligence/
+- [Efficient ML & AI Infrastructure]({{ site.url }}/research/efficient-ml-ai-infrastructure/): covers quantization and pruning (including the ACL 2022 Outstanding Paper), vocabulary scaling, distillation, caches, training and inference systems. Explores how efficiency could support autonomous research and successive self-improvement, distinguishing local speedups, task completion and improvements in the research process. Chinese: {{ site.url }}/zh/research/efficient-ml-ai-infrastructure/
 
 ## Projects (LegoX)
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Research"
-description: "Research notes by Chaofan Tao on agents that work with users over long projects, and the learning, evaluation and infrastructure needed to make that practical."
+description: "Research by Chaofan Tao across efficient machine learning, multimodal reasoning and agents, with open questions about multi-agent systems, AI for AI and recursive self-improvement."
 permalink: /research/
 research_lang: en
 last_modified_at: 2026-11-06
@@ -11,6 +11,9 @@ about:
   - Coding agents
   - Efficient machine learning
   - AI infrastructure
+  - Multi-agent systems
+  - AI for AI
+  - Recursive self-improvement
 ---
 
 {% include research/styles.liquid %}
@@ -24,17 +27,17 @@ about:
   </nav>
 
   <h1>Research</h1>
-  <p class="research-lead">I want agents to grow from fixing one issue to working with a user on a whole project: understanding requirements, building and checking the result, and continuing when those requirements change. That calls for reliable learning and evaluation, together with affordable training and execution.</p>
-  <p>These two essays connect research by my collaborators and me with our open-source work at <a href="https://www.legox.net/">LegoX</a>. I explain the questions behind the projects, what the experiments taught us, and what remains unresolved. Links to papers, code and data sit alongside the discussion so the evidence is easy to follow.</p>
+  <p class="research-lead">My research asks how agents can understand their environment, learn from acting in it, and become more capable of autonomous exploration. Further questions follow: can multiple agents work together on complex problems, and can AI help improve models, learning methods and the research process itself?</p>
+  <p>The work here spans different stages of my research and different collaborations: model compression and efficient learning, multimodal reasoning, robotics, and agent data, training and evaluation. Recent open-source projects at <a href="https://www.legox.net/">LegoX</a> form one part of that history. These essays connect the findings with open questions about multi-agent systems, AI for AI and recursive self-improvement.</p>
 
   <div class="research-cards">
     <article class="research-card">
-      <h2><a href="{{ '/research/agentic-intelligence/' | relative_url }}">Agentic Coding, Reasoning and Evaluation</a></h2>
-      <p>From data, training and evaluation to agents that understand changing requirements, collaborate with users and sustain work on complete projects.</p>
+      <h2><a href="{{ '/research/agentic-intelligence/' | relative_url }}">Agentic Intelligence</a></h2>
+      <p>Learning from interaction and multimodal evidence, verifying outcomes, coordinating multiple agents, and exploring how AI could contribute to its own improvement.</p>
     </article>
     <article class="research-card">
       <h2><a href="{{ '/research/efficient-ml-ai-infrastructure/' | relative_url }}">Efficient ML &amp; AI Infrastructure</a></h2>
-      <p>From vocabulary, compression and caches to training and serving: the trade-offs between compute, user time and rework over long projects.</p>
+      <p>From compression, vocabulary and distillation to caches, training and serving: how limited resources can support more useful learning and autonomous exploration.</p>
     </article>
   </div>
 

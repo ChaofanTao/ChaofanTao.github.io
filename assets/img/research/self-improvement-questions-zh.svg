@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 320" width="960" height="320" role="img" aria-labelledby="title desc">
+  <title id="title">从协作探索到自我改进：有待验证的联系</title>
+  <desc id="desc">研究问题示意图：多个智能体提出方案，执行实验，经独立复验后继承改进，再检查下一轮探索是否更有效。</desc>
+  <defs><marker id="arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b509ac"/></marker></defs>
+  <style>
+    text{font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Inter,-apple-system,"Segoe UI",Roboto,sans-serif;fill:#1f2328}
+    .heading{font-size:16px;font-weight:600}
+    .detail{font-size:12.5px;fill:#4a525c}
+    .question{font-size:12px;fill:#8a1f84}
+    .arrow{fill:none;stroke:#b509ac;stroke-width:2}
+  </style>
+  <rect width="960" height="320" rx="14" fill="#f7f7fa"/>
+  <text x="480" y="36" text-anchor="middle" class="heading">从协作探索到自我改进：有待验证的联系</text>
+  <g transform="translate(20 80)">
+    <rect width="200" height="115" rx="10" fill="#fff" stroke="#b509ac" stroke-width="1.5"/>
+    <text x="100" y="33" text-anchor="middle" class="heading">并行提出方案</text>
+    <text x="100" y="60" text-anchor="middle" class="detail">方法、数据、工具</text>
+    <text x="100" y="91" text-anchor="middle" class="question">协作带来了什么？</text>
+  </g>
+  <g transform="translate(260 80)">
+    <rect width="200" height="115" rx="10" fill="#fff" stroke="#b509ac" stroke-width="1.5"/>
+    <text x="100" y="33" text-anchor="middle" class="heading">运行实验</text>
+    <text x="100" y="60" text-anchor="middle" class="detail">保留过程与结果</text>
+    <text x="100" y="91" text-anchor="middle" class="question">结果能够复现吗？</text>
+  </g>
+  <g transform="translate(500 80)">
+    <rect width="200" height="115" rx="10" fill="#fff" stroke="#b509ac" stroke-width="1.5"/>
+    <text x="100" y="33" text-anchor="middle" class="heading">独立复验</text>
+    <text x="100" y="60" text-anchor="middle" class="detail">新任务、对照与复现</text>
+    <text x="100" y="91" text-anchor="middle" class="question">改进能够迁移吗？</text>
+  </g>
+  <g transform="translate(740 80)">
+    <rect width="200" height="115" rx="10" fill="#fff" stroke="#b509ac" stroke-width="1.5"/>
+    <text x="100" y="33" text-anchor="middle" class="heading">继承改进</text>
+    <text x="100" y="60" text-anchor="middle" class="detail">代码、记忆、模型</text>
+    <text x="100" y="91" text-anchor="middle" class="question">哪些能力进入下一轮？</text>
+  </g>
+  <path d="M220 137H253" class="arrow" marker-end="url(#arrowhead)"/>
+  <path d="M460 137H493" class="arrow" marker-end="url(#arrowhead)"/>
+  <path d="M700 137H733" class="arrow" marker-end="url(#arrowhead)"/>
+  <path d="M840 197V246H120V202" class="arrow" marker-end="url(#arrowhead)"/>
+  <text x="480" y="281" text-anchor="middle" class="detail">这轮改进，能否提高下一轮探索的效率？</text>
+</svg>

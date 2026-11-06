@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "研究方向"
-description: "陶超凡的研究笔记：面向长期任务、用户协作和完整项目构建，讨论智能体的学习、评测，以及计算和返工成本。"
+description: "陶超凡不同阶段的研究：高效机器学习、多模态推理与智能体，以及多智能体协作、AI for AI 和递归自我改进的开放问题。"
 permalink: /zh/research/
 research_lang: zh
 last_modified_at: 2026-11-06
@@ -11,6 +11,9 @@ about:
   - 代码智能体
   - 高效机器学习
   - AI 基础设施
+  - 多智能体协作
+  - AI for AI
+  - 递归自我改进
 ---
 
 {% include research/styles.liquid %}
@@ -24,17 +27,17 @@ about:
   </nav>
 
   <h1>研究方向</h1>
-  <p class="research-lead">我希望智能体能从完成一次修复，走向和用户一起完成一个长期项目：理解需求、持续实现、检查结果，并在需求变化时接着做下去。这需要更可靠的学习与评测，也需要负担得起的训练和运行成本。</p>
-  <p>下面两篇文章围绕我和合作者的研究展开，也结合了我们在 <a href="https://www.legox.net/">LegoX</a> 开源项目中的实践。我想写清楚每项工作的出发点、实验带来的认识，以及仍然没有答案的部分。具体论文、代码和数据链接都放在相关讨论旁，方便继续查阅。</p>
+  <p class="research-lead">我的研究关注智能体如何理解环境、从行动中学习，并逐步具备更强的自主探索能力。再往前，值得追问的是：多个智能体能否协同解决复杂问题，甚至参与改进模型、训练方法和它们自身的研究过程？</p>
+  <p>这里串起了我在不同阶段与不同团队合作的研究：从模型压缩与高效学习，到多模态推理、机器人，以及智能体的数据、训练和评测。近期在 <a href="https://www.legox.net/">LegoX</a> 的开源实践是其中一部分。两篇文章既回顾已有结果，也把多智能体、AI for AI 和递归自我改进放在开放问题中继续讨论。</p>
 
   <div class="research-cards">
     <article class="research-card">
-      <h2><a href="{{ '/zh/research/agentic-intelligence/' | relative_url }}">智能体编程、推理与评测</a></h2>
-      <p>从数据、训练和评测出发，讨论智能体怎样理解变化中的需求、与用户协作，并把一个项目持续做完整。</p>
+      <h2><a href="{{ '/zh/research/agentic-intelligence/' | relative_url }}">智能体的学习、协作与自我改进</a></h2>
+      <p>从多模态推理与环境交互出发，讨论经验、验证、多智能体协作，以及 AI 如何参与自身改进。</p>
     </article>
     <article class="research-card">
       <h2><a href="{{ '/zh/research/efficient-ml-ai-infrastructure/' | relative_url }}">高效机器学习与 AI 基础设施</a></h2>
-      <p>从词表、压缩、缓存到训练与服务，讨论长期项目的计算开销、用户时间和返工成本，以及它们之间的取舍。</p>
+      <p>从模型压缩、词表与知识蒸馏，到缓存、训练和推理系统，讨论有限资源怎样支持更多有效学习与自主探索。</p>
     </article>
   </div>
 

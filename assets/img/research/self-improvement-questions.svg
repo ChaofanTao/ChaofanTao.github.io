@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 320" width="960" height="320" role="img" aria-labelledby="title desc">
+  <title id="title">From collaboration to self-improvement: connections to test</title>
+  <desc id="desc">A conceptual research loop: parallel proposals, experiments, independent checks and inherited improvements. Feedback asks whether the next round of discovery becomes more effective.</desc>
+  <defs><marker id="arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b509ac"/></marker></defs>
+  <style>
+    text{font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Inter,-apple-system,"Segoe UI",Roboto,sans-serif;fill:#1f2328}
+    .heading{font-size:16px;font-weight:600}
+    .detail{font-size:12.5px;fill:#4a525c}
+    .question{font-size:12px;fill:#8a1f84}
+    .arrow{fill:none;stroke:#b509ac;stroke-width:2}
+  </style>
+  <rect width="960" height="320" rx="14" fill="#f7f7fa"/>
+  <text x="480" y="36" text-anchor="middle" class="heading">From collaboration to self-improvement: connections to test</text>
+  <g transform="translate(20 80)">
+    <rect width="200" height="115" rx="10" fill="#fff" stroke="#b509ac" stroke-width="1.5"/>
+    <text x="100" y="33" text-anchor="middle" class="heading">Parallel proposals</text>
+    <text x="100" y="60" text-anchor="middle" class="detail">methods · data · tools</text>
+    <text x="100" y="91" text-anchor="middle" class="question">What does coordination add?</text>
+  </g>
+  <g transform="translate(260 80)">
+    <rect width="200" height="115" rx="10" fill="#fff" stroke="#b509ac" stroke-width="1.5"/>
+    <text x="100" y="33" text-anchor="middle" class="heading">Run experiments</text>
+    <text x="100" y="60" text-anchor="middle" class="detail">record attempts and results</text>
+    <text x="100" y="91" text-anchor="middle" class="question">Can results be reproduced?</text>
+  </g>
+  <g transform="translate(500 80)">
+    <rect width="200" height="115" rx="10" fill="#fff" stroke="#b509ac" stroke-width="1.5"/>
+    <text x="100" y="33" text-anchor="middle" class="heading">Independent checks</text>
+    <text x="100" y="60" text-anchor="middle" class="detail">new tasks · replication</text>
+    <text x="100" y="91" text-anchor="middle" class="question">Do improvements transfer?</text>
+  </g>
+  <g transform="translate(740 80)">
+    <rect width="200" height="115" rx="10" fill="#fff" stroke="#b509ac" stroke-width="1.5"/>
+    <text x="100" y="33" text-anchor="middle" class="heading">Inherit improvements</text>
+    <text x="100" y="60" text-anchor="middle" class="detail">code · memory · models</text>
+    <text x="100" y="91" text-anchor="middle" class="question">What can be inherited?</text>
+  </g>
+  <path d="M220 137H253" class="arrow" marker-end="url(#arrowhead)"/>
+  <path d="M460 137H493" class="arrow" marker-end="url(#arrowhead)"/>
+  <path d="M700 137H733" class="arrow" marker-end="url(#arrowhead)"/>
+  <path d="M840 197V246H120V202" class="arrow" marker-end="url(#arrowhead)"/>
+  <text x="480" y="281" text-anchor="middle" class="detail">Does this improvement make the next search more effective?</text>
+</svg>
