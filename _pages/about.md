@@ -9,6 +9,7 @@ redirect_from:
 ---
 
 <!-- Page-scoped styles are rendered here because the gem's head does not load head/custom.html. -->
+{% include site/mobile-nav.liquid %}
 <style>
   .home-page {
     --home-muted: #59616b;
