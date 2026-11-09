@@ -26,16 +26,16 @@ about:
   </nav>
 
   <h1>研究方向</h1>
-  <p class="research-lead">我研究的是：AI 系统怎样看清关键信息、据此行动、从结果中学习、并且值得信任，以及怎样让这一切的成本负担得起。我的工作从压缩和扩展语言模型开始，经过多模态推理，走到了我们在 <a href="https://www.legox.net/">LegoX</a> 开源构建的代码智能体。下面两篇文章梳理这些工作，也谈谈我认为它们会通向哪里：更长的任务、多个智能体协作、可信的评测、AI 帮助改进 AI，以及智能体数据对基础设施提出的新要求。</p>
+  <p class="research-lead">我关心的是：AI 系统怎样看清要紧的信息、据此行动、从结果里学习、并且值得信任，以及怎样让这一切花得起。我的工作从压缩和扩展语言模型开始，经过多模态推理，走到了我们在 <a href="https://www.legox.net/">LegoX</a> 开源构建的代码智能体。下面两篇文章梳理这些工作，也聊聊我对未来的一些思考：超长程任务、多智能体协作、可信的评测、AI 改进 AI、AI for Science，以及智能体数据对基础设施提出的新要求。</p>
 
   <div class="research-cards">
     <article class="research-card">
       <h2><a href="{{ '/zh/research/agentic-intelligence/' | relative_url }}">智能体的学习、协作与自我改进</a></h2>
-      <p>从多模态推理，到把代码智能体当作实验室：可验证的经验、真实 harness 里的 SFT 与 RL、智能体代码审查；以及我对长程记忆、多智能体协作、评测和 AI 改进 AI 的判断。</p>
+      <p>从多模态推理，到把代码智能体当作实验室：可验证的经验、真实 harness 里的 SFT 与 RL、智能体代码审查；以及我对超长程智能体、多智能体协作、评测、AI 改进 AI 和 AI for Science 的一些思考。</p>
     </article>
     <article class="research-card">
       <h2><a href="{{ '/zh/research/efficient-ml-ai-infrastructure/' | relative_url }}">高效机器学习与 AI 基础设施</a></h2>
-      <p>量化与剪枝、词表扩展定律、KV 缓存、快速的推理时扩展、知识蒸馏和稳定的系统；以及我对大规模智能体数据基础设施、按轨迹衡量效率的判断。</p>
+      <p>量化与剪枝、词表扩展定律、KV 缓存、快速的推理时扩展、知识蒸馏和稳定的系统；以及我对大规模智能体数据基础设施、按轨迹衡量效率、超长程运行和 AI for Science 的一些思考。</p>
     </article>
   </div>
 

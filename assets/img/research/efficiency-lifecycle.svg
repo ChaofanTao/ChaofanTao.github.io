@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 325" width="960" height="325" role="img" aria-labelledby="t d">
   <title id="t">Efficiency across the model lifecycle</title>
   <desc id="d">Five connected areas of efficiency research: design, compression, memory, computation and serving, and transfer. Each asks how resources should be allocated.</desc>
   <defs>
@@ -15,7 +15,7 @@
     .box{fill:#fff;stroke:#b509ac;stroke-width:1.5}
     .arr{stroke:#b509ac;stroke-width:2}
   </style>
-  <rect width="960" height="300" rx="14" fill="#f7f7fa"/>
+  <rect width="960" height="325" rx="14" fill="#f7f7fa"/>
 
   <g transform="translate(20 40)">
     <rect class="box" width="166" height="220" rx="10"/>
@@ -67,4 +67,5 @@
   <line class="arr" x1="374" y1="150" x2="389" y2="150" marker-end="url(#a)"/>
   <line class="arr" x1="560" y1="150" x2="575" y2="150" marker-end="url(#a)"/>
   <line class="arr" x1="746" y1="150" x2="761" y2="150" marker-end="url(#a)"/>
+  <text x="480" y="300" text-anchor="middle" style="font-size:12px;fill:#8a8f98">All projects shown are work by Chaofan Tao and collaborators</text>
 </svg>

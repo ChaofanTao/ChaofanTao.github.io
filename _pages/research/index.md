@@ -26,16 +26,16 @@ about:
   </nav>
 
   <h1>Research</h1>
-  <p class="research-lead">I study how AI systems can see what matters, act on it, learn from the result and be trusted, and how to make all of that affordable. My work has moved from compressing and scaling language models, through multimodal reasoning, to coding agents that we build in the open at <a href="https://www.legox.net/">LegoX</a>. The two essays below walk through that work and say where I think it leads: longer tasks, teams of agents, trustworthy evaluation, AI that helps improve AI, and the infrastructure that agentic data now demands.</p>
+  <p class="research-lead">I study how AI systems can see what matters, act on it, learn from the result and be trusted, and how to make all of that affordable. My work has moved from compressing and scaling language models, through multimodal reasoning, to coding agents that we build in the open at <a href="https://www.legox.net/">LegoX</a>. The two essays below walk through that work and share some thoughts on where it leads: very long-horizon tasks, teams of agents, trustworthy evaluation, AI that helps improve AI, AI for Science, and the infrastructure that agentic data now demands.</p>
 
   <div class="research-cards">
     <article class="research-card">
       <h2><a href="{{ '/research/agentic-intelligence/' | relative_url }}">Agentic Intelligence</a></h2>
-      <p>Multimodal reasoning, then coding agents as a laboratory: verified experience, SFT and RL inside real harnesses, and agentic review. My views on long-horizon memory, multi-agent collaboration, evaluation and AI for AI.</p>
+      <p>Multimodal reasoning, then coding agents as a laboratory: verified experience, SFT and RL inside real harnesses, and agentic review. Thoughts on very long-horizon agents, multi-agent collaboration, evaluation, AI for AI and AI for Science.</p>
     </article>
     <article class="research-card">
       <h2><a href="{{ '/research/efficient-ml-ai-infrastructure/' | relative_url }}">Efficient ML &amp; AI Infrastructure</a></h2>
-      <p>Quantization and pruning, vocabulary scaling, KV caches, fast test-time scaling, distillation and resilient systems. My views on infrastructure for large-scale agentic data and measuring efficiency per trajectory.</p>
+      <p>Quantization and pruning, vocabulary scaling, KV caches, fast test-time scaling, distillation and resilient systems. Thoughts on infrastructure for large-scale agentic data, efficiency per trajectory, weeks-long runs and AI for Science.</p>
     </article>
   </div>
 

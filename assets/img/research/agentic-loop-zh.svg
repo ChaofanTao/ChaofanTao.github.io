@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 480" width="760" height="480" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 505" width="760" height="505" role="img" aria-labelledby="t d">
   <title id="t">智能体的学习循环</title>
   <desc id="d">智能体由模型和运行框架 组成，它在一个由四个环节组成的循环里学习：行动所在的环境、收集到的经验、把经验转化为学习的信号，以及检验结果的评测。</desc>
   <defs>
@@ -14,7 +14,7 @@
     .box{fill:#fff;stroke:#b509ac;stroke-width:1.5}
     .arc{fill:none;stroke:#b509ac;stroke-width:2}
   </style>
-  <rect width="760" height="480" rx="14" fill="#f7f7fa"/>
+  <rect width="760" height="505" rx="14" fill="#f7f7fa"/>
   <circle cx="380" cy="240" r="80" fill="#fff" stroke="#d6d8de" stroke-width="1.5"/>
   <text x="380" y="234" text-anchor="middle" class="h">智能体</text>
   <text x="380" y="257" text-anchor="middle" class="s">模型 + 运行框架</text>
@@ -43,4 +43,5 @@
   <path class="arc" d="M620 292 Q620 404 501 404" marker-end="url(#a)"/>
   <path class="arc" d="M263 404 Q140 404 140 294" marker-end="url(#a)"/>
   <path class="arc" d="M140 188 Q140 76 259 76" marker-end="url(#a)"/>
+  <text x="380" y="488" text-anchor="middle" style="font-size:12.5px;fill:#8a8f98">图中所有项目均为陶超凡与合作者的工作</text>
 </svg>
