@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" width="900" height="360" role="img" aria-labelledby="t d">
+  <title id="t">Working by milestones on a weeks-long task</title>
+  <desc id="d">A long task is split by milestones. At every milestone the agent re-reads the goal, verifies progress, records lessons with their conditions and saves its state, then continues working until a verified result.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b509ac"/></marker>
+  </defs>
+  <style>
+    text{font-family:Inter,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,"PingFang SC","Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#1f2328}
+    .h{font-size:15px;font-weight:600}
+    .s{font-size:12.5px;fill:#4a525c}
+    .t{font-size:11.5px;fill:#8a1f84;font-style:italic}
+    .k{font-size:11.5px;fill:#8a8f98}
+    .box{fill:#fff;stroke:#b509ac;stroke-width:1.5}
+    .grp{fill:none;stroke:#d6d8de;stroke-width:1.5;stroke-dasharray:5 4}
+    .arr{fill:none;stroke:#b509ac;stroke-width:1.8}
+    .dash{fill:none;stroke:#b509ac;stroke-width:1.5;stroke-dasharray:4 4}
+    .line{fill:none;stroke:#4a525c;stroke-width:2}
+    .ms{fill:#b509ac}
+  </style>
+
+  <rect width="900" height="360" rx="14" fill="#f7f7fa"/>
+  <text x="24" y="34" class="h">Working by milestones on a weeks-long task</text>
+  <rect class="grp" x="14" y="50" width="872" height="134" rx="12"/>
+  <rect class="box" x="30" y="62" width="180" height="110" rx="10"/>
+  <text x="120" y="90" text-anchor="middle" class="h">1 · Re-read the goal</text>
+  <text x="120" y="114" text-anchor="middle" class="s">is the requirement</text>
+  <text x="120" y="132" text-anchor="middle" class="s">still right?</text>
+  <text x="120" y="160" text-anchor="middle" class="t">cf. REAgent</text>
+  <path class="arr" d="M212 117 L248 117" marker-end="url(#a)"/>
+  <rect class="box" x="250" y="62" width="180" height="110" rx="10"/>
+  <text x="340" y="90" text-anchor="middle" class="h">2 · Verify progress</text>
+  <text x="340" y="114" text-anchor="middle" class="s">review against the</text>
+  <text x="340" y="132" text-anchor="middle" class="s">tests and the spec</text>
+  <text x="340" y="160" text-anchor="middle" class="t">cf. SWE-Review</text>
+  <path class="arr" d="M432 117 L468 117" marker-end="url(#a)"/>
+  <rect class="box" x="470" y="62" width="180" height="110" rx="10"/>
+  <text x="560" y="90" text-anchor="middle" class="h">3 · Record lessons</text>
+  <text x="560" y="114" text-anchor="middle" class="s">with the conditions</text>
+  <text x="560" y="132" text-anchor="middle" class="s">under which they hold</text>
+  <text x="560" y="160" text-anchor="middle" class="t">three levels of memory</text>
+  <path class="arr" d="M652 117 L688 117" marker-end="url(#a)"/>
+  <rect class="box" x="690" y="62" width="180" height="110" rx="10"/>
+  <text x="780" y="90" text-anchor="middle" class="h">4 · Save state</text>
+  <text x="780" y="114" text-anchor="middle" class="s">so work can resume</text>
+  <text x="780" y="132" text-anchor="middle" class="s">after a failure</text>
+  <text x="780" y="160" text-anchor="middle" class="t">AnchorTP · partial rollout</text>
+  <path class="dash" d="M350 186 L350 262" marker-end="url(#a)"/>
+  <text x="362" y="230" class="t">at every milestone</text>
+  <path class="line" d="M40 280 L846 280" marker-end="url(#a)"/>
+  <rect class="ms" x="142" y="272" width="16" height="16" transform="rotate(45 150 280)"/>
+  <text x="150" y="308" text-anchor="middle" class="k">M1</text>
+  <rect class="ms" x="342" y="272" width="16" height="16" transform="rotate(45 350 280)"/>
+  <text x="350" y="308" text-anchor="middle" class="k">M2</text>
+  <rect class="ms" x="542" y="272" width="16" height="16" transform="rotate(45 550 280)"/>
+  <text x="550" y="308" text-anchor="middle" class="k">M3</text>
+  <rect class="ms" x="742" y="272" width="16" height="16" transform="rotate(45 750 280)"/>
+  <text x="750" y="308" text-anchor="middle" class="k">M4</text>
+  <text x="250" y="268" text-anchor="middle" class="k">act · read results · adjust</text>
+  <text x="450" y="268" text-anchor="middle" class="k">act · read results · adjust</text>
+  <text x="650" y="268" text-anchor="middle" class="k">act · read results · adjust</text>
+  <text x="40" y="308" class="k">start</text>
+  <text x="860" y="308" text-anchor="end" class="k">verified result</text>
+  <text x="450" y="342" text-anchor="middle" class="k">A direction I expect, built from lessons in our work; not a finished system.</text>
+</svg>
