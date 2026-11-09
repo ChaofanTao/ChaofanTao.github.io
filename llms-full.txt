@@ -241,7 +241,7 @@ The paper derives compute-optimal vocabulary scaling laws and shows larger model
 
 ### Dynamic Discriminative Operations for Efficient Long-Context Inference of Large Language Models
 
-- Venue: ICLR 2024
+- Venue: ICLR 2025
 - Authors: Zhongwei Wan, Xinjian Wu, Yu Zhang, Yi Xin, Chaofan Tao, Zhihong Zhu, Xin Wang, Siqi Luo, Jing Xiong, Longyue Wang, Mi Zhang
 - Paper: https://arxiv.org/abs/2406.13035
 - Code: https://github.com/AIoT-MLSys-Lab/D2O
@@ -263,7 +263,7 @@ CrossGET accelerates vision-language Transformers by cross-modally matching and 
 
 ### Rethinking Kullback-Leibler Divergence in Knowledge Distillation for Large Language Models
 
-- Venue: COLING 2024
+- Venue: COLING 2025
 - Authors: Taiqiang Wu, Chaofan Tao, Jiahao Wang, Runming Yang, Zhe Zhao, Ngai Wong
 - Paper: https://arxiv.org/abs/2404.02657
 - Code: https://github.com/wutaiqiang/LLM_KD_AKL

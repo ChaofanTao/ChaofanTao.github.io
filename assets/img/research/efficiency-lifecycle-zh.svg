@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 325" width="960" height="325" role="img" aria-labelledby="t d">
   <title id="t">贯穿模型生命周期的效率</title>
   <desc id="d">五类相互联系的效率问题：设计、压缩、记忆、计算与服务、迁移，每一类都需要考虑资源应该怎样分配。</desc>
   <defs>
@@ -15,7 +15,7 @@
     .box{fill:#fff;stroke:#b509ac;stroke-width:1.5}
     .arr{stroke:#b509ac;stroke-width:2}
   </style>
-  <rect width="960" height="300" rx="14" fill="#f7f7fa"/>
+  <rect width="960" height="325" rx="14" fill="#f7f7fa"/>
 
   <g transform="translate(20 40)">
     <rect class="box" width="166" height="220" rx="10"/>
@@ -66,4 +66,5 @@
   <line class="arr" x1="374" y1="150" x2="389" y2="150" marker-end="url(#a)"/>
   <line class="arr" x1="560" y1="150" x2="575" y2="150" marker-end="url(#a)"/>
   <line class="arr" x1="746" y1="150" x2="761" y2="150" marker-end="url(#a)"/>
+  <text x="480" y="300" text-anchor="middle" style="font-size:12.5px;fill:#8a8f98">图中所有项目均为陶超凡与合作者的工作</text>
 </svg>
