@@ -1,10 +1,10 @@
 ---
 layout: default
 title: "研究方向"
-description: "陶超凡不同阶段的研究：高效机器学习、多模态推理与智能体，以及多智能体协作、AI for AI 和递归自我改进的开放问题。"
+description: "陶超凡（Chaofan Tao）的两个研究主题：智能体，从多模态推理到在 LegoX 开源构建的代码智能体；高效机器学习与 AI 基础设施，从模型压缩到训练智能体的系统。"
 permalink: /zh/research/
 research_lang: zh
-last_modified_at: 2026-11-06
+last_modified_at: 2026-11-09
 og_image: /assets/img/og-image.png
 about:
   - 智能体
@@ -12,8 +12,7 @@ about:
   - 高效机器学习
   - AI 基础设施
   - 多智能体协作
-  - AI for AI
-  - 递归自我改进
+  - AI 改进 AI
 ---
 
 {% include research/styles.liquid %}
@@ -27,17 +26,16 @@ about:
   </nav>
 
   <h1>研究方向</h1>
-  <p class="research-lead">我的研究关注智能体如何理解环境、从行动中学习，并逐步具备更强的自主探索能力。再往前，值得追问的是：多个智能体能否协同解决复杂问题，甚至参与改进模型、训练方法和它们自身的研究过程？</p>
-  <p>这里串起了我在不同阶段与不同团队合作的研究：从模型压缩与高效学习，到多模态推理、机器人，以及智能体的数据、训练和评测。近期在 <a href="https://www.legox.net/">LegoX</a> 的开源实践是其中一部分。两篇文章既回顾已有结果，也把多智能体、AI for AI 和递归自我改进放在开放问题中继续讨论。</p>
+  <p class="research-lead">我研究的是：AI 系统怎样看清关键信息、据此行动、从结果中学习、并且值得信任，以及怎样让这一切的成本负担得起。我的工作从压缩和扩展语言模型开始，经过多模态推理，走到了我们在 <a href="https://www.legox.net/">LegoX</a> 开源构建的代码智能体。下面两篇文章梳理这些工作，也谈谈我认为它们会通向哪里：更长的任务、多个智能体协作、可信的评测、AI 帮助改进 AI，以及智能体数据对基础设施提出的新要求。</p>
 
   <div class="research-cards">
     <article class="research-card">
       <h2><a href="{{ '/zh/research/agentic-intelligence/' | relative_url }}">智能体的学习、协作与自我改进</a></h2>
-      <p>从多模态推理与环境交互出发，讨论经验、验证、多智能体协作，以及 AI 如何参与自身改进。</p>
+      <p>从多模态推理，到把代码智能体当作实验室：可验证的经验、真实 harness 里的 SFT 与 RL、智能体代码审查；以及我对长程记忆、多智能体协作、评测和 AI 改进 AI 的判断。</p>
     </article>
     <article class="research-card">
       <h2><a href="{{ '/zh/research/efficient-ml-ai-infrastructure/' | relative_url }}">高效机器学习与 AI 基础设施</a></h2>
-      <p>从模型压缩、词表与知识蒸馏，到缓存、训练和推理系统，讨论有限资源怎样支持更多有效学习与自主探索。</p>
+      <p>量化与剪枝、词表扩展定律、KV 缓存、快速的推理时扩展、知识蒸馏和稳定的系统；以及我对大规模智能体数据基础设施、按轨迹衡量效率的判断。</p>
     </article>
   </div>
 

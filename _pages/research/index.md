@@ -1,10 +1,10 @@
 ---
 layout: default
 title: "Research"
-description: "Research by Chaofan Tao across efficient machine learning, multimodal reasoning and agents, with open questions about multi-agent systems, AI for AI and recursive self-improvement."
+description: "Research by Chaofan Tao (陶超凡) in two themes: agentic intelligence, from multimodal reasoning to coding agents built in the open at LegoX; and efficient ML and AI infrastructure, from model compression to systems for training agents."
 permalink: /research/
 research_lang: en
-last_modified_at: 2026-11-06
+last_modified_at: 2026-11-09
 og_image: /assets/img/og-image.png
 about:
   - Agentic intelligence
@@ -13,7 +13,6 @@ about:
   - AI infrastructure
   - Multi-agent systems
   - AI for AI
-  - Recursive self-improvement
 ---
 
 {% include research/styles.liquid %}
@@ -27,17 +26,16 @@ about:
   </nav>
 
   <h1>Research</h1>
-  <p class="research-lead">My research asks how agents can understand their environment, learn from acting in it, and become more capable of autonomous exploration. Further questions follow: can multiple agents work together on complex problems, and can AI help improve models, learning methods and the research process itself?</p>
-  <p>The work here spans different stages of my research and different collaborations: model compression and efficient learning, multimodal reasoning, robotics, and agent data, training and evaluation. Recent open-source projects at <a href="https://www.legox.net/">LegoX</a> form one part of that history. These essays connect the findings with open questions about multi-agent systems, AI for AI and recursive self-improvement.</p>
+  <p class="research-lead">I study how AI systems can see what matters, act on it, learn from the result and be trusted, and how to make all of that affordable. My work has moved from compressing and scaling language models, through multimodal reasoning, to coding agents that we build in the open at <a href="https://www.legox.net/">LegoX</a>. The two essays below walk through that work and say where I think it leads: longer tasks, teams of agents, trustworthy evaluation, AI that helps improve AI, and the infrastructure that agentic data now demands.</p>
 
   <div class="research-cards">
     <article class="research-card">
       <h2><a href="{{ '/research/agentic-intelligence/' | relative_url }}">Agentic Intelligence</a></h2>
-      <p>Learning from interaction and multimodal evidence, verifying outcomes, coordinating multiple agents, and exploring how AI could contribute to its own improvement.</p>
+      <p>Multimodal reasoning, then coding agents as a laboratory: verified experience, SFT and RL inside real harnesses, and agentic review. My views on long-horizon memory, multi-agent collaboration, evaluation and AI for AI.</p>
     </article>
     <article class="research-card">
       <h2><a href="{{ '/research/efficient-ml-ai-infrastructure/' | relative_url }}">Efficient ML &amp; AI Infrastructure</a></h2>
-      <p>From compression, vocabulary and distillation to caches, training and serving: how limited resources can support more useful learning and autonomous exploration.</p>
+      <p>Quantization and pruning, vocabulary scaling, KV caches, fast test-time scaling, distillation and resilient systems. My views on infrastructure for large-scale agentic data and measuring efficiency per trajectory.</p>
     </article>
   </div>
 
