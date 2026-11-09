@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" width="960" height="400" role="img" aria-labelledby="t d">
+  <title id="t">多智能体团队中的验证与自我改进循环</title>
+  <desc id="d">左：按“分工验证”组织的团队，提出者、测试者、审查者各自看到不同的信息，并共享一份记录了结论、证据和来源的记忆。右：自我改进循环在搜索任务上提出改进，在另一组任务上挑选，在从未参与搜索的新任务上确认，再把对数据流水线、运行环境和验证器的改进传给下一轮，并在相同总预算下比较各轮。</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b509ac"/></marker>
+  </defs>
+  <style>
+    text{font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC","WenQuanYi Zen Hei",Inter,-apple-system,Roboto,sans-serif;fill:#1f2328}
+    .p{font-size:16px;font-weight:600}
+    .h{font-size:15px;font-weight:600}
+    .s{font-size:12px;fill:#4a525c}
+    .k{font-size:12.5px;fill:#8a1f84}
+    .box{fill:#fff;stroke:#b509ac;stroke-width:1.5}
+    .mem{fill:#fff;stroke:#d6d8de;stroke-width:1.5}
+    .arr{fill:none;stroke:#b509ac;stroke-width:1.8}
+  </style>
+  <rect width="960" height="400" rx="14" fill="#f7f7fa"/>
+  <line x1="480" y1="30" x2="480" y2="370" stroke="#e3e4e8" stroke-width="1.5"/>
+
+  <text x="240" y="40" text-anchor="middle" class="p">按“分工验证”组织的团队</text>
+  <rect class="box" x="35" y="65" width="125" height="85" rx="10"/>
+  <text x="97" y="96" text-anchor="middle" class="h">提出者</text>
+  <text x="97" y="118" text-anchor="middle" class="s">看到问题描述</text>
+  <text x="97" y="135" text-anchor="middle" class="s">和代码仓库</text>
+  <rect class="box" x="178" y="65" width="125" height="85" rx="10"/>
+  <text x="240" y="96" text-anchor="middle" class="h">测试者</text>
+  <text x="240" y="118" text-anchor="middle" class="s">看到需求说明，</text>
+  <text x="240" y="135" text-anchor="middle" class="s">看不到提出者的思路</text>
+  <rect class="box" x="321" y="65" width="125" height="85" rx="10"/>
+  <text x="383" y="96" text-anchor="middle" class="h">审查者</text>
+  <text x="383" y="118" text-anchor="middle" class="s">自己去探索</text>
+  <text x="383" y="135" text-anchor="middle" class="s">代码仓库</text>
+  <path class="arr" d="M97 152 L97 218" marker-start="url(#a)" marker-end="url(#a)"/>
+  <path class="arr" d="M240 152 L240 218" marker-start="url(#a)" marker-end="url(#a)"/>
+  <path class="arr" d="M383 152 L383 218" marker-start="url(#a)" marker-end="url(#a)"/>
+  <rect class="mem" x="35" y="222" width="411" height="92" rx="10"/>
+  <text x="240" y="253" text-anchor="middle" class="h">共享记忆</text>
+  <text x="240" y="276" text-anchor="middle" class="s">结论 + 证据 + 来源</text>
+  <text x="240" y="296" text-anchor="middle" class="s">用的哪份数据、哪个代码版本、什么设置</text>
+  <text x="240" y="350" text-anchor="middle" class="k">看到的信息不同 → 证据才是独立的</text>
+
+  <text x="720" y="40" text-anchor="middle" class="p">一个自我改进的循环</text>
+  <rect class="box" x="510" y="70" width="180" height="72" rx="10"/>
+  <text x="600" y="101" text-anchor="middle" class="h">提出改进</text>
+  <text x="600" y="123" text-anchor="middle" class="s">在搜索任务上</text>
+  <rect class="box" x="750" y="70" width="180" height="72" rx="10"/>
+  <text x="840" y="101" text-anchor="middle" class="h">挑选</text>
+  <text x="840" y="123" text-anchor="middle" class="s">在另一组挑选任务上</text>
+  <rect class="box" x="750" y="242" width="180" height="72" rx="10"/>
+  <text x="840" y="273" text-anchor="middle" class="h">确认</text>
+  <text x="840" y="295" text-anchor="middle" class="s">在从未搜索过的新任务上</text>
+  <rect class="box" x="510" y="242" width="180" height="72" rx="10"/>
+  <text x="600" y="269" text-anchor="middle" class="h">传承</text>
+  <text x="600" y="292" text-anchor="middle" class="s">改进后的数据流水线、</text>
+  <text x="600" y="308" text-anchor="middle" class="s">运行环境和验证器</text>
+  <path class="arr" d="M692 106 L746 106" marker-end="url(#a)"/>
+  <path class="arr" d="M840 144 L840 238" marker-end="url(#a)"/>
+  <path class="arr" d="M748 278 L694 278" marker-end="url(#a)"/>
+  <path class="arr" d="M600 240 L600 146" marker-end="url(#a)"/>
+  <text x="720" y="189" text-anchor="middle" class="k">各轮之间</text>
+  <text x="720" y="208" text-anchor="middle" class="k">在相同总预算下比较</text>
+  <text x="720" y="350" text-anchor="middle" class="k">生成候选很容易，难的是判断哪些改进是真的</text>
+</svg>

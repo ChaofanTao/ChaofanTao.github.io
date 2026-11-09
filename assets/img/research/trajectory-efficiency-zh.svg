@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300" role="img" aria-labelledby="t d">
+  <title id="t">按单次调用衡量与按整条轨迹衡量的效率</title>
+  <desc id="d">上：保留完整上下文的智能体，几步就得到经过验证的结果。下：因为上下文里丢了一个细节，每次调用都更便宜，但智能体随后要多走几步去重读、重试、重新测试，更晚才得到经过验证的结果，总成本反而更高。</desc>
+  <style>
+    text{font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC","WenQuanYi Zen Hei",Inter,-apple-system,Roboto,sans-serif;fill:#1f2328}
+    .h{font-size:15px;font-weight:600}
+    .s{font-size:12.5px;fill:#4a525c}
+    .k{font-size:13px;fill:#8a1f84}
+    .st{fill:#fff;stroke:#b509ac;stroke-width:1.5}
+    .lt{fill:#fff;stroke:#d9a6d6;stroke-width:1.5}
+    .ex{fill:#fbe3cf;stroke:#e08a3c;stroke-width:1.5}
+    .ok{fill:#e6f4ea;stroke:#2e8b57;stroke-width:1.5}
+  </style>
+  <rect width="900" height="300" rx="14" fill="#f7f7fa"/>
+
+  <text x="24" y="52" class="h">保留完整上下文</text>
+  <text x="24" y="72" class="s">每次调用更贵</text>
+  <rect class="st" x="200" y="40" width="56" height="40" rx="6"/>
+  <rect class="st" x="266" y="40" width="56" height="40" rx="6"/>
+  <rect class="st" x="332" y="40" width="56" height="40" rx="6"/>
+  <rect class="st" x="398" y="40" width="56" height="40" rx="6"/>
+  <rect class="ok" x="464" y="40" width="120" height="40" rx="6"/>
+  <text x="524" y="65" text-anchor="middle" class="s">经过验证的结果</text>
+
+  <text x="24" y="172" class="h">丢了一个细节</text>
+  <text x="24" y="192" class="s">每次调用更便宜</text>
+  <rect class="lt" x="200" y="160" width="44" height="40" rx="6"/>
+  <rect class="lt" x="252" y="160" width="44" height="40" rx="6" style="stroke:#d14343;stroke-width:2"/>
+  <text x="274" y="223" text-anchor="middle" class="s" style="fill:#d14343">细节丢失</text>
+  <rect class="lt" x="304" y="160" width="44" height="40" rx="6"/>
+  <rect class="ex" x="356" y="160" width="44" height="40" rx="6"/>
+  <rect class="ex" x="408" y="160" width="44" height="40" rx="6"/>
+  <rect class="ex" x="460" y="160" width="44" height="40" rx="6"/>
+  <rect class="lt" x="512" y="160" width="44" height="40" rx="6"/>
+  <rect class="ok" x="564" y="160" width="120" height="40" rx="6"/>
+  <text x="624" y="185" text-anchor="middle" class="s">经过验证的结果</text>
+  <text x="430" y="223" text-anchor="middle" class="s" style="fill:#b5651d">重读 · 重试 · 重新测试</text>
+
+  <text x="450" y="272" text-anchor="middle" class="k">单次省下的成本，整体上又亏了回去：要按得到验证结果的整条轨迹来衡量</text>
+</svg>
