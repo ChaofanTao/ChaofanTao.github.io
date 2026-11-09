@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" width="900" height="380" role="img" aria-labelledby="t d">
+  <title id="t">经验分三层保留</title>
+  <desc id="d">来自尝试、失败和审查的经验分三层保留：稳定的习惯进入权重，可复用的流程沉淀为技能和工具，具体任务中的事实连同其成立条件写入记忆。</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b509ac"/></marker>
+  </defs>
+  <style>
+    text{font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC","WenQuanYi Zen Hei",Inter,-apple-system,Roboto,sans-serif;fill:#1f2328}
+    .h{font-size:16px;font-weight:600}
+    .s{font-size:13px;fill:#4a525c}
+    .t{font-size:12px;fill:#8a1f84}
+    .k{font-size:12px;fill:#8a8f98}
+    .box{fill:#fff;stroke:#b509ac;stroke-width:1.5}
+    .src{fill:#fff;stroke:#d6d8de;stroke-width:1.5}
+    .arr{fill:none;stroke:#b509ac;stroke-width:1.8}
+  </style>
+  <rect width="900" height="380" rx="14" fill="#f7f7fa"/>
+
+  <rect class="src" x="20" y="120" width="210" height="140" rx="10"/>
+  <text x="125" y="160" text-anchor="middle" class="h">经验</text>
+  <text x="125" y="187" text-anchor="middle" class="s">尝试 · 失败</text>
+  <text x="125" y="208" text-anchor="middle" class="s">审查意见 · 部分成功</text>
+  <text x="125" y="238" text-anchor="middle" class="k">长任务留下的东西</text>
+
+  <path class="arr" d="M232 165 C255 165 255 77 276 77" marker-end="url(#a)"/>
+  <path class="arr" d="M232 190 L276 190" marker-end="url(#a)"/>
+  <path class="arr" d="M232 215 C255 215 255 305 276 305" marker-end="url(#a)"/>
+  <text x="262" y="64" text-anchor="middle" class="k">提炼</text>
+  <text x="254" y="180" text-anchor="middle" class="k">封装</text>
+  <text x="262" y="326" text-anchor="middle" class="k">记录</text>
+
+  <rect class="box" x="280" y="30" width="600" height="95" rx="10"/>
+  <text x="300" y="61" class="h">权重 · 稳定的习惯</text>
+  <text x="300" y="86" class="s">改代码前先看清楚 · 改完回头检查 · 跑一遍测试</text>
+  <text x="300" y="109" class="t">变化慢，处处适用</text>
+
+  <rect class="box" x="280" y="143" width="600" height="95" rx="10"/>
+  <text x="300" y="174" class="h">技能与工具 · 可复用的流程</text>
+  <text x="300" y="199" class="s">搭建运行环境 · 验证一个任务 · 跑一次评测</text>
+  <text x="300" y="222" class="t">有版本管理，可在任务之间共享</text>
+
+  <rect class="box" x="280" y="256" width="600" height="95" rx="10"/>
+  <text x="300" y="287" class="h">记忆 · 连同成立条件的事实</text>
+  <text x="300" y="312" class="s">“方法 A 比 B 好” · 数据：v3 · 代码：4f2a · 设置：学习率、随机种子</text>
+  <text x="300" y="335" class="t">条件一变，就要重新核实</text>
+</svg>

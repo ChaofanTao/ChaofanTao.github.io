@@ -42,7 +42,7 @@ about:
     <figcaption>Efficiency across a model's life. Each stage pairs its central question with the work that addresses it.</figcaption>
   </figure>
 
-  <p class="research-toc">On this page: <a href="#compress">Representations and compression</a> · <a href="#remember">Memory and inference</a> · <a href="#transfer">Transfer</a> · <a href="#serve">Systems and reliability</a> · <a href="#lessons">What we learned</a> · <a href="#outlook">Where I think this is going</a> · <a href="#open-questions">Open questions</a></p>
+  <p class="research-toc">On this page: <a href="#compress">Representations and compression</a> · <a href="#remember">Memory and inference</a> · <a href="#transfer">Transfer</a> · <a href="#serve">Systems and reliability</a> · <a href="#at-a-glance">At a glance</a> · <a href="#lessons">What we learned</a> · <a href="#outlook">Where I think this is going</a> · <a href="#open-questions">Open questions</a></p>
 
   <h2 id="compress">1. Representations and compression</h2>
   <p>My work in this direction began with <a href="https://arxiv.org/abs/2203.10705">quantizing generative language models</a>, which received an ACL 2022 Outstanding Paper Award. Methods that worked for BERT-style encoders fell apart on GPT-style generators, and it wasn't clear why. We traced it to two problems. At low precision, word embeddings collapse until they look almost the same, so a model choosing its next token can no longer tell the options apart. And weights in different modules are spread very differently, so no single quantizer setting suits them all. Token-level contrastive distillation keeps each token's representation distinct, and module-wise dynamic scaling gives each module its own range. The diagnosis mattered more than the method: it explained why generation is harder to compress than classification.</p>
@@ -60,6 +60,31 @@ about:
   <p>Serving rests on another hidden assumption: that GPUs don't fail. With tensor parallelism across several GPUs, losing one can take the whole service down. <a href="https://arxiv.org/abs/2511.11617">AnchorTP</a> keeps the weights and KV caches alive in a separate process that survives the crash, re-splits the model across the remaining GPUs, and plans the least data movement needed to recover.</p>
   <p>Training agents brings both lessons, waiting and lost state, into sharper focus. In <a href="https://www.legox.net/blog/lego-rl/">Lego-RL</a>, almost all of a training attempt is the agent working in a sandbox, and attempts vary widely in length, so synchronous batches keep waiting for the slowest member. Asynchronous scheduling fills those gaps. When weights update mid-attempt, partial rollout pauses generation, loads the new weights and continues from the cached prefix, so long attempts aren't thrown away. Sandbox start-up is dominated by building images, so prebuilt task images and lazy image pulls remove most of that wait, while the grading tools are deliberately baked into every image, because a reward you can reproduce is worth more than one you get slightly faster. Dashboards that break down why each attempt ended let us tell infrastructure failures from genuine policy problems before misreading a reward curve. <a href="https://www.legox.net/blog/lego-rl-sao/">Single-rollout optimization</a> attacks a different cost: it replaces repeated sampling of the same task with a learned critic, so far fewer trajectories are needed to train.</p>
 
+  <figure class="research-figure">
+    <div class="research-figure-scroll"><img src="{{ '/assets/img/research/legox/lego-rl-workflow.png' | relative_url }}" alt="Lego-RL closed-loop workflow: data preparation with sandbox management, image cache, lazy pulls and anti-hacking; run validation; the training run with sandbox execution, in-process proxy, rollout and trainer; a live UI with failure breakdowns and trajectory viewer; and human review." width="1600" height="878" loading="lazy"></div>
+    <figcaption>The Lego-RL workflow, from data preparation and sandbox management to live failure diagnosis and human review. Figure from the <a href="https://www.legox.net/blog/lego-rl/">Lego-RL blog</a>.</figcaption>
+  </figure>
+
+  <h2 id="at-a-glance">At a glance</h2>
+  <div class="research-table-wrap">
+    <table>
+      <thead><tr><th>Assumption that broke</th><th>Work</th><th>Diagnosis</th><th>Fix</th></tr></thead>
+      <tbody>
+        <tr><td>The tokenizer can be fixed before scaling</td><td>Scaling Laws with Vocabulary</td><td>The best vocabulary grows with compute, more slowly than the rest of the model</td><td>Predict vocabulary size from the compute budget</td></tr>
+        <tr><td>Every part tolerates low precision equally</td><td>Quantization (ACL 2022 Outstanding Paper)</td><td>Embeddings collapse; weight ranges differ across modules</td><td>Token-level contrastive distillation; module-wise scaling</td></tr>
+        <tr><td>Structure can be pruned uniformly</td><td>Structured pruning · UPop</td><td>Components and modalities differ in how much they can lose</td><td>Learnable masks; pruning ratios learned per modality</td></tr>
+        <tr><td>Every visual token is needed</td><td>CrossGET</td><td>Many tokens are redundant across modalities</td><td>Cross-modal guided token merging</td></tr>
+        <tr><td>Every cached token matters equally</td><td>D2O · UNComp</td><td>Layers and heads need different things</td><td>Per-layer budgets with recall; entropy-guided compression</td></tr>
+        <tr><td>The prompt must be re-read every step</td><td>Prefilling-dLLM</td><td>Diffusion models repeat work on the prefix</td><td>Chunked cache with start-of-sequence anchors</td></tr>
+        <tr><td>Synchronization is free</td><td>ATTS</td><td>Waiting dominates test-time scaling</td><td>Asynchronous inference with conformal prediction</td></tr>
+        <tr><td>GPUs don't fail</td><td>AnchorTP</td><td>One failure takes the whole service down</td><td>State kept outside the process; minimal migration</td></tr>
+        <tr><td>Forward and reverse KL behave differently</td><td>Adaptive KL</td><td>Same optimum; they differ early, on head versus tail</td><td>Weight the two adaptively</td></tr>
+        <tr><td>The strongest teacher teaches best</td><td>PerSyn</td><td>What matters is what the student can learn</td><td>Route each prompt to the best-suited teacher</td></tr>
+        <tr><td>Agent RL is bounded by the optimizer</td><td>Lego-RL infrastructure</td><td>Most time goes to agents acting and waiting</td><td>Asynchronous scheduling, partial rollout, prebuilt images</td></tr>
+      </tbody>
+    </table>
+  </div>
+
   <h2 id="lessons">What we learned</h2>
   <ol class="research-insights">
     <li><strong>Find the broken assumption before you optimize.</strong> Every result here started with asking why an existing method failed. Once the cause was clear, the fix was usually small.</li>
@@ -73,10 +98,39 @@ about:
 
   <h3 id="agentic-data">Infrastructure for large-scale agentic data is the new bottleneck</h3>
   <p>For language models, data meant text. For agents, data means executable environments with a way to check the outcome, and producing them at scale is mostly an infrastructure problem. Building LegoFlow and Terminal-Lego taught us where the cost goes: finding candidate tasks is cheap, but building their environments, proving each one with tests, rolling out trajectories and screening them for leakage and shallow reasoning is where almost all the effort lies, and only a small fraction of candidates survive. I think the scaling unit for agentic data is the verified, reproducible environment, and infrastructure should be judged by how many of those it can build, verify and keep honest per unit of compute. That means fast environment construction and caching, isolated and network-controlled sandboxes, provenance for every task and trajectory, and pipelines designed so that agents themselves can operate them, as LegoFlow's blocks already allow.</p>
+
+  <figure class="research-figure">
+    <div class="research-figure-scroll"><img src="{{ '/assets/img/research/agentic-data-pipeline.svg' | relative_url }}" alt="Pipeline from candidate tasks through building environments, verifying tasks, rolling out trajectories and screening them to training data; each stage keeps fewer items, and most of the cost sits in the middle stages handled by LegoFlow's Curator and Tracer." width="960" height="340" loading="lazy"></div>
+    <figcaption>Where the cost of agentic data goes. Finding candidates is cheap; building, verifying, rolling out and screening is where the effort lies.</figcaption>
+  </figure>
+
+  <figure class="research-figure">
+    <div class="research-figure-scroll"><img src="{{ '/assets/img/research/legox/terminal-lego-pipeline.png' | relative_url }}" alt="Terminal-Lego construction pipeline: collecting high-quality Stack Overflow questions, generating instructions, environments, solutions, Dockerfiles and tests in cascade, reviewing tests, and a Docker round trip that keeps only tasks that pass verification." width="1600" height="892" loading="lazy"></div>
+    <figcaption>A concrete example: Terminal-Lego keeps a task only after a full Docker round trip confirms it. Figure from the <a href="https://www.legox.net/blog/terminal-lego/">Terminal-Lego blog</a>.</figcaption>
+  </figure>
   <p>Software engineering is the easiest case, because tests give a clean signal. The next wave of agentic data will come from collaborative office work, what I think of as cowork data: documents, spreadsheets, email and multi-application workflows, often with a human in the loop. There, checking the outcome is much harder. It needs simulated applications whose state can be inspected, simulated users who respond realistically, and checkers that judge whether a task was done well rather than merely done. I expect the teams that build this infrastructure, rather than the ones with the most raw logs, to have the best agentic data.</p>
 
+  <div class="research-table-wrap">
+    <table>
+      <thead><tr><th></th><th>Coding data</th><th>Cowork data</th></tr></thead>
+      <tbody>
+        <tr><td>Environment</td><td>A repository snapshot in a container</td><td>Documents, spreadsheets, email and several applications, often with a person involved</td></tr>
+        <tr><td>How the outcome is checked</td><td>Tests: the original fails, the fix passes</td><td>Inspectable application state plus a judgment of quality; usually no unit tests</td></tr>
+        <tr><td>Main difficulty</td><td>Answer leakage, building environments at scale, shallow trajectories</td><td>Simulating applications and people; judging "done well", not just "done"</td></tr>
+        <tr><td>Infrastructure needed</td><td>Fast builds and caching, isolated sandboxes, anti-leakage, provenance</td><td>Simulated apps with checkable state, simulated users, quality checkers, replayable sessions</td></tr>
+      </tbody>
+    </table>
+  </div>
+
   <h3 id="trajectory-efficiency">Efficiency should be measured per trajectory, not per call</h3>
-  <p>Most efficiency methods, including many of ours, are evaluated one response at a time. For an agent, a compression or caching choice that loses one detail can cost several extra steps later, and the savings vanish. I think efficiency for agents has to be measured at the level of the whole task: total compute, memory and time to a verified result. This also changes what memory should keep. An agent's context is dominated by tool output rather than prose, so the idea behind D2O and UNComp, keeping what later steps will need and keeping a way back for what was dropped, should be applied to observations and actions, not just tokens.</p>
+  <p>Most efficiency methods, including many of ours, are evaluated one response at a time. For an agent, a compression or caching choice that loses one detail can cost several extra steps later, and the savings vanish. I think efficiency for agents has to be measured at the level of the whole task: total compute, memory and time to a verified result.</p>
+
+  <figure class="research-figure">
+    <div class="research-figure-scroll"><img src="{{ '/assets/img/research/trajectory-efficiency.svg' | relative_url }}" alt="Two trajectories: with full context, the agent reaches a verified result in a few steps; with a detail dropped from the context, each call is cheaper but extra steps to re-read, retry and re-test make the whole task slower and costlier." width="900" height="300" loading="lazy"></div>
+    <figcaption>Saved per call, lost per task. Efficiency for agents should be measured over the whole trajectory to a verified result.</figcaption>
+  </figure>
+
+  <p> This also changes what memory should keep. An agent's context is dominated by tool output rather than prose, so the idea behind D2O and UNComp, keeping what later steps will need and keeping a way back for what was dropped, should be applied to observations and actions, not just tokens.</p>
 
   <h3 id="ai-for-ai-compute">In AI-for-AI loops, compute should flow to verification</h3>
   <p>When AI helps improve AI, each round spends compute on proposing candidates, running them, checking them and confirming the winners. Our agent work suggests that checking is where reliability is won or lost. So I think the efficiency question for these loops is less "how fast can we generate candidates?" and more "how cheaply can we trust a result?" Cheaper reviewers and verifiers, of the kind SWE-Review and SWE-Lego's verifier point to, are likely to be the biggest lever. Progress should also be counted at the same total budget across rounds, including failed attempts and replication, so that an improvement in the loop is not confused with simply spending more.</p>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 340" width="960" height="340" role="img" aria-labelledby="t d">
+  <title id="t">Where the cost of agentic data goes</title>
+  <desc id="d">A pipeline from candidate tasks to training data: building environments, verifying tasks, rolling out trajectories and screening them for leakage and shallow reasoning. Each stage keeps fewer items than the last, and most of the cost sits in the middle stages, handled by LegoFlow's Curator and Tracer blocks.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b509ac"/></marker>
+  </defs>
+  <style>
+    text{font-family:Inter,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;fill:#1f2328}
+    .h{font-size:14px;font-weight:600}
+    .s{font-size:11.5px;fill:#4a525c}
+    .k{font-size:12px;fill:#8a8f98}
+    .c{font-size:12.5px;font-weight:600;fill:#8a1f84}
+    .box{fill:#fff;stroke:#b509ac;stroke-width:1.5}
+    .arr{stroke:#b509ac;stroke-width:1.8}
+  </style>
+  <rect width="960" height="340" rx="14" fill="#f7f7fa"/>
+
+  <rect class="box" x="20" y="30" width="135" height="190" rx="10"/>
+  <text x="87" y="112" text-anchor="middle" class="h">Candidates</text>
+  <text x="87" y="134" text-anchor="middle" class="s">repositories · PRs</text>
+  <text x="87" y="150" text-anchor="middle" class="s">community Q&amp;A</text>
+
+  <rect class="box" x="177" y="45" width="135" height="160" rx="10"/>
+  <text x="244" y="112" text-anchor="middle" class="h">Build</text>
+  <text x="244" y="134" text-anchor="middle" class="s">containers</text>
+  <text x="244" y="150" text-anchor="middle" class="s">dependencies</text>
+
+  <rect class="box" x="334" y="60" width="135" height="130" rx="10"/>
+  <text x="401" y="112" text-anchor="middle" class="h">Verify</text>
+  <text x="401" y="134" text-anchor="middle" class="s">original fails</text>
+  <text x="401" y="150" text-anchor="middle" class="s">reference fix passes</text>
+
+  <rect class="box" x="491" y="75" width="135" height="100" rx="10"/>
+  <text x="558" y="112" text-anchor="middle" class="h">Roll out</text>
+  <text x="558" y="134" text-anchor="middle" class="s">agents in sandboxes</text>
+  <text x="558" y="150" text-anchor="middle" class="s">full trajectories</text>
+
+  <rect class="box" x="648" y="85" width="135" height="80" rx="10"/>
+  <text x="715" y="112" text-anchor="middle" class="h">Screen</text>
+  <text x="715" y="134" text-anchor="middle" class="s">leakage</text>
+  <text x="715" y="150" text-anchor="middle" class="s">shallow reasoning</text>
+
+  <rect class="box" x="805" y="95" width="135" height="60" rx="10" style="fill:#fbeefa"/>
+  <text x="872" y="121" text-anchor="middle" class="h">Training data</text>
+  <text x="872" y="139" text-anchor="middle" class="s">verified · reproducible</text>
+
+  <line class="arr" x1="157" y1="125" x2="173" y2="125" marker-end="url(#a)"/>
+  <line class="arr" x1="314" y1="125" x2="330" y2="125" marker-end="url(#a)"/>
+  <line class="arr" x1="471" y1="125" x2="487" y2="125" marker-end="url(#a)"/>
+  <line class="arr" x1="628" y1="125" x2="644" y2="125" marker-end="url(#a)"/>
+  <line class="arr" x1="785" y1="125" x2="801" y2="125" marker-end="url(#a)"/>
+
+  <rect x="20" y="238" width="135" height="26" rx="6" fill="#eceef2"/>
+  <text x="87" y="256" text-anchor="middle" class="k">cheap</text>
+  <rect x="177" y="238" width="606" height="26" rx="6" fill="#f3d6f0"/>
+  <text x="480" y="256" text-anchor="middle" class="c">most of the cost is here</text>
+
+  <line x1="20" y1="290" x2="469" y2="290" stroke="#b9bcc4" stroke-width="1.5"/>
+  <text x="244" y="312" text-anchor="middle" class="k">LegoFlow · Curator</text>
+  <line x1="491" y1="290" x2="783" y2="290" stroke="#b9bcc4" stroke-width="1.5"/>
+  <text x="637" y="312" text-anchor="middle" class="k">LegoFlow · Tracer</text>
+  <line x1="805" y1="290" x2="940" y2="290" stroke="#b9bcc4" stroke-width="1.5"/>
+  <text x="872" y="312" text-anchor="middle" class="k">Trainer · Evaluator</text>
+</svg>

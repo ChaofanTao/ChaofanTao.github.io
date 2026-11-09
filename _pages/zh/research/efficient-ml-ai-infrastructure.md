@@ -42,7 +42,7 @@ about:
     <figcaption>模型一生中的效率问题。每个阶段对应一个核心问题，以及回答它的工作。</figcaption>
   </figure>
 
-  <p class="research-toc">本页内容：<a href="#compress">表示与压缩</a> · <a href="#remember">记忆与推理</a> · <a href="#transfer">知识迁移</a> · <a href="#serve">系统与稳定性</a> · <a href="#lessons">我们的体会</a> · <a href="#outlook">我对接下来的判断</a> · <a href="#open-questions">还没解决的问题</a></p>
+  <p class="research-toc">本页内容：<a href="#compress">表示与压缩</a> · <a href="#remember">记忆与推理</a> · <a href="#transfer">知识迁移</a> · <a href="#serve">系统与稳定性</a> · <a href="#at-a-glance">一览</a> · <a href="#lessons">我们的体会</a> · <a href="#outlook">我对接下来的判断</a> · <a href="#open-questions">还没解决的问题</a></p>
 
   <h2 id="compress">1. 表示与压缩</h2>
   <p>我在这个方向的工作，是从<a href="https://arxiv.org/abs/2203.10705">量化生成式语言模型</a>开始的，这项工作获得了 ACL 2022 杰出论文奖。对 BERT 这类编码器很好用的量化方法，用到 GPT 这类生成模型上就不灵了，而且当时说不清为什么。我们找到了两个原因：一是在低精度下，词嵌入会挤成一团、变得几乎一样，模型在挑下一个 token 时就分不清这些选项；二是不同模块的权重分布差别很大，一套量化设置照顾不到所有模块。对应的办法是：用 token 级的对比蒸馏让每个 token 的表示保持区分度，用按模块的动态缩放给每个模块单独设定范围。比起方法本身，更重要的是这个诊断，它解释了为什么生成任务比分类任务更难压缩。</p>
@@ -60,6 +60,31 @@ about:
   <p>部署服务还藏着一个假设：GPU 不会坏。在多卡张量并行里，坏一张卡就可能让整个服务停掉。<a href="https://arxiv.org/abs/2511.11617">AnchorTP</a> 把权重和 KV 缓存放在一个独立的进程里，推理进程崩溃了它也还在；然后把模型重新分配到剩下的 GPU 上，并规划出恢复所需的最少数据搬运。</p>
   <p>训练智能体时，“等待”和“丢失状态”这两个问题表现得更加明显。在 <a href="https://www.legox.net/blog/lego-rl/">Lego-RL</a> 里，一次训练尝试几乎全部时间都是智能体在沙箱里干活，而且每次尝试长短差别很大，同步训练的一批总得等最慢的那个；异步调度就能把这些空档填上。如果训练途中权重更新了，部分 rollout 会先暂停生成、加载新权重，再接着缓存的内容继续，长时间的尝试就不会白费。启动沙箱的时间主要花在构建镜像上，预先构建任务镜像、按需拉取镜像省掉了大部分等待；而评分工具则有意内置在每个镜像里，因为能复现的奖励比快一点拿到的奖励更有价值。看板会拆解每次尝试是怎么结束的，帮我们在误读奖励曲线之前，先分清是基础设施出了问题还是模型本身的问题。<a href="https://www.legox.net/blog/lego-rl-sao/">单 rollout 优化</a>则从另一个角度降低成本：用一个学出来的 critic 代替对同一任务的反复采样，训练所需的轨迹大大减少。</p>
 
+  <figure class="research-figure">
+    <div class="research-figure-scroll"><img src="{{ '/assets/img/research/legox/lego-rl-workflow.png' | relative_url }}" alt="Lego-RL 闭环训练流程：数据准备（沙箱管理、镜像缓存、按需拉取、防作弊）、运行前校验、训练（沙箱执行、进程内代理、rollout 与训练器）、实时看板（失败原因拆解、轨迹查看）以及人工复核。" width="1600" height="878" loading="lazy"></div>
+    <figcaption>Lego-RL 的工作流程：从数据准备、沙箱管理，到实时的失败诊断和人工复核。图片来自 <a href="https://www.legox.net/blog/lego-rl/">Lego-RL 博客</a>。</figcaption>
+  </figure>
+
+  <h2 id="at-a-glance">一览</h2>
+  <div class="research-table-wrap">
+    <table>
+      <thead><tr><th>不再成立的假设</th><th>工作</th><th>诊断</th><th>解法</th></tr></thead>
+      <tbody>
+        <tr><td>分词器可以在扩大模型前定下来</td><td>词表扩展定律</td><td>最合适的词表随算力增长，但比模型其他部分慢</td><td>根据算力预算预测词表大小</td></tr>
+        <tr><td>每个部分对低精度的承受能力一样</td><td>量化（ACL 2022 杰出论文）</td><td>词嵌入挤成一团；各模块权重分布差异大</td><td>token 级对比蒸馏；按模块动态缩放</td></tr>
+        <tr><td>结构可以统一地剪</td><td>结构化剪枝 · UPop</td><td>不同组件、不同模态能承受的删减程度不同</td><td>可学习的掩码；按模态学习剪枝比例</td></tr>
+        <tr><td>每个视觉 token 都必不可少</td><td>CrossGET</td><td>跨模态存在大量重复 token</td><td>跨模态引导的 token 合并</td></tr>
+        <tr><td>缓存里每个 token 同样重要</td><td>D2O · UNComp</td><td>不同层、不同注意力头需要的信息不同</td><td>按层分配额度并可召回；按熵引导压缩</td></tr>
+        <tr><td>每一步都要重读整段提示</td><td>Prefilling-dLLM</td><td>扩散模型在前缀上重复计算</td><td>分块缓存，加上序列起始 token 作锚点</td></tr>
+        <tr><td>同步没有成本</td><td>ATTS</td><td>推理时扩展的主要开销是等待</td><td>基于共性预测的异步推理</td></tr>
+        <tr><td>GPU 不会坏</td><td>AnchorTP</td><td>坏一张卡就会让整个服务停掉</td><td>状态放在进程之外；最少数据搬运恢复</td></tr>
+        <tr><td>前向和反向 KL 表现不同</td><td>自适应 KL</td><td>最优解相同，只在训练早期侧重头部或尾部</td><td>自适应地为两者分配权重</td></tr>
+        <tr><td>最强的老师教得最好</td><td>PerSyn</td><td>关键在于学生能学会什么</td><td>为每个问题挑选最合适的老师</td></tr>
+        <tr><td>智能体 RL 的瓶颈在优化器</td><td>Lego-RL 基础设施</td><td>大部分时间花在智能体干活和等待上</td><td>异步调度、部分 rollout、预构建镜像</td></tr>
+      </tbody>
+    </table>
+  </div>
+
   <h2 id="lessons">我们的体会</h2>
   <ol class="research-insights">
     <li><strong>先找出那个不成立的假设，再动手优化。</strong>这里的每个结果，都是从追问“现有方法为什么不行”开始的。原因一旦弄清楚，解决办法往往很简单。</li>
@@ -73,10 +98,39 @@ about:
 
   <h3 id="agentic-data">大规模智能体数据的基础设施，是新的瓶颈</h3>
   <p>对语言模型来说，数据就是文本；对智能体来说，数据是可以运行、并且能检验结果的环境，而大规模生产这样的数据，主要是一个基础设施问题。做 LegoFlow 和 Terminal-Lego 让我们看清了成本花在哪里：找候选任务很便宜，真正费力的是搭建运行环境、用测试证明每个任务成立、生成轨迹，再筛掉有答案泄露或推理太浅的那些，最后只有一小部分候选能留下来。我认为智能体数据的扩展单位，是“经过验证、可以复现的环境”，衡量基础设施的标准，是单位算力下能搭建、验证并保持干净的环境有多少。这需要快速的环境构建和缓存、隔离且可控网络的沙箱、每个任务和轨迹都能追溯来源，以及让智能体自己就能操作的数据流水线，LegoFlow 的模块化设计已经朝这个方向迈出了一步。</p>
+
+  <figure class="research-figure">
+    <div class="research-figure-scroll"><img src="{{ '/assets/img/research/agentic-data-pipeline-zh.svg' | relative_url }}" alt="从候选任务到训练数据的流水线：搭建环境、验证任务、生成轨迹、筛掉答案泄露和推理过浅的轨迹；每一步留下的都更少，大部分成本集中在中间几步，由 LegoFlow 的 Curator 和 Tracer 负责。" width="960" height="340" loading="lazy"></div>
+    <figcaption>智能体数据的成本花在哪里。找候选任务很便宜，真正费力的是搭环境、验证、生成轨迹和筛选。</figcaption>
+  </figure>
+
+  <figure class="research-figure">
+    <div class="research-figure-scroll"><img src="{{ '/assets/img/research/legox/terminal-lego-pipeline.png' | relative_url }}" alt="Terminal-Lego 任务构建流程：筛选高质量的 Stack Overflow 问答，依次生成指令、环境、解答、Dockerfile 和测试，审查测试，再通过 Docker 往返验证，只保留通过验证的任务。" width="1600" height="892" loading="lazy"></div>
+    <figcaption>一个具体例子：Terminal-Lego 只有在完整的 Docker 往返验证通过后，才保留一个任务。图片来自 <a href="https://www.legox.net/blog/terminal-lego/">Terminal-Lego 博客</a>。</figcaption>
+  </figure>
   <p>软件工程是最容易的情况，因为测试能给出清晰的信号。下一波智能体数据会来自协作办公，我把它叫作 cowork 数据：文档、表格、邮件和跨多个应用的工作流程，而且常常有人参与其中。在这些场景里，判断任务是否完成要难得多。它需要状态可以检查的模拟应用、反应真实的模拟用户，以及能判断“做得好不好”而不只是“做没做完”的检查器。我认为，真正拥有好的智能体数据的，会是那些建好了这套基础设施的团队，而不是手里原始日志最多的团队。</p>
 
+  <div class="research-table-wrap">
+    <table>
+      <thead><tr><th></th><th>代码数据</th><th>cowork 数据</th></tr></thead>
+      <tbody>
+        <tr><td>环境</td><td>容器里的代码仓库快照</td><td>文档、表格、邮件和多个应用，常常有人参与其中</td></tr>
+        <tr><td>如何检验结果</td><td>测试：原代码不通过，修复后通过</td><td>可检查的应用状态，加上对完成质量的判断；通常没有单元测试</td></tr>
+        <tr><td>主要难点</td><td>答案泄露、大规模搭建环境、推理过浅的轨迹</td><td>模拟应用和人；判断“做得好不好”，而不只是“做没做完”</td></tr>
+        <tr><td>需要的基础设施</td><td>快速构建与缓存、隔离沙箱、防泄露、来源可追溯</td><td>状态可检查的模拟应用、模拟用户、质量检查器、可回放的会话</td></tr>
+      </tbody>
+    </table>
+  </div>
+
   <h3 id="trajectory-efficiency">效率应该按整条轨迹衡量，而不是按单次调用</h3>
-  <p>大多数效率方法，包括我们的不少工作，都是按单次回答来评估的。但对智能体来说，一次压缩或缓存决策如果丢掉了一个细节，后面可能要多走好几步，省下的成本也就没了。我认为，智能体的效率要在整个任务的层面衡量：得到一个经过验证的结果，总共花了多少算力、显存和时间。这也改变了记忆应该保留什么。智能体的上下文里大部分是工具输出而不是普通文字，所以 D2O 和 UNComp 背后的思路，即留下后续步骤会用到的信息、给删掉的内容留一条退路，应该用到观察结果和动作上，而不只是 token 上。</p>
+  <p>大多数效率方法，包括我们的不少工作，都是按单次回答来评估的。但对智能体来说，一次压缩或缓存决策如果丢掉了一个细节，后面可能要多走好几步，省下的成本也就没了。我认为，智能体的效率要在整个任务的层面衡量：得到一个经过验证的结果，总共花了多少算力、显存和时间。</p>
+
+  <figure class="research-figure">
+    <div class="research-figure-scroll"><img src="{{ '/assets/img/research/trajectory-efficiency-zh.svg' | relative_url }}" alt="两条轨迹对比：保留完整上下文时，智能体几步就得到经过验证的结果；上下文丢了一个细节时，每次调用更便宜，但要多走几步去重读、重试、重新测试，整体更慢也更贵。" width="900" height="300" loading="lazy"></div>
+    <figcaption>单次省下的成本，整体上又亏了回去。智能体的效率要按得到验证结果的整条轨迹来衡量。</figcaption>
+  </figure>
+
+  <p>这也改变了记忆应该保留什么。智能体的上下文里大部分是工具输出而不是普通文字，所以 D2O 和 UNComp 背后的思路，即留下后续步骤会用到的信息、给删掉的内容留一条退路，应该用到观察结果和动作上，而不只是 token 上。</p>
 
   <h3 id="ai-for-ai-compute">在 AI 改进 AI 的循环里，算力应该更多地流向验证</h3>
   <p>当 AI 帮助改进 AI 时，每一轮都要把算力花在提出候选、运行候选、检验候选和确认最终结果上。我们在智能体方面的工作表明，可靠与否往往取决于检验这一步。所以我认为，这类循环的效率问题，与其说是“候选能生成多快”，不如说是“要花多少成本才能相信一个结果”。更便宜的审查者和验证器，比如 SWE-Review 和 SWE-Lego 的验证器所指向的那种，很可能是最大的杠杆。各轮之间的进展也应该在相同的总预算下比较，把失败的尝试和复现都算进去，免得把“花得更多”误当成“循环变好了”。</p>
