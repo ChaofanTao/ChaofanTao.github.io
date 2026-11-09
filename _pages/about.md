@@ -718,7 +718,7 @@ redirect_from:
 
   <section class="home-section" id="all-publications" aria-labelledby="all-publications-heading">
     <div class="home-section-heading"><h2 id="all-publications-heading">All publications <span class="home-count">since 2022</span></h2></div>
-    <p class="home-section-description">Browse by topic. Each paper includes its full author list and a Chinese summary under “Authors &amp; 中文摘要”. Research essays on each theme: <a href="{{ '/research/agentic-intelligence/' | relative_url }}">agentic intelligence</a> and <a href="{{ '/research/efficient-ml-ai-infrastructure/' | relative_url }}">efficient ML and AI infrastructure</a> (<a href="{{ '/zh/research/' | relative_url }}" lang="zh">中文</a>).</p>
+    <p class="home-section-description">Browse by topic. Each paper includes its full author list and a Chinese summary under “Authors &amp; 中文摘要”. Research essays on each theme: <a href="{{ '/research/agentic-intelligence/' | relative_url }}">agentic intelligence</a> and <a href="{{ '/research/efficient-ml-ai-infrastructure/' | relative_url }}">efficient ML and AI infrastructure</a>.</p>
     {% for group in site.data.homepage.groups %}
       {% assign papers = site.data.homepage.publications | where: "group", group.id %}
       <details class="home-publication-group">

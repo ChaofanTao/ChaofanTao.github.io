@@ -28,7 +28,6 @@ about:
     <a href="{{ '/' | relative_url }}">Chaofan Tao</a><span aria-hidden="true">/</span>
     <a href="{{ '/research/' | relative_url }}">Research</a><span aria-hidden="true">/</span>
     <span>Efficient ML and AI infrastructure</span>
-    <span aria-hidden="true">·</span><a href="{{ '/zh/research/efficient-ml-ai-infrastructure/' | relative_url }}" lang="zh-Hans">中文版</a>
   </nav>
 
   <h1>Efficient ML &amp; AI Infrastructure</h1>
@@ -82,17 +81,17 @@ about:
     <table>
       <thead><tr><th>Assumption that broke</th><th>Work</th><th>Diagnosis</th><th>Fix</th></tr></thead>
       <tbody>
-        <tr><td>The tokenizer can be fixed before scaling</td><td><a href="https://arxiv.org/abs/2407.13623">Scaling Laws with Vocabulary</a> <span class="research-venue">(NeurIPS 2024)</span></td><td>The best vocabulary grows with compute, more slowly than the rest of the model</td><td>Predict vocabulary size from the compute budget</td></tr>
-        <tr><td>Every part tolerates low precision equally</td><td><a href="https://arxiv.org/abs/2203.10705">Quantization</a> <span class="research-venue">(ACL 2022 Outstanding Paper)</span></td><td>Embeddings collapse; weight ranges differ across modules</td><td>Token-level contrastive distillation; module-wise scaling</td></tr>
-        <tr><td>Structure can be pruned uniformly</td><td><a href="https://doi.org/10.18653/v1/2023.findings-acl.692">Structured pruning</a> <span class="research-venue">(Findings of ACL 2023)</span> · <a href="https://arxiv.org/abs/2301.13741">UPop</a> <span class="research-venue">(ICML 2023)</span></td><td>Components and modalities differ in how much they can lose</td><td>Learnable masks; pruning ratios learned per modality</td></tr>
-        <tr><td>Every visual token is needed</td><td><a href="https://arxiv.org/abs/2305.17455">CrossGET</a> <span class="research-venue">(ICML 2024)</span></td><td>Many tokens are redundant across modalities</td><td>Cross-modal guided token merging</td></tr>
-        <tr><td>Every cached token matters equally</td><td><a href="https://arxiv.org/abs/2406.13035">D2O</a> <span class="research-venue">(ICLR 2025)</span> · <a href="https://arxiv.org/abs/2410.03090">UNComp</a> <span class="research-venue">(EMNLP 2025)</span></td><td>Layers and heads need different things</td><td>Per-layer budgets with recall; entropy-guided compression</td></tr>
-        <tr><td>The prompt must be re-read every step</td><td><a href="https://arxiv.org/abs/2606.10537">Prefilling-dLLM</a> <span class="research-venue">(EMNLP 2026)</span></td><td>Diffusion models repeat work on the prefix</td><td>Chunked cache with start-of-sequence anchors</td></tr>
-        <tr><td>Synchronization is free</td><td><a href="https://arxiv.org/abs/2509.15148">ATTS</a> <span class="research-venue">(ICLR 2026)</span></td><td>Waiting dominates test-time scaling</td><td>Asynchronous inference with conformal prediction</td></tr>
-        <tr><td>GPUs don't fail</td><td><a href="https://arxiv.org/abs/2511.11617">AnchorTP</a> <span class="research-venue">(DATE 2026)</span></td><td>One failure takes the whole service down</td><td>State kept outside the process; minimal migration</td></tr>
-        <tr><td>Forward and reverse KL behave differently</td><td><a href="https://arxiv.org/abs/2404.02657">Adaptive KL</a> <span class="research-venue">(COLING 2025)</span></td><td>Same optimum; they differ early, on head versus tail</td><td>Weight the two adaptively</td></tr>
-        <tr><td>The strongest teacher teaches best</td><td><a href="https://arxiv.org/abs/2510.10925">PerSyn</a> <span class="research-venue">(ACL 2026)</span></td><td>What matters is what the student can learn</td><td>Route each prompt to the best-suited teacher</td></tr>
-        <tr><td>Agent RL is bounded by the optimizer</td><td><a href="https://arxiv.org/abs/2608.17393">Lego-RL</a> infrastructure <span class="research-venue">(arXiv 2026)</span></td><td>Most time goes to agents acting and waiting</td><td>Asynchronous scheduling, partial rollout, prebuilt images</td></tr>
+        <tr><td>The tokenizer can be fixed before scaling</td><td>Scaling Laws with Vocabulary</td><td>The best vocabulary grows with compute, more slowly than the rest of the model</td><td>Predict vocabulary size from the compute budget</td></tr>
+        <tr><td>Every part tolerates low precision equally</td><td>Quantization</td><td>Embeddings collapse; weight ranges differ across modules</td><td>Token-level contrastive distillation; module-wise scaling</td></tr>
+        <tr><td>Structure can be pruned uniformly</td><td>Structured pruning · UPop</td><td>Components and modalities differ in how much they can lose</td><td>Learnable masks; pruning ratios learned per modality</td></tr>
+        <tr><td>Every visual token is needed</td><td>CrossGET</td><td>Many tokens are redundant across modalities</td><td>Cross-modal guided token merging</td></tr>
+        <tr><td>Every cached token matters equally</td><td>D2O · UNComp</td><td>Layers and heads need different things</td><td>Per-layer budgets with recall; entropy-guided compression</td></tr>
+        <tr><td>The prompt must be re-read every step</td><td>Prefilling-dLLM</td><td>Diffusion models repeat work on the prefix</td><td>Chunked cache with start-of-sequence anchors</td></tr>
+        <tr><td>Synchronization is free</td><td>ATTS</td><td>Waiting dominates test-time scaling</td><td>Asynchronous inference with conformal prediction</td></tr>
+        <tr><td>GPUs don't fail</td><td>AnchorTP</td><td>One failure takes the whole service down</td><td>State kept outside the process; minimal migration</td></tr>
+        <tr><td>Forward and reverse KL behave differently</td><td>Adaptive KL</td><td>Same optimum; they differ early, on head versus tail</td><td>Weight the two adaptively</td></tr>
+        <tr><td>The strongest teacher teaches best</td><td>PerSyn</td><td>What matters is what the student can learn</td><td>Route each prompt to the best-suited teacher</td></tr>
+        <tr><td>Agent RL is bounded by the optimizer</td><td>Lego-RL infrastructure</td><td>Most time goes to agents acting and waiting</td><td>Asynchronous scheduling, partial rollout, prebuilt images</td></tr>
       </tbody>
     </table>
   </div>
@@ -150,12 +149,16 @@ about:
   <p>In loops where AI improves AI, checking is where reliability is won or lost, so cheaper reviewers and verifiers of the kind <a href="https://arxiv.org/abs/2607.06065">SWE-Review</a> points to are likely the biggest lever. Science sharpens this, because the expensive step is the experiment, not the model. The draft-and-check pattern from ATTS fits: a cheap model or fast surrogate screens many candidates, the expensive simulation or experiment checks only the most promising, and calibrated rules decide how much to filter. Failed experiments should be kept, with their settings, not discarded.</p>
 
   <h2 id="open-questions">Open questions</h2>
+  <p>Questions I find most important for this direction, some raised by our own work and some by where the field is now.</p>
   <ul class="research-questions">
-    <li><strong>What does a verifiable environment for cowork tasks look like?</strong> There are no unit tests, only app state and quality judgments. <span class="research-test">How we might test it: grade a small set of cowork tasks by hand, then measure how often automated checkers agree and how easily an agent fools them.</span></li>
-    <li><strong>How should vocabularies and caches handle contexts that are mostly tool output?</strong> <span class="research-test">How we might test it: compare tokenizers and cache policies on agent traces by end-to-end cost to a verified result.</span></li>
-    <li><strong>How much of agent RL's cost can be removed before capability suffers?</strong> Each saving makes training data staler relative to the policy. <span class="research-test">How we might test it: vary staleness and rollout counts, comparing at equal compute and wall-clock time.</span></li>
-    <li><strong>What should a weeks-long agent forget?</strong> <span class="research-test">How we might test it: replay long trajectories under different forgetting policies and count the extra steps each needs to reach the same verified result.</span></li>
-    <li><strong>How should a loop split its budget between exploring and verifying?</strong> In science, a surrogate may filter out exactly the surprising candidates. <span class="research-test">How we might test it: sweep the share spent on verification and track confirmed gains per unit of compute on a held-out set.</span></li>
+    <li><strong>Is there a scaling law for agentic data?</strong> For text we know how loss scales with tokens. For agents the unit is a verified environment, and we do not know how capability scales with their number, variety and difficulty, or what each should cost.</li>
+    <li><strong>How do we verify cowork tasks without unit tests?</strong> Office work is judged through application state and a person's sense of quality. Checkers that are cheap, agree with people and are hard to game do not exist yet.</li>
+    <li><strong>Does memory compression still matter when long context gets cheap?</strong> The bottleneck may move from storing tokens to choosing what to read. Should an agent compress, retrieve or keep everything, judged over the whole trajectory?</li>
+    <li><strong>What is compute-optimal for an agent?</strong> A fixed budget can go to a bigger model, more turns, more parallel attempts or more verification. Training has scaling laws for such trade-offs; trajectories do not.</li>
+    <li><strong>How far can training and inference drift apart before RL breaks?</strong> Asynchronous and partial rollouts, and numerical differences between inference engines and trainers, all make data slightly off-policy. The safe boundary between throughput and stability is still found by trial and error.</li>
+    <li><strong>Can small models learn long-horizon agent skills?</strong> The best teacher is the one a student can learn from, but it is unclear whether a small model can absorb planning and self-checking from traces, or whether some of that only appears at scale.</li>
+    <li><strong>Which efficiency techniques survive new architectures?</strong> Diffusion language models, mixtures of experts and hybrid attention each break assumptions behind KV caching, quantization and speculative decoding.</li>
+    <li><strong>When can a cheap surrogate be trusted to screen scientific experiments?</strong> One that filters out exactly the surprising candidates defeats the purpose, and science cares most about the cases a surrogate has never seen.</li>
   </ul>
 
   <p class="research-readmore">Code and experiments: <a href="https://github.com/sail-sg/scaling-with-vocab">Vocabulary study</a> · <a href="https://huggingface.co/spaces/sail/scaling-with-vocab-demo">Vocabulary calculator</a> · <a href="https://github.com/LegoX/Lego-RL">Lego-RL</a> · <a href="https://github.com/LegoX/LegoFlow">LegoFlow</a></p>

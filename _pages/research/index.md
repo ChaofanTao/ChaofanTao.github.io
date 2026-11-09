@@ -22,7 +22,6 @@ about:
   <nav class="research-breadcrumb" aria-label="Breadcrumb">
     <a href="{{ '/' | relative_url }}">Chaofan Tao</a><span aria-hidden="true">/</span>
     <span>Research</span>
-    <span aria-hidden="true">·</span><a href="{{ '/zh/research/' | relative_url }}" lang="zh-Hans">中文版</a>
   </nav>
 
   <h1>Research</h1>
