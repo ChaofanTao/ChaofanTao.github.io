@@ -23,7 +23,8 @@
       "abstract_zh": "SWE-Lego 研究仅靠监督微调能把代码修复做到什么程度。它结合真实与合成任务，保留错误作为上下文但不模仿错误步骤，并按难度安排训练，再用验证器选择候选补丁。",
       "selected_order": 1,
       "takeaway": "A supervised fine-tuning recipe for software issue resolution, combining verified data, error masking, and curriculum learning.",
-      "code": "https://github.com/LegoX/SWE-Lego"
+      "code": "https://github.com/LegoX/SWE-Lego",
+      "data": "https://huggingface.co/collections/Lego-X/swe-lego"
     },
     {
       "title": "LEGO-RL: Harness-Native Reinforcement Learning for Coding Agents",
@@ -86,7 +87,8 @@
       "group": "agentic",
       "abstract_en": "MMSearch-Plus provides 311 tasks requiring fine visual cues to be followed through iterative image-text search and cross-checking, with tools for marking, cropping and targeted retrieval.",
       "abstract_zh": "MMSearch-Plus 包含 311 个图文搜索任务，要求从图像细节出发，经过多轮检索与交叉核对找到答案。配套工具支持标记、裁剪和定向搜索，帮助检查视觉线索是否真正参与了解题。",
-      "repository": "https://github.com/mmsearch-plus/MMSearch-Plus"
+      "repository": "https://github.com/mmsearch-plus/MMSearch-Plus",
+      "data": "https://huggingface.co/datasets/Cie1/MMSearch-Plus"
     },
     {
       "title": "OVD: On-policy Verbal Distillation",
@@ -122,7 +124,8 @@
       "group": "agentic",
       "abstract_en": "PhyX introduces a 3K-question multimodal benchmark spanning six physics domains to test physics-grounded reasoning, revealing large gaps between top models and human experts.",
       "abstract_zh": "PhyX 用约 3000 道多模态题考察物理推理，覆盖六个物理领域。它要求模型结合图像、知识与实际约束，并分析模型依赖公式记忆或表面线索时会出现哪些错误。",
-      "code": "https://github.com/killthefullmoon/PhyX"
+      "code": "https://github.com/killthefullmoon/PhyX",
+      "data": "https://huggingface.co/datasets/Cloudriver/PhyX"
     },
     {
       "title": "RoboCodeX: Multimodal Code Generation for Robotic Behavior Synthesis",
@@ -157,7 +160,8 @@
       "group": "agentic",
       "abstract_en": "SRPO is a reflection-aware RL framework that teaches MLLMs self-reflection and then optimizes concise, meaningful reflections with GRPO-style rewards to improve multimodal reasoning.",
       "abstract_zh": "SRPO 先用示范帮助多模态模型学习反思，再通过强化学习鼓励简洁、有帮助的修正。它关注反思能否改善推理，而不只是增加回答长度。",
-      "code": "https://github.com/SUSTechBruce/SRPO_MLLMs"
+      "code": "https://github.com/SUSTechBruce/SRPO_MLLMs",
+      "data": "https://huggingface.co/datasets/bruce360568/SRPO_RL_datasets"
     },
     {
       "title": "The Synergy Dilemma of Long-CoT SFT and RL: Investigating Post-training Techniques for Reasoning VLMs",

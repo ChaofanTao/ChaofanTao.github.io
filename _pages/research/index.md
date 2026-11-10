@@ -25,7 +25,7 @@ about:
   </nav>
 
   <h1>Research</h1>
-  <p class="research-lead">I study how AI systems can interact with the environment, learn from the result and be trusted, and how to make all of that affordable. My work has moved from compressing and scaling language models, through multimodal learning, to agentic intelligence. The two essays below walk through my work with collaborators, and share some of my thoughts: ultra long-horizon tasks,  trustworthy evaluation, and the infrastructure that agentic data demands.</p>
+  <p class="research-lead">I study how AI systems can interact with the environment, learn from the result and be trusted, and how to make all of that affordable. My work has moved from compressing and scaling language models, through multimodal learning, to agentic intelligence. The two blogs below walk through some of my previous work with collaborators, and share some of thoughts: ultra long-horizon tasks,  trustworthy evaluation, and the infrastructure that agentic data demands.</p>
 
   <div class="research-cards">
     <article class="research-card">
@@ -34,7 +34,7 @@ about:
     </article>
     <article class="research-card">
       <h2><a href="{{ '/research/efficient-ml-ai-infrastructure/' | relative_url }}">Efficient ML &amp; AI Infrastructure</a></h2>
-      <p>Quantization and pruning, vocabulary scaling, KV caches, fast test-time scaling, distillation and resilient systems. Thoughts on infrastructure for large-scale agentic data, efficiency per trajectory, weeks-long runs and AI for Science.</p>
+      <p>Quantization and pruning, vocabulary scaling, KV caches, test-time scaling, distillation and resilient systems. Thoughts on infrastructure for large-scale agentic data, efficiency per trajectory, weeks-long runs and AI for Science.</p>
     </article>
   </div>
 
