@@ -174,15 +174,6 @@ about:
     <li><strong>Does multimodal perception need to become active?</strong> Our multimodal failures usually start before reasoning, at seeing the right detail. Will scale fix this, or must agents look again, zoom and gather evidence as part of reasoning, on screens and in the physical world?</li>
   </ul>
 
-  <h2 id="resources">Project resources and papers</h2>
-  <ul>
-    <li>LegoFlow: <a href="https://github.com/LegoX/LegoFlow">code</a> · <a href="https://huggingface.co/collections/Lego-X/legoflow">data</a></li>
-    <li>SWE-Lego: <a href="https://github.com/LegoX/SWE-Lego">code</a> · <a href="https://huggingface.co/collections/Lego-X/swe-lego">data and models</a></li>
-    <li>Terminal-Lego: <a href="https://github.com/LegoX/Terminal-Lego">code</a> · <a href="https://huggingface.co/datasets/Lego-X/Terminal-Lego-15k">data</a></li>
-    <li>Lego-RL: <a href="https://github.com/LegoX/Lego-RL">code</a> · <a href="https://huggingface.co/collections/Lego-X/lego-rl">models and data</a></li>
-    <li>SWE-Review: <a href="https://github.com/LegoX/SWE-Review">code</a> · <a href="https://huggingface.co/collections/Lego-X/swe-review">models and data</a></li>
-  </ul>
-
   {% include research/paper-list.liquid group="agentic" lang="en" %}
 
   <p>Related: <a href="{{ '/research/efficient-ml-ai-infrastructure/' | relative_url }}">Efficient ML and AI infrastructure</a></p>

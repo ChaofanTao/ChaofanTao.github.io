@@ -1,6 +1,6 @@
 {% assign group_papers = site.data.homepage.publications | where: "group", include.group %}
 <details class="research-more">
-  <summary>{% if include.lang == 'zh' %}相关论文（{{ group_papers.size }} 篇）{% else %}Papers ({{ group_papers.size }}){% endif %}</summary>
+  <summary>{% if include.lang == 'zh' %}相关论文（{{ group_papers.size }} 篇）{% else %}Papers and Resources ({{ group_papers.size }}){% endif %}</summary>
   <ol class="research-papers">
     {% for paper in group_papers %}
       <li class="research-paper">

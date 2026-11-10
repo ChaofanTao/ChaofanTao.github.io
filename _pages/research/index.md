@@ -25,12 +25,12 @@ about:
   </nav>
 
   <h1>Research</h1>
-  <p class="research-lead">I study how AI systems can see what matters, act on it, learn from the result and be trusted, and how to make all of that affordable. My work has moved from compressing and scaling language models, through multimodal reasoning, to coding agents that we build in the open at <a href="https://www.legox.net/">LegoX</a>. The two essays below walk through that work and share some thoughts on where it leads: very long-horizon tasks, teams of agents, trustworthy evaluation, AI that helps improve AI, AI for Science, and the infrastructure that agentic data now demands.</p>
+  <p class="research-lead">I study how AI systems can interact with the environment, learn from the result and be trusted, and how to make all of that affordable. My work has moved from compressing and scaling language models, through multimodal learning, to agentic intelligence. The two essays below walk through my work with collaborators, and share some of my thoughts: ultra long-horizon tasks,  trustworthy evaluation, and the infrastructure that agentic data demands.</p>
 
   <div class="research-cards">
     <article class="research-card">
       <h2><a href="{{ '/research/agentic-intelligence/' | relative_url }}">Agentic Intelligence</a></h2>
-      <p>Multimodal reasoning, then coding agents as a laboratory: verified experience, SFT and RL inside real harnesses, and agentic review. Thoughts on very long-horizon agents, multi-agent collaboration, evaluation, AI for AI and AI for Science.</p>
+      <p>From reasoning to agentic reasoning: agentic data pipeline, SFT and RL inside real harnesses, and agentic review. Thoughts on long-horizon agents, multi-agent collaboration, evaluation, AI for AI and AI for Science.</p>
     </article>
     <article class="research-card">
       <h2><a href="{{ '/research/efficient-ml-ai-infrastructure/' | relative_url }}">Efficient ML &amp; AI Infrastructure</a></h2>
