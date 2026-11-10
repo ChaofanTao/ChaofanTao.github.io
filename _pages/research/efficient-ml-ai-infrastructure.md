@@ -40,7 +40,7 @@ about:
   <figure class="research-figure">
     <div class="research-figure-scroll"><img src="{{ '/assets/img/research/efficiency-lifecycle.svg' | relative_url }}" alt="Diagram of five lifecycle stages, design, compress, remember, compute and serve, and transfer, each paired with its central question and the projects that address it. All projects are work by Chaofan Tao and collaborators." width="960" height="325" loading="eager"></div>
     <figcaption>Efficiency across a model's life. Each stage pairs its central question with the work that addresses it.</figcaption>
-    <div class="research-works">
+    <div class="research-works" id="works">
       <p class="research-works-note">All work in this figure is by Chaofan Tao and collaborators:</p>
       <p><strong>Design</strong>: <a href="https://arxiv.org/abs/2407.13623">Scaling Laws with Vocabulary</a> <span class="research-venue">(NeurIPS 2024)</span></p>
       <p><strong>Compress</strong>: <a href="https://arxiv.org/abs/2203.10705">Quantization of generative LMs</a> <span class="research-venue">(ACL 2022 Outstanding Paper)</span> · <a href="https://doi.org/10.18653/v1/2023.findings-acl.692">Structured pruning</a> <span class="research-venue">(Findings of ACL 2023)</span> · <a href="https://arxiv.org/abs/2301.13741">UPop</a> <span class="research-venue">(ICML 2023)</span> · <a href="https://arxiv.org/abs/2305.17455">CrossGET</a> <span class="research-venue">(ICML 2024)</span></p>
@@ -67,8 +67,7 @@ about:
 
   <h2 id="serve">4. Systems and reliability</h2>
   <p><strong>Serving rests on another hidden assumption: that GPUs don't fail.</strong> With tensor parallelism across several GPUs, losing one can take the whole service down. <a href="https://arxiv.org/abs/2511.11617">AnchorTP</a> keeps the weights and KV caches alive in a separate process that survives the crash, re-splits the model across the remaining GPUs, and plans the least data movement needed to recover.</p>
-  <p><strong>Training agents brings both lessons, waiting and lost state, into sharper focus.</strong> In <a href="https://arxiv.org/abs/2608.17393">Lego-RL</a>, almost all of a training attempt is the agent working in a sandbox, and attempts vary widely in length, so synchronous batches keep waiting for the slowest member. Asynchronous scheduling fills those gaps. When weights update mid-attempt, partial rollout pauses generation, loads the new weights and continues from the cached prefix, so long attempts aren't thrown away.</p>
-  <p><strong>Start-up and diagnosis matter as much as scheduling.</strong> Sandbox start-up is dominated by building images, so prebuilt task images and lazy image pulls remove most of that wait, while the grading tools are deliberately baked into every image, because a reward you can reproduce is worth more than one you get slightly faster. Dashboards that break down why each attempt ended let us tell infrastructure failures from genuine policy problems before misreading a reward curve. <a href="https://www.legox.net/blog/lego-rl-sao/">Single-rollout optimization</a> attacks a different cost: it replaces repeated sampling of the same task with a learned critic, so far fewer trajectories are needed to train.</p>
+  <p><strong>Training agents brings both lessons, waiting and lost state, into sharper focus.</strong> In <a href="https://arxiv.org/abs/2608.17393">Lego-RL</a>, almost all of a training attempt is the agent working in a sandbox, and attempts vary widely in length, so synchronous batches keep waiting for the slowest member; asynchronous scheduling fills those gaps, and partial rollout lets a long attempt survive a weight update by continuing from its cached prefix. Prebuilt task images and lazy image pulls remove most of the sandbox start-up wait, while the grading tools are deliberately baked into every image, because a reward you can reproduce is worth more than one you get slightly faster. How Lego-RL keeps training faithful to what the agent actually did, and how it tells infrastructure failures from policy problems, is covered on the <a href="{{ '/research/agentic-intelligence/#learning' | relative_url }}">agentic intelligence page</a>.</p>
 
   <figure class="research-figure">
     <div class="research-figure-scroll"><img src="{{ '/assets/img/research/legox/lego-rl-workflow.png' | relative_url }}" alt="Lego-RL closed-loop workflow: data preparation with sandbox management, image cache, lazy pulls and anti-hacking; run validation; the training run with sandbox execution, in-process proxy, rollout and trainer; a live UI with failure breakdowns and trajectory viewer; and human review." width="1600" height="878" loading="lazy"></div>
@@ -76,7 +75,7 @@ about:
   </figure>
 
   <h2 id="at-a-glance">At a glance</h2>
-  <p class="research-works-note">All work in this table is by Chaofan Tao and collaborators.</p>
+  <p class="research-works-note">All work in this table is by Chaofan Tao and collaborators. Paper links and venues are in the <a href="#works">list under the opening figure</a>.</p>
   <div class="research-table-wrap">
     <table>
       <thead><tr><th>Assumption that broke</th><th>Work</th><th>Diagnosis</th><th>Fix</th></tr></thead>
@@ -109,7 +108,7 @@ about:
   <p>These are personal views, each an extension of something the work above taught us.</p>
 
   <h3 id="agentic-data">Infrastructure for large-scale agentic data is the new bottleneck</h3>
-  <p><strong>For agents, data means executable environments with a way to check the outcome.</strong> Building LegoFlow and Terminal-Lego showed us where the cost goes: finding candidate tasks is cheap, but building environments, proving each task with tests, rolling out trajectories and screening them is where almost all the effort lies, and only a small fraction survive. I think the scaling unit for agentic data is the verified, reproducible environment, and infrastructure should be judged by how many of those it can build, verify and keep honest per unit of compute.</p>
+  <p><strong>For agents, data means executable environments with a way to check the outcome.</strong> Building LegoFlow and Terminal-Lego showed us where the cost goes: finding candidates is cheap, while building environments, proving tasks with tests, and rolling out and screening trajectories take almost all the effort, and few candidates survive. I think the scaling unit for agentic data is the verified, reproducible environment, and infrastructure should be judged by how many it can build and keep honest per unit of compute.</p>
 
   <figure class="research-figure">
     <div class="research-figure-scroll"><img src="{{ '/assets/img/research/agentic-data-pipeline.svg' | relative_url }}" alt="Pipeline from candidate tasks through building environments, verifying tasks, rolling out trajectories and screening them to training data; each stage keeps fewer items, and most of the cost sits in the middle stages handled by LegoFlow's Curator and Tracer." width="960" height="340" loading="lazy"></div>
@@ -120,22 +119,22 @@ about:
     <div class="research-figure-scroll"><img src="{{ '/assets/img/research/legox/terminal-lego-pipeline.png' | relative_url }}" alt="Terminal-Lego construction pipeline: collecting high-quality Stack Overflow questions, generating instructions, environments, solutions, Dockerfiles and tests in cascade, reviewing tests, and a Docker round trip that keeps only tasks that pass verification." width="1600" height="892" loading="lazy"></div>
     <figcaption>A concrete example: <a href="https://arxiv.org/abs/2606.03461">Terminal-Lego</a> keeps a task only after a full Docker round trip confirms it. Figure from the <a href="https://www.legox.net/blog/terminal-lego/">Terminal-Lego blog</a>.</figcaption>
   </figure>
-  <p>Software is the easy case, because tests give a clean signal. The next wave will be cowork data: documents, spreadsheets, email and multi-application workflows, often with a person in the loop, where checking an outcome is much harder. I expect the teams that build this infrastructure, rather than those with the most raw logs, to have the best agentic data.</p>
+  <p>Software is the easy case, because tests give a clean signal. The next wave is cowork data, documents, spreadsheets, email and multi-app workflows with people in the loop, where checking outcomes is much harder. I expect the teams that build this infrastructure, not those with the most raw logs, to have the best agentic data.</p>
 
   <div class="research-table-wrap">
     <table>
       <thead><tr><th></th><th>Coding data</th><th>Cowork data</th></tr></thead>
       <tbody>
-        <tr><td>Environment</td><td>A repository snapshot in a container</td><td>Documents, spreadsheets, email and several apps, often with a person involved</td></tr>
-        <tr><td>Outcome check</td><td>Tests: the original fails, the fix passes</td><td>Inspectable app state plus a quality judgment; usually no unit tests</td></tr>
-        <tr><td>Main difficulty</td><td>Answer leakage, environments at scale, shallow trajectories</td><td>Simulating apps and people; judging "done well", not just "done"</td></tr>
-        <tr><td>Infrastructure</td><td>Fast builds and caching, isolated sandboxes, anti-leakage, provenance</td><td>Simulated apps and users, quality checkers, replayable sessions</td></tr>
+        <tr><td>Environment</td><td>A repository snapshot in a container</td><td>Documents, spreadsheets, email, several apps, often a person</td></tr>
+        <tr><td>Outcome check</td><td>Original fails the tests, the fix passes</td><td>App state plus a quality judgment; rarely unit tests</td></tr>
+        <tr><td>Main difficulty</td><td>Answer leakage, scale, shallow trajectories</td><td>Simulating apps and people; judging "done well"</td></tr>
+        <tr><td>Infrastructure</td><td>Fast builds, isolated sandboxes, anti-leakage, provenance</td><td>Simulated apps and users, quality checkers, replayable sessions</td></tr>
       </tbody>
     </table>
   </div>
 
   <h3 id="trajectory-efficiency">Efficiency should be measured per trajectory, not per call</h3>
-  <p>Most efficiency methods, including many of ours, are judged one response at a time. For an agent, dropping one detail can cost several extra steps later. Efficiency should be measured per task: total compute, memory and time to a verified result. The idea behind D2O and UNComp, keep what later steps need and a way back for the rest, should then apply to observations and actions, not only tokens.</p>
+  <p>Most efficiency methods, including ours, are judged one response at a time, but for an agent, dropping one detail can cost several extra steps later. Efficiency should be measured per task, as total compute, memory and time to a verified result, and the D2O and UNComp idea of keeping a way back should apply to observations and actions, not only tokens.</p>
 
   <figure class="research-figure">
     <div class="research-figure-scroll"><img src="{{ '/assets/img/research/trajectory-efficiency.svg' | relative_url }}" alt="Two trajectories: with full context, the agent reaches a verified result in a few steps; with a detail dropped from the context, each call is cheaper but extra steps to re-read, retry and re-test make the whole task slower and costlier." width="900" height="300" loading="lazy"></div>
@@ -143,22 +142,19 @@ about:
   </figure>
 
   <h3 id="long-runs">Very long-horizon runs need layered memory and resumable state</h3>
-  <p>No context window holds weeks of tool output, so memory will need layers: a short working context, compressed summaries, and a searchable store for exact details, a project-level version of D2O's recall. And since machines and sandboxes will fail over weeks, AnchorTP's separation of state from crashing processes and partial rollout's resuming where you left off should become standard.</p>
+  <p>No context window holds weeks of tool output, so memory will need layers: a short working context, compressed summaries, and a searchable store for exact details, a project-level version of D2O's recall. Since machines and sandboxes will fail over weeks, AnchorTP's separation of state from crashing processes and partial rollout's resuming should become standard.</p>
 
   <h3 id="verification-compute">AI for AI and AI for Science: compute should flow to verification</h3>
-  <p>In loops where AI improves AI, checking is where reliability is won or lost, so cheaper reviewers and verifiers of the kind <a href="https://arxiv.org/abs/2607.06065">SWE-Review</a> points to are likely the biggest lever. Science sharpens this, because the expensive step is the experiment, not the model. The draft-and-check pattern from ATTS fits: a cheap model or fast surrogate screens many candidates, the expensive simulation or experiment checks only the most promising, and calibrated rules decide how much to filter. Failed experiments should be kept, with their settings, not discarded.</p>
+  <p>In AI-for-AI loops, checking is where reliability is won or lost, so cheaper reviewers and verifiers, of the kind <a href="https://arxiv.org/abs/2607.06065">SWE-Review</a> points to, are likely the biggest lever. Science sharpens this, because the expensive step is the experiment. The draft-and-check pattern from ATTS fits: a cheap surrogate screens many candidates, the expensive experiment checks the most promising, and calibrated rules set how much to filter, at the risk of removing exactly the surprising ones. Failed experiments should be kept, with their settings.</p>
 
   <h2 id="open-questions">Open questions</h2>
   <p>Questions I find most important for this direction, some raised by our own work and some by where the field is now.</p>
   <ul class="research-questions">
-    <li><strong>Is there a scaling law for agentic data?</strong> For text we know how loss scales with tokens. For agents the unit is a verified environment, and we do not know how capability scales with their number, variety and difficulty, or what each should cost.</li>
-    <li><strong>How do we verify cowork tasks without unit tests?</strong> Office work is judged through application state and a person's sense of quality. Checkers that are cheap, agree with people and are hard to game do not exist yet.</li>
-    <li><strong>Does memory compression still matter when long context gets cheap?</strong> The bottleneck may move from storing tokens to choosing what to read. Should an agent compress, retrieve or keep everything, judged over the whole trajectory?</li>
-    <li><strong>What is compute-optimal for an agent?</strong> A fixed budget can go to a bigger model, more turns, more parallel attempts or more verification. Training has scaling laws for such trade-offs; trajectories do not.</li>
-    <li><strong>How far can training and inference drift apart before RL breaks?</strong> Asynchronous and partial rollouts, and numerical differences between inference engines and trainers, all make data slightly off-policy. The safe boundary between throughput and stability is still found by trial and error.</li>
+    <li><strong>Is there a scaling law for agentic data?</strong> For text we know how loss scales with tokens. For agents the unit is a verified environment, and we do not know how capability scales with their number, variety and difficulty, what each should cost, or how to check environments that have no unit tests, such as cowork tasks.</li>
+    <li><strong>What is compute-optimal for an agent?</strong> We know how to split training compute between <a href="https://arxiv.org/abs/2203.15556">parameters and data</a>, and that <a href="https://arxiv.org/abs/2408.03314">test-time compute</a> can beat a larger model. For an agent, a fixed budget can go to a bigger model, more turns, more parallel attempts or more verification, and there is no equivalent rule for the trajectory.</li>
+    <li><strong>How far can training and inference drift apart before RL breaks?</strong> Asynchronous and partial rollouts make data slightly off-policy, and even the same weights can produce <a href="https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/">different numbers</a> in an inference engine and a trainer. Throughput rewards more drift and stability punishes it; the safe boundary is still found by trial and error.</li>
     <li><strong>Can small models learn long-horizon agent skills?</strong> The best teacher is the one a student can learn from, but it is unclear whether a small model can absorb planning and self-checking from traces, or whether some of that only appears at scale.</li>
     <li><strong>Which efficiency techniques survive new architectures?</strong> Diffusion language models, mixtures of experts and hybrid attention each break assumptions behind KV caching, quantization and speculative decoding.</li>
-    <li><strong>When can a cheap surrogate be trusted to screen scientific experiments?</strong> One that filters out exactly the surprising candidates defeats the purpose, and science cares most about the cases a surrogate has never seen.</li>
   </ul>
 
   <p class="research-readmore">Code and experiments: <a href="https://github.com/sail-sg/scaling-with-vocab">Vocabulary study</a> · <a href="https://huggingface.co/spaces/sail/scaling-with-vocab-demo">Vocabulary calculator</a> · <a href="https://github.com/LegoX/Lego-RL">Lego-RL</a> · <a href="https://github.com/LegoX/LegoFlow">LegoFlow</a></p>
