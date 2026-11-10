@@ -138,11 +138,11 @@ about:
     <figcaption>Working by milestones. A direction I expect, built from lessons in our work, not a finished system.</figcaption>
   </figure>
 
-  <p><strong>Recording lessons is the subtle step.</strong> I think experience should be kept at different levels: habits in the weights, procedures as reusable skills and tools (LegoFlow's blocks are a small example), and task-specific facts in memory, each tagged with the data, code version and settings under which it held.</p>
+  <p><strong>Recording lessons is the subtle step.</strong> I think experience should be kept at levels: habits in the weights, procedures as reusable skills and tools (LegoFlow's blocks are a small example), and task-specific facts in memory, each tagged with the data, code version and settings under which it held.</p>
 
   <figure class="research-figure">
-    <div class="research-figure-scroll"><img src="{{ '/assets/img/research/experience-layers.svg' | relative_url }}" alt="Experience from attempts, failures and reviews is kept at three levels: stable habits in weights, reusable procedures as skills and tools, and task-specific facts in memory together with the conditions under which they hold." width="900" height="380" loading="lazy"></div>
-    <figcaption>Keeping experience at different levels. Memory entries carry their conditions so they can be re-checked when those conditions change.</figcaption>
+    <div class="research-figure-scroll"><img src="{{ '/assets/img/research/experience-layers.svg' | relative_url }}" alt="Experience from attempts, failures and reviews is kept at levels: stable habits in weights, reusable procedures as skills and tools, and task-specific facts in memory together with the conditions under which they hold." width="900" height="380" loading="lazy"></div>
+    <figcaption>Keeping experience at levels. Memory entries carry their conditions so they can be re-checked when those conditions change.</figcaption>
   </figure>
 
   <h3 id="multi-agent">Teams of agents: extra agents help only when they add independent evidence</h3>
