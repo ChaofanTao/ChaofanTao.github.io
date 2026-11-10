@@ -157,7 +157,7 @@ about:
     <li><strong>Which efficiency techniques survive new architectures?</strong> Diffusion language models, hybrid attention, etc.</li>
   </ul>
 
-  <p class="research-readmore">Code and experiments: <a href="https://github.com/sail-sg/scaling-with-vocab">Vocabulary study</a> · <a href="https://huggingface.co/spaces/sail/scaling-with-vocab-demo">Vocabulary calculator</a> · <a href="https://github.com/LegoX/Lego-RL">Lego-RL</a> · <a href="https://github.com/LegoX/LegoFlow">LegoFlow</a></p>
+  <!-- <p class="research-readmore">Code and experiments: <a href="https://github.com/sail-sg/scaling-with-vocab">Vocabulary study</a> · <a href="https://huggingface.co/spaces/sail/scaling-with-vocab-demo">Vocabulary calculator</a> · <a href="https://github.com/LegoX/Lego-RL">Lego-RL</a> · <a href="https://github.com/LegoX/LegoFlow">LegoFlow</a></p> -->
 
   {% include research/paper-list.liquid group="efficient" lang="en" %}
 
