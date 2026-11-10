@@ -21,6 +21,7 @@ REAgent turns issue descriptions into structured, information-rich requirements,
 - Authors: Chaofan Tao, Jierun Chen, Yuxin Jiang, Kaiqi Kou, Shaowei Wang, Ruoyu Wang, Xiaohui Li, Sidi Yang, Yiming Du, Jianbo Dai, Zhiming Mao, Xinyu Wang, Lifeng Shang, Haoli Bai
 - Paper: https://arxiv.org/abs/2601.01426
 - Code: https://github.com/LegoX/SWE-Lego
+- Data: https://huggingface.co/collections/Lego-X/swe-lego
 
 SWE-Lego studies supervised fine-tuning for issue resolution using real and synthetic tasks, error masking and a difficulty curriculum, then evaluates verifier-guided selection of candidate patches.
 
@@ -79,6 +80,7 @@ SwingArena is a CI-driven competitive benchmark where LLMs take turns as submitt
 - Authors: Xijia Tao, Yihua Teng, Xinxing Su, Xinyu Fu, Jihao Wu, Chaofan Tao, Ziru Liu, Haoli Bai, Rui Liu, Lingpeng Kong
 - Paper: https://arxiv.org/abs/2508.21475
 - Repository: https://github.com/mmsearch-plus/MMSearch-Plus
+- Data: https://huggingface.co/datasets/Cie1/MMSearch-Plus
 
 MMSearch-Plus provides 311 tasks requiring fine visual cues to be followed through iterative image-text search and cross-checking, with tools for marking, cropping and targeted retrieval.
 
@@ -112,6 +114,7 @@ RLVRR turns single verifiable end rewards into ordered reference-derived reward 
 - Authors: Hui Shen, Taiqiang Wu, Qi Han, Yunta Hsieh, Jizhou Wang, Yuyue Zhang, Yuxin Cheng, Zijian Hao, Yuansheng Ni, Xin Wang, Zhongwei Wan, Kai Zhang, Wendong Xu, Jing Xiong, Ping Luo, Wenhu Chen, Chaofan Tao, Zhuoqing Mao, Ngai Wong
 - Paper: https://arxiv.org/abs/2505.15929
 - Code: https://github.com/killthefullmoon/PhyX
+- Data: https://huggingface.co/datasets/Cloudriver/PhyX
 
 PhyX introduces a 3K-question multimodal benchmark spanning six physics domains to test physics-grounded reasoning, revealing large gaps between top models and human experts.
 
@@ -144,6 +147,7 @@ A comprehensive survey of visual autoregressive modeling, covering representatio
 - Authors: Zhongwei Wan, Zhihao Dou, Che Liu, Yu Zhang, Dongfei Cui, Qinjian Zhao, Hui Shen, Jing Xiong, Yi Xin, Yifan Jiang, Chaofan Tao, Yangfan He, Mi Zhang, Shen Yan
 - Paper: https://arxiv.org/abs/2506.01713
 - Code: https://github.com/SUSTechBruce/SRPO_MLLMs
+- Data: https://huggingface.co/datasets/bruce360568/SRPO_RL_datasets
 
 SRPO is a reflection-aware RL framework that teaches MLLMs self-reflection and then optimizes concise, meaningful reflections with GRPO-style rewards to improve multimodal reasoning.
 
