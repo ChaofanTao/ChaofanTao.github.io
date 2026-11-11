@@ -420,6 +420,24 @@ redirect_from:
     margin-bottom: 0.8rem;
   }
 
+  .home-visitors {
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+
+  .home-visitors a {
+    display: inline-block;
+    line-height: 0;
+  }
+
+  .home-visitors img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.5rem;
+  }
+
   @media (max-width: 640px) {
     .home-hero {
       grid-template-columns: minmax(0, 1fr);
@@ -786,6 +804,12 @@ redirect_from:
     <h2 id="services-heading">Service</h2>
     <p>Conference reviewer: ICLR, ICML, NeurIPS, ACL, EMNLP, COLM, ICCV, CVPR, ECCV.<br>Journal reviewer: T-NNLS.</p>
   </section>
+
+  <div class="home-visitors">
+    <a href="https://clustrmaps.com/site/1bbv1" title="Visitor map" rel="nofollow noopener" target="_blank">
+      <img src="https://www.clustrmaps.com/map_v2.png?d=0ZecqQLAEt37Edlt0hzfXqCTlzIMMIu54WE-oI1xVj8&amp;cl=ffffff" alt="Map of visitors to this site" loading="lazy" onerror="this.closest('.home-visitors').hidden = true">
+    </a>
+  </div>
 </div>
 
 <script src="{{ '/assets/js/homepage.js' | relative_url }}" defer></script>
