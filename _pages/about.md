@@ -806,8 +806,8 @@ redirect_from:
   </section>
 
   <div class="home-visitors">
-    <a href="https://clustrmaps.com/site/1bbv1" title="Visitor map" rel="nofollow noopener" target="_blank">
-      <img src="https://www.clustrmaps.com/map_v2.png?d=0ZecqQLAEt37Edlt0hzfXqCTlzIMMIu54WE-oI1xVj8&amp;cl=ffffff" alt="Map of visitors to this site" loading="lazy" onerror="this.closest('.home-visitors').hidden = true">
+    <a href="https://mapmyvisitors.com/web/1c9f3" title="Visitor map" rel="nofollow noopener" target="_blank">
+      <img src="https://mapmyvisitors.com/map.png?d=zKNXdFxLZdPEBCKI2aElWiJ0mk_veWYfZ-aVLLT0K0Q&amp;cl=ffffff&amp;w=600" alt="Map of visitors to this site" width="600" height="317" loading="lazy" onerror="this.closest('.home-visitors').hidden = true">
     </a>
   </div>
 </div>
