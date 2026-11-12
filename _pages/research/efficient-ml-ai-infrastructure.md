@@ -71,7 +71,7 @@ about:
 
   <figure class="research-figure">
     <div class="research-figure-scroll"><img src="{{ '/assets/img/research/legox/lego-rl-workflow.png' | relative_url }}" alt="Lego-RL closed-loop workflow: data preparation with sandbox management, image cache, lazy pulls and anti-hacking; run validation; the training run with sandbox execution, in-process proxy, rollout and trainer; a live UI with failure breakdowns and trajectory viewer; and human review." width="1600" height="878" loading="lazy"></div>
-    <figcaption>The Lego-RL workflow, from data preparation and sandbox management to live failure diagnosis and human review. Figure from the <a href="https://www.legox.net/blog/lego-rl/">Lego-RL blog</a>.</figcaption>
+    <figcaption>The Lego-RL workflow, from data preparation and sandbox management to live failure diagnosis and human review. Figure from the <a href="https://intellegox.net/blog/lego-rl/">Lego-RL blog</a>.</figcaption>
   </figure>
 
   <h2 id="at-a-glance">At a glance</h2>
@@ -117,7 +117,7 @@ about:
 
   <figure class="research-figure">
     <div class="research-figure-scroll"><img src="{{ '/assets/img/research/legox/terminal-lego-pipeline.png' | relative_url }}" alt="Terminal-Lego construction pipeline: collecting high-quality Stack Overflow questions, generating instructions, environments, solutions, Dockerfiles and tests in cascade, reviewing tests, and a Docker round trip that keeps only tasks that pass verification." width="1600" height="892" loading="lazy"></div>
-    <figcaption>A concrete example: <a href="https://arxiv.org/abs/2606.03461">Terminal-Lego</a> keeps a task only after a full Docker round trip confirms it. Figure from the <a href="https://www.legox.net/blog/terminal-lego/">Terminal-Lego blog</a>.</figcaption>
+    <figcaption>A concrete example: <a href="https://arxiv.org/abs/2606.03461">Terminal-Lego</a> keeps a task only after a full Docker round trip confirms it. Figure from the <a href="https://intellegox.net/blog/terminal-lego/">Terminal-Lego blog</a>.</figcaption>
   </figure>
   <p>Software is the easy case, because tests give a clean signal. The next wave is cowork data, documents, spreadsheets, email and multi-app workflows with people in the loop, where checking outcomes is much harder. I expect the teams that build this infrastructure, not those with the most raw logs, to have the best agentic data.</p>
 

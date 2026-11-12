@@ -513,7 +513,7 @@ redirect_from:
 </style>
 
 {% assign person_id = site.url | append: '/#person' %}
-{% assign legox_id = 'https://www.legox.net/#organization' %}
+{% assign legox_id = 'https://intellegox.net/#organization' %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -598,12 +598,12 @@ redirect_from:
       "@type": "Organization",
       "@id": "{{ legox_id }}",
       "name": "LegoX",
-      "url": "https://www.legox.net/",
-      "logo": "https://www.legox.net/logo/legox-parallel-pipeline.svg",
+      "url": "https://intellegox.net/",
+      "logo": "https://intellegox.net/logo/legox-parallel-pipeline.svg",
       "description": "An open-source effort connecting agentic data, training infrastructure, evaluation, and models for coding agents.",
       "sameAs": ["https://github.com/LegoX", "https://huggingface.co/Lego-X"]
     },
-    {% assign projects = "LegoFlow|https://www.legox.net/blog/legoflow/|https://github.com/LegoX/LegoFlow|An agent-orchestrated framework for building verified coding tasks and training trajectories, from repository discovery to evaluation.;Lego-RL|https://www.legox.net/blog/lego-rl/|https://github.com/LegoX/Lego-RL|Reinforcement learning inside unmodified coding-agent harnesses, preserving generation-time tokens and MoE routing for faithful training.;Terminal-Lego|https://www.legox.net/blog/terminal-lego/|https://github.com/SWE-Lego/terminal-lego|Executable tasks and grounded interaction trajectories for terminal-agent training.;SWE-Lego|https://www.legox.net/blog/swe-lego/|https://github.com/LegoX/SWE-Lego|A supervised fine-tuning recipe for software issue resolution, combining verified data, error masking, and curriculum learning." | split: ";" %}
+    {% assign projects = "LegoFlow|https://intellegox.net/blog/legoflow/|https://github.com/LegoX/LegoFlow|An agent-orchestrated framework for building verified coding tasks and training trajectories, from repository discovery to evaluation.;Lego-RL|https://intellegox.net/blog/lego-rl/|https://github.com/LegoX/Lego-RL|Reinforcement learning inside unmodified coding-agent harnesses, preserving generation-time tokens and MoE routing for faithful training.;Terminal-Lego|https://intellegox.net/blog/terminal-lego/|https://github.com/SWE-Lego/terminal-lego|Executable tasks and grounded interaction trajectories for terminal-agent training.;SWE-Lego|https://intellegox.net/blog/swe-lego/|https://github.com/LegoX/SWE-Lego|A supervised fine-tuning recipe for software issue resolution, combining verified data, error masking, and curriculum learning." | split: ";" %}
     {% for project in projects %}
     {% assign p = project | split: "|" %}
     {
@@ -661,46 +661,46 @@ redirect_from:
   <section class="home-section" id="projects" aria-labelledby="projects-heading">
     <div class="home-section-heading">
       <h2 id="projects-heading">Recent projects</h2>
-      <a href="https://www.legox.net/">Explore LegoX <span aria-hidden="true">↗</span></a>
+      <a href="https://intellegox.net/">Explore LegoX <span aria-hidden="true">↗</span></a>
     </div>
-    <p class="home-section-description">I am actively involved in <a href="https://www.legox.net/"><strong>LegoX</strong></a>, an open-source effort connecting agentic data, training infrastructure, evaluation, and models.</p>
+    <p class="home-section-description">I am actively involved in <a href="https://intellegox.net/"><strong>LegoX</strong></a>, an open-source effort connecting agentic data, training infrastructure, evaluation, and models.</p>
     <div class="home-project-grid">
       <article class="home-project">
         <p class="home-project-kind">Data &amp; environments</p>
-        <h3><a href="https://www.legox.net/blog/legoflow/">LegoFlow</a></h3>
+        <h3><a href="https://intellegox.net/blog/legoflow/">LegoFlow</a></h3>
         <p>An agent-orchestrated framework for building verified coding tasks and training trajectories, from repository discovery to evaluation.</p>
         <div class="home-resources" aria-label="LegoFlow resources">
-          <a href="https://www.legox.net/blog/legoflow/">Overview</a>
+          <a href="https://intellegox.net/blog/legoflow/">Overview</a>
           <a href="https://github.com/LegoX/LegoFlow">Code</a>
           <a href="https://huggingface.co/collections/Lego-X/legoflow">Data</a>
         </div>
       </article>
       <article class="home-project">
         <p class="home-project-kind">Training infrastructure</p>
-        <h3><a href="https://www.legox.net/blog/lego-rl/">Lego-RL</a></h3>
+        <h3><a href="https://intellegox.net/blog/lego-rl/">Lego-RL</a></h3>
         <p>Reinforcement learning inside unmodified coding-agent harnesses, preserving generation-time tokens and MoE routing for faithful training.</p>
         <div class="home-resources" aria-label="Lego-RL resources">
-          <a href="https://www.legox.net/blog/lego-rl/">Overview</a>
+          <a href="https://intellegox.net/blog/lego-rl/">Overview</a>
           <a href="https://github.com/LegoX/Lego-RL">Code</a>
           <a href="https://huggingface.co/collections/Lego-X/lego-rl">Models &amp; data</a>
         </div>
       </article>
       <article class="home-project">
         <p class="home-project-kind">Terminal agents</p>
-        <h3><a href="https://www.legox.net/blog/terminal-lego/">Terminal-Lego</a></h3>
+        <h3><a href="https://intellegox.net/blog/terminal-lego/">Terminal-Lego</a></h3>
         <p>Executable tasks and grounded interaction trajectories for terminal-agent training, using 30× fewer examples in the reported comparison.</p>
         <div class="home-resources" aria-label="Terminal-Lego resources">
-          <a href="https://www.legox.net/blog/terminal-lego/">Overview</a>
+          <a href="https://intellegox.net/blog/terminal-lego/">Overview</a>
           <a href="https://github.com/SWE-Lego/terminal-lego">Code</a>
           <a href="https://huggingface.co/datasets/SWE-Lego/Terminal-Lego-15k">Data</a>
         </div>
       </article>
       <article class="home-project">
         <p class="home-project-kind">Coding agents</p>
-        <h3><a href="https://www.legox.net/blog/swe-lego/">SWE-Lego</a></h3>
+        <h3><a href="https://intellegox.net/blog/swe-lego/">SWE-Lego</a></h3>
         <p>A supervised fine-tuning recipe for software issue resolution, combining verified data, error masking, and curriculum learning.</p>
         <div class="home-resources" aria-label="SWE-Lego resources">
-          <a href="https://www.legox.net/blog/swe-lego/">Overview</a>
+          <a href="https://intellegox.net/blog/swe-lego/">Overview</a>
           <a href="https://github.com/LegoX/SWE-Lego">Code</a>
           <a href="https://arxiv.org/abs/2601.01426">Paper</a>
         </div>
@@ -793,8 +793,8 @@ redirect_from:
         <span class="home-social-icon"><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="" aria-hidden="true" loading="lazy"></span>
         <span class="home-social-label">Hugging Face</span>
       </a>
-      <a class="home-social-link home-social-legox" href="https://www.legox.net/" aria-label="LegoX">
-        <span class="home-social-icon"><img src="https://www.legox.net/logo/legox-parallel-pipeline.svg" alt="" aria-hidden="true" loading="lazy"></span>
+      <a class="home-social-link home-social-legox" href="https://intellegox.net/" aria-label="LegoX">
+        <span class="home-social-icon"><img src="https://intellegox.net/logo/legox-parallel-pipeline.svg" alt="" aria-hidden="true" loading="lazy"></span>
         <span class="home-social-label">LegoX</span>
       </a>
     </div>

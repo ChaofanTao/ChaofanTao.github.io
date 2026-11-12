@@ -5,7 +5,7 @@ sitemap: false
 ---
 # Chaofan Tao (陶超凡)
 
-> Chaofan Tao is an AI researcher at LegoX (https://www.legox.net/), an open-source effort on agentic data, training infrastructure, evaluation, and models for coding agents. He is also a researcher at Huawei Foundation Model Lab. His work covers LLM coding agents, agentic reinforcement learning, agentic data and environments, multimodal LLM reasoning, and efficient LLM training and inference. He received his PhD from The University of Hong Kong (advised by Prof. Ngai Wong and Prof. Ping Luo, MMLAB@HKU) and his bachelor's degree from the Yingcai Honors College, UESTC. His paper on generative language model quantization received the ACL 2022 Outstanding Paper Award.
+> Chaofan Tao is an AI researcher at LegoX (https://intellegox.net/), an open-source effort on agentic data, training infrastructure, evaluation, and models for coding agents. He is also a researcher at Huawei Foundation Model Lab. His work covers LLM coding agents, agentic reinforcement learning, agentic data and environments, multimodal LLM reasoning, and efficient LLM training and inference. He received his PhD from The University of Hong Kong (advised by Prof. Ngai Wong and Prof. Ping Luo, MMLAB@HKU) and his bachelor's degree from the Yingcai Honors College, UESTC. His paper on generative language model quantization received the ACL 2022 Outstanding Paper Award.
 
 Key facts:
 
@@ -31,11 +31,11 @@ Key facts:
 
 ## Projects (LegoX)
 
-- [LegoFlow](https://www.legox.net/blog/legoflow/): agent-orchestrated framework for building verified coding tasks and training trajectories, from repository discovery to evaluation. Code: https://github.com/LegoX/LegoFlow
-- [Lego-RL](https://www.legox.net/blog/lego-rl/): reinforcement learning inside unmodified coding-agent harnesses (e.g. OpenHands, Claude Code, OpenCode), preserving generation-time tokens and MoE routing for faithful training. Code: https://github.com/LegoX/Lego-RL
-- [Terminal-Lego](https://www.legox.net/blog/terminal-lego/): executable tasks and grounded interaction trajectories for terminal-agent training. Code: https://github.com/SWE-Lego/terminal-lego · Data: https://huggingface.co/datasets/SWE-Lego/Terminal-Lego-15k
-- [SWE-Lego](https://www.legox.net/blog/swe-lego/): supervised fine-tuning recipe for software issue resolution with verified data, error masking, and curriculum learning. Paper: https://arxiv.org/abs/2601.01426
-- [SWE-Review](https://www.legox.net/blog/swe-review/): agentic code review that closes the generate-review-revise loop for issue resolution. Paper: https://arxiv.org/abs/2607.06065
+- [LegoFlow](https://intellegox.net/blog/legoflow/): agent-orchestrated framework for building verified coding tasks and training trajectories, from repository discovery to evaluation. Code: https://github.com/LegoX/LegoFlow
+- [Lego-RL](https://intellegox.net/blog/lego-rl/): reinforcement learning inside unmodified coding-agent harnesses (e.g. OpenHands, Claude Code, OpenCode), preserving generation-time tokens and MoE routing for faithful training. Code: https://github.com/LegoX/Lego-RL
+- [Terminal-Lego](https://intellegox.net/blog/terminal-lego/): executable tasks and grounded interaction trajectories for terminal-agent training. Code: https://github.com/SWE-Lego/terminal-lego · Data: https://huggingface.co/datasets/SWE-Lego/Terminal-Lego-15k
+- [SWE-Lego](https://intellegox.net/blog/swe-lego/): supervised fine-tuning recipe for software issue resolution with verified data, error masking, and curriculum learning. Paper: https://arxiv.org/abs/2601.01426
+- [SWE-Review](https://intellegox.net/blog/swe-review/): agentic code review that closes the generate-review-revise loop for issue resolution. Paper: https://arxiv.org/abs/2607.06065
 
 ## Selected publications
 {% assign selected_papers = site.data.homepage.publications | where_exp: "paper", "paper.selected_order" | sort: "selected_order" %}
