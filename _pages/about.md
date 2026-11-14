@@ -805,9 +805,9 @@ redirect_from:
     <p>Conference reviewer: ICLR, ICML, NeurIPS, ACL, EMNLP, COLM, ICCV, CVPR, ECCV.<br>Journal reviewer: T-NNLS.</p>
   </section>
 
-  <div class="home-visitors">
+  <div class="home-visitors" hidden>
     <a href="https://mapmyvisitors.com/web/1c9f3" title="Visitor map" rel="nofollow noopener" target="_blank">
-      <img src="https://mapmyvisitors.com/map.png?d=zKNXdFxLZdPEBCKI2aElWiJ0mk_veWYfZ-aVLLT0K0Q&amp;cl=ffffff&amp;w=600" alt="Map of visitors to this site" width="600" height="317" loading="lazy" onerror="this.closest('.home-visitors').hidden = true">
+      <img src="https://mapmyvisitors.com/map.png?d=zKNXdFxLZdPEBCKI2aElWiJ0mk_veWYfZ-aVLLT0K0Q&amp;cl=ffffff&amp;w=600" alt="Map of visitors to this site" width="600" height="317" loading="eager" onerror="this.closest('.home-visitors').hidden = true">
     </a>
   </div>
 </div>

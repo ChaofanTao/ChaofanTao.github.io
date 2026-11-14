@@ -23,8 +23,37 @@ function initHomepageNavigation() {
   });
 }
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initHomepageNavigation, { once: true });
-} else {
+// This is a display preference, not authentication. Keep the image request active
+// for visitor counting even while the map is hidden.
+function initHomepageVisitors() {
+  const visitors = document.querySelector(".home-visitors");
+  if (!visitors) return;
+
+  const preference = new URLSearchParams(window.location.search).get("stats");
+  const storageKey = "homepage-show-stats";
+  let showStats = preference === "on";
+
+  try {
+    if (preference === "on" || preference === "off") {
+      window.localStorage.setItem(storageKey, preference);
+    } else {
+      showStats = window.localStorage.getItem(storageKey) === "on";
+    }
+  } catch {
+    // The URL switch still works when browser storage is unavailable.
+  }
+
+  const image = visitors.querySelector("img");
+  visitors.hidden = !showStats || (image.complete && image.naturalWidth === 0);
+}
+
+function initHomepage() {
   initHomepageNavigation();
+  initHomepageVisitors();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initHomepage, { once: true });
+} else {
+  initHomepage();
 }
